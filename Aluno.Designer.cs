@@ -1,6 +1,6 @@
 ﻿namespace ECOInsight
 {
-    partial class Aluno
+    partial class AlunoTela
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             panelEsquedo = new Panel();
-            btnSair = new Button();
+            btnSairAluno = new Button();
+            panelSairAluno = new Panel();
             btnProfessor = new Button();
             btnAluno = new Button();
             btnGestor = new Button();
@@ -43,7 +44,8 @@
             // panelEsquedo
             // 
             panelEsquedo.BackColor = Color.FromArgb(153, 179, 142);
-            panelEsquedo.Controls.Add(btnSair);
+            panelEsquedo.Controls.Add(btnSairAluno);
+            panelEsquedo.Controls.Add(panelSairAluno);
             panelEsquedo.Controls.Add(btnProfessor);
             panelEsquedo.Controls.Add(btnAluno);
             panelEsquedo.Controls.Add(btnGestor);
@@ -54,18 +56,27 @@
             panelEsquedo.Size = new Size(161, 593);
             panelEsquedo.TabIndex = 12;
             // 
-            // btnSair
+            // btnSairAluno
             // 
-            btnSair.FlatAppearance.BorderSize = 0;
-            btnSair.FlatStyle = FlatStyle.Flat;
-            btnSair.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSair.ForeColor = SystemColors.ActiveCaptionText;
-            btnSair.Location = new Point(0, 524);
-            btnSair.Name = "btnSair";
-            btnSair.Size = new Size(161, 57);
-            btnSair.TabIndex = 4;
-            btnSair.Text = "SAIR";
-            btnSair.UseVisualStyleBackColor = true;
+            btnSairAluno.Anchor = AnchorStyles.Bottom;
+            btnSairAluno.FlatAppearance.BorderSize = 0;
+            btnSairAluno.FlatStyle = FlatStyle.Flat;
+            btnSairAluno.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSairAluno.ForeColor = SystemColors.ActiveCaptionText;
+            btnSairAluno.Location = new Point(0, 524);
+            btnSairAluno.Name = "btnSairAluno";
+            btnSairAluno.Size = new Size(161, 57);
+            btnSairAluno.TabIndex = 15;
+            btnSairAluno.Text = "SAIR";
+            btnSairAluno.UseVisualStyleBackColor = true;
+            btnSairAluno.Click += btnSairAluno_Click;
+            // 
+            // panelSairAluno
+            // 
+            panelSairAluno.Location = new Point(0, 524);
+            panelSairAluno.Name = "panelSairAluno";
+            panelSairAluno.Size = new Size(161, 70);
+            panelSairAluno.TabIndex = 16;
             // 
             // btnProfessor
             // 
@@ -80,6 +91,7 @@
             btnProfessor.Text = "Professor  ";
             btnProfessor.TextAlign = ContentAlignment.MiddleRight;
             btnProfessor.UseVisualStyleBackColor = true;
+            btnProfessor.Click += btnProfessor_Click;
             // 
             // btnAluno
             // 
@@ -94,6 +106,7 @@
             btnAluno.Text = "Aluno        ";
             btnAluno.TextAlign = ContentAlignment.MiddleRight;
             btnAluno.UseVisualStyleBackColor = true;
+            btnAluno.Click += btnAluno_Click;
             // 
             // btnGestor
             // 
@@ -108,6 +121,7 @@
             btnGestor.Text = "Gestor       ";
             btnGestor.TextAlign = ContentAlignment.MiddleRight;
             btnGestor.UseVisualStyleBackColor = true;
+            btnGestor.Click += btnGestor_Click;
             // 
             // btnDestaques
             // 
@@ -122,6 +136,7 @@
             btnDestaques.Text = "Destaques";
             btnDestaques.TextAlign = ContentAlignment.MiddleRight;
             btnDestaques.UseVisualStyleBackColor = true;
+            btnDestaques.Click += btnDestaques_Click;
             // 
             // panelSuperiorAluno
             // 
@@ -145,14 +160,15 @@
             lblAluno.TabIndex = 0;
             lblAluno.Text = "ALUNO";
             // 
-            // Aluno
+            // AlunoTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1064, 633);
             Controls.Add(panelEsquedo);
             Controls.Add(panelSuperiorAluno);
-            Name = "Aluno";
+            Name = "AlunoTela";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Aluno";
             panelEsquedo.ResumeLayout(false);
             panelSuperiorAluno.ResumeLayout(false);
@@ -163,12 +179,13 @@
         #endregion
 
         private Panel panelEsquedo;
-        private Button btnSair;
         private Button btnProfessor;
         private Button btnAluno;
         private Button btnGestor;
         private Button btnDestaques;
         private Panel panelSuperiorAluno;
         private Label lblAluno;
+        private Button btnSairAluno;
+        private Panel panelSairAluno;
     }
 }

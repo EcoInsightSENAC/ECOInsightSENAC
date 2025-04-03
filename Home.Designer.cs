@@ -1,6 +1,6 @@
 ﻿namespace ECOInsight
 {
-    partial class Home
+    partial class HomeTela
     {
         /// <summary>
         /// Required designer variable.
@@ -32,11 +32,12 @@
             panelSuperiorLogin = new Panel();
             lblLogin = new Label();
             panelEsquedo = new Panel();
-            btnSair = new Button();
+            btnSairHome = new Button();
             btnProfessor = new Button();
             btnAluno = new Button();
             btnGestor = new Button();
             btnDestaques = new Button();
+            panel1 = new Panel();
             panelSuperiorLogin.SuspendLayout();
             panelEsquedo.SuspendLayout();
             SuspendLayout();
@@ -76,29 +77,32 @@
             // panelEsquedo
             // 
             panelEsquedo.BackColor = Color.FromArgb(153, 179, 142);
-            panelEsquedo.Controls.Add(btnSair);
+            panelEsquedo.Controls.Add(btnSairHome);
             panelEsquedo.Controls.Add(btnProfessor);
             panelEsquedo.Controls.Add(btnAluno);
             panelEsquedo.Controls.Add(btnGestor);
             panelEsquedo.Controls.Add(btnDestaques);
+            panelEsquedo.Controls.Add(panel1);
             panelEsquedo.Dock = DockStyle.Left;
             panelEsquedo.Location = new Point(0, 40);
             panelEsquedo.Name = "panelEsquedo";
             panelEsquedo.Size = new Size(161, 593);
             panelEsquedo.TabIndex = 7;
             // 
-            // btnSair
+            // btnSairHome
             // 
-            btnSair.FlatAppearance.BorderSize = 0;
-            btnSair.FlatStyle = FlatStyle.Flat;
-            btnSair.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSair.ForeColor = SystemColors.ActiveCaptionText;
-            btnSair.Location = new Point(0, 524);
-            btnSair.Name = "btnSair";
-            btnSair.Size = new Size(161, 57);
-            btnSair.TabIndex = 4;
-            btnSair.Text = "SAIR";
-            btnSair.UseVisualStyleBackColor = true;
+            btnSairHome.Anchor = AnchorStyles.Bottom;
+            btnSairHome.FlatAppearance.BorderSize = 0;
+            btnSairHome.FlatStyle = FlatStyle.Flat;
+            btnSairHome.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSairHome.ForeColor = SystemColors.ActiveCaptionText;
+            btnSairHome.Location = new Point(0, 524);
+            btnSairHome.Name = "btnSairHome";
+            btnSairHome.Size = new Size(161, 57);
+            btnSairHome.TabIndex = 4;
+            btnSairHome.Text = "SAIR";
+            btnSairHome.UseVisualStyleBackColor = true;
+            btnSairHome.Click += btnSair_Click;
             // 
             // btnProfessor
             // 
@@ -113,6 +117,7 @@
             btnProfessor.Text = "Professor  ";
             btnProfessor.TextAlign = ContentAlignment.MiddleRight;
             btnProfessor.UseVisualStyleBackColor = true;
+            btnProfessor.Click += btnProfessor_Click;
             // 
             // btnAluno
             // 
@@ -127,6 +132,7 @@
             btnAluno.Text = "Aluno        ";
             btnAluno.TextAlign = ContentAlignment.MiddleRight;
             btnAluno.UseVisualStyleBackColor = true;
+            btnAluno.Click += btnAluno_Click;
             // 
             // btnGestor
             // 
@@ -141,6 +147,7 @@
             btnGestor.Text = "Gestor       ";
             btnGestor.TextAlign = ContentAlignment.MiddleRight;
             btnGestor.UseVisualStyleBackColor = true;
+            btnGestor.Click += btnGestor_Click;
             // 
             // btnDestaques
             // 
@@ -156,7 +163,14 @@
             btnDestaques.TextAlign = ContentAlignment.MiddleRight;
             btnDestaques.UseVisualStyleBackColor = true;
             // 
-            // Home
+            // panel1
+            // 
+            panel1.Location = new Point(0, 520);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(161, 70);
+            panel1.TabIndex = 15;
+            // 
+            // HomeTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -164,9 +178,10 @@
             Controls.Add(panelEsquedo);
             Controls.Add(panelSuperiorLogin);
             Controls.Add(lblDestaques);
-            Name = "Home";
+            Name = "HomeTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
+            Load += HomeTela_Load;
             panelSuperiorLogin.ResumeLayout(false);
             panelSuperiorLogin.PerformLayout();
             panelEsquedo.ResumeLayout(false);
@@ -181,8 +196,9 @@
         private Panel panelEsquedo;
         private Button btnGestor;
         private Button btnDestaques;
-        private Button btnSair;
+        private Button btnSairHome;
         private Button btnProfessor;
         private Button btnAluno;
+        private Panel panel1;
     }
 }

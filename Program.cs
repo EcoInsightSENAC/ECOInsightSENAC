@@ -1,6 +1,4 @@
-using ECOInsight;
-
-namespace ECOInsightSENAC
+namespace ECOInsight
 {
     internal static class Program
     {
@@ -11,9 +9,10 @@ namespace ECOInsightSENAC
         static void Main()
         {
             // To customize application configuration such as set high DPI settings or default font,
+            // teste
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Gestor());
+            Application.Run(new LoginTela());
         }
     }
 }

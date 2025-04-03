@@ -1,6 +1,6 @@
 ﻿namespace ECOInsight
 {
-    partial class Esqueci_a_Senha
+    partial class Esqueci_a_SenhaTela
     {
         /// <summary>
         /// Required designer variable.
@@ -37,11 +37,13 @@
             btnRecuperar = new Button();
             panelSuperiorEsqueciaSenha = new Panel();
             lblEsqueciSenha = new Label();
+            panel1 = new Panel();
             panelSuperiorEsqueciaSenha.SuspendLayout();
             SuspendLayout();
             // 
             // txtConfirSenha
             // 
+            txtConfirSenha.Anchor = AnchorStyles.Top;
             txtConfirSenha.Location = new Point(554, 324);
             txtConfirSenha.Margin = new Padding(4);
             txtConfirSenha.Name = "txtConfirSenha";
@@ -50,6 +52,7 @@
             // 
             // txtNovaSenha
             // 
+            txtNovaSenha.Anchor = AnchorStyles.Top;
             txtNovaSenha.Location = new Point(141, 324);
             txtNovaSenha.Margin = new Padding(4);
             txtNovaSenha.Name = "txtNovaSenha";
@@ -58,6 +61,7 @@
             // 
             // txtEmail
             // 
+            txtEmail.Anchor = AnchorStyles.Top;
             txtEmail.Location = new Point(141, 211);
             txtEmail.Margin = new Padding(4);
             txtEmail.Name = "txtEmail";
@@ -66,6 +70,7 @@
             // 
             // lblConfirSenha
             // 
+            lblConfirSenha.Anchor = AnchorStyles.Top;
             lblConfirSenha.AutoSize = true;
             lblConfirSenha.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblConfirSenha.Location = new Point(554, 282);
@@ -77,6 +82,7 @@
             // 
             // lblNovaSenha
             // 
+            lblNovaSenha.Anchor = AnchorStyles.Top;
             lblNovaSenha.AutoSize = true;
             lblNovaSenha.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNovaSenha.Location = new Point(141, 282);
@@ -88,6 +94,7 @@
             // 
             // lblEmail
             // 
+            lblEmail.Anchor = AnchorStyles.Top;
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblEmail.Location = new Point(141, 167);
@@ -99,7 +106,7 @@
             // 
             // btnRecuperar
             // 
-            btnRecuperar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnRecuperar.Anchor = AnchorStyles.Top;
             btnRecuperar.BackColor = Color.FromArgb(30, 66, 57);
             btnRecuperar.FlatAppearance.BorderSize = 0;
             btnRecuperar.FlatStyle = FlatStyle.Flat;
@@ -133,7 +140,14 @@
             lblEsqueciSenha.TabIndex = 0;
             lblEsqueciSenha.Text = "ESQUECI A SENHA";
             // 
-            // Esqueci_a_Senha
+            // panel1
+            // 
+            panel1.Location = new Point(125, 150);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(828, 363);
+            panel1.TabIndex = 19;
+            // 
+            // Esqueci_a_SenhaTela
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -146,9 +160,10 @@
             Controls.Add(lblConfirSenha);
             Controls.Add(lblNovaSenha);
             Controls.Add(lblEmail);
+            Controls.Add(panel1);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
-            Name = "Esqueci_a_Senha";
+            Name = "Esqueci_a_SenhaTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Esqueci_a_Senha";
             panelSuperiorEsqueciaSenha.ResumeLayout(false);
@@ -167,5 +182,6 @@
         private Button btnRecuperar;
         private Panel panelSuperiorEsqueciaSenha;
         private Label lblEsqueciSenha;
+        private Panel panel1;
     }
 }

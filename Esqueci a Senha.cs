@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ECOInsight
 {
-    public partial class Esqueci_a_Senha : Form
+    public partial class Esqueci_a_SenhaTela : Form
     {
-        public Esqueci_a_Senha()
+        public Esqueci_a_SenhaTela()
         {
             InitializeComponent();
         }

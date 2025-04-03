@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ECOInsight
 {
-    public partial class Cadastro : Form
+    public partial class CadastroTela : Form
     {
-        public Cadastro()
+        public CadastroTela()
         {
             InitializeComponent();
         }

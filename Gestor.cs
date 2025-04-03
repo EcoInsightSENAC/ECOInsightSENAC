@@ -10,22 +10,48 @@ using System.Windows.Forms;
 
 namespace ECOInsight
 {
-    public partial class Gestor : Form
+    public partial class GestorTela : Form
     {
-        public Gestor()
+        public GestorTela()
         {
-            InitializeComponent();         
+            InitializeComponent();
         }
 
         private void btnAluno_Click(object sender, EventArgs e)
         {
-            Aluno aluno = new Aluno();
-            aluno.Show();
+            AlunoTela alunoTela = new AlunoTela();
+            alunoTela.Show(); //Abre a nova tela
+            this.Hide(); //Oculta a tela atual
+        }
 
-            Gestor gestor = new Gestor();
-            //gestor.Close();
-            //gestor.Dispose();
-            gestor.Hide();
+        private void btnProfessor_Click(object sender, EventArgs e)
+        {
+            ProfessorTela professorTela = new ProfessorTela();
+            professorTela.Show(); //Abre a nova tela
+            this.Hide(); //Oculta a tela atual
+        }
+
+        private void btnGestor_Click(object sender, EventArgs e)
+        {
+            GestorTela gestorTela = new GestorTela();
+            gestorTela.Show(); //Abre a nova tela
+            this.Hide(); //Oculta a tela atual
+        }
+
+        private void btnDestaquesGestor_Click(object sender, EventArgs e)
+        {
+            HomeTela homeTela = new HomeTela();
+            homeTela.Show(); //Abre a nova tela
+            this.Hide(); //Oculta a tela atual
+        }
+
+        private void btnSairGestor_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void GestorTela_Load(object sender, EventArgs e)
+        {
 
         }
     }

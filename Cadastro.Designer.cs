@@ -1,6 +1,6 @@
 ﻿namespace ECOInsight
 {
-    partial class Cadastro
+    partial class CadastroTela
     {
         /// <summary>
         /// Required designer variable.
@@ -44,6 +44,9 @@
             txtPerfilCad = new TextBox();
             btnCancelarCad = new Button();
             btnSalvarCad = new Button();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
             panelSuperiorCad.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,6 +73,7 @@
             // 
             // lblNomeCad
             // 
+            lblNomeCad.Anchor = AnchorStyles.Top;
             lblNomeCad.AutoSize = true;
             lblNomeCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNomeCad.Location = new Point(188, 149);
@@ -80,6 +84,7 @@
             // 
             // lblEmailCad
             // 
+            lblEmailCad.Anchor = AnchorStyles.Top;
             lblEmailCad.AutoSize = true;
             lblEmailCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblEmailCad.Location = new Point(195, 221);
@@ -90,6 +95,7 @@
             // 
             // lblSenhaCad
             // 
+            lblSenhaCad.Anchor = AnchorStyles.Top;
             lblSenhaCad.AutoSize = true;
             lblSenhaCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSenhaCad.Location = new Point(195, 302);
@@ -100,6 +106,7 @@
             // 
             // lblPerfilCad
             // 
+            lblPerfilCad.Anchor = AnchorStyles.Top;
             lblPerfilCad.AutoSize = true;
             lblPerfilCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPerfilCad.Location = new Point(195, 385);
@@ -110,6 +117,7 @@
             // 
             // lblUsuarioCad
             // 
+            lblUsuarioCad.Anchor = AnchorStyles.Top;
             lblUsuarioCad.AutoSize = true;
             lblUsuarioCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUsuarioCad.Location = new Point(533, 221);
@@ -120,6 +128,7 @@
             // 
             // lblConfirSenhaCad
             // 
+            lblConfirSenhaCad.Anchor = AnchorStyles.Top;
             lblConfirSenhaCad.AutoSize = true;
             lblConfirSenhaCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblConfirSenhaCad.Location = new Point(533, 302);
@@ -130,6 +139,7 @@
             // 
             // txtNomeCad
             // 
+            txtNomeCad.Anchor = AnchorStyles.Top;
             txtNomeCad.Location = new Point(195, 179);
             txtNomeCad.Name = "txtNomeCad";
             txtNomeCad.Size = new Size(634, 23);
@@ -137,6 +147,7 @@
             // 
             // txtEmailCad
             // 
+            txtEmailCad.Anchor = AnchorStyles.Top;
             txtEmailCad.Location = new Point(195, 260);
             txtEmailCad.Name = "txtEmailCad";
             txtEmailCad.Size = new Size(296, 23);
@@ -144,6 +155,7 @@
             // 
             // txtUsuarioCad
             // 
+            txtUsuarioCad.Anchor = AnchorStyles.Top;
             txtUsuarioCad.Location = new Point(533, 260);
             txtUsuarioCad.Name = "txtUsuarioCad";
             txtUsuarioCad.Size = new Size(296, 23);
@@ -151,6 +163,7 @@
             // 
             // txtSenhaCad
             // 
+            txtSenhaCad.Anchor = AnchorStyles.Top;
             txtSenhaCad.Location = new Point(195, 341);
             txtSenhaCad.Name = "txtSenhaCad";
             txtSenhaCad.Size = new Size(296, 23);
@@ -158,6 +171,7 @@
             // 
             // txtConfirSenhaCad
             // 
+            txtConfirSenhaCad.Anchor = AnchorStyles.Top;
             txtConfirSenhaCad.Location = new Point(533, 341);
             txtConfirSenhaCad.Name = "txtConfirSenhaCad";
             txtConfirSenhaCad.Size = new Size(296, 23);
@@ -165,6 +179,7 @@
             // 
             // txtPerfilCad
             // 
+            txtPerfilCad.Anchor = AnchorStyles.Top;
             txtPerfilCad.Location = new Point(195, 424);
             txtPerfilCad.Name = "txtPerfilCad";
             txtPerfilCad.Size = new Size(296, 23);
@@ -172,6 +187,7 @@
             // 
             // btnCancelarCad
             // 
+            btnCancelarCad.Anchor = AnchorStyles.Top;
             btnCancelarCad.BackColor = Color.FromArgb(30, 66, 57);
             btnCancelarCad.FlatAppearance.BorderSize = 0;
             btnCancelarCad.FlatStyle = FlatStyle.Flat;
@@ -187,6 +203,7 @@
             // 
             // btnSalvarCad
             // 
+            btnSalvarCad.Anchor = AnchorStyles.Top;
             btnSalvarCad.BackColor = Color.FromArgb(30, 66, 57);
             btnSalvarCad.FlatAppearance.BorderSize = 0;
             btnSalvarCad.FlatStyle = FlatStyle.Flat;
@@ -200,7 +217,28 @@
             btnSalvarCad.TextAlign = ContentAlignment.BottomCenter;
             btnSalvarCad.UseVisualStyleBackColor = false;
             // 
-            // Cadastro
+            // panel1
+            // 
+            panel1.Location = new Point(160, 98);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(689, 276);
+            panel1.TabIndex = 16;
+            // 
+            // panel2
+            // 
+            panel2.Location = new Point(160, 370);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(354, 133);
+            panel2.TabIndex = 17;
+            // 
+            // panel3
+            // 
+            panel3.Location = new Point(511, 370);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(338, 133);
+            panel3.TabIndex = 18;
+            // 
+            // CadastroTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -220,7 +258,10 @@
             Controls.Add(lblEmailCad);
             Controls.Add(lblNomeCad);
             Controls.Add(panelSuperiorCad);
-            Name = "Cadastro";
+            Controls.Add(panel1);
+            Controls.Add(panel2);
+            Controls.Add(panel3);
+            Name = "CadastroTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro";
             panelSuperiorCad.ResumeLayout(false);
@@ -247,5 +288,8 @@
         private TextBox txtPerfilCad;
         private Button btnCancelarCad;
         private Button btnSalvarCad;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
     }
 }
