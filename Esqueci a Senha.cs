@@ -16,5 +16,20 @@ namespace ECOInsight
         {
             InitializeComponent();
         }
+
+        private void iconMinim_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void iconMax_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void iconX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -1,5 +1,6 @@
-namespace ECOInsight
-{
+namespace ECOInsight;
+using FontAwesome.Sharp;
+
     internal static class Program
     {
         /// <summary>
@@ -15,4 +16,3 @@ namespace ECOInsight
             Application.Run(new LoginTela());
         }
     }
-}

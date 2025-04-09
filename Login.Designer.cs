@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginTela));
             panelSuperiorLogin = new Panel();
+            iconMinim = new FontAwesome.Sharp.IconButton();
+            iconMax = new FontAwesome.Sharp.IconButton();
+            iconX = new FontAwesome.Sharp.IconButton();
+            panel3 = new Panel();
             lblLogin = new Label();
             pictureBoxLogo = new PictureBox();
             lblUsuario = new Label();
@@ -40,7 +44,7 @@
             btnCriarCadastro = new Button();
             btnEntrar = new Button();
             checkBoxLembrarSenha = new CheckBox();
-            checkBoxCriarCadastro = new CheckBox();
+            checkBoxVizualizarSenha = new CheckBox();
             panel1 = new Panel();
             panel2 = new Panel();
             panelSuperiorLogin.SuspendLayout();
@@ -51,11 +55,74 @@
             // 
             panelSuperiorLogin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelSuperiorLogin.BackColor = Color.FromArgb(32, 65, 57);
+            panelSuperiorLogin.Controls.Add(iconMinim);
+            panelSuperiorLogin.Controls.Add(iconMax);
+            panelSuperiorLogin.Controls.Add(iconX);
+            panelSuperiorLogin.Controls.Add(panel3);
             panelSuperiorLogin.Controls.Add(lblLogin);
             panelSuperiorLogin.Location = new Point(0, 0);
             panelSuperiorLogin.Name = "panelSuperiorLogin";
             panelSuperiorLogin.Size = new Size(1064, 40);
             panelSuperiorLogin.TabIndex = 0;
+            // 
+            // iconMinim
+            // 
+            iconMinim.Anchor = AnchorStyles.Right;
+            iconMinim.FlatAppearance.BorderSize = 0;
+            iconMinim.FlatStyle = FlatStyle.Flat;
+            iconMinim.ForeColor = Color.Transparent;
+            iconMinim.IconChar = FontAwesome.Sharp.IconChar.Subtract;
+            iconMinim.IconColor = Color.White;
+            iconMinim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMinim.IconSize = 20;
+            iconMinim.Location = new Point(918, 3);
+            iconMinim.Name = "iconMinim";
+            iconMinim.Size = new Size(39, 37);
+            iconMinim.TabIndex = 22;
+            iconMinim.UseVisualStyleBackColor = true;
+            iconMinim.Click += iconMinim_Click_1;
+            // 
+            // iconMax
+            // 
+            iconMax.Anchor = AnchorStyles.Right;
+            iconMax.FlatAppearance.BorderSize = 0;
+            iconMax.FlatStyle = FlatStyle.Flat;
+            iconMax.ForeColor = Color.Transparent;
+            iconMax.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+            iconMax.IconColor = Color.White;
+            iconMax.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMax.IconSize = 20;
+            iconMax.Location = new Point(963, 3);
+            iconMax.Name = "iconMax";
+            iconMax.Size = new Size(39, 37);
+            iconMax.TabIndex = 21;
+            iconMax.UseVisualStyleBackColor = true;
+            iconMax.Click += iconMax_Click_1;
+            // 
+            // iconX
+            // 
+            iconX.Anchor = AnchorStyles.Right;
+            iconX.FlatAppearance.BorderSize = 0;
+            iconX.FlatStyle = FlatStyle.Flat;
+            iconX.ForeColor = Color.Transparent;
+            iconX.IconChar = FontAwesome.Sharp.IconChar.Close;
+            iconX.IconColor = Color.White;
+            iconX.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconX.IconSize = 20;
+            iconX.Location = new Point(1008, 3);
+            iconX.Name = "iconX";
+            iconX.Size = new Size(39, 37);
+            iconX.TabIndex = 19;
+            iconX.UseVisualStyleBackColor = true;
+            iconX.Click += iconX_Click_1;
+            // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.Right;
+            panel3.Location = new Point(911, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(148, 40);
+            panel3.TabIndex = 20;
             // 
             // lblLogin
             // 
@@ -115,9 +182,9 @@
             txtSenha.Anchor = AnchorStyles.Top;
             txtSenha.Location = new Point(117, 293);
             txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '•';
             txtSenha.Size = new Size(314, 23);
             txtSenha.TabIndex = 5;
-            txtSenha.UseSystemPasswordChar = true;
             // 
             // btnEsqueciSenha
             // 
@@ -174,16 +241,17 @@
             checkBoxLembrarSenha.Text = "Lembrar Senha";
             checkBoxLembrarSenha.UseVisualStyleBackColor = true;
             // 
-            // checkBoxCriarCadastro
+            // checkBoxVizualizarSenha
             // 
-            checkBoxCriarCadastro.Anchor = AnchorStyles.Top;
-            checkBoxCriarCadastro.AutoSize = true;
-            checkBoxCriarCadastro.Location = new Point(117, 356);
-            checkBoxCriarCadastro.Name = "checkBoxCriarCadastro";
-            checkBoxCriarCadastro.Size = new Size(110, 19);
-            checkBoxCriarCadastro.TabIndex = 10;
-            checkBoxCriarCadastro.Text = "Vizualizar Senha";
-            checkBoxCriarCadastro.UseVisualStyleBackColor = true;
+            checkBoxVizualizarSenha.Anchor = AnchorStyles.Top;
+            checkBoxVizualizarSenha.AutoSize = true;
+            checkBoxVizualizarSenha.Location = new Point(117, 356);
+            checkBoxVizualizarSenha.Name = "checkBoxVizualizarSenha";
+            checkBoxVizualizarSenha.Size = new Size(110, 19);
+            checkBoxVizualizarSenha.TabIndex = 10;
+            checkBoxVizualizarSenha.Text = "Vizualizar Senha";
+            checkBoxVizualizarSenha.UseVisualStyleBackColor = true;
+            checkBoxVizualizarSenha.CheckedChanged += checkBoxVizualizarSenha_CheckedChanged;
             // 
             // panel1
             // 
@@ -205,7 +273,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1064, 633);
-            Controls.Add(checkBoxCriarCadastro);
+            Controls.Add(checkBoxVizualizarSenha);
             Controls.Add(checkBoxLembrarSenha);
             Controls.Add(btnEntrar);
             Controls.Add(btnCriarCadastro);
@@ -221,6 +289,7 @@
             Name = "LoginTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LOGIN";
+            Load += LoginTela_Load;
             panelSuperiorLogin.ResumeLayout(false);
             panelSuperiorLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
@@ -241,8 +310,12 @@
         private Button btnCriarCadastro;
         private Button btnEntrar;
         private CheckBox checkBoxLembrarSenha;
-        private CheckBox checkBoxCriarCadastro;
+        private CheckBox checkBoxVizualizarSenha;
         private Panel panel1;
         private Panel panel2;
+        private FontAwesome.Sharp.IconButton iconMinim;
+        private FontAwesome.Sharp.IconButton iconMax;
+        private FontAwesome.Sharp.IconButton iconX;
+        private Panel panel3;
     }
 }

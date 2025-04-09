@@ -26,36 +26,56 @@ namespace ECOInsight
         {
 
         }
+        private void HomeTela_Load(object sender, EventArgs e)
+        {
 
-        private void btnGestor_Click(object sender, EventArgs e)
+        }
+
+        private void iconMinim_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void iconMax_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void iconX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSair_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnGest_Click(object sender, EventArgs e)
         {
             GestorTela gestor = new GestorTela();
             gestor.Show(); // Abre a nova tela
             this.Hide(); //Oculta a tela atual 
         }
 
-        private void btnAluno_Click(object sender, EventArgs e)
-        {
-            AlunoTela aluno = new AlunoTela();
-            aluno.Show(); // Abre a nova tela
-            this.Hide(); //Oculta a tela atual 
-        }
-
-        private void btnProfessor_Click(object sender, EventArgs e)
+        private void btnProf_Click(object sender, EventArgs e)
         {
             ProfessorTela professor = new ProfessorTela();
             professor.Show(); // Abre a nova tela
             this.Hide(); //Oculta a tela atual 
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
+        private void iconButton1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            AlunoTela aluno = new AlunoTela();
+            aluno.Show(); // Abre a nova tela
+            this.Hide(); //Oculta a tela atual 
         }
 
-        private void HomeTela_Load(object sender, EventArgs e)
+        private void btnDestaques_Click(object sender, EventArgs e)
         {
 
         }
     }
 }
+

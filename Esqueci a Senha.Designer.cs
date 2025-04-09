@@ -36,7 +36,11 @@
             lblEmail = new Label();
             btnRecuperar = new Button();
             panelSuperiorEsqueciaSenha = new Panel();
+            iconMinim = new FontAwesome.Sharp.IconButton();
             lblEsqueciSenha = new Label();
+            iconMax = new FontAwesome.Sharp.IconButton();
+            iconX = new FontAwesome.Sharp.IconButton();
+            panel2 = new Panel();
             panel1 = new Panel();
             panelSuperiorEsqueciaSenha.SuspendLayout();
             SuspendLayout();
@@ -122,12 +126,33 @@
             // panelSuperiorEsqueciaSenha
             // 
             panelSuperiorEsqueciaSenha.BackColor = Color.FromArgb(32, 65, 57);
+            panelSuperiorEsqueciaSenha.Controls.Add(iconMinim);
             panelSuperiorEsqueciaSenha.Controls.Add(lblEsqueciSenha);
+            panelSuperiorEsqueciaSenha.Controls.Add(iconMax);
+            panelSuperiorEsqueciaSenha.Controls.Add(iconX);
+            panelSuperiorEsqueciaSenha.Controls.Add(panel2);
             panelSuperiorEsqueciaSenha.Dock = DockStyle.Top;
             panelSuperiorEsqueciaSenha.Location = new Point(0, 0);
             panelSuperiorEsqueciaSenha.Name = "panelSuperiorEsqueciaSenha";
             panelSuperiorEsqueciaSenha.Size = new Size(1064, 40);
             panelSuperiorEsqueciaSenha.TabIndex = 18;
+            // 
+            // iconMinim
+            // 
+            iconMinim.Anchor = AnchorStyles.Right;
+            iconMinim.FlatAppearance.BorderSize = 0;
+            iconMinim.FlatStyle = FlatStyle.Flat;
+            iconMinim.ForeColor = Color.Transparent;
+            iconMinim.IconChar = FontAwesome.Sharp.IconChar.Subtract;
+            iconMinim.IconColor = Color.White;
+            iconMinim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMinim.IconSize = 20;
+            iconMinim.Location = new Point(923, 3);
+            iconMinim.Name = "iconMinim";
+            iconMinim.Size = new Size(39, 37);
+            iconMinim.TabIndex = 23;
+            iconMinim.UseVisualStyleBackColor = true;
+            iconMinim.Click += iconMinim_Click;
             // 
             // lblEsqueciSenha
             // 
@@ -139,6 +164,48 @@
             lblEsqueciSenha.Size = new Size(176, 25);
             lblEsqueciSenha.TabIndex = 0;
             lblEsqueciSenha.Text = "ESQUECI A SENHA";
+            // 
+            // iconMax
+            // 
+            iconMax.Anchor = AnchorStyles.Right;
+            iconMax.FlatAppearance.BorderSize = 0;
+            iconMax.FlatStyle = FlatStyle.Flat;
+            iconMax.ForeColor = Color.Transparent;
+            iconMax.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+            iconMax.IconColor = Color.White;
+            iconMax.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMax.IconSize = 20;
+            iconMax.Location = new Point(968, 3);
+            iconMax.Name = "iconMax";
+            iconMax.Size = new Size(39, 37);
+            iconMax.TabIndex = 22;
+            iconMax.UseVisualStyleBackColor = true;
+            iconMax.Click += iconMax_Click;
+            // 
+            // iconX
+            // 
+            iconX.Anchor = AnchorStyles.Right;
+            iconX.FlatAppearance.BorderSize = 0;
+            iconX.FlatStyle = FlatStyle.Flat;
+            iconX.ForeColor = Color.Transparent;
+            iconX.IconChar = FontAwesome.Sharp.IconChar.Close;
+            iconX.IconColor = Color.White;
+            iconX.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconX.IconSize = 20;
+            iconX.Location = new Point(1013, 3);
+            iconX.Name = "iconX";
+            iconX.Size = new Size(39, 37);
+            iconX.TabIndex = 20;
+            iconX.UseVisualStyleBackColor = true;
+            iconX.Click += iconX_Click;
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Right;
+            panel2.Location = new Point(916, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(148, 40);
+            panel2.TabIndex = 21;
             // 
             // panel1
             // 
@@ -183,5 +250,9 @@
         private Panel panelSuperiorEsqueciaSenha;
         private Label lblEsqueciSenha;
         private Panel panel1;
+        private FontAwesome.Sharp.IconButton iconMinim;
+        private FontAwesome.Sharp.IconButton iconMax;
+        private FontAwesome.Sharp.IconButton iconX;
+        private Panel panel2;
     }
 }

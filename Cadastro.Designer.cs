@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             panelSuperiorCad = new Panel();
+            iconMinim = new FontAwesome.Sharp.IconButton();
             lblCad = new Label();
+            iconMax = new FontAwesome.Sharp.IconButton();
+            iconX = new FontAwesome.Sharp.IconButton();
+            panel4 = new Panel();
             lblNomeCad = new Label();
             lblEmailCad = new Label();
             lblSenhaCad = new Label();
@@ -41,24 +45,48 @@
             txtUsuarioCad = new TextBox();
             txtSenhaCad = new TextBox();
             txtConfirSenhaCad = new TextBox();
-            txtPerfilCad = new TextBox();
-            btnCancelarCad = new Button();
-            btnSalvarCad = new Button();
             panel1 = new Panel();
             panel2 = new Panel();
+            cbSelecao = new ComboBox();
+            comboBox1 = new ComboBox();
             panel3 = new Panel();
+            btnCancelar = new FontAwesome.Sharp.IconButton();
+            btnSalvar = new FontAwesome.Sharp.IconButton();
             panelSuperiorCad.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panelSuperiorCad
             // 
             panelSuperiorCad.BackColor = Color.FromArgb(32, 65, 57);
+            panelSuperiorCad.Controls.Add(iconMinim);
             panelSuperiorCad.Controls.Add(lblCad);
+            panelSuperiorCad.Controls.Add(iconMax);
+            panelSuperiorCad.Controls.Add(iconX);
+            panelSuperiorCad.Controls.Add(panel4);
             panelSuperiorCad.Dock = DockStyle.Top;
             panelSuperiorCad.Location = new Point(0, 0);
             panelSuperiorCad.Name = "panelSuperiorCad";
             panelSuperiorCad.Size = new Size(1064, 40);
             panelSuperiorCad.TabIndex = 1;
+            // 
+            // iconMinim
+            // 
+            iconMinim.Anchor = AnchorStyles.Right;
+            iconMinim.FlatAppearance.BorderSize = 0;
+            iconMinim.FlatStyle = FlatStyle.Flat;
+            iconMinim.ForeColor = Color.Transparent;
+            iconMinim.IconChar = FontAwesome.Sharp.IconChar.Subtract;
+            iconMinim.IconColor = Color.White;
+            iconMinim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMinim.IconSize = 20;
+            iconMinim.Location = new Point(922, 3);
+            iconMinim.Name = "iconMinim";
+            iconMinim.Size = new Size(39, 37);
+            iconMinim.TabIndex = 22;
+            iconMinim.UseVisualStyleBackColor = true;
+            iconMinim.Click += iconMinim_Click;
             // 
             // lblCad
             // 
@@ -70,6 +98,48 @@
             lblCad.Size = new Size(112, 25);
             lblCad.TabIndex = 0;
             lblCad.Text = "CADASTRO";
+            // 
+            // iconMax
+            // 
+            iconMax.Anchor = AnchorStyles.Right;
+            iconMax.FlatAppearance.BorderSize = 0;
+            iconMax.FlatStyle = FlatStyle.Flat;
+            iconMax.ForeColor = Color.Transparent;
+            iconMax.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+            iconMax.IconColor = Color.White;
+            iconMax.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMax.IconSize = 20;
+            iconMax.Location = new Point(967, 3);
+            iconMax.Name = "iconMax";
+            iconMax.Size = new Size(39, 37);
+            iconMax.TabIndex = 21;
+            iconMax.UseVisualStyleBackColor = true;
+            iconMax.Click += iconMax_Click;
+            // 
+            // iconX
+            // 
+            iconX.Anchor = AnchorStyles.Right;
+            iconX.FlatAppearance.BorderSize = 0;
+            iconX.FlatStyle = FlatStyle.Flat;
+            iconX.ForeColor = Color.Transparent;
+            iconX.IconChar = FontAwesome.Sharp.IconChar.Close;
+            iconX.IconColor = Color.White;
+            iconX.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconX.IconSize = 20;
+            iconX.Location = new Point(1012, 3);
+            iconX.Name = "iconX";
+            iconX.Size = new Size(39, 37);
+            iconX.TabIndex = 19;
+            iconX.UseVisualStyleBackColor = true;
+            iconX.Click += iconX_Click;
+            // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Right;
+            panel4.Location = new Point(915, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(148, 40);
+            panel4.TabIndex = 20;
             // 
             // lblNomeCad
             // 
@@ -177,46 +247,6 @@
             txtConfirSenhaCad.Size = new Size(296, 23);
             txtConfirSenhaCad.TabIndex = 12;
             // 
-            // txtPerfilCad
-            // 
-            txtPerfilCad.Anchor = AnchorStyles.Top;
-            txtPerfilCad.Location = new Point(195, 424);
-            txtPerfilCad.Name = "txtPerfilCad";
-            txtPerfilCad.Size = new Size(296, 23);
-            txtPerfilCad.TabIndex = 13;
-            // 
-            // btnCancelarCad
-            // 
-            btnCancelarCad.Anchor = AnchorStyles.Top;
-            btnCancelarCad.BackColor = Color.FromArgb(30, 66, 57);
-            btnCancelarCad.FlatAppearance.BorderSize = 0;
-            btnCancelarCad.FlatStyle = FlatStyle.Flat;
-            btnCancelarCad.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancelarCad.ForeColor = SystemColors.ButtonHighlight;
-            btnCancelarCad.Location = new Point(577, 403);
-            btnCancelarCad.Name = "btnCancelarCad";
-            btnCancelarCad.Size = new Size(87, 84);
-            btnCancelarCad.TabIndex = 14;
-            btnCancelarCad.Text = "Cancelar";
-            btnCancelarCad.TextAlign = ContentAlignment.BottomCenter;
-            btnCancelarCad.UseVisualStyleBackColor = false;
-            // 
-            // btnSalvarCad
-            // 
-            btnSalvarCad.Anchor = AnchorStyles.Top;
-            btnSalvarCad.BackColor = Color.FromArgb(30, 66, 57);
-            btnSalvarCad.FlatAppearance.BorderSize = 0;
-            btnSalvarCad.FlatStyle = FlatStyle.Flat;
-            btnSalvarCad.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSalvarCad.ForeColor = SystemColors.ButtonHighlight;
-            btnSalvarCad.Location = new Point(703, 403);
-            btnSalvarCad.Name = "btnSalvarCad";
-            btnSalvarCad.Size = new Size(87, 84);
-            btnSalvarCad.TabIndex = 15;
-            btnSalvarCad.Text = "Salvar";
-            btnSalvarCad.TextAlign = ContentAlignment.BottomCenter;
-            btnSalvarCad.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
             panel1.Location = new Point(160, 98);
@@ -226,26 +256,83 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(cbSelecao);
+            panel2.Controls.Add(comboBox1);
             panel2.Location = new Point(160, 370);
             panel2.Name = "panel2";
             panel2.Size = new Size(354, 133);
             panel2.TabIndex = 17;
             // 
+            // cbSelecao
+            // 
+            cbSelecao.FlatStyle = FlatStyle.Flat;
+            cbSelecao.FormattingEnabled = true;
+            cbSelecao.Location = new Point(35, 54);
+            cbSelecao.Name = "cbSelecao";
+            cbSelecao.Size = new Size(296, 23);
+            cbSelecao.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(35, 54);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(296, 23);
+            comboBox1.TabIndex = 0;
+            // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.Top;
+            panel3.Controls.Add(btnCancelar);
+            panel3.Controls.Add(btnSalvar);
             panel3.Location = new Point(511, 370);
             panel3.Name = "panel3";
             panel3.Size = new Size(338, 133);
             panel3.TabIndex = 18;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.FromArgb(30, 66, 57);
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
+            btnCancelar.IconColor = Color.White;
+            btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnCancelar.Location = new Point(66, 31);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(87, 86);
+            btnCancelar.TabIndex = 20;
+            btnCancelar.Text = "CANCELAR";
+            btnCancelar.TextAlign = ContentAlignment.BottomCenter;
+            btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSalvar.BackColor = Color.FromArgb(30, 66, 57);
+            btnSalvar.FlatAppearance.BorderSize = 0;
+            btnSalvar.FlatStyle = FlatStyle.Flat;
+            btnSalvar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSalvar.ForeColor = Color.White;
+            btnSalvar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            btnSalvar.IconColor = Color.White;
+            btnSalvar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSalvar.Location = new Point(186, 31);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(87, 86);
+            btnSalvar.TabIndex = 19;
+            btnSalvar.Text = "SALVAR";
+            btnSalvar.TextAlign = ContentAlignment.BottomCenter;
+            btnSalvar.UseVisualStyleBackColor = false;
             // 
             // CadastroTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1064, 633);
-            Controls.Add(btnSalvarCad);
-            Controls.Add(btnCancelarCad);
-            Controls.Add(txtPerfilCad);
             Controls.Add(txtConfirSenhaCad);
             Controls.Add(txtSenhaCad);
             Controls.Add(txtUsuarioCad);
@@ -266,6 +353,8 @@
             Text = "Cadastro";
             panelSuperiorCad.ResumeLayout(false);
             panelSuperiorCad.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -285,11 +374,16 @@
         private TextBox txtUsuarioCad;
         private TextBox txtSenhaCad;
         private TextBox txtConfirSenhaCad;
-        private TextBox txtPerfilCad;
-        private Button btnCancelarCad;
-        private Button btnSalvarCad;
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
+        private FontAwesome.Sharp.IconButton iconMinim;
+        private FontAwesome.Sharp.IconButton iconMax;
+        private FontAwesome.Sharp.IconButton iconX;
+        private Panel panel4;
+        private FontAwesome.Sharp.IconButton btnCancelar;
+        private FontAwesome.Sharp.IconButton btnSalvar;
+        private ComboBox comboBox1;
+        private ComboBox cbSelecao;
     }
 }
