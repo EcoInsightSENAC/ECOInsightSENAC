@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\geovane.ffeitosa\\ESGSoftwareSENAC\\ECOInsight.csproj": {}
+    "C:\\Users\\mirella.nrocha\\Desktop\\ECOInsightSENAC\\ECOInsightSENAC\\ECOInsight.csproj": {}
   },
   "projects": {
-    "C:\\Users\\geovane.ffeitosa\\ESGSoftwareSENAC\\ECOInsight.csproj": {
+    "C:\\Users\\mirella.nrocha\\Desktop\\ECOInsightSENAC\\ECOInsightSENAC\\ECOInsight.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\geovane.ffeitosa\\ESGSoftwareSENAC\\ECOInsight.csproj",
+        "projectUniqueName": "C:\\Users\\mirella.nrocha\\Desktop\\ECOInsightSENAC\\ECOInsightSENAC\\ECOInsight.csproj",
         "projectName": "ECOInsight",
-        "projectPath": "C:\\Users\\geovane.ffeitosa\\ESGSoftwareSENAC\\ECOInsight.csproj",
-        "packagesPath": "C:\\Users\\geovane.ffeitosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\geovane.ffeitosa\\ESGSoftwareSENAC\\obj\\",
+        "projectPath": "C:\\Users\\mirella.nrocha\\Desktop\\ECOInsightSENAC\\ECOInsightSENAC\\ECOInsight.csproj",
+        "packagesPath": "C:\\Users\\mirella.nrocha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mirella.nrocha\\Desktop\\ECOInsightSENAC\\ECOInsightSENAC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\geovane.ffeitosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mirella.nrocha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -49,6 +49,12 @@
       "frameworks": {
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
+          "dependencies": {
+            "FontAwesome.Sharp": {
+              "target": "Package",
+              "version": "[6.6.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

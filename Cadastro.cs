@@ -31,5 +31,10 @@ namespace ECOInsight
         {
             this.Close();
         }
+
+        private void txtEmailCad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,6 @@
 namespace ECOInsight;
+
+using ECOInsightSENAC;
 using FontAwesome.Sharp;
 
     internal static class Program
@@ -13,6 +15,6 @@ using FontAwesome.Sharp;
             // teste
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LoginTela());
+            Application.Run(new PerfilTela());
         }
     }

@@ -42,7 +42,7 @@
             lblConfirSenhaCad = new Label();
             txtNomeCad = new TextBox();
             txtEmailCad = new TextBox();
-            txtUsuarioCad = new TextBox();
+            txtTelefCad = new TextBox();
             txtSenhaCad = new TextBox();
             txtConfirSenhaCad = new TextBox();
             panel1 = new Panel();
@@ -53,6 +53,7 @@
             btnCancelar = new FontAwesome.Sharp.IconButton();
             btnSalvar = new FontAwesome.Sharp.IconButton();
             panelSuperiorCad.SuspendLayout();
+            panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -146,7 +147,7 @@
             lblNomeCad.Anchor = AnchorStyles.Top;
             lblNomeCad.AutoSize = true;
             lblNomeCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNomeCad.Location = new Point(188, 149);
+            lblNomeCad.Location = new Point(34, 45);
             lblNomeCad.Name = "lblNomeCad";
             lblNomeCad.Size = new Size(55, 21);
             lblNomeCad.TabIndex = 2;
@@ -168,7 +169,7 @@
             lblSenhaCad.Anchor = AnchorStyles.Top;
             lblSenhaCad.AutoSize = true;
             lblSenhaCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSenhaCad.Location = new Point(195, 302);
+            lblSenhaCad.Location = new Point(35, 204);
             lblSenhaCad.Name = "lblSenhaCad";
             lblSenhaCad.Size = new Size(54, 21);
             lblSenhaCad.TabIndex = 4;
@@ -192,9 +193,9 @@
             lblUsuarioCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUsuarioCad.Location = new Point(533, 221);
             lblUsuarioCad.Name = "lblUsuarioCad";
-            lblUsuarioCad.Size = new Size(65, 21);
+            lblUsuarioCad.Size = new Size(73, 21);
             lblUsuarioCad.TabIndex = 6;
-            lblUsuarioCad.Text = "Usuário";
+            lblUsuarioCad.Text = "Telefone";
             // 
             // lblConfirSenhaCad
             // 
@@ -223,18 +224,18 @@
             txtEmailCad.Size = new Size(296, 23);
             txtEmailCad.TabIndex = 9;
             // 
-            // txtUsuarioCad
+            // txtTelefCad
             // 
-            txtUsuarioCad.Anchor = AnchorStyles.Top;
-            txtUsuarioCad.Location = new Point(533, 260);
-            txtUsuarioCad.Name = "txtUsuarioCad";
-            txtUsuarioCad.Size = new Size(296, 23);
-            txtUsuarioCad.TabIndex = 10;
+            txtTelefCad.Anchor = AnchorStyles.Top;
+            txtTelefCad.Location = new Point(533, 260);
+            txtTelefCad.Name = "txtTelefCad";
+            txtTelefCad.Size = new Size(296, 23);
+            txtTelefCad.TabIndex = 10;
             // 
             // txtSenhaCad
             // 
             txtSenhaCad.Anchor = AnchorStyles.Top;
-            txtSenhaCad.Location = new Point(195, 341);
+            txtSenhaCad.Location = new Point(35, 243);
             txtSenhaCad.Name = "txtSenhaCad";
             txtSenhaCad.Size = new Size(296, 23);
             txtSenhaCad.TabIndex = 11;
@@ -249,6 +250,9 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(lblSenhaCad);
+            panel1.Controls.Add(txtSenhaCad);
+            panel1.Controls.Add(lblNomeCad);
             panel1.Location = new Point(160, 98);
             panel1.Name = "panel1";
             panel1.Size = new Size(689, 276);
@@ -265,7 +269,6 @@
             // 
             // cbSelecao
             // 
-            cbSelecao.FlatStyle = FlatStyle.Flat;
             cbSelecao.FormattingEnabled = true;
             cbSelecao.Location = new Point(35, 54);
             cbSelecao.Name = "cbSelecao";
@@ -334,16 +337,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1064, 633);
             Controls.Add(txtConfirSenhaCad);
-            Controls.Add(txtSenhaCad);
-            Controls.Add(txtUsuarioCad);
+            Controls.Add(txtTelefCad);
             Controls.Add(txtEmailCad);
             Controls.Add(txtNomeCad);
             Controls.Add(lblConfirSenhaCad);
             Controls.Add(lblUsuarioCad);
             Controls.Add(lblPerfilCad);
-            Controls.Add(lblSenhaCad);
             Controls.Add(lblEmailCad);
-            Controls.Add(lblNomeCad);
             Controls.Add(panelSuperiorCad);
             Controls.Add(panel1);
             Controls.Add(panel2);
@@ -353,6 +353,8 @@
             Text = "Cadastro";
             panelSuperiorCad.ResumeLayout(false);
             panelSuperiorCad.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ResumeLayout(false);
@@ -371,7 +373,7 @@
         private Label lblConfirSenhaCad;
         private TextBox txtNomeCad;
         private TextBox txtEmailCad;
-        private TextBox txtUsuarioCad;
+        private TextBox txtTelefCad;
         private TextBox txtSenhaCad;
         private TextBox txtConfirSenhaCad;
         private Panel panel1;

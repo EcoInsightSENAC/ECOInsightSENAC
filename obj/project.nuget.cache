@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dB/CFyCYWxE=",
+  "dgSpecHash": "k++Jo3pPoVc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\geovane.ffeitosa\\ESGSoftwareSENAC\\ECOInsight.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\mirella.nrocha\\Desktop\\Teste\\ECOInsightSENAC\\ECOInsightSENAC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mirella.nrocha\\.nuget\\packages\\fontawesome.sharp\\6.6.0\\fontawesome.sharp.6.6.0.nupkg.sha512"
+  ],
   "logs": []
 }
