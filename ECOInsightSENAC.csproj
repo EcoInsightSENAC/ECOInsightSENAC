@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Imagens\ECOInsight.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Imagens\ECOInsight.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp">
+      <HintPath>bin\Debug\net9.0-windows\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
