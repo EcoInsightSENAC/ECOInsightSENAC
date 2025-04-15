@@ -15,6 +15,6 @@ using FontAwesome.Sharp;
             // teste
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new PerfilTela());
+            Application.Run(new LoginTela());
         }
     }
