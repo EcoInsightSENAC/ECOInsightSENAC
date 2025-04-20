@@ -17,19 +17,39 @@ namespace ECOInsight
             InitializeComponent();
         }
 
-        private void iconMinim_Click(object sender, EventArgs e)
+        private void btnMinimizarEsqueciSenha_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void iconMax_Click(object sender, EventArgs e)
+        private Size tamanhoOriginal; // Variável para armazenar o tamanho original
+        private bool maximizado = false;
+        private void btnMaximizarRestaurarEsqueciSenha_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            if (!maximizado) // Se não estiver maximizado, maximizar
+            {
+                tamanhoOriginal = this.Size; // Armazena o tamanho atual
+                this.WindowState = FormWindowState.Maximized; // Maximiza
+                btnMaximizarRestaurarEsqueciSenha.Text = " "; // Atualiza o texto
+                maximizado = true;
+            }
+            else // Se estiver maximizado, restaurar para o tamanho original
+            {
+                this.WindowState = FormWindowState.Normal; // Define o estado como normal primeiro
+                this.Size = tamanhoOriginal; // Restaura o tamanho
+                btnMaximizarRestaurarEsqueciSenha.Text = " "; // Atualiza o texto
+                maximizado = false;
+            }
         }
 
-        private void iconX_Click(object sender, EventArgs e)
+        private void btnFecharEsqueciSenha_Click(object sender, EventArgs e)
         {
-            this.Close();
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void btnVoltarPagEsqueciSenha_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
         }
     }
 }

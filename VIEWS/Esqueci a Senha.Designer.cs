@@ -36,12 +36,15 @@
             lblEmail = new Label();
             btnRecuperar = new Button();
             panelSuperiorEsqueciaSenha = new Panel();
-            iconMinim = new FontAwesome.Sharp.IconButton();
+            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
+            btnMinimizarEsqueciSenha = new FontAwesome.Sharp.IconButton();
             lblEsqueciSenha = new Label();
-            iconMax = new FontAwesome.Sharp.IconButton();
-            iconX = new FontAwesome.Sharp.IconButton();
+            btnMaximizarRestaurarEsqueciSenha = new FontAwesome.Sharp.IconButton();
+            btnFecharEsqueciSenha = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             panel1 = new Panel();
+            textTelef = new TextBox();
+            lblTelef = new Label();
             panelSuperiorEsqueciaSenha.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,7 +72,7 @@
             txtEmail.Location = new Point(141, 211);
             txtEmail.Margin = new Padding(4);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(780, 29);
+            txtEmail.Size = new Size(367, 29);
             txtEmail.TabIndex = 14;
             // 
             // lblConfirSenha
@@ -126,10 +129,11 @@
             // panelSuperiorEsqueciaSenha
             // 
             panelSuperiorEsqueciaSenha.BackColor = Color.FromArgb(32, 65, 57);
-            panelSuperiorEsqueciaSenha.Controls.Add(iconMinim);
+            panelSuperiorEsqueciaSenha.Controls.Add(btnVoltarPagEsqueciSenha);
+            panelSuperiorEsqueciaSenha.Controls.Add(btnMinimizarEsqueciSenha);
             panelSuperiorEsqueciaSenha.Controls.Add(lblEsqueciSenha);
-            panelSuperiorEsqueciaSenha.Controls.Add(iconMax);
-            panelSuperiorEsqueciaSenha.Controls.Add(iconX);
+            panelSuperiorEsqueciaSenha.Controls.Add(btnMaximizarRestaurarEsqueciSenha);
+            panelSuperiorEsqueciaSenha.Controls.Add(btnFecharEsqueciSenha);
             panelSuperiorEsqueciaSenha.Controls.Add(panel2);
             panelSuperiorEsqueciaSenha.Dock = DockStyle.Top;
             panelSuperiorEsqueciaSenha.Location = new Point(0, 0);
@@ -137,67 +141,82 @@
             panelSuperiorEsqueciaSenha.Size = new Size(1064, 40);
             panelSuperiorEsqueciaSenha.TabIndex = 18;
             // 
-            // iconMinim
+            // btnVoltarPagEsqueciSenha
             // 
-            iconMinim.Anchor = AnchorStyles.Right;
-            iconMinim.FlatAppearance.BorderSize = 0;
-            iconMinim.FlatStyle = FlatStyle.Flat;
-            iconMinim.ForeColor = Color.Transparent;
-            iconMinim.IconChar = FontAwesome.Sharp.IconChar.Subtract;
-            iconMinim.IconColor = Color.White;
-            iconMinim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMinim.IconSize = 20;
-            iconMinim.Location = new Point(923, 3);
-            iconMinim.Name = "iconMinim";
-            iconMinim.Size = new Size(39, 37);
-            iconMinim.TabIndex = 23;
-            iconMinim.UseVisualStyleBackColor = true;
-            iconMinim.Click += iconMinim_Click;
+            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
+            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
+            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
+            btnVoltarPagEsqueciSenha.IconColor = Color.White;
+            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnVoltarPagEsqueciSenha.IconSize = 25;
+            btnVoltarPagEsqueciSenha.Location = new Point(12, 3);
+            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
+            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
+            btnVoltarPagEsqueciSenha.TabIndex = 20;
+            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
+            btnVoltarPagEsqueciSenha.Click += btnVoltarPagEsqueciSenha_Click;
+            // 
+            // btnMinimizarEsqueciSenha
+            // 
+            btnMinimizarEsqueciSenha.Anchor = AnchorStyles.Right;
+            btnMinimizarEsqueciSenha.FlatAppearance.BorderSize = 0;
+            btnMinimizarEsqueciSenha.FlatStyle = FlatStyle.Flat;
+            btnMinimizarEsqueciSenha.ForeColor = Color.Transparent;
+            btnMinimizarEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.Subtract;
+            btnMinimizarEsqueciSenha.IconColor = Color.White;
+            btnMinimizarEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMinimizarEsqueciSenha.IconSize = 20;
+            btnMinimizarEsqueciSenha.Location = new Point(923, 3);
+            btnMinimizarEsqueciSenha.Name = "btnMinimizarEsqueciSenha";
+            btnMinimizarEsqueciSenha.Size = new Size(39, 37);
+            btnMinimizarEsqueciSenha.TabIndex = 23;
+            btnMinimizarEsqueciSenha.UseVisualStyleBackColor = true;
+            btnMinimizarEsqueciSenha.Click += btnMinimizarEsqueciSenha_Click;
             // 
             // lblEsqueciSenha
             // 
             lblEsqueciSenha.AutoSize = true;
             lblEsqueciSenha.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblEsqueciSenha.ForeColor = SystemColors.ButtonHighlight;
-            lblEsqueciSenha.Location = new Point(12, 9);
+            lblEsqueciSenha.Location = new Point(444, 9);
             lblEsqueciSenha.Name = "lblEsqueciSenha";
             lblEsqueciSenha.Size = new Size(176, 25);
             lblEsqueciSenha.TabIndex = 0;
             lblEsqueciSenha.Text = "ESQUECI A SENHA";
             // 
-            // iconMax
+            // btnMaximizarRestaurarEsqueciSenha
             // 
-            iconMax.Anchor = AnchorStyles.Right;
-            iconMax.FlatAppearance.BorderSize = 0;
-            iconMax.FlatStyle = FlatStyle.Flat;
-            iconMax.ForeColor = Color.Transparent;
-            iconMax.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
-            iconMax.IconColor = Color.White;
-            iconMax.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMax.IconSize = 20;
-            iconMax.Location = new Point(968, 3);
-            iconMax.Name = "iconMax";
-            iconMax.Size = new Size(39, 37);
-            iconMax.TabIndex = 22;
-            iconMax.UseVisualStyleBackColor = true;
-            iconMax.Click += iconMax_Click;
+            btnMaximizarRestaurarEsqueciSenha.Anchor = AnchorStyles.Right;
+            btnMaximizarRestaurarEsqueciSenha.FlatAppearance.BorderSize = 0;
+            btnMaximizarRestaurarEsqueciSenha.FlatStyle = FlatStyle.Flat;
+            btnMaximizarRestaurarEsqueciSenha.ForeColor = Color.Transparent;
+            btnMaximizarRestaurarEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+            btnMaximizarRestaurarEsqueciSenha.IconColor = Color.White;
+            btnMaximizarRestaurarEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMaximizarRestaurarEsqueciSenha.IconSize = 20;
+            btnMaximizarRestaurarEsqueciSenha.Location = new Point(968, 3);
+            btnMaximizarRestaurarEsqueciSenha.Name = "btnMaximizarRestaurarEsqueciSenha";
+            btnMaximizarRestaurarEsqueciSenha.Size = new Size(39, 37);
+            btnMaximizarRestaurarEsqueciSenha.TabIndex = 22;
+            btnMaximizarRestaurarEsqueciSenha.UseVisualStyleBackColor = true;
+            btnMaximizarRestaurarEsqueciSenha.Click += btnMaximizarRestaurarEsqueciSenha_Click;
             // 
-            // iconX
+            // btnFecharEsqueciSenha
             // 
-            iconX.Anchor = AnchorStyles.Right;
-            iconX.FlatAppearance.BorderSize = 0;
-            iconX.FlatStyle = FlatStyle.Flat;
-            iconX.ForeColor = Color.Transparent;
-            iconX.IconChar = FontAwesome.Sharp.IconChar.Close;
-            iconX.IconColor = Color.White;
-            iconX.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconX.IconSize = 20;
-            iconX.Location = new Point(1013, 3);
-            iconX.Name = "iconX";
-            iconX.Size = new Size(39, 37);
-            iconX.TabIndex = 20;
-            iconX.UseVisualStyleBackColor = true;
-            iconX.Click += iconX_Click;
+            btnFecharEsqueciSenha.Anchor = AnchorStyles.Right;
+            btnFecharEsqueciSenha.FlatAppearance.BorderSize = 0;
+            btnFecharEsqueciSenha.FlatStyle = FlatStyle.Flat;
+            btnFecharEsqueciSenha.ForeColor = Color.Transparent;
+            btnFecharEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.Close;
+            btnFecharEsqueciSenha.IconColor = Color.White;
+            btnFecharEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnFecharEsqueciSenha.IconSize = 20;
+            btnFecharEsqueciSenha.Location = new Point(1013, 3);
+            btnFecharEsqueciSenha.Name = "btnFecharEsqueciSenha";
+            btnFecharEsqueciSenha.Size = new Size(39, 37);
+            btnFecharEsqueciSenha.TabIndex = 20;
+            btnFecharEsqueciSenha.UseVisualStyleBackColor = true;
+            btnFecharEsqueciSenha.Click += btnFecharEsqueciSenha_Click;
             // 
             // panel2
             // 
@@ -211,14 +230,37 @@
             // 
             panel1.Location = new Point(125, 150);
             panel1.Name = "panel1";
-            panel1.Size = new Size(828, 363);
+            panel1.Size = new Size(837, 363);
             panel1.TabIndex = 19;
+            // 
+            // textTelef
+            // 
+            textTelef.Anchor = AnchorStyles.Top;
+            textTelef.Location = new Point(554, 211);
+            textTelef.Margin = new Padding(4);
+            textTelef.Name = "textTelef";
+            textTelef.Size = new Size(367, 29);
+            textTelef.TabIndex = 16;
+            // 
+            // lblTelef
+            // 
+            lblTelef.Anchor = AnchorStyles.Top;
+            lblTelef.AutoSize = true;
+            lblTelef.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTelef.Location = new Point(554, 167);
+            lblTelef.Margin = new Padding(4, 0, 4, 0);
+            lblTelef.Name = "lblTelef";
+            lblTelef.Size = new Size(73, 21);
+            lblTelef.TabIndex = 15;
+            lblTelef.Text = "Telefone";
             // 
             // Esqueci_a_SenhaTela
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1064, 633);
+            Controls.Add(lblTelef);
+            Controls.Add(textTelef);
             Controls.Add(panelSuperiorEsqueciaSenha);
             Controls.Add(btnRecuperar);
             Controls.Add(txtConfirSenha);
@@ -232,7 +274,7 @@
             Margin = new Padding(4);
             Name = "Esqueci_a_SenhaTela";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Esqueci_a_Senha";
+            Text = "ECOInsight";
             panelSuperiorEsqueciaSenha.ResumeLayout(false);
             panelSuperiorEsqueciaSenha.PerformLayout();
             ResumeLayout(false);
@@ -250,9 +292,12 @@
         private Panel panelSuperiorEsqueciaSenha;
         private Label lblEsqueciSenha;
         private Panel panel1;
-        private FontAwesome.Sharp.IconButton iconMinim;
-        private FontAwesome.Sharp.IconButton iconMax;
-        private FontAwesome.Sharp.IconButton iconX;
+        private FontAwesome.Sharp.IconButton btnMinimizarEsqueciSenha;
+        private FontAwesome.Sharp.IconButton btnMaximizarRestaurarEsqueciSenha;
+        private FontAwesome.Sharp.IconButton btnFecharEsqueciSenha;
         private Panel panel2;
+        private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
+        private TextBox textTelef;
+        private Label lblTelef;
     }
 }

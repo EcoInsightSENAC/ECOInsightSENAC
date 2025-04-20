@@ -1,6 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="UserControls\UCAdm_Destaques.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCAdm_MeuPerfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCAdm_Relatorio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCAdm_Usuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCAluno_Aulas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCAluno_Destaques.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCAluno_MeuPerfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCFuncio_Destaques.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCFuncio_MeuPerfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCFuncio_Relatorio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCProf_Aulas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCProf_Destaques.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCProf_MeuPerfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCProf_Relatorio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="VIEWS\Administrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -19,7 +61,7 @@
     <Compile Update="VIEWS\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="VIEWS\Perfil.cs">
+    <Compile Update="VIEWS\Funcionario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="VIEWS\Professor.cs">

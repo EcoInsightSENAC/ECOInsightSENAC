@@ -7,30 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ECOInsight.UserControls;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace ECOInsight
 {
     public partial class AlunoTela : Form
     {
+        private bool sidebarExpand;
+
         public AlunoTela()
         {
             InitializeComponent();
+
+            UCAluno_Destaques uc = new UCAluno_Destaques();
+            addUserControl(uc);
+            sidebarAluno.Width = sidebarAluno.MinimumSize.Width;
+            sidebarExpand = false;
         }
 
-        private void iconMinim_Click(object sender, EventArgs e)
+        private void addUserControl(UserControl userControl)
         {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void iconMax_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void iconX_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            userControl.Dock = DockStyle.Fill;
+            panelAluno.Controls.Clear();
+            panelAluno.Controls.Add(userControl);
+            userControl.BringToFront();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -38,32 +39,81 @@ namespace ECOInsight
             System.Windows.Forms.Application.Exit();
         }
 
-        private void btnDestaques_Click(object sender, EventArgs e)
+        private void btnMinimizarAluno_Click(object sender, EventArgs e)
         {
-            HomeTela homeTela = new HomeTela();
-            homeTela.Show(); //Abre a nova tela
-            this.Hide(); //Oculta a tela atual
+            this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnGestor_Click(object sender, EventArgs e)
+        private Size tamanhoOriginal; // Variável para armazenar o tamanho original
+        private bool maximizado = false;
+        private void btnMaximizarRestaurarAluno_Click(object sender, EventArgs e)
         {
-            AdmTela gestor = new AdmTela();
-            gestor.Show(); // Abre a nova tela
-            this.Hide(); //Oculta a tela atual
+            if (!maximizado) // Se não estiver maximizado, maximizar
+            {
+                tamanhoOriginal = this.Size; // Armazena o tamanho atual
+                this.WindowState = FormWindowState.Maximized; // Maximiza
+                btnMaximizarRestaurarAluno.Text = " "; // Atualiza o texto
+                maximizado = true;
+            }
+            else // Se estiver maximizado, restaurar para o tamanho original
+            {
+                this.WindowState = FormWindowState.Normal; // Define o estado como normal primeiro
+                this.Size = tamanhoOriginal; // Restaura o tamanho
+                btnMaximizarRestaurarAluno.Text = " "; // Atualiza o texto
+                maximizado = false;
+            }
         }
 
-        private void btnProfessor_Click(object sender, EventArgs e)
+        private void btnFecharAluno_Click(object sender, EventArgs e)
         {
-            ProfessorTela professor = new ProfessorTela();
-            professor.Show(); // Abre a nova tela
-            this.Hide(); //Oculta a tela atual 
+            System.Windows.Forms.Application.Exit();
         }
 
-        private void btnAluno_Click(object sender, EventArgs e)
+        private void btnAlunoDestaques_Click(object sender, EventArgs e)
         {
-            AlunoTela aluno = new AlunoTela();
-            aluno.Show(); // Abre a nova tela
-            this.Hide(); //Oculta a tela atual
+            UCAluno_Destaques uc = new UCAluno_Destaques();
+            addUserControl(uc);
         }
+
+        private void btnAlunoAulas_Click(object sender, EventArgs e)
+        {
+            UCAluno_Aulas uc = new UCAluno_Aulas();
+            addUserControl(uc);
+        }
+
+        private void btnAlunoMPerfil_Click(object sender, EventArgs e)
+        {
+            UCAluno_MeuPerfil uc = new UCAluno_MeuPerfil();
+            addUserControl(uc);
+        }
+
+        private void SidebarTimerAluno_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebarAluno.Width -= 10;
+                if (sidebarAluno.Width == sidebarAluno.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    sidebarTimerAluno.Stop();
+                }
+
+            }
+            else
+            {
+                sidebarAluno.Width += 10;
+                if (sidebarAluno.Width == sidebarAluno.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    sidebarTimerAluno.Stop();
+                }
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            sidebarTimerAluno.Start();
+        }
+
     }
 }

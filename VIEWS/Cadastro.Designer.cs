@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             panelSuperiorCad = new Panel();
-            iconMinim = new FontAwesome.Sharp.IconButton();
+            btnMinimizarCadastro = new FontAwesome.Sharp.IconButton();
             lblCad = new Label();
-            iconMax = new FontAwesome.Sharp.IconButton();
-            iconX = new FontAwesome.Sharp.IconButton();
+            btnMaximizarRestaurarCadastro = new FontAwesome.Sharp.IconButton();
+            btnFecharCadastro = new FontAwesome.Sharp.IconButton();
             panel4 = new Panel();
             lblNomeCad = new Label();
             lblEmailCad = new Label();
@@ -61,10 +61,10 @@
             // panelSuperiorCad
             // 
             panelSuperiorCad.BackColor = Color.FromArgb(32, 65, 57);
-            panelSuperiorCad.Controls.Add(iconMinim);
+            panelSuperiorCad.Controls.Add(btnMinimizarCadastro);
             panelSuperiorCad.Controls.Add(lblCad);
-            panelSuperiorCad.Controls.Add(iconMax);
-            panelSuperiorCad.Controls.Add(iconX);
+            panelSuperiorCad.Controls.Add(btnMaximizarRestaurarCadastro);
+            panelSuperiorCad.Controls.Add(btnFecharCadastro);
             panelSuperiorCad.Controls.Add(panel4);
             panelSuperiorCad.Dock = DockStyle.Top;
             panelSuperiorCad.Location = new Point(0, 0);
@@ -72,67 +72,67 @@
             panelSuperiorCad.Size = new Size(1064, 40);
             panelSuperiorCad.TabIndex = 1;
             // 
-            // iconMinim
+            // btnMinimizarCadastro
             // 
-            iconMinim.Anchor = AnchorStyles.Right;
-            iconMinim.FlatAppearance.BorderSize = 0;
-            iconMinim.FlatStyle = FlatStyle.Flat;
-            iconMinim.ForeColor = Color.Transparent;
-            iconMinim.IconChar = FontAwesome.Sharp.IconChar.Subtract;
-            iconMinim.IconColor = Color.White;
-            iconMinim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMinim.IconSize = 20;
-            iconMinim.Location = new Point(922, 3);
-            iconMinim.Name = "iconMinim";
-            iconMinim.Size = new Size(39, 37);
-            iconMinim.TabIndex = 22;
-            iconMinim.UseVisualStyleBackColor = true;
-            iconMinim.Click += iconMinim_Click;
+            btnMinimizarCadastro.Anchor = AnchorStyles.Right;
+            btnMinimizarCadastro.FlatAppearance.BorderSize = 0;
+            btnMinimizarCadastro.FlatStyle = FlatStyle.Flat;
+            btnMinimizarCadastro.ForeColor = Color.Transparent;
+            btnMinimizarCadastro.IconChar = FontAwesome.Sharp.IconChar.Subtract;
+            btnMinimizarCadastro.IconColor = Color.White;
+            btnMinimizarCadastro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMinimizarCadastro.IconSize = 20;
+            btnMinimizarCadastro.Location = new Point(922, 3);
+            btnMinimizarCadastro.Name = "btnMinimizarCadastro";
+            btnMinimizarCadastro.Size = new Size(39, 37);
+            btnMinimizarCadastro.TabIndex = 22;
+            btnMinimizarCadastro.UseVisualStyleBackColor = true;
+            btnMinimizarCadastro.Click += iconMinim_Click;
             // 
             // lblCad
             // 
             lblCad.AutoSize = true;
             lblCad.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCad.ForeColor = SystemColors.ButtonHighlight;
-            lblCad.Location = new Point(12, 9);
+            lblCad.Location = new Point(476, 9);
             lblCad.Name = "lblCad";
             lblCad.Size = new Size(112, 25);
             lblCad.TabIndex = 0;
             lblCad.Text = "CADASTRO";
             // 
-            // iconMax
+            // btnMaximizarRestaurarCadastro
             // 
-            iconMax.Anchor = AnchorStyles.Right;
-            iconMax.FlatAppearance.BorderSize = 0;
-            iconMax.FlatStyle = FlatStyle.Flat;
-            iconMax.ForeColor = Color.Transparent;
-            iconMax.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
-            iconMax.IconColor = Color.White;
-            iconMax.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMax.IconSize = 20;
-            iconMax.Location = new Point(967, 3);
-            iconMax.Name = "iconMax";
-            iconMax.Size = new Size(39, 37);
-            iconMax.TabIndex = 21;
-            iconMax.UseVisualStyleBackColor = true;
-            iconMax.Click += iconMax_Click;
+            btnMaximizarRestaurarCadastro.Anchor = AnchorStyles.Right;
+            btnMaximizarRestaurarCadastro.FlatAppearance.BorderSize = 0;
+            btnMaximizarRestaurarCadastro.FlatStyle = FlatStyle.Flat;
+            btnMaximizarRestaurarCadastro.ForeColor = Color.Transparent;
+            btnMaximizarRestaurarCadastro.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+            btnMaximizarRestaurarCadastro.IconColor = Color.White;
+            btnMaximizarRestaurarCadastro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMaximizarRestaurarCadastro.IconSize = 20;
+            btnMaximizarRestaurarCadastro.Location = new Point(967, 3);
+            btnMaximizarRestaurarCadastro.Name = "btnMaximizarRestaurarCadastro";
+            btnMaximizarRestaurarCadastro.Size = new Size(39, 37);
+            btnMaximizarRestaurarCadastro.TabIndex = 21;
+            btnMaximizarRestaurarCadastro.UseVisualStyleBackColor = true;
+            btnMaximizarRestaurarCadastro.Click += iconMax_Click;
             // 
-            // iconX
+            // btnFecharCadastro
             // 
-            iconX.Anchor = AnchorStyles.Right;
-            iconX.FlatAppearance.BorderSize = 0;
-            iconX.FlatStyle = FlatStyle.Flat;
-            iconX.ForeColor = Color.Transparent;
-            iconX.IconChar = FontAwesome.Sharp.IconChar.Close;
-            iconX.IconColor = Color.White;
-            iconX.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconX.IconSize = 20;
-            iconX.Location = new Point(1012, 3);
-            iconX.Name = "iconX";
-            iconX.Size = new Size(39, 37);
-            iconX.TabIndex = 19;
-            iconX.UseVisualStyleBackColor = true;
-            iconX.Click += iconX_Click;
+            btnFecharCadastro.Anchor = AnchorStyles.Right;
+            btnFecharCadastro.FlatAppearance.BorderSize = 0;
+            btnFecharCadastro.FlatStyle = FlatStyle.Flat;
+            btnFecharCadastro.ForeColor = Color.Transparent;
+            btnFecharCadastro.IconChar = FontAwesome.Sharp.IconChar.Close;
+            btnFecharCadastro.IconColor = Color.White;
+            btnFecharCadastro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnFecharCadastro.IconSize = 20;
+            btnFecharCadastro.Location = new Point(1012, 3);
+            btnFecharCadastro.Name = "btnFecharCadastro";
+            btnFecharCadastro.Size = new Size(39, 37);
+            btnFecharCadastro.TabIndex = 19;
+            btnFecharCadastro.UseVisualStyleBackColor = true;
+            btnFecharCadastro.Click += iconX_Click;
             // 
             // panel4
             // 
@@ -350,7 +350,7 @@
             Controls.Add(panel3);
             Name = "CadastroTela";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Cadastro";
+            Text = "ECOInsight";
             panelSuperiorCad.ResumeLayout(false);
             panelSuperiorCad.PerformLayout();
             panel1.ResumeLayout(false);
@@ -379,9 +379,9 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private FontAwesome.Sharp.IconButton iconMinim;
-        private FontAwesome.Sharp.IconButton iconMax;
-        private FontAwesome.Sharp.IconButton iconX;
+        private FontAwesome.Sharp.IconButton btnMinimizarCadastro;
+        private FontAwesome.Sharp.IconButton btnMaximizarRestaurarCadastro;
+        private FontAwesome.Sharp.IconButton btnFecharCadastro;
         private Panel panel4;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnSalvar;

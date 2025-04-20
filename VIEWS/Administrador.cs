@@ -7,34 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ECOInsight.UserControls;
 
 namespace ECOInsight
 {
     public partial class AdmTela : Form
     {
+        private bool sidebarExpand;
+
         public AdmTela()
         {
             InitializeComponent();
+            UCAdm_Destaques uc = new UCAdm_Destaques();
+            addUserControl(uc);
+            sidebarAdm.Width = sidebarAdm.MinimumSize.Width;
+            sidebarExpand = false;
+            // Certifique-se de que o Dock do sidebarAdm está definido como Left no Designer do Visual Studio
+            // E que o Anchor está definido como Top, Bottom, Left
         }
 
-        private void GestorTela_Load(object sender, EventArgs e)
+        private void addUserControl(UserControl userControl)
         {
-
-        }
-
-        private void iconMinim_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void iconMax_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void iconX_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            userControl.Dock = DockStyle.Fill;
+            panelAdm.Controls.Clear();
+            panelAdm.Controls.Add(userControl);
+            userControl.BringToFront();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -42,32 +39,92 @@ namespace ECOInsight
             Application.Exit();
         }
 
-        private void btnDestaques_Click(object sender, EventArgs e)
+        private void btnMinimizarAdm_Click(object sender, EventArgs e)
         {
-            HomeTela homeTela = new HomeTela();
-            homeTela.Show(); //Abre a nova tela
-            this.Hide(); //Oculta a tela atual
+            this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnGestor_Click(object sender, EventArgs e)
+        private Size tamanhoOriginal;
+        private bool maximizado = false;
+
+        private void btnMaximizarRestaurarAdm_Click(object sender, EventArgs e)
         {
-            AdmTela gestor = new AdmTela();
-            gestor.Show(); // Abre a nova tela
-            this.Hide(); //Oculta a tela atual 
+            if (!maximizado)
+            {
+                tamanhoOriginal = this.Size;
+                this.WindowState = FormWindowState.Maximized;
+                btnMaximizarRestaurarAdm.Text = " ";
+                maximizado = true;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.Size = tamanhoOriginal;
+                btnMaximizarRestaurarAdm.Text = " ";
+                maximizado = false;
+            }
         }
 
-        private void btnProfessor_Click(object sender, EventArgs e)
+        private void btnFecharAdm_Click(object sender, EventArgs e)
         {
-            ProfessorTela professor = new ProfessorTela();
-            professor.Show(); // Abre a nova tela
-            this.Hide(); //Oculta a tela atual 
+            this.Close();
         }
 
-        private void btnAluno_Click(object sender, EventArgs e)
+        private void btnAdmRelatorio_Click_1(object sender, EventArgs e)
         {
-            AlunoTela aluno = new AlunoTela();
-            aluno.Show(); // Abre a nova tela
-            this.Hide(); //Oculta a tela atual 
+            UCAdm_Relatorio uc = new UCAdm_Relatorio();
+            addUserControl(uc);
+        }
+
+        private void btnAdmDestaques_Click_1(object sender, EventArgs e)
+        {
+            UCAdm_Destaques uc = new UCAdm_Destaques();
+            addUserControl(uc);
+        }
+
+        private void btnAdmUsuario_Click(object sender, EventArgs e)
+        {
+            UCAdm_Usuarios uc = new UCAdm_Usuarios();
+            addUserControl(uc);
+        }
+
+        private void btnAdmMPerfil_Click(object sender, EventArgs e)
+        {
+            UCAdm_MeuPerfil uc = new UCAdm_MeuPerfil();
+            addUserControl(uc);
+        }
+
+        private void sidebarTimerAdm_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebarAdm.Width -= 10;
+                if (sidebarAdm.Width == sidebarAdm.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    sidebarTimerAdm.Stop();
+                }
+            }
+            else
+            {
+                sidebarAdm.Width += 10;
+                if (sidebarAdm.Width == sidebarAdm.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    sidebarTimerAdm.Stop();
+                }
+            }
+        }
+
+        private void btnAdmMenu_Click(object sender, EventArgs e)
+        {
+            sidebarTimerAdm.Start();
+        }
+
+        private void sidebarAdm_Resize(object sender, EventArgs e)
+        {
+            sidebarAdm.Height = this.ClientSize.Height;
+            this.PerformLayout();
         }
     }
 }

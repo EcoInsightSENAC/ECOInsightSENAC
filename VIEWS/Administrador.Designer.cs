@@ -28,118 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panelEsquerdo = new Panel();
-            btnDestaques = new FontAwesome.Sharp.IconButton();
-            btnAluno = new FontAwesome.Sharp.IconButton();
-            btnProfessor = new FontAwesome.Sharp.IconButton();
-            btnAdm = new FontAwesome.Sharp.IconButton();
-            panel1 = new Panel();
+            components = new System.ComponentModel.Container();
+            sidebarAdm = new Panel();
+            btnAdmMenu = new FontAwesome.Sharp.IconButton();
             btnSair = new FontAwesome.Sharp.IconButton();
+            btnAdmDestaques = new FontAwesome.Sharp.IconButton();
+            btnAdmMPerfil = new FontAwesome.Sharp.IconButton();
+            btnAdmUsuario = new FontAwesome.Sharp.IconButton();
+            btnAdmRelatorio = new FontAwesome.Sharp.IconButton();
             panelSuperiorAdm = new Panel();
-            iconMinim = new FontAwesome.Sharp.IconButton();
-            iconMax = new FontAwesome.Sharp.IconButton();
-            iconX = new FontAwesome.Sharp.IconButton();
+            btnMinimizarAdm = new FontAwesome.Sharp.IconButton();
+            btnMaximizarRestaurarAdm = new FontAwesome.Sharp.IconButton();
+            btnFecharAdm = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             lblAdm = new Label();
-            panelEsquerdo.SuspendLayout();
-            panel1.SuspendLayout();
+            panelAdm = new Panel();
+            sidebarTimerAdm = new System.Windows.Forms.Timer(components);
+            sidebarAdm.SuspendLayout();
             panelSuperiorAdm.SuspendLayout();
             SuspendLayout();
             // 
-            // panelEsquerdo
+            // sidebarAdm
             // 
-            panelEsquerdo.BackColor = Color.FromArgb(153, 179, 142);
-            panelEsquerdo.Controls.Add(btnDestaques);
-            panelEsquerdo.Controls.Add(btnAluno);
-            panelEsquerdo.Controls.Add(btnProfessor);
-            panelEsquerdo.Controls.Add(btnAdm);
-            panelEsquerdo.Controls.Add(panel1);
-            panelEsquerdo.Dock = DockStyle.Left;
-            panelEsquerdo.Location = new Point(0, 40);
-            panelEsquerdo.Name = "panelEsquerdo";
-            panelEsquerdo.Size = new Size(161, 593);
-            panelEsquerdo.TabIndex = 10;
+            sidebarAdm.BackColor = Color.FromArgb(153, 179, 142);
+            sidebarAdm.Controls.Add(btnAdmMenu);
+            sidebarAdm.Controls.Add(btnSair);
+            sidebarAdm.Controls.Add(btnAdmDestaques);
+            sidebarAdm.Controls.Add(btnAdmMPerfil);
+            sidebarAdm.Controls.Add(btnAdmUsuario);
+            sidebarAdm.Controls.Add(btnAdmRelatorio);
+            sidebarAdm.Dock = DockStyle.Left;
+            sidebarAdm.Location = new Point(0, 40);
+            sidebarAdm.MaximumSize = new Size(161, 689);
+            sidebarAdm.MinimumSize = new Size(60, 689);
+            sidebarAdm.Name = "sidebarAdm";
+            sidebarAdm.Size = new Size(161, 689);
+            sidebarAdm.TabIndex = 10;
+            sidebarAdm.Resize += sidebarAdm_Resize;
             // 
-            // btnDestaques
+            // btnAdmMenu
             // 
-            btnDestaques.FlatAppearance.BorderSize = 0;
-            btnDestaques.FlatStyle = FlatStyle.Flat;
-            btnDestaques.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDestaques.IconChar = FontAwesome.Sharp.IconChar.Bullhorn;
-            btnDestaques.IconColor = Color.Black;
-            btnDestaques.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnDestaques.IconSize = 40;
-            btnDestaques.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDestaques.Location = new Point(0, 3);
-            btnDestaques.Name = "btnDestaques";
-            btnDestaques.Size = new Size(161, 72);
-            btnDestaques.TabIndex = 23;
-            btnDestaques.Text = "      Destaques";
-            btnDestaques.UseVisualStyleBackColor = true;
-            btnDestaques.Click += btnDestaques_Click;
-            // 
-            // btnAluno
-            // 
-            btnAluno.FlatAppearance.BorderSize = 0;
-            btnAluno.FlatStyle = FlatStyle.Flat;
-            btnAluno.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAluno.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
-            btnAluno.IconColor = Color.Black;
-            btnAluno.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAluno.IconSize = 40;
-            btnAluno.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAluno.Location = new Point(0, 237);
-            btnAluno.Name = "btnAluno";
-            btnAluno.Size = new Size(161, 72);
-            btnAluno.TabIndex = 22;
-            btnAluno.Text = "Aluno";
-            btnAluno.UseVisualStyleBackColor = true;
-            btnAluno.Click += btnAluno_Click;
-            // 
-            // btnProfessor
-            // 
-            btnProfessor.FlatAppearance.BorderSize = 0;
-            btnProfessor.FlatStyle = FlatStyle.Flat;
-            btnProfessor.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProfessor.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
-            btnProfessor.IconColor = Color.Black;
-            btnProfessor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnProfessor.IconSize = 40;
-            btnProfessor.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProfessor.Location = new Point(0, 159);
-            btnProfessor.Name = "btnProfessor";
-            btnProfessor.Size = new Size(161, 72);
-            btnProfessor.TabIndex = 21;
-            btnProfessor.Text = "    Professor";
-            btnProfessor.UseVisualStyleBackColor = true;
-            btnProfessor.Click += btnProfessor_Click;
-            // 
-            // btnAdm
-            // 
-            btnAdm.FlatAppearance.BorderSize = 0;
-            btnAdm.FlatStyle = FlatStyle.Flat;
-            btnAdm.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdm.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            btnAdm.IconColor = Color.Black;
-            btnAdm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAdm.IconSize = 40;
-            btnAdm.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAdm.Location = new Point(0, 81);
-            btnAdm.Name = "btnAdm";
-            btnAdm.Size = new Size(161, 72);
-            btnAdm.TabIndex = 20;
-            btnAdm.Text = "          Administrador";
-            btnAdm.UseVisualStyleBackColor = true;
-            btnAdm.Click += btnGestor_Click;
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Bottom;
-            panel1.Controls.Add(btnSair);
-            panel1.Location = new Point(0, 524);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(161, 70);
-            panel1.TabIndex = 14;
+            btnAdmMenu.Cursor = Cursors.Hand;
+            btnAdmMenu.FlatAppearance.BorderSize = 0;
+            btnAdmMenu.FlatStyle = FlatStyle.Flat;
+            btnAdmMenu.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdmMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            btnAdmMenu.IconColor = Color.Black;
+            btnAdmMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdmMenu.IconSize = 40;
+            btnAdmMenu.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdmMenu.Location = new Point(0, 0);
+            btnAdmMenu.Name = "btnAdmMenu";
+            btnAdmMenu.Padding = new Padding(7, 0, 0, 0);
+            btnAdmMenu.Size = new Size(161, 52);
+            btnAdmMenu.TabIndex = 29;
+            btnAdmMenu.Text = " Menu";
+            btnAdmMenu.UseVisualStyleBackColor = true;
+            btnAdmMenu.Click += btnAdmMenu_Click;
             // 
             // btnSair
             // 
@@ -147,87 +92,164 @@
             btnSair.FlatAppearance.BorderSize = 0;
             btnSair.FlatStyle = FlatStyle.Flat;
             btnSair.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSair.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            btnSair.IconChar = FontAwesome.Sharp.IconChar.SignOut;
             btnSair.IconColor = Color.Black;
             btnSair.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnSair.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSair.Location = new Point(3, 0);
+            btnSair.Location = new Point(0, 637);
             btnSair.Name = "btnSair";
-            btnSair.Size = new Size(155, 70);
+            btnSair.Padding = new Padding(4, 0, 0, 0);
+            btnSair.Size = new Size(161, 52);
             btnSair.TabIndex = 10;
-            btnSair.Text = "SAIR";
+            btnSair.Text = "    SAIR";
             btnSair.UseVisualStyleBackColor = true;
             btnSair.Click += btnSair_Click;
+            // 
+            // btnAdmDestaques
+            // 
+            btnAdmDestaques.FlatAppearance.BorderSize = 0;
+            btnAdmDestaques.FlatStyle = FlatStyle.Flat;
+            btnAdmDestaques.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdmDestaques.IconChar = FontAwesome.Sharp.IconChar.Bullhorn;
+            btnAdmDestaques.IconColor = Color.Black;
+            btnAdmDestaques.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdmDestaques.IconSize = 40;
+            btnAdmDestaques.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdmDestaques.Location = new Point(0, 58);
+            btnAdmDestaques.Name = "btnAdmDestaques";
+            btnAdmDestaques.Padding = new Padding(7, 0, 0, 0);
+            btnAdmDestaques.Size = new Size(161, 52);
+            btnAdmDestaques.TabIndex = 23;
+            btnAdmDestaques.Text = "      Destaques";
+            btnAdmDestaques.UseVisualStyleBackColor = true;
+            btnAdmDestaques.Click += btnAdmDestaques_Click_1;
+            // 
+            // btnAdmMPerfil
+            // 
+            btnAdmMPerfil.FlatAppearance.BorderSize = 0;
+            btnAdmMPerfil.FlatStyle = FlatStyle.Flat;
+            btnAdmMPerfil.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdmMPerfil.IconChar = FontAwesome.Sharp.IconChar.UserLarge;
+            btnAdmMPerfil.IconColor = Color.Black;
+            btnAdmMPerfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdmMPerfil.IconSize = 40;
+            btnAdmMPerfil.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdmMPerfil.Location = new Point(0, 232);
+            btnAdmMPerfil.Name = "btnAdmMPerfil";
+            btnAdmMPerfil.Padding = new Padding(7, 0, 0, 0);
+            btnAdmMPerfil.Size = new Size(161, 52);
+            btnAdmMPerfil.TabIndex = 22;
+            btnAdmMPerfil.Text = "       Meu Perfil";
+            btnAdmMPerfil.UseVisualStyleBackColor = true;
+            btnAdmMPerfil.Click += btnAdmMPerfil_Click;
+            // 
+            // btnAdmUsuario
+            // 
+            btnAdmUsuario.FlatAppearance.BorderSize = 0;
+            btnAdmUsuario.FlatStyle = FlatStyle.Flat;
+            btnAdmUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdmUsuario.IconChar = FontAwesome.Sharp.IconChar.UsersCog;
+            btnAdmUsuario.IconColor = Color.Black;
+            btnAdmUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdmUsuario.IconSize = 40;
+            btnAdmUsuario.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdmUsuario.Location = new Point(0, 174);
+            btnAdmUsuario.Name = "btnAdmUsuario";
+            btnAdmUsuario.Padding = new Padding(7, 0, 0, 0);
+            btnAdmUsuario.Size = new Size(161, 52);
+            btnAdmUsuario.TabIndex = 21;
+            btnAdmUsuario.Text = "     Usuários";
+            btnAdmUsuario.UseVisualStyleBackColor = true;
+            btnAdmUsuario.Click += btnAdmUsuario_Click;
+            // 
+            // btnAdmRelatorio
+            // 
+            btnAdmRelatorio.FlatAppearance.BorderSize = 0;
+            btnAdmRelatorio.FlatStyle = FlatStyle.Flat;
+            btnAdmRelatorio.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdmRelatorio.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
+            btnAdmRelatorio.IconColor = Color.Black;
+            btnAdmRelatorio.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdmRelatorio.IconSize = 40;
+            btnAdmRelatorio.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdmRelatorio.Location = new Point(0, 116);
+            btnAdmRelatorio.Name = "btnAdmRelatorio";
+            btnAdmRelatorio.Padding = new Padding(7, 0, 0, 0);
+            btnAdmRelatorio.Size = new Size(161, 52);
+            btnAdmRelatorio.TabIndex = 20;
+            btnAdmRelatorio.Text = "         Relatórios";
+            btnAdmRelatorio.UseVisualStyleBackColor = true;
+            btnAdmRelatorio.Click += btnAdmRelatorio_Click_1;
             // 
             // panelSuperiorAdm
             // 
             panelSuperiorAdm.BackColor = Color.FromArgb(36, 65, 57);
-            panelSuperiorAdm.Controls.Add(iconMinim);
-            panelSuperiorAdm.Controls.Add(iconMax);
-            panelSuperiorAdm.Controls.Add(iconX);
+            panelSuperiorAdm.Controls.Add(btnMinimizarAdm);
+            panelSuperiorAdm.Controls.Add(btnMaximizarRestaurarAdm);
+            panelSuperiorAdm.Controls.Add(btnFecharAdm);
             panelSuperiorAdm.Controls.Add(panel2);
             panelSuperiorAdm.Controls.Add(lblAdm);
             panelSuperiorAdm.Dock = DockStyle.Top;
             panelSuperiorAdm.Location = new Point(0, 0);
             panelSuperiorAdm.Name = "panelSuperiorAdm";
-            panelSuperiorAdm.Size = new Size(1064, 40);
+            panelSuperiorAdm.Size = new Size(1350, 40);
             panelSuperiorAdm.TabIndex = 9;
             // 
-            // iconMinim
+            // btnMinimizarAdm
             // 
-            iconMinim.Anchor = AnchorStyles.Right;
-            iconMinim.FlatAppearance.BorderSize = 0;
-            iconMinim.FlatStyle = FlatStyle.Flat;
-            iconMinim.ForeColor = Color.Transparent;
-            iconMinim.IconChar = FontAwesome.Sharp.IconChar.Subtract;
-            iconMinim.IconColor = Color.White;
-            iconMinim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMinim.IconSize = 20;
-            iconMinim.Location = new Point(922, 3);
-            iconMinim.Name = "iconMinim";
-            iconMinim.Size = new Size(39, 37);
-            iconMinim.TabIndex = 14;
-            iconMinim.UseVisualStyleBackColor = true;
-            iconMinim.Click += iconMinim_Click;
+            btnMinimizarAdm.Anchor = AnchorStyles.Right;
+            btnMinimizarAdm.FlatAppearance.BorderSize = 0;
+            btnMinimizarAdm.FlatStyle = FlatStyle.Flat;
+            btnMinimizarAdm.ForeColor = Color.Transparent;
+            btnMinimizarAdm.IconChar = FontAwesome.Sharp.IconChar.Subtract;
+            btnMinimizarAdm.IconColor = Color.White;
+            btnMinimizarAdm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMinimizarAdm.IconSize = 20;
+            btnMinimizarAdm.Location = new Point(1208, 3);
+            btnMinimizarAdm.Name = "btnMinimizarAdm";
+            btnMinimizarAdm.Size = new Size(39, 37);
+            btnMinimizarAdm.TabIndex = 14;
+            btnMinimizarAdm.UseVisualStyleBackColor = true;
+            btnMinimizarAdm.Click += btnMinimizarAdm_Click;
             // 
-            // iconMax
+            // btnMaximizarRestaurarAdm
             // 
-            iconMax.Anchor = AnchorStyles.Right;
-            iconMax.FlatAppearance.BorderSize = 0;
-            iconMax.FlatStyle = FlatStyle.Flat;
-            iconMax.ForeColor = Color.Transparent;
-            iconMax.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
-            iconMax.IconColor = Color.White;
-            iconMax.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMax.IconSize = 20;
-            iconMax.Location = new Point(967, 3);
-            iconMax.Name = "iconMax";
-            iconMax.Size = new Size(39, 37);
-            iconMax.TabIndex = 13;
-            iconMax.UseVisualStyleBackColor = true;
-            iconMax.Click += iconMax_Click;
+            btnMaximizarRestaurarAdm.Anchor = AnchorStyles.Right;
+            btnMaximizarRestaurarAdm.FlatAppearance.BorderSize = 0;
+            btnMaximizarRestaurarAdm.FlatStyle = FlatStyle.Flat;
+            btnMaximizarRestaurarAdm.ForeColor = Color.Transparent;
+            btnMaximizarRestaurarAdm.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+            btnMaximizarRestaurarAdm.IconColor = Color.White;
+            btnMaximizarRestaurarAdm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMaximizarRestaurarAdm.IconSize = 20;
+            btnMaximizarRestaurarAdm.Location = new Point(1253, 3);
+            btnMaximizarRestaurarAdm.Name = "btnMaximizarRestaurarAdm";
+            btnMaximizarRestaurarAdm.Size = new Size(39, 37);
+            btnMaximizarRestaurarAdm.TabIndex = 13;
+            btnMaximizarRestaurarAdm.UseVisualStyleBackColor = true;
+            btnMaximizarRestaurarAdm.Click += btnMaximizarRestaurarAdm_Click;
             // 
-            // iconX
+            // btnFecharAdm
             // 
-            iconX.Anchor = AnchorStyles.Right;
-            iconX.FlatAppearance.BorderSize = 0;
-            iconX.FlatStyle = FlatStyle.Flat;
-            iconX.ForeColor = Color.Transparent;
-            iconX.IconChar = FontAwesome.Sharp.IconChar.Close;
-            iconX.IconColor = Color.White;
-            iconX.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconX.IconSize = 20;
-            iconX.Location = new Point(1012, 3);
-            iconX.Name = "iconX";
-            iconX.Size = new Size(39, 37);
-            iconX.TabIndex = 11;
-            iconX.UseVisualStyleBackColor = true;
-            iconX.Click += iconX_Click;
+            btnFecharAdm.Anchor = AnchorStyles.Right;
+            btnFecharAdm.FlatAppearance.BorderSize = 0;
+            btnFecharAdm.FlatStyle = FlatStyle.Flat;
+            btnFecharAdm.ForeColor = Color.Transparent;
+            btnFecharAdm.IconChar = FontAwesome.Sharp.IconChar.Close;
+            btnFecharAdm.IconColor = Color.White;
+            btnFecharAdm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnFecharAdm.IconSize = 20;
+            btnFecharAdm.Location = new Point(1298, 3);
+            btnFecharAdm.Name = "btnFecharAdm";
+            btnFecharAdm.Size = new Size(39, 37);
+            btnFecharAdm.TabIndex = 11;
+            btnFecharAdm.UseVisualStyleBackColor = true;
+            btnFecharAdm.Click += btnFecharAdm_Click;
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Right;
-            panel2.Location = new Point(915, 0);
+            panel2.Location = new Point(1201, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(148, 40);
             panel2.TabIndex = 12;
@@ -237,25 +259,37 @@
             lblAdm.AutoSize = true;
             lblAdm.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAdm.ForeColor = SystemColors.ButtonHighlight;
-            lblAdm.Location = new Point(12, 9);
+            lblAdm.Location = new Point(590, 9);
             lblAdm.Name = "lblAdm";
             lblAdm.Size = new Size(171, 25);
             lblAdm.TabIndex = 0;
             lblAdm.Text = "ADMINISTRADOR";
             // 
+            // panelAdm
+            // 
+            panelAdm.Dock = DockStyle.Fill;
+            panelAdm.Location = new Point(161, 40);
+            panelAdm.Name = "panelAdm";
+            panelAdm.Size = new Size(1189, 689);
+            panelAdm.TabIndex = 11;
+            // 
+            // sidebarTimerAdm
+            // 
+            sidebarTimerAdm.Interval = 10;
+            sidebarTimerAdm.Tick += sidebarTimerAdm_Tick;
+            // 
             // AdmTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1064, 633);
-            Controls.Add(panelEsquerdo);
+            ClientSize = new Size(1350, 729);
+            Controls.Add(panelAdm);
+            Controls.Add(sidebarAdm);
             Controls.Add(panelSuperiorAdm);
             Name = "AdmTela";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Administrador";
-            Load += GestorTela_Load;
-            panelEsquerdo.ResumeLayout(false);
-            panel1.ResumeLayout(false);
+            Text = "ECOInsight";
+            sidebarAdm.ResumeLayout(false);
             panelSuperiorAdm.ResumeLayout(false);
             panelSuperiorAdm.PerformLayout();
             ResumeLayout(false);
@@ -263,18 +297,20 @@
 
         #endregion
 
-        private Panel panelEsquerdo;
+        private Panel sidebarAdm;
         private Panel panelSuperiorAdm;
         private Label lblAdm;
-        private Panel panel1;
         private FontAwesome.Sharp.IconButton btnSair;
-        private FontAwesome.Sharp.IconButton btnDestaques;
-        private FontAwesome.Sharp.IconButton btnAluno;
-        private FontAwesome.Sharp.IconButton btnProfessor;
-        private FontAwesome.Sharp.IconButton btnAdm;
-        private FontAwesome.Sharp.IconButton iconMinim;
-        private FontAwesome.Sharp.IconButton iconMax;
-        private FontAwesome.Sharp.IconButton iconX;
+        private FontAwesome.Sharp.IconButton btnAdmDestaques;
+        private FontAwesome.Sharp.IconButton btnAdmMPerfil;
+        private FontAwesome.Sharp.IconButton btnAdmUsuario;
+        private FontAwesome.Sharp.IconButton btnAdmRelatorio;
+        private FontAwesome.Sharp.IconButton btnMinimizarAdm;
+        private FontAwesome.Sharp.IconButton btnMaximizarRestaurarAdm;
+        private FontAwesome.Sharp.IconButton btnFecharAdm;
         private Panel panel2;
+        private Panel panelAdm;
+        private System.Windows.Forms.Timer sidebarTimerAdm;
+        private FontAwesome.Sharp.IconButton btnAdmMenu;
     }
 }
