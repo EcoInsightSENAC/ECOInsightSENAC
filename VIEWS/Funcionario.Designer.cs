@@ -29,46 +29,37 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            panelSuperiorGestor = new Panel();
             btnMinimizarFuncionario = new FontAwesome.Sharp.IconButton();
             btnMaximizarRestaurarFuncionario = new FontAwesome.Sharp.IconButton();
             btnFecharFuncionario = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
-            iconMinim = new FontAwesome.Sharp.IconButton();
-            iconMax = new FontAwesome.Sharp.IconButton();
-            iconX = new FontAwesome.Sharp.IconButton();
-            panel2 = new Panel();
             lblFuncionario = new Label();
-            sidebarFuncionario = new Panel();
             btnFuncionarioDestaques = new FontAwesome.Sharp.IconButton();
             btnFuncionarioSair = new FontAwesome.Sharp.IconButton();
             btnFuncionarioAula = new FontAwesome.Sharp.IconButton();
-            btnProfSair = new FontAwesome.Sharp.IconButton();
             btnFuncionarioMenu = new FontAwesome.Sharp.IconButton();
             btnFuncionarioMPerfil = new FontAwesome.Sharp.IconButton();
-            panelFuncionario = new Panel();
             sidebarTimerFuncionario = new System.Windows.Forms.Timer(components);
-            panelSuperiorGestor.SuspendLayout();
+            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
+            panel2 = new Panel();
+            sidebarFuncionario = new FlowLayoutPanel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            panel7 = new Panel();
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            panelFuncionario = new Panel();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             sidebarFuncionario.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
+            flowLayoutPanel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // panelSuperiorGestor
-            // 
-            panelSuperiorGestor.BackColor = Color.FromArgb(36, 65, 57);
-            panelSuperiorGestor.Controls.Add(btnMinimizarFuncionario);
-            panelSuperiorGestor.Controls.Add(btnMaximizarRestaurarFuncionario);
-            panelSuperiorGestor.Controls.Add(btnFecharFuncionario);
-            panelSuperiorGestor.Controls.Add(panel1);
-            panelSuperiorGestor.Controls.Add(iconMinim);
-            panelSuperiorGestor.Controls.Add(iconMax);
-            panelSuperiorGestor.Controls.Add(iconX);
-            panelSuperiorGestor.Controls.Add(panel2);
-            panelSuperiorGestor.Controls.Add(lblFuncionario);
-            panelSuperiorGestor.Dock = DockStyle.Top;
-            panelSuperiorGestor.Location = new Point(0, 0);
-            panelSuperiorGestor.Name = "panelSuperiorGestor";
-            panelSuperiorGestor.Size = new Size(1350, 40);
-            panelSuperiorGestor.TabIndex = 10;
             // 
             // btnMinimizarFuncionario
             // 
@@ -80,7 +71,7 @@
             btnMinimizarFuncionario.IconColor = Color.White;
             btnMinimizarFuncionario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMinimizarFuncionario.IconSize = 20;
-            btnMinimizarFuncionario.Location = new Point(1208, 3);
+            btnMinimizarFuncionario.Location = new Point(20, 0);
             btnMinimizarFuncionario.Name = "btnMinimizarFuncionario";
             btnMinimizarFuncionario.Size = new Size(39, 37);
             btnMinimizarFuncionario.TabIndex = 18;
@@ -97,7 +88,7 @@
             btnMaximizarRestaurarFuncionario.IconColor = Color.White;
             btnMaximizarRestaurarFuncionario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMaximizarRestaurarFuncionario.IconSize = 20;
-            btnMaximizarRestaurarFuncionario.Location = new Point(1253, 3);
+            btnMaximizarRestaurarFuncionario.Location = new Point(65, 0);
             btnMaximizarRestaurarFuncionario.Name = "btnMaximizarRestaurarFuncionario";
             btnMaximizarRestaurarFuncionario.Size = new Size(39, 37);
             btnMaximizarRestaurarFuncionario.TabIndex = 17;
@@ -114,7 +105,7 @@
             btnFecharFuncionario.IconColor = Color.White;
             btnFecharFuncionario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnFecharFuncionario.IconSize = 20;
-            btnFecharFuncionario.Location = new Point(1298, 3);
+            btnFecharFuncionario.Location = new Point(110, 0);
             btnFecharFuncionario.Name = "btnFecharFuncionario";
             btnFecharFuncionario.Size = new Size(39, 37);
             btnFecharFuncionario.TabIndex = 15;
@@ -124,94 +115,25 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Right;
-            panel1.Location = new Point(1201, 0);
+            panel1.Controls.Add(btnMinimizarFuncionario);
+            panel1.Controls.Add(btnMaximizarRestaurarFuncionario);
+            panel1.Controls.Add(btnFecharFuncionario);
+            panel1.Location = new Point(988, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(148, 40);
             panel1.TabIndex = 16;
             // 
-            // iconMinim
-            // 
-            iconMinim.Anchor = AnchorStyles.Right;
-            iconMinim.FlatAppearance.BorderSize = 0;
-            iconMinim.FlatStyle = FlatStyle.Flat;
-            iconMinim.ForeColor = Color.Transparent;
-            iconMinim.IconChar = FontAwesome.Sharp.IconChar.Subtract;
-            iconMinim.IconColor = Color.White;
-            iconMinim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMinim.IconSize = 20;
-            iconMinim.Location = new Point(2072, -27);
-            iconMinim.Name = "iconMinim";
-            iconMinim.Size = new Size(39, 37);
-            iconMinim.TabIndex = 14;
-            iconMinim.UseVisualStyleBackColor = true;
-            // 
-            // iconMax
-            // 
-            iconMax.Anchor = AnchorStyles.Right;
-            iconMax.FlatAppearance.BorderSize = 0;
-            iconMax.FlatStyle = FlatStyle.Flat;
-            iconMax.ForeColor = Color.Transparent;
-            iconMax.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
-            iconMax.IconColor = Color.White;
-            iconMax.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMax.IconSize = 20;
-            iconMax.Location = new Point(2117, -27);
-            iconMax.Name = "iconMax";
-            iconMax.Size = new Size(39, 37);
-            iconMax.TabIndex = 13;
-            iconMax.UseVisualStyleBackColor = true;
-            // 
-            // iconX
-            // 
-            iconX.Anchor = AnchorStyles.Right;
-            iconX.FlatAppearance.BorderSize = 0;
-            iconX.FlatStyle = FlatStyle.Flat;
-            iconX.ForeColor = Color.Transparent;
-            iconX.IconChar = FontAwesome.Sharp.IconChar.Close;
-            iconX.IconColor = Color.White;
-            iconX.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconX.IconSize = 20;
-            iconX.Location = new Point(2162, -27);
-            iconX.Name = "iconX";
-            iconX.Size = new Size(39, 37);
-            iconX.TabIndex = 11;
-            iconX.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.Right;
-            panel2.Location = new Point(2065, -30);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(148, 40);
-            panel2.TabIndex = 12;
-            // 
             // lblFuncionario
             // 
+            lblFuncionario.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblFuncionario.AutoSize = true;
             lblFuncionario.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFuncionario.ForeColor = SystemColors.ButtonHighlight;
-            lblFuncionario.Location = new Point(639, 9);
+            lblFuncionario.Location = new Point(498, 9);
             lblFuncionario.Name = "lblFuncionario";
             lblFuncionario.Size = new Size(143, 25);
             lblFuncionario.TabIndex = 0;
             lblFuncionario.Text = "FUNCIONÁRIO";
-            // 
-            // sidebarFuncionario
-            // 
-            sidebarFuncionario.BackColor = Color.FromArgb(153, 179, 142);
-            sidebarFuncionario.Controls.Add(btnFuncionarioDestaques);
-            sidebarFuncionario.Controls.Add(btnFuncionarioSair);
-            sidebarFuncionario.Controls.Add(btnFuncionarioAula);
-            sidebarFuncionario.Controls.Add(btnProfSair);
-            sidebarFuncionario.Controls.Add(btnFuncionarioMenu);
-            sidebarFuncionario.Controls.Add(btnFuncionarioMPerfil);
-            sidebarFuncionario.Dock = DockStyle.Left;
-            sidebarFuncionario.Location = new Point(0, 40);
-            sidebarFuncionario.MaximumSize = new Size(161, 689);
-            sidebarFuncionario.MinimumSize = new Size(58, 689);
-            sidebarFuncionario.Name = "sidebarFuncionario";
-            sidebarFuncionario.Size = new Size(161, 689);
-            sidebarFuncionario.TabIndex = 15;
             // 
             // btnFuncionarioDestaques
             // 
@@ -223,10 +145,10 @@
             btnFuncionarioDestaques.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnFuncionarioDestaques.IconSize = 40;
             btnFuncionarioDestaques.ImageAlign = ContentAlignment.MiddleLeft;
-            btnFuncionarioDestaques.Location = new Point(0, 58);
+            btnFuncionarioDestaques.Location = new Point(-3, 0);
             btnFuncionarioDestaques.Name = "btnFuncionarioDestaques";
             btnFuncionarioDestaques.Padding = new Padding(7, 0, 0, 0);
-            btnFuncionarioDestaques.Size = new Size(161, 52);
+            btnFuncionarioDestaques.Size = new Size(177, 52);
             btnFuncionarioDestaques.TabIndex = 23;
             btnFuncionarioDestaques.Text = "         Destaques";
             btnFuncionarioDestaques.UseVisualStyleBackColor = true;
@@ -242,10 +164,10 @@
             btnFuncionarioSair.IconColor = Color.Black;
             btnFuncionarioSair.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnFuncionarioSair.ImageAlign = ContentAlignment.MiddleLeft;
-            btnFuncionarioSair.Location = new Point(0, 637);
+            btnFuncionarioSair.Location = new Point(3, 3);
             btnFuncionarioSair.Name = "btnFuncionarioSair";
             btnFuncionarioSair.Padding = new Padding(4, 0, 0, 0);
-            btnFuncionarioSair.Size = new Size(161, 52);
+            btnFuncionarioSair.Size = new Size(177, 52);
             btnFuncionarioSair.TabIndex = 30;
             btnFuncionarioSair.Text = "    SAIR";
             btnFuncionarioSair.UseVisualStyleBackColor = true;
@@ -256,37 +178,19 @@
             btnFuncionarioAula.FlatAppearance.BorderSize = 0;
             btnFuncionarioAula.FlatStyle = FlatStyle.Flat;
             btnFuncionarioAula.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnFuncionarioAula.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
+            btnFuncionarioAula.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
             btnFuncionarioAula.IconColor = Color.Black;
             btnFuncionarioAula.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnFuncionarioAula.IconSize = 40;
             btnFuncionarioAula.ImageAlign = ContentAlignment.MiddleLeft;
-            btnFuncionarioAula.Location = new Point(0, 116);
+            btnFuncionarioAula.Location = new Point(-3, 0);
             btnFuncionarioAula.Name = "btnFuncionarioAula";
             btnFuncionarioAula.Padding = new Padding(7, 0, 0, 0);
-            btnFuncionarioAula.Size = new Size(161, 52);
+            btnFuncionarioAula.Size = new Size(177, 52);
             btnFuncionarioAula.TabIndex = 20;
             btnFuncionarioAula.Text = "       Relatório";
             btnFuncionarioAula.UseVisualStyleBackColor = true;
             btnFuncionarioAula.Click += btnFuncionarioAula_Click;
-            // 
-            // btnProfSair
-            // 
-            btnProfSair.Anchor = AnchorStyles.Left;
-            btnProfSair.FlatAppearance.BorderSize = 0;
-            btnProfSair.FlatStyle = FlatStyle.Flat;
-            btnProfSair.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProfSair.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            btnProfSair.IconColor = Color.Black;
-            btnProfSair.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnProfSair.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProfSair.Location = new Point(0, 910);
-            btnProfSair.Name = "btnProfSair";
-            btnProfSair.Padding = new Padding(7, 0, 0, 0);
-            btnProfSair.Size = new Size(155, 70);
-            btnProfSair.TabIndex = 11;
-            btnProfSair.Text = "    SAIR";
-            btnProfSair.UseVisualStyleBackColor = true;
             // 
             // btnFuncionarioMenu
             // 
@@ -302,7 +206,7 @@
             btnFuncionarioMenu.Location = new Point(0, 0);
             btnFuncionarioMenu.Name = "btnFuncionarioMenu";
             btnFuncionarioMenu.Padding = new Padding(7, 0, 0, 0);
-            btnFuncionarioMenu.Size = new Size(161, 52);
+            btnFuncionarioMenu.Size = new Size(177, 52);
             btnFuncionarioMenu.TabIndex = 29;
             btnFuncionarioMenu.Text = " Menu";
             btnFuncionarioMenu.UseVisualStyleBackColor = true;
@@ -318,65 +222,165 @@
             btnFuncionarioMPerfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnFuncionarioMPerfil.IconSize = 40;
             btnFuncionarioMPerfil.ImageAlign = ContentAlignment.MiddleLeft;
-            btnFuncionarioMPerfil.Location = new Point(0, 174);
+            btnFuncionarioMPerfil.Location = new Point(-3, 0);
             btnFuncionarioMPerfil.Name = "btnFuncionarioMPerfil";
             btnFuncionarioMPerfil.Padding = new Padding(7, 0, 0, 0);
-            btnFuncionarioMPerfil.Size = new Size(161, 52);
+            btnFuncionarioMPerfil.Size = new Size(177, 52);
             btnFuncionarioMPerfil.TabIndex = 22;
             btnFuncionarioMPerfil.Text = "          Meu Perfil";
             btnFuncionarioMPerfil.UseVisualStyleBackColor = true;
             btnFuncionarioMPerfil.Click += btnFuncionarioMPerfil_Click;
-            // 
-            // panelFuncionario
-            // 
-            panelFuncionario.Dock = DockStyle.Fill;
-            panelFuncionario.Location = new Point(161, 40);
-            panelFuncionario.Name = "panelFuncionario";
-            panelFuncionario.Size = new Size(1189, 689);
-            panelFuncionario.TabIndex = 16;
             // 
             // sidebarTimerFuncionario
             // 
             sidebarTimerFuncionario.Interval = 10;
             sidebarTimerFuncionario.Tick += sidebarTimerFuncionario_Tick;
             // 
+            // btnVoltarPagEsqueciSenha
+            // 
+            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
+            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
+            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
+            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
+            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnVoltarPagEsqueciSenha.IconSize = 25;
+            btnVoltarPagEsqueciSenha.Location = new Point(3, 3);
+            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
+            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
+            btnVoltarPagEsqueciSenha.TabIndex = 21;
+            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
+            btnVoltarPagEsqueciSenha.Click += btnVoltarPagEsqueciSenha_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(36, 65, 57);
+            panel2.Controls.Add(lblFuncionario);
+            panel2.Controls.Add(panel1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1139, 42);
+            panel2.TabIndex = 22;
+            // 
+            // sidebarFuncionario
+            // 
+            sidebarFuncionario.BackColor = Color.FromArgb(153, 179, 142);
+            sidebarFuncionario.Controls.Add(panel3);
+            sidebarFuncionario.Controls.Add(panel4);
+            sidebarFuncionario.Controls.Add(panel5);
+            sidebarFuncionario.Controls.Add(panel6);
+            sidebarFuncionario.Controls.Add(panel7);
+            sidebarFuncionario.Dock = DockStyle.Left;
+            sidebarFuncionario.Location = new Point(0, 42);
+            sidebarFuncionario.Name = "sidebarFuncionario";
+            sidebarFuncionario.Size = new Size(180, 687);
+            sidebarFuncionario.TabIndex = 23;
+            sidebarFuncionario.Paint += sidebarFuncionario_Paint;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(btnFuncionarioMenu);
+            panel3.Location = new Point(3, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(177, 52);
+            panel3.TabIndex = 25;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(btnFuncionarioDestaques);
+            panel4.Location = new Point(3, 61);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(177, 52);
+            panel4.TabIndex = 26;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(btnFuncionarioAula);
+            panel5.Location = new Point(3, 119);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(177, 52);
+            panel5.TabIndex = 26;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(btnFuncionarioMPerfil);
+            panel6.Location = new Point(3, 177);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(177, 52);
+            panel6.TabIndex = 26;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(btnFuncionarioSair);
+            panel7.Location = new Point(3, 235);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(177, 52);
+            panel7.TabIndex = 26;
+            // 
+            // flowLayoutPanel2
+            // 
+            flowLayoutPanel2.BackColor = Color.Gainsboro;
+            flowLayoutPanel2.Controls.Add(btnVoltarPagEsqueciSenha);
+            flowLayoutPanel2.Dock = DockStyle.Top;
+            flowLayoutPanel2.Location = new Point(180, 42);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new Size(959, 39);
+            flowLayoutPanel2.TabIndex = 24;
+            // 
+            // panelFuncionario
+            // 
+            panelFuncionario.Dock = DockStyle.Fill;
+            panelFuncionario.Location = new Point(180, 81);
+            panelFuncionario.Name = "panelFuncionario";
+            panelFuncionario.Size = new Size(959, 648);
+            panelFuncionario.TabIndex = 57;
+            // 
             // FuncionarioTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1350, 729);
+            ClientSize = new Size(1139, 729);
             Controls.Add(panelFuncionario);
+            Controls.Add(flowLayoutPanel2);
             Controls.Add(sidebarFuncionario);
-            Controls.Add(panelSuperiorGestor);
+            Controls.Add(panel2);
             Name = "FuncionarioTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
-            panelSuperiorGestor.ResumeLayout(false);
-            panelSuperiorGestor.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             sidebarFuncionario.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel7.ResumeLayout(false);
+            flowLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panelSuperiorGestor;
-        private FontAwesome.Sharp.IconButton iconMinim;
-        private FontAwesome.Sharp.IconButton iconMax;
-        private FontAwesome.Sharp.IconButton iconX;
-        private Panel panel2;
         private Label lblFuncionario;
         private FontAwesome.Sharp.IconButton btnMinimizarFuncionario;
         private FontAwesome.Sharp.IconButton btnMaximizarRestaurarFuncionario;
         private FontAwesome.Sharp.IconButton btnFecharFuncionario;
         private Panel panel1;
-        private Panel sidebarFuncionario;
-        private FontAwesome.Sharp.IconButton btnProfSair;
         private FontAwesome.Sharp.IconButton btnFuncionarioMenu;
         private FontAwesome.Sharp.IconButton btnFuncionarioDestaques;
         private FontAwesome.Sharp.IconButton btnFuncionarioMPerfil;
         private FontAwesome.Sharp.IconButton btnFuncionarioAula;
         private FontAwesome.Sharp.IconButton btnFuncionarioSair;
-        private Panel panelFuncionario;
         private System.Windows.Forms.Timer sidebarTimerFuncionario;
+        private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
+        private Panel panel2;
+        private FlowLayoutPanel sidebarFuncionario;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel panel6;
+        private Panel panel7;
+        private Panel panelFuncionario;
     }
 }

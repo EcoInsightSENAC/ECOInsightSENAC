@@ -29,60 +29,40 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            sidebarProf = new Panel();
-            btnProfSair = new FontAwesome.Sharp.IconButton();
             btnAProfMenu = new FontAwesome.Sharp.IconButton();
             btnProfDestaques = new FontAwesome.Sharp.IconButton();
             btnProfMPerfil = new FontAwesome.Sharp.IconButton();
             btnProfRelatorio = new FontAwesome.Sharp.IconButton();
             btnProfAula = new FontAwesome.Sharp.IconButton();
-            panelSuperiorProfessor = new Panel();
             btnMinimizarProf = new FontAwesome.Sharp.IconButton();
             lblAluno = new Label();
             btnMaximizarRestaurarProf = new FontAwesome.Sharp.IconButton();
             btnFecharProf = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
-            panelProf = new Panel();
             sidebarTimerProf = new System.Windows.Forms.Timer(components);
+            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
+            panelSuperiorProf = new Panel();
+            sidebarProf = new FlowLayoutPanel();
+            panelbtnAProfMenu = new Panel();
+            panelbtnProfDestaques = new Panel();
+            panelbtnProfAula = new Panel();
+            panelbtnProfMPerfil = new Panel();
+            btnProfMeuPerfil = new FontAwesome.Sharp.IconButton();
+            panelbtnSairProf = new Panel();
+            btnSairProf = new FontAwesome.Sharp.IconButton();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            timerSubAula = new System.Windows.Forms.Timer(components);
+            panelProf = new Panel();
+            panel2.SuspendLayout();
+            panelSuperiorProf.SuspendLayout();
             sidebarProf.SuspendLayout();
-            panelSuperiorProfessor.SuspendLayout();
+            panelbtnAProfMenu.SuspendLayout();
+            panelbtnProfDestaques.SuspendLayout();
+            panelbtnProfAula.SuspendLayout();
+            panelbtnProfMPerfil.SuspendLayout();
+            panelbtnSairProf.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // sidebarProf
-            // 
-            sidebarProf.BackColor = Color.FromArgb(153, 179, 142);
-            sidebarProf.Controls.Add(btnProfSair);
-            sidebarProf.Controls.Add(btnAProfMenu);
-            sidebarProf.Controls.Add(btnProfDestaques);
-            sidebarProf.Controls.Add(btnProfMPerfil);
-            sidebarProf.Controls.Add(btnProfRelatorio);
-            sidebarProf.Controls.Add(btnProfAula);
-            sidebarProf.Dock = DockStyle.Left;
-            sidebarProf.Location = new Point(0, 40);
-            sidebarProf.MaximumSize = new Size(161, 689);
-            sidebarProf.MinimumSize = new Size(58, 689);
-            sidebarProf.Name = "sidebarProf";
-            sidebarProf.Size = new Size(161, 689);
-            sidebarProf.TabIndex = 14;
-            // 
-            // btnProfSair
-            // 
-            btnProfSair.Anchor = AnchorStyles.Left;
-            btnProfSair.FlatAppearance.BorderSize = 0;
-            btnProfSair.FlatStyle = FlatStyle.Flat;
-            btnProfSair.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProfSair.IconChar = FontAwesome.Sharp.IconChar.SignOut;
-            btnProfSair.IconColor = Color.Black;
-            btnProfSair.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnProfSair.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProfSair.Location = new Point(0, 637);
-            btnProfSair.Name = "btnProfSair";
-            btnProfSair.Padding = new Padding(4, 0, 0, 0);
-            btnProfSair.Size = new Size(161, 52);
-            btnProfSair.TabIndex = 11;
-            btnProfSair.Text = "    SAIR";
-            btnProfSair.UseVisualStyleBackColor = true;
-            btnProfSair.Click += btnSair_Click;
             // 
             // btnAProfMenu
             // 
@@ -98,7 +78,7 @@
             btnAProfMenu.Location = new Point(0, 0);
             btnAProfMenu.Name = "btnAProfMenu";
             btnAProfMenu.Padding = new Padding(7, 0, 0, 0);
-            btnAProfMenu.Size = new Size(161, 52);
+            btnAProfMenu.Size = new Size(177, 52);
             btnAProfMenu.TabIndex = 29;
             btnAProfMenu.Text = " Menu";
             btnAProfMenu.UseVisualStyleBackColor = true;
@@ -114,10 +94,10 @@
             btnProfDestaques.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnProfDestaques.IconSize = 40;
             btnProfDestaques.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProfDestaques.Location = new Point(0, 58);
+            btnProfDestaques.Location = new Point(0, 0);
             btnProfDestaques.Name = "btnProfDestaques";
             btnProfDestaques.Padding = new Padding(5, 0, 0, 0);
-            btnProfDestaques.Size = new Size(161, 52);
+            btnProfDestaques.Size = new Size(177, 52);
             btnProfDestaques.TabIndex = 23;
             btnProfDestaques.Text = "         Destaques";
             btnProfDestaques.UseVisualStyleBackColor = true;
@@ -125,22 +105,13 @@
             // 
             // btnProfMPerfil
             // 
-            btnProfMPerfil.FlatAppearance.BorderSize = 0;
-            btnProfMPerfil.FlatStyle = FlatStyle.Flat;
-            btnProfMPerfil.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProfMPerfil.IconChar = FontAwesome.Sharp.IconChar.UserLarge;
+            btnProfMPerfil.IconChar = FontAwesome.Sharp.IconChar.None;
             btnProfMPerfil.IconColor = Color.Black;
             btnProfMPerfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnProfMPerfil.IconSize = 40;
-            btnProfMPerfil.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProfMPerfil.Location = new Point(0, 232);
+            btnProfMPerfil.Location = new Point(0, 0);
             btnProfMPerfil.Name = "btnProfMPerfil";
-            btnProfMPerfil.Padding = new Padding(5, 0, 0, 0);
-            btnProfMPerfil.Size = new Size(161, 52);
-            btnProfMPerfil.TabIndex = 22;
-            btnProfMPerfil.Text = "          Meu Perfil";
-            btnProfMPerfil.UseVisualStyleBackColor = true;
-            btnProfMPerfil.Click += btnProfMPerfil_Click;
+            btnProfMPerfil.Size = new Size(75, 23);
+            btnProfMPerfil.TabIndex = 24;
             // 
             // btnProfRelatorio
             // 
@@ -152,10 +123,10 @@
             btnProfRelatorio.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnProfRelatorio.IconSize = 40;
             btnProfRelatorio.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProfRelatorio.Location = new Point(0, 174);
+            btnProfRelatorio.Location = new Point(0, 58);
             btnProfRelatorio.Name = "btnProfRelatorio";
             btnProfRelatorio.Padding = new Padding(5, 0, 0, 0);
-            btnProfRelatorio.Size = new Size(161, 52);
+            btnProfRelatorio.Size = new Size(177, 52);
             btnProfRelatorio.TabIndex = 21;
             btnProfRelatorio.Text = "    Notas";
             btnProfRelatorio.UseVisualStyleBackColor = true;
@@ -171,28 +142,14 @@
             btnProfAula.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnProfAula.IconSize = 40;
             btnProfAula.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProfAula.Location = new Point(0, 116);
+            btnProfAula.Location = new Point(0, 0);
             btnProfAula.Name = "btnProfAula";
             btnProfAula.Padding = new Padding(5, 0, 0, 0);
-            btnProfAula.Size = new Size(161, 52);
+            btnProfAula.Size = new Size(177, 52);
             btnProfAula.TabIndex = 20;
             btnProfAula.Text = "Aula";
             btnProfAula.UseVisualStyleBackColor = true;
             btnProfAula.Click += btnProfAula_Click;
-            // 
-            // panelSuperiorProfessor
-            // 
-            panelSuperiorProfessor.BackColor = Color.FromArgb(36, 65, 57);
-            panelSuperiorProfessor.Controls.Add(btnMinimizarProf);
-            panelSuperiorProfessor.Controls.Add(lblAluno);
-            panelSuperiorProfessor.Controls.Add(btnMaximizarRestaurarProf);
-            panelSuperiorProfessor.Controls.Add(btnFecharProf);
-            panelSuperiorProfessor.Controls.Add(panel2);
-            panelSuperiorProfessor.Dock = DockStyle.Top;
-            panelSuperiorProfessor.Location = new Point(0, 0);
-            panelSuperiorProfessor.Name = "panelSuperiorProfessor";
-            panelSuperiorProfessor.Size = new Size(1350, 40);
-            panelSuperiorProfessor.TabIndex = 13;
             // 
             // btnMinimizarProf
             // 
@@ -204,7 +161,7 @@
             btnMinimizarProf.IconColor = Color.White;
             btnMinimizarProf.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMinimizarProf.IconSize = 20;
-            btnMinimizarProf.Location = new Point(1208, 3);
+            btnMinimizarProf.Location = new Point(19, 0);
             btnMinimizarProf.Name = "btnMinimizarProf";
             btnMinimizarProf.Size = new Size(39, 37);
             btnMinimizarProf.TabIndex = 18;
@@ -217,7 +174,7 @@
             lblAluno.FlatStyle = FlatStyle.Flat;
             lblAluno.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAluno.ForeColor = SystemColors.ButtonHighlight;
-            lblAluno.Location = new Point(616, 9);
+            lblAluno.Location = new Point(510, 9);
             lblAluno.Name = "lblAluno";
             lblAluno.Size = new Size(118, 25);
             lblAluno.TabIndex = 0;
@@ -233,7 +190,7 @@
             btnMaximizarRestaurarProf.IconColor = Color.White;
             btnMaximizarRestaurarProf.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMaximizarRestaurarProf.IconSize = 20;
-            btnMaximizarRestaurarProf.Location = new Point(1253, 3);
+            btnMaximizarRestaurarProf.Location = new Point(64, 0);
             btnMaximizarRestaurarProf.Name = "btnMaximizarRestaurarProf";
             btnMaximizarRestaurarProf.Size = new Size(39, 37);
             btnMaximizarRestaurarProf.TabIndex = 17;
@@ -250,7 +207,7 @@
             btnFecharProf.IconColor = Color.White;
             btnFecharProf.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnFecharProf.IconSize = 20;
-            btnFecharProf.Location = new Point(1298, 3);
+            btnFecharProf.Location = new Point(109, 0);
             btnFecharProf.Name = "btnFecharProf";
             btnFecharProf.Size = new Size(39, 37);
             btnFecharProf.TabIndex = 15;
@@ -260,57 +217,206 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Right;
-            panel2.Location = new Point(1201, 0);
+            panel2.Controls.Add(btnMinimizarProf);
+            panel2.Controls.Add(btnMaximizarRestaurarProf);
+            panel2.Controls.Add(btnFecharProf);
+            panel2.Location = new Point(988, 2);
             panel2.Name = "panel2";
             panel2.Size = new Size(148, 40);
             panel2.TabIndex = 16;
-            // 
-            // panelProf
-            // 
-            panelProf.Dock = DockStyle.Fill;
-            panelProf.Location = new Point(161, 40);
-            panelProf.Name = "panelProf";
-            panelProf.Size = new Size(1189, 689);
-            panelProf.TabIndex = 15;
             // 
             // sidebarTimerProf
             // 
             sidebarTimerProf.Interval = 10;
             sidebarTimerProf.Tick += sidebarTimerProf_Tick;
             // 
+            // btnVoltarPagEsqueciSenha
+            // 
+            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
+            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
+            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
+            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
+            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnVoltarPagEsqueciSenha.IconSize = 25;
+            btnVoltarPagEsqueciSenha.Location = new Point(3, 3);
+            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
+            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
+            btnVoltarPagEsqueciSenha.TabIndex = 21;
+            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
+            btnVoltarPagEsqueciSenha.Click += btnVoltarPagEsqueciSenha_Click;
+            // 
+            // panelSuperiorProf
+            // 
+            panelSuperiorProf.BackColor = Color.FromArgb(36, 65, 57);
+            panelSuperiorProf.Controls.Add(panel2);
+            panelSuperiorProf.Controls.Add(lblAluno);
+            panelSuperiorProf.Dock = DockStyle.Top;
+            panelSuperiorProf.Location = new Point(0, 0);
+            panelSuperiorProf.Name = "panelSuperiorProf";
+            panelSuperiorProf.Size = new Size(1139, 42);
+            panelSuperiorProf.TabIndex = 22;
+            // 
+            // sidebarProf
+            // 
+            sidebarProf.BackColor = Color.FromArgb(153, 179, 142);
+            sidebarProf.Controls.Add(panelbtnAProfMenu);
+            sidebarProf.Controls.Add(panelbtnProfDestaques);
+            sidebarProf.Controls.Add(panelbtnProfAula);
+            sidebarProf.Controls.Add(panelbtnProfMPerfil);
+            sidebarProf.Controls.Add(panelbtnSairProf);
+            sidebarProf.Dock = DockStyle.Left;
+            sidebarProf.Location = new Point(0, 42);
+            sidebarProf.Name = "sidebarProf";
+            sidebarProf.Size = new Size(180, 687);
+            sidebarProf.TabIndex = 23;
+            // 
+            // panelbtnAProfMenu
+            // 
+            panelbtnAProfMenu.Controls.Add(btnAProfMenu);
+            panelbtnAProfMenu.Location = new Point(3, 3);
+            panelbtnAProfMenu.Name = "panelbtnAProfMenu";
+            panelbtnAProfMenu.Size = new Size(177, 52);
+            panelbtnAProfMenu.TabIndex = 57;
+            // 
+            // panelbtnProfDestaques
+            // 
+            panelbtnProfDestaques.Controls.Add(btnProfDestaques);
+            panelbtnProfDestaques.Location = new Point(3, 61);
+            panelbtnProfDestaques.Name = "panelbtnProfDestaques";
+            panelbtnProfDestaques.Size = new Size(177, 52);
+            panelbtnProfDestaques.TabIndex = 58;
+            // 
+            // panelbtnProfAula
+            // 
+            panelbtnProfAula.Controls.Add(btnProfRelatorio);
+            panelbtnProfAula.Controls.Add(btnProfAula);
+            panelbtnProfAula.Location = new Point(3, 119);
+            panelbtnProfAula.Name = "panelbtnProfAula";
+            panelbtnProfAula.Size = new Size(177, 52);
+            panelbtnProfAula.TabIndex = 58;
+            // 
+            // panelbtnProfMPerfil
+            // 
+            panelbtnProfMPerfil.Controls.Add(btnProfMeuPerfil);
+            panelbtnProfMPerfil.Controls.Add(btnProfMPerfil);
+            panelbtnProfMPerfil.Location = new Point(3, 177);
+            panelbtnProfMPerfil.Name = "panelbtnProfMPerfil";
+            panelbtnProfMPerfil.Size = new Size(177, 52);
+            panelbtnProfMPerfil.TabIndex = 58;
+            // 
+            // btnProfMeuPerfil
+            // 
+            btnProfMeuPerfil.FlatAppearance.BorderSize = 0;
+            btnProfMeuPerfil.FlatStyle = FlatStyle.Flat;
+            btnProfMeuPerfil.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProfMeuPerfil.IconChar = FontAwesome.Sharp.IconChar.UserLarge;
+            btnProfMeuPerfil.IconColor = Color.Black;
+            btnProfMeuPerfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnProfMeuPerfil.IconSize = 40;
+            btnProfMeuPerfil.ImageAlign = ContentAlignment.MiddleLeft;
+            btnProfMeuPerfil.Location = new Point(0, 0);
+            btnProfMeuPerfil.Name = "btnProfMeuPerfil";
+            btnProfMeuPerfil.Padding = new Padding(5, 0, 0, 0);
+            btnProfMeuPerfil.Size = new Size(177, 52);
+            btnProfMeuPerfil.TabIndex = 23;
+            btnProfMeuPerfil.Text = "          Meu Perfil";
+            btnProfMeuPerfil.UseVisualStyleBackColor = true;
+            btnProfMeuPerfil.Click += btnProfMeuPerfil_Click;
+            // 
+            // panelbtnSairProf
+            // 
+            panelbtnSairProf.Controls.Add(btnSairProf);
+            panelbtnSairProf.Location = new Point(3, 235);
+            panelbtnSairProf.Name = "panelbtnSairProf";
+            panelbtnSairProf.Size = new Size(177, 52);
+            panelbtnSairProf.TabIndex = 59;
+            // 
+            // btnSairProf
+            // 
+            btnSairProf.Anchor = AnchorStyles.Left;
+            btnSairProf.FlatAppearance.BorderSize = 0;
+            btnSairProf.FlatStyle = FlatStyle.Flat;
+            btnSairProf.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSairProf.IconChar = FontAwesome.Sharp.IconChar.SignOut;
+            btnSairProf.IconColor = Color.Black;
+            btnSairProf.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSairProf.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSairProf.Location = new Point(3, -3);
+            btnSairProf.Name = "btnSairProf";
+            btnSairProf.Padding = new Padding(4, 0, 0, 0);
+            btnSairProf.Size = new Size(177, 52);
+            btnSairProf.TabIndex = 60;
+            btnSairProf.Text = "    SAIR";
+            btnSairProf.UseVisualStyleBackColor = true;
+            btnSairProf.Click += btnSairProf_Click;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.Gainsboro;
+            flowLayoutPanel1.Controls.Add(btnVoltarPagEsqueciSenha);
+            flowLayoutPanel1.Dock = DockStyle.Top;
+            flowLayoutPanel1.Location = new Point(180, 42);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(959, 39);
+            flowLayoutPanel1.TabIndex = 56;
+            // 
+            // panelProf
+            // 
+            panelProf.Dock = DockStyle.Fill;
+            panelProf.Location = new Point(180, 81);
+            panelProf.Name = "panelProf";
+            panelProf.Size = new Size(959, 648);
+            panelProf.TabIndex = 57;
+            // 
             // ProfessorTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1350, 729);
+            ClientSize = new Size(1139, 729);
             Controls.Add(panelProf);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(sidebarProf);
-            Controls.Add(panelSuperiorProfessor);
+            Controls.Add(panelSuperiorProf);
             Name = "ProfessorTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
+            panel2.ResumeLayout(false);
+            panelSuperiorProf.ResumeLayout(false);
+            panelSuperiorProf.PerformLayout();
             sidebarProf.ResumeLayout(false);
-            panelSuperiorProfessor.ResumeLayout(false);
-            panelSuperiorProfessor.PerformLayout();
+            panelbtnAProfMenu.ResumeLayout(false);
+            panelbtnProfDestaques.ResumeLayout(false);
+            panelbtnProfAula.ResumeLayout(false);
+            panelbtnProfMPerfil.ResumeLayout(false);
+            panelbtnSairProf.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel sidebarProf;
-        private Panel panelSuperiorProfessor;
         private Label lblAluno;
         private FontAwesome.Sharp.IconButton btnMinimizarProf;
         private FontAwesome.Sharp.IconButton btnMaximizarRestaurarProf;
         private FontAwesome.Sharp.IconButton btnFecharProf;
         private Panel panel2;
-        private FontAwesome.Sharp.IconButton btnProfSair;
         private FontAwesome.Sharp.IconButton btnProfDestaques;
         private FontAwesome.Sharp.IconButton btnProfMPerfil;
         private FontAwesome.Sharp.IconButton btnProfRelatorio;
         private FontAwesome.Sharp.IconButton btnProfAula;
         private FontAwesome.Sharp.IconButton btnAProfMenu;
-        private Panel panelProf;
         private System.Windows.Forms.Timer sidebarTimerProf;
+        private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
+        private Panel panelSuperiorProf;
+        private FlowLayoutPanel sidebarProf;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Panel panelbtnAProfMenu;
+        private Panel panelbtnProfDestaques;
+        private Panel panelbtnProfAula;
+        private Panel panelbtnProfMPerfil;
+        private FontAwesome.Sharp.IconButton btnProfMeuPerfil;
+        private System.Windows.Forms.Timer timerSubAula;
+        private Panel panelbtnSairProf;
+        private FontAwesome.Sharp.IconButton btnSairProf;
+        private Panel panelProf;
     }
 }

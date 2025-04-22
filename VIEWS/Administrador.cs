@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ECOInsight.UserControls;
 
@@ -13,18 +7,39 @@ namespace ECOInsight
 {
     public partial class AdmTela : Form
     {
-        private bool sidebarExpand;
+        #region Campos Privados
+
+        private bool menuExpand;
+        private bool sidebarExpand = false;
+        private Size tamanhoOriginal;
+        private bool maximizado = false;
+
+        #endregion
+
+        #region Construtor
 
         public AdmTela()
         {
             InitializeComponent();
+            InitializeSidebar();
+            LoadInitialUserControl();
+        }
+
+        private void InitializeSidebar()
+        {
+            sidebarAdm.Width = 63; // Define a largura inicial do sidebar para minimizado
+            sidebarExpand = false; // Garante que a variável esteja definida como false inicialmente
+        }
+
+        private void LoadInitialUserControl()
+        {
             UCAdm_Destaques uc = new UCAdm_Destaques();
             addUserControl(uc);
-            sidebarAdm.Width = sidebarAdm.MinimumSize.Width;
-            sidebarExpand = false;
-            // Certifique-se de que o Dock do sidebarAdm está definido como Left no Designer do Visual Studio
-            // E que o Anchor está definido como Top, Bottom, Left
         }
+
+        #endregion
+
+        #region Métodos Utilitários
 
         private void addUserControl(UserControl userControl)
         {
@@ -34,6 +49,10 @@ namespace ECOInsight
             userControl.BringToFront();
         }
 
+        #endregion
+
+        #region Eventos de Botões (Ações da Interface)
+
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -41,25 +60,22 @@ namespace ECOInsight
 
         private void btnMinimizarAdm_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
-
-        private Size tamanhoOriginal;
-        private bool maximizado = false;
 
         private void btnMaximizarRestaurarAdm_Click(object sender, EventArgs e)
         {
             if (!maximizado)
             {
-                tamanhoOriginal = this.Size;
-                this.WindowState = FormWindowState.Maximized;
+                tamanhoOriginal = Size;
+                WindowState = FormWindowState.Maximized;
                 btnMaximizarRestaurarAdm.Text = " ";
                 maximizado = true;
             }
             else
             {
-                this.WindowState = FormWindowState.Normal;
-                this.Size = tamanhoOriginal;
+                WindowState = FormWindowState.Normal;
+                Size = tamanhoOriginal;
                 btnMaximizarRestaurarAdm.Text = " ";
                 maximizado = false;
             }
@@ -67,11 +83,22 @@ namespace ECOInsight
 
         private void btnFecharAdm_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
+        }
+
+        private void btnVoltarPagEsqueciSenha_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnAdmMenu_Click(object sender, EventArgs e)
+        {
+            sidebarTimerAdm.Start();
         }
 
         private void btnAdmRelatorio_Click_1(object sender, EventArgs e)
         {
+            timerSubRelatorio.Start();
             UCAdm_Relatorio uc = new UCAdm_Relatorio();
             addUserControl(uc);
         }
@@ -84,6 +111,7 @@ namespace ECOInsight
 
         private void btnAdmUsuario_Click(object sender, EventArgs e)
         {
+            timerSubUsuarios.Start();
             UCAdm_Usuarios uc = new UCAdm_Usuarios();
             addUserControl(uc);
         }
@@ -94,12 +122,72 @@ namespace ECOInsight
             addUserControl(uc);
         }
 
+        #endregion
+
+        #region Eventos de Timer (Animações)
+
+        private void timerSubRelatorio_Tick(object sender, EventArgs e)
+        {
+            int animationStep = 3;
+            int targetHeightExpanded = 104;
+            int targetHeightCollapsed = 52;
+
+            if (!menuExpand)
+            {
+                panelSubRelatorioAdm.Height += animationStep;
+                if (panelSubRelatorioAdm.Height >= targetHeightExpanded)
+                {
+                    timerSubRelatorio.Stop();
+                    menuExpand = true;
+                }
+            }
+            else
+            {
+                panelSubRelatorioAdm.Height -= animationStep;
+                if (panelSubRelatorioAdm.Height <= targetHeightCollapsed)
+                {
+                    timerSubRelatorio.Stop();
+                    menuExpand = false;
+                }
+            }
+        }
+
+        private void timerSubUsuarios_Tick(object sender, EventArgs e)
+        {
+            int animationStep = 3;
+            int targetHeightExpanded = 104;
+            int targetHeightCollapsed = 52;
+
+            if (!menuExpand)
+            {
+                panelSubUsuarios.Height += animationStep;
+                if (panelSubUsuarios.Height >= targetHeightExpanded)
+                {
+                    timerSubUsuarios.Stop();
+                    menuExpand = true;
+                }
+            }
+            else
+            {
+                panelSubUsuarios.Height -= animationStep;
+                if (panelSubUsuarios.Height <= targetHeightCollapsed)
+                {
+                    timerSubUsuarios.Stop();
+                    menuExpand = false;
+                }
+            }
+        }
+
         private void sidebarTimerAdm_Tick(object sender, EventArgs e)
         {
+            int animationStep = 10;
+            int targetWidthExpanded = 180;
+            int targetWidthCollapsed = 63;
+
             if (sidebarExpand)
             {
-                sidebarAdm.Width -= 10;
-                if (sidebarAdm.Width == sidebarAdm.MinimumSize.Width)
+                sidebarAdm.Width -= animationStep;
+                if (sidebarAdm.Width <= targetWidthCollapsed)
                 {
                     sidebarExpand = false;
                     sidebarTimerAdm.Stop();
@@ -107,8 +195,8 @@ namespace ECOInsight
             }
             else
             {
-                sidebarAdm.Width += 10;
-                if (sidebarAdm.Width == sidebarAdm.MaximumSize.Width)
+                sidebarAdm.Width += animationStep;
+                if (sidebarAdm.Width >= targetWidthExpanded)
                 {
                     sidebarExpand = true;
                     sidebarTimerAdm.Stop();
@@ -116,15 +204,13 @@ namespace ECOInsight
             }
         }
 
-        private void btnAdmMenu_Click(object sender, EventArgs e)
+        #endregion
+
+        private void btnAdmGerarRelatorio_Click(object sender, EventArgs e)
         {
-            sidebarTimerAdm.Start();
+            UCAdmGerarRelatorio uc = new UCAdmGerarRelatorio();
+            addUserControl(uc);
         }
 
-        private void sidebarAdm_Resize(object sender, EventArgs e)
-        {
-            sidebarAdm.Height = this.ClientSize.Height;
-            this.PerformLayout();
-        }
     }
 }

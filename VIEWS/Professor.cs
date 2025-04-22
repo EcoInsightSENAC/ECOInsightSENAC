@@ -13,14 +13,16 @@ namespace ECOInsight
 {
     public partial class ProfessorTela : Form
     {
-        private bool sidebarExpand;
+        bool sidebarExpand = false;
+        bool menuExpand = false;
+
         public ProfessorTela()
         {
             InitializeComponent();
             UCProf_Destaques uc = new UCProf_Destaques();
             addUserControl(uc);
-            sidebarProf.Width = sidebarProf.MinimumSize.Width;
-            sidebarExpand = false;
+            sidebarProf.Width = 63; // Define a largura inicial do sidebar para minimizado
+            sidebarExpand = false; // Garante que a variável esteja definida como false inicialmente
         }
 
         private void addUserControl(UserControl userControl)
@@ -86,28 +88,28 @@ namespace ECOInsight
             addUserControl(uc);
         }
 
-        private void btnProfMPerfil_Click(object sender, EventArgs e)
+        private void btnProfMeuPerfil_Click(object sender, EventArgs e)
         {
             UCProf_MeuPerfil uc = new UCProf_MeuPerfil();
             addUserControl(uc);
         }
+
 
         private void sidebarTimerProf_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
             {
                 sidebarProf.Width -= 10;
-                if (sidebarProf.Width == sidebarProf.MinimumSize.Width)
+                if (sidebarProf.Width <= 63)
                 {
                     sidebarExpand = false;
                     sidebarTimerProf.Stop();
                 }
-
             }
             else
             {
                 sidebarProf.Width += 10;
-                if (sidebarProf.Width == sidebarProf.MaximumSize.Width)
+                if (sidebarProf.Width >= 180)
                 {
                     sidebarExpand = true;
                     sidebarTimerProf.Stop();
@@ -119,5 +121,39 @@ namespace ECOInsight
         {
             sidebarTimerProf.Start();
         }
+
+        private void btnVoltarPagEsqueciSenha_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void timerSubAula_Tick(object sender, EventArgs e)
+        {
+            if (menuExpand)
+            {
+                panelbtnProfAula.Height += 3;
+                if (panelbtnProfAula.Height >= 114)
+                {
+                    timerSubAula.Stop();
+                    menuExpand = true;
+                }
+            }
+            else
+            {
+                panelbtnProfAula.Height -= 3;
+                if (panelbtnProfAula.Height <= 52)
+                {
+                    timerSubAula.Stop();
+                    menuExpand = false;
+
+                }
+            }
+        }
+
+        private void btnSairProf_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+       
     }
 }

@@ -14,16 +14,16 @@ namespace ECOInsight
 {
     public partial class AlunoTela : Form
     {
-        private bool sidebarExpand;
+        bool menuExpand;
+        bool sidebarExpand = true;
 
         public AlunoTela()
         {
             InitializeComponent();
-
+            sidebarAluno.Width = 63; // Define a largura inicial do sidebar para minimizado
+            sidebarExpand = false; // Garante que a variável esteja definida como false inicialmente
             UCAluno_Destaques uc = new UCAluno_Destaques();
             addUserControl(uc);
-            sidebarAluno.Width = sidebarAluno.MinimumSize.Width;
-            sidebarExpand = false;
         }
 
         private void addUserControl(UserControl userControl)
@@ -77,6 +77,7 @@ namespace ECOInsight
 
         private void btnAlunoAulas_Click(object sender, EventArgs e)
         {
+            timerMenuAluno.Start();
             UCAluno_Aulas uc = new UCAluno_Aulas();
             addUserControl(uc);
         }
@@ -87,33 +88,59 @@ namespace ECOInsight
             addUserControl(uc);
         }
 
-        private void SidebarTimerAluno_Tick(object sender, EventArgs e)
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            sidebarTimerAluno.Start();
+        }
+
+        private void btnVoltarPagEsqueciSenha_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void timerMenuAluno_Tick(object sender, EventArgs e)
+        {
+            if (menuExpand == false)
+            {
+                menuAluno.Height += 10;
+                if (menuAluno.Height >= 111)
+                {
+                    timerMenuAluno.Stop();
+                    menuExpand = true;
+                }
+            }
+            else
+            {
+                menuAluno.Height -= 10;
+                if (menuAluno.Height <= 52)
+                {
+                    timerMenuAluno.Stop();
+                    menuExpand = false;
+
+                }
+            }
+        }
+
+        private void sidebarTimerAluno_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
             {
                 sidebarAluno.Width -= 10;
-                if (sidebarAluno.Width == sidebarAluno.MinimumSize.Width)
+                if (sidebarAluno.Width <= 63)
                 {
                     sidebarExpand = false;
                     sidebarTimerAluno.Stop();
                 }
-
             }
             else
             {
                 sidebarAluno.Width += 10;
-                if (sidebarAluno.Width == sidebarAluno.MaximumSize.Width)
+                if (sidebarAluno.Width >= 180)
                 {
                     sidebarExpand = true;
                     sidebarTimerAluno.Stop();
                 }
             }
         }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            sidebarTimerAluno.Start();
-        }
-
     }
 }

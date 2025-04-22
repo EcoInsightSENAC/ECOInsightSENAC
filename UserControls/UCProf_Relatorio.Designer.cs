@@ -35,7 +35,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(15, 341);
+            label1.Location = new Point(16, 20);
             label1.Name = "label1";
             label1.Size = new Size(466, 128);
             label1.TabIndex = 1;
@@ -47,7 +47,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
             Name = "UCProf_Relatorio";
-            Size = new Size(1189, 689);
+            Size = new Size(978, 646);
             ResumeLayout(false);
             PerformLayout();
         }

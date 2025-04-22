@@ -13,12 +13,12 @@ namespace ECOInsight
 {
     public partial class HomeTela : Form
     {
-        private bool sidebarExpand;
+        bool menuExpand;
         public HomeTela()
         {
             InitializeComponent();
-            sidebarHome.Width = sidebarHome.MinimumSize.Width;
-            sidebarExpand = false;
+            //sidebarHome.Width = sidebarHome.MinimumSize.Width;
+            //sidebarExpand = false;
         }
 
         private void HomeTela_Load(object sender, EventArgs e)
@@ -33,23 +33,35 @@ namespace ECOInsight
 
         private void btnGest_Click(object sender, EventArgs e)
         {
-            AdmTela gestor = new AdmTela();
-            gestor.Show(); // Abre a nova tela
-            this.Hide(); //Oculta a tela atual 
+            AdmTela admTela = new AdmTela();
+            admTela.FormClosed += (s, ev) => this.Show(); // Adiciona um manipulador para o evento FormClosed
+            admTela.Show();
+            this.Hide();
         }
 
         private void btnProf_Click(object sender, EventArgs e)
         {
-            ProfessorTela professor = new ProfessorTela();
-            professor.Show(); // Abre a nova tela
-            this.Hide(); //Oculta a tela atual 
+            ProfessorTela professorTela = new ProfessorTela();
+            professorTela.FormClosed += (s, ev) => this.Show(); // Adiciona um manipulador para o evento FormClosed
+            professorTela.Show();
+            this.Hide();
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            AlunoTela aluno = new AlunoTela();
-            aluno.Show(); // Abre a nova tela
-            this.Hide(); //Oculta a tela atual 
+            AlunoTela alunoTela = new AlunoTela();
+            alunoTela.FormClosed += (s, ev) => this.Show(); // Adiciona um manipulador para o evento FormClosed
+            alunoTela.Show();
+            this.Hide();
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            timerSub.Start();
+            FuncionarioTela funcionarioTela = new FuncionarioTela();
+            funcionarioTela.FormClosed += (s, ev) => this.Show(); // Adiciona um manipulador para o evento FormClosed
+            funcionarioTela.Show();
+            this.Hide();
         }
 
         private void btnDestaques_Click(object sender, EventArgs e)
@@ -88,45 +100,59 @@ namespace ECOInsight
             this.Close();
         }
 
-        private void iconButton1_Click_1(object sender, EventArgs e)
+        private void timerSub_Tick(object sender, EventArgs e)
         {
-            FuncionarioTela aluno = new FuncionarioTela();
-            aluno.Show(); // Abre a nova tela
-            this.Hide(); //Oculta a tela atual
+            if (menuExpand == false)
+            {
+                panelSub.Height += 10;
+                if (panelSub.Height >= 111)
+                {
+                    timerSub.Stop();
+                    menuExpand = true;
+                }
+            }
+            else
+            {
+                panelSub.Height -= 10;
+                if (panelSub.Height <= 52)
+                {
+                    timerSub.Stop();
+                    menuExpand = false;
+
+                }
+            }
         }
-
-        private void panelEsquerdo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        bool sidebarExpand = true;
+        private void sidebarhome2_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
             {
                 sidebarHome.Width -= 10;
-                if (sidebarHome.Width == sidebarHome.MinimumSize.Width)
+                if (sidebarHome.Width <= 70)
                 {
                     sidebarExpand = false;
-                    timer1.Stop();
+                    sidebarhome2.Stop();
                 }
-
             }
             else
             {
                 sidebarHome.Width += 10;
-                if (sidebarHome.Width == sidebarHome.MaximumSize.Width)
+                if (sidebarHome.Width >= 180)
                 {
                     sidebarExpand = true;
-                    timer1.Stop();
+                    sidebarhome2.Stop();
                 }
             }
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            sidebarhome2.Start();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
-

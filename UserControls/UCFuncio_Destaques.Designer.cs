@@ -47,7 +47,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
             Name = "UCFuncio_Destaques";
-            Size = new Size(1189, 689);
+            Size = new Size(978, 646);
             ResumeLayout(false);
             PerformLayout();
         }

@@ -4,6 +4,9 @@
     <Compile Update="UserControls\UCAdm_Destaques.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControls\UCAdm_GerarRelatorio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControls\UCAdm_MeuPerfil.cs">
       <SubType>UserControl</SubType>
     </Compile>
