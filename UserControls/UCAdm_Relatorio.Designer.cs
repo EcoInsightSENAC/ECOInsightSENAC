@@ -54,13 +54,18 @@
             iconButton2 = new FontAwesome.Sharp.IconButton();
             label4 = new Label();
             comboBox1 = new ComboBox();
+            panel1 = new Panel();
+            iconButton8 = new FontAwesome.Sharp.IconButton();
+            lblAlunoAulas = new Label();
+            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
             panelTiposdemateriais.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // txtLixoOrganico
             // 
             txtLixoOrganico.Anchor = AnchorStyles.Top;
-            txtLixoOrganico.Location = new Point(205, 226);
+            txtLixoOrganico.Location = new Point(205, 246);
             txtLixoOrganico.Name = "txtLixoOrganico";
             txtLixoOrganico.Size = new Size(111, 23);
             txtLixoOrganico.TabIndex = 28;
@@ -70,7 +75,7 @@
             lblTiposdemateriais.Anchor = AnchorStyles.Top;
             lblTiposdemateriais.AutoSize = true;
             lblTiposdemateriais.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTiposdemateriais.Location = new Point(92, 47);
+            lblTiposdemateriais.Location = new Point(92, 67);
             lblTiposdemateriais.Name = "lblTiposdemateriais";
             lblTiposdemateriais.Size = new Size(144, 21);
             lblTiposdemateriais.TabIndex = 26;
@@ -81,7 +86,7 @@
             lbllixoOrganico.Anchor = AnchorStyles.Top;
             lbllixoOrganico.AutoSize = true;
             lbllixoOrganico.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbllixoOrganico.Location = new Point(84, 227);
+            lbllixoOrganico.Location = new Point(84, 247);
             lbllixoOrganico.Name = "lbllixoOrganico";
             lbllixoOrganico.Size = new Size(115, 21);
             lbllixoOrganico.TabIndex = 25;
@@ -92,7 +97,7 @@
             lbllixoReciclavel.Anchor = AnchorStyles.Top;
             lbllixoReciclavel.AutoSize = true;
             lbllixoReciclavel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbllixoReciclavel.Location = new Point(370, 227);
+            lbllixoReciclavel.Location = new Point(370, 247);
             lbllixoReciclavel.Name = "lbllixoReciclavel";
             lbllixoReciclavel.Size = new Size(120, 21);
             lbllixoReciclavel.TabIndex = 29;
@@ -103,7 +108,7 @@
             lblMinhocario.Anchor = AnchorStyles.Top;
             lblMinhocario.AutoSize = true;
             lblMinhocario.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMinhocario.Location = new Point(658, 227);
+            lblMinhocario.Location = new Point(658, 247);
             lblMinhocario.Name = "lblMinhocario";
             lblMinhocario.Size = new Size(97, 21);
             lblMinhocario.TabIndex = 30;
@@ -114,7 +119,7 @@
             lblLixoDestino.Anchor = AnchorStyles.Top;
             lblLixoDestino.AutoSize = true;
             lblLixoDestino.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLixoDestino.Location = new Point(90, 334);
+            lblLixoDestino.Location = new Point(90, 354);
             lblLixoDestino.Name = "lblLixoDestino";
             lblLixoDestino.Size = new Size(70, 21);
             lblLixoDestino.TabIndex = 37;
@@ -125,7 +130,7 @@
             LblLixoOutrasInfo.Anchor = AnchorStyles.Top;
             LblLixoOutrasInfo.AutoSize = true;
             LblLixoOutrasInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LblLixoOutrasInfo.Location = new Point(519, 334);
+            LblLixoOutrasInfo.Location = new Point(519, 354);
             LblLixoOutrasInfo.Name = "LblLixoOutrasInfo";
             LblLixoOutrasInfo.Size = new Size(158, 21);
             LblLixoOutrasInfo.TabIndex = 38;
@@ -136,7 +141,7 @@
             dateTimePicker1.Anchor = AnchorStyles.Top;
             dateTimePicker1.Font = new Font("Segoe UI", 11F);
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(761, 484);
+            dateTimePicker1.Location = new Point(761, 504);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(124, 27);
             dateTimePicker1.TabIndex = 39;
@@ -144,7 +149,7 @@
             // txtMinhocario
             // 
             txtMinhocario.Anchor = AnchorStyles.Top;
-            txtMinhocario.Location = new Point(761, 226);
+            txtMinhocario.Location = new Point(761, 246);
             txtMinhocario.Name = "txtMinhocario";
             txtMinhocario.Size = new Size(111, 23);
             txtMinhocario.TabIndex = 41;
@@ -152,7 +157,7 @@
             // txtLixoReciclavel
             // 
             txtLixoReciclavel.Anchor = AnchorStyles.Top;
-            txtLixoReciclavel.Location = new Point(496, 226);
+            txtLixoReciclavel.Location = new Point(496, 246);
             txtLixoReciclavel.Name = "txtLixoReciclavel";
             txtLixoReciclavel.Size = new Size(111, 23);
             txtLixoReciclavel.TabIndex = 42;
@@ -246,7 +251,7 @@
             panelTiposdemateriais.Controls.Add(checkBoxTipoEletronico);
             panelTiposdemateriais.Controls.Add(checkBoxTipoMetal);
             panelTiposdemateriais.Controls.Add(checkBoxTipoVidro);
-            panelTiposdemateriais.Location = new Point(92, 83);
+            panelTiposdemateriais.Location = new Point(92, 103);
             panelTiposdemateriais.Name = "panelTiposdemateriais";
             panelTiposdemateriais.Size = new Size(795, 55);
             panelTiposdemateriais.TabIndex = 43;
@@ -254,7 +259,7 @@
             // textLixoOutrasInfo
             // 
             textLixoOutrasInfo.Anchor = AnchorStyles.Top;
-            textLixoOutrasInfo.Location = new Point(519, 368);
+            textLixoOutrasInfo.Location = new Point(519, 388);
             textLixoOutrasInfo.Multiline = true;
             textLixoOutrasInfo.Name = "textLixoOutrasInfo";
             textLixoOutrasInfo.Size = new Size(366, 76);
@@ -265,7 +270,7 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label1.Location = new Point(313, 227);
+            label1.Location = new Point(313, 247);
             label1.Name = "label1";
             label1.Size = new Size(26, 19);
             label1.TabIndex = 45;
@@ -276,7 +281,7 @@
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label2.Location = new Point(609, 228);
+            label2.Location = new Point(609, 248);
             label2.Name = "label2";
             label2.Size = new Size(26, 19);
             label2.TabIndex = 46;
@@ -287,7 +292,7 @@
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label3.Location = new Point(868, 228);
+            label3.Location = new Point(868, 248);
             label3.Name = "label3";
             label3.Size = new Size(26, 19);
             label3.TabIndex = 47;
@@ -305,7 +310,7 @@
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton3.IconSize = 25;
             iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(773, 551);
+            iconButton3.Location = new Point(773, 571);
             iconButton3.Name = "iconButton3";
             iconButton3.Padding = new Padding(3, 0, 0, 0);
             iconButton3.Size = new Size(105, 41);
@@ -327,7 +332,7 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 25;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(792, 153);
+            iconButton1.Location = new Point(792, 173);
             iconButton1.Name = "iconButton1";
             iconButton1.Padding = new Padding(5, 0, 0, 0);
             iconButton1.Size = new Size(95, 41);
@@ -349,7 +354,7 @@
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 25;
             iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(773, 267);
+            iconButton2.Location = new Point(773, 287);
             iconButton2.Name = "iconButton2";
             iconButton2.Padding = new Padding(5, 0, 0, 0);
             iconButton2.Size = new Size(114, 41);
@@ -362,7 +367,7 @@
             label4.Anchor = AnchorStyles.Top;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(629, 488);
+            label4.Location = new Point(629, 508);
             label4.Name = "label4";
             label4.Size = new Size(126, 21);
             label4.TabIndex = 59;
@@ -373,15 +378,68 @@
             comboBox1.Anchor = AnchorStyles.Top;
             comboBox1.FlatStyle = FlatStyle.Flat;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(92, 368);
+            comboBox1.Location = new Point(92, 388);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(366, 23);
             comboBox1.TabIndex = 60;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Gainsboro;
+            panel1.Controls.Add(iconButton8);
+            panel1.Controls.Add(lblAlunoAulas);
+            panel1.Controls.Add(btnVoltarPagEsqueciSenha);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(978, 39);
+            panel1.TabIndex = 64;
+            // 
+            // iconButton8
+            // 
+            iconButton8.FlatAppearance.BorderSize = 0;
+            iconButton8.FlatStyle = FlatStyle.Flat;
+            iconButton8.IconChar = FontAwesome.Sharp.IconChar.ChevronRight;
+            iconButton8.IconColor = Color.Black;
+            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton8.IconSize = 25;
+            iconButton8.Location = new Point(48, 2);
+            iconButton8.Name = "iconButton8";
+            iconButton8.Size = new Size(39, 34);
+            iconButton8.TabIndex = 70;
+            iconButton8.UseVisualStyleBackColor = true;
+            // 
+            // lblAlunoAulas
+            // 
+            lblAlunoAulas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblAlunoAulas.AutoSize = true;
+            lblAlunoAulas.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAlunoAulas.ForeColor = Color.Black;
+            lblAlunoAulas.Location = new Point(433, 7);
+            lblAlunoAulas.Name = "lblAlunoAulas";
+            lblAlunoAulas.Size = new Size(113, 25);
+            lblAlunoAulas.TabIndex = 68;
+            lblAlunoAulas.Text = "REGISTROS";
+            // 
+            // btnVoltarPagEsqueciSenha
+            // 
+            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
+            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
+            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
+            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
+            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnVoltarPagEsqueciSenha.IconSize = 25;
+            btnVoltarPagEsqueciSenha.Location = new Point(3, 3);
+            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
+            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
+            btnVoltarPagEsqueciSenha.TabIndex = 54;
+            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
             // 
             // UCAdm_Relatorio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panel1);
             Controls.Add(comboBox1);
             Controls.Add(label4);
             Controls.Add(iconButton2);
@@ -406,6 +464,8 @@
             Size = new Size(978, 646);
             panelTiposdemateriais.ResumeLayout(false);
             panelTiposdemateriais.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -438,5 +498,9 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private Label label4;
         private ComboBox comboBox1;
+        private Panel panel1;
+        private Label lblAlunoAulas;
+        private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
+        private FontAwesome.Sharp.IconButton iconButton8;
     }
 }

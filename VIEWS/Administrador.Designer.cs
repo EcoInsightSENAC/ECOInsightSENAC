@@ -49,6 +49,7 @@
             panelSubUsuarios = new Panel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             panelSuperiorAdm = new Panel();
+            lblLogin = new Label();
             panel1 = new Panel();
             btnMaximizarRestaurarHome = new FontAwesome.Sharp.IconButton();
             btnFecharHome = new FontAwesome.Sharp.IconButton();
@@ -60,7 +61,6 @@
             sidebarAdm = new FlowLayoutPanel();
             panelbtnAdmMenu = new Panel();
             panelbtnAdmDestaques = new Panel();
-            flowLayoutPanel2 = new FlowLayoutPanel();
             timerSubRelatorio = new System.Windows.Forms.Timer(components);
             timerSubUsuarios = new System.Windows.Forms.Timer(components);
             panelAdm = new Panel();
@@ -75,7 +75,6 @@
             sidebarAdm.SuspendLayout();
             panelbtnAdmMenu.SuspendLayout();
             panelbtnAdmDestaques.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // btnAdmMenu
@@ -191,7 +190,7 @@
             btnAdmRelatorio.Padding = new Padding(7, 0, 0, 0);
             btnAdmRelatorio.Size = new Size(177, 56);
             btnAdmRelatorio.TabIndex = 20;
-            btnAdmRelatorio.Text = "         Informações";
+            btnAdmRelatorio.Text = "      Registros";
             btnAdmRelatorio.UseVisualStyleBackColor = false;
             btnAdmRelatorio.Click += btnAdmRelatorio_Click_1;
             // 
@@ -259,6 +258,7 @@
             // 
             // lblAdm
             // 
+            lblAdm.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblAdm.AutoSize = true;
             lblAdm.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAdm.ForeColor = SystemColors.ButtonHighlight;
@@ -363,6 +363,7 @@
             // panelSuperiorAdm
             // 
             panelSuperiorAdm.BackColor = Color.FromArgb(36, 65, 57);
+            panelSuperiorAdm.Controls.Add(lblLogin);
             panelSuperiorAdm.Controls.Add(panel1);
             panelSuperiorAdm.Controls.Add(panel3);
             panelSuperiorAdm.Controls.Add(lblAdm);
@@ -372,6 +373,17 @@
             panelSuperiorAdm.Name = "panelSuperiorAdm";
             panelSuperiorAdm.Size = new Size(1139, 42);
             panelSuperiorAdm.TabIndex = 34;
+            // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(12, 9);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(86, 21);
+            lblLogin.TabIndex = 59;
+            lblLogin.Text = "ECOBoard";
             // 
             // panel1
             // 
@@ -522,16 +534,6 @@
             panelbtnAdmDestaques.Size = new Size(177, 52);
             panelbtnAdmDestaques.TabIndex = 58;
             // 
-            // flowLayoutPanel2
-            // 
-            flowLayoutPanel2.BackColor = Color.Gainsboro;
-            flowLayoutPanel2.Controls.Add(btnVoltarPagEsqueciSenha);
-            flowLayoutPanel2.Dock = DockStyle.Top;
-            flowLayoutPanel2.Location = new Point(180, 42);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(959, 39);
-            flowLayoutPanel2.TabIndex = 56;
-            // 
             // timerSubRelatorio
             // 
             timerSubRelatorio.Interval = 10;
@@ -545,9 +547,9 @@
             // panelAdm
             // 
             panelAdm.Dock = DockStyle.Fill;
-            panelAdm.Location = new Point(180, 81);
+            panelAdm.Location = new Point(180, 42);
             panelAdm.Name = "panelAdm";
-            panelAdm.Size = new Size(959, 648);
+            panelAdm.Size = new Size(959, 687);
             panelAdm.TabIndex = 58;
             // 
             // AdmTela
@@ -556,9 +558,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1139, 729);
             Controls.Add(panelAdm);
-            Controls.Add(flowLayoutPanel2);
             Controls.Add(sidebarAdm);
             Controls.Add(panelSuperiorAdm);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "AdmTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
@@ -574,7 +576,6 @@
             sidebarAdm.ResumeLayout(false);
             panelbtnAdmMenu.ResumeLayout(false);
             panelbtnAdmDestaques.ResumeLayout(false);
-            flowLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -602,7 +603,6 @@
         private FontAwesome.Sharp.IconButton btnMaximizarRestaurarAluno;
         private FontAwesome.Sharp.IconButton btnFecharAluno;
         private FlowLayoutPanel sidebarAdm;
-        private FlowLayoutPanel flowLayoutPanel2;
         private Panel panelbtnAdmMenu;
         private Panel panelbtnAdmDestaques;
         private Panel panelSubRelatorioAdm;
@@ -614,5 +614,6 @@
         private System.Windows.Forms.Timer timerSubRelatorio;
         private System.Windows.Forms.Timer timerSubUsuarios;
         private Panel panelAdm;
+        private Label lblLogin;
     }
 }

@@ -51,23 +51,28 @@
             lblSenhaCad = new Label();
             lblEmailCad = new Label();
             panel1 = new Panel();
+            iconButton7 = new FontAwesome.Sharp.IconButton();
             panel5 = new Panel();
             comboBox2 = new ComboBox();
             label2 = new Label();
             comboBox1 = new ComboBox();
             iconButton6 = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
-            iconButton7 = new FontAwesome.Sharp.IconButton();
+            panel6 = new Panel();
+            iconButton8 = new FontAwesome.Sharp.IconButton();
+            lblAdmUsuarios = new Label();
+            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
+            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // txtNomeCad
             // 
             txtNomeCad.Anchor = AnchorStyles.Top;
-            txtNomeCad.Location = new Point(140, 89);
+            txtNomeCad.Location = new Point(140, 117);
             txtNomeCad.Name = "txtNomeCad";
             txtNomeCad.Size = new Size(555, 23);
             txtNomeCad.TabIndex = 23;
@@ -98,7 +103,7 @@
             panel3.Anchor = AnchorStyles.Top;
             panel3.Controls.Add(comboBox3);
             panel3.Controls.Add(label3);
-            panel3.Location = new Point(491, 295);
+            panel3.Location = new Point(491, 323);
             panel3.Name = "panel3";
             panel3.Size = new Size(365, 86);
             panel3.TabIndex = 29;
@@ -129,7 +134,7 @@
             panel2.Anchor = AnchorStyles.Top;
             panel2.Controls.Add(cbSelecao);
             panel2.Controls.Add(lblPerfilCad);
-            panel2.Location = new Point(123, 295);
+            panel2.Location = new Point(123, 323);
             panel2.Name = "panel2";
             panel2.Size = new Size(369, 86);
             panel2.TabIndex = 30;
@@ -146,7 +151,7 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 25;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(140, 414);
+            iconButton1.Location = new Point(140, 442);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(128, 41);
             iconButton1.TabIndex = 34;
@@ -166,7 +171,7 @@
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 25;
             iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(287, 414);
+            iconButton2.Location = new Point(287, 442);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(137, 41);
             iconButton2.TabIndex = 35;
@@ -186,7 +191,7 @@
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton3.IconSize = 25;
             iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(736, 414);
+            iconButton3.Location = new Point(736, 442);
             iconButton3.Name = "iconButton3";
             iconButton3.Padding = new Padding(3, 0, 0, 0);
             iconButton3.Size = new Size(105, 41);
@@ -207,7 +212,7 @@
             iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton4.IconSize = 25;
             iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(608, 414);
+            iconButton4.Location = new Point(608, 442);
             iconButton4.Name = "iconButton4";
             iconButton4.Padding = new Padding(3, 0, 0, 0);
             iconButton4.Size = new Size(105, 41);
@@ -219,7 +224,7 @@
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel4.Location = new Point(123, 387);
+            panel4.Location = new Point(123, 415);
             panel4.Name = "panel4";
             panel4.Size = new Size(733, 90);
             panel4.TabIndex = 30;
@@ -236,7 +241,7 @@
             iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton5.IconSize = 25;
             iconButton5.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton5.Location = new Point(449, 414);
+            iconButton5.Location = new Point(449, 442);
             iconButton5.Name = "iconButton5";
             iconButton5.Padding = new Padding(5, 0, 0, 0);
             iconButton5.Size = new Size(137, 41);
@@ -345,10 +350,32 @@
             panel1.Controls.Add(lblUsuarioCad);
             panel1.Controls.Add(txtConfirSenhaCad);
             panel1.Controls.Add(lblConfirSenhaCad);
-            panel1.Location = new Point(123, 23);
+            panel1.Location = new Point(123, 51);
             panel1.Name = "panel1";
             panel1.Size = new Size(733, 269);
             panel1.TabIndex = 27;
+            // 
+            // iconButton7
+            // 
+            iconButton7.Anchor = AnchorStyles.Top;
+            iconButton7.BackColor = Color.FromArgb(35, 68, 57);
+            iconButton7.FlatAppearance.BorderColor = Color.FromArgb(35, 68, 57);
+            iconButton7.FlatAppearance.BorderSize = 0;
+            iconButton7.FlatStyle = FlatStyle.Flat;
+            iconButton7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton7.ForeColor = Color.White;
+            iconButton7.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButton7.IconColor = Color.White;
+            iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton7.IconSize = 25;
+            iconButton7.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton7.Location = new Point(595, 66);
+            iconButton7.Name = "iconButton7";
+            iconButton7.Padding = new Padding(5, 0, 0, 0);
+            iconButton7.Size = new Size(123, 29);
+            iconButton7.TabIndex = 69;
+            iconButton7.Text = "Buscar Usuário";
+            iconButton7.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -359,7 +386,7 @@
             panel5.Controls.Add(comboBox1);
             panel5.Controls.Add(iconButton6);
             panel5.Controls.Add(label1);
-            panel5.Location = new Point(123, 498);
+            panel5.Location = new Point(123, 526);
             panel5.Name = "panel5";
             panel5.Size = new Size(733, 91);
             panel5.TabIndex = 40;
@@ -427,32 +454,63 @@
             label1.TabIndex = 21;
             label1.Text = "Lista de usuários do tipo ";
             // 
-            // iconButton7
+            // panel6
             // 
-            iconButton7.Anchor = AnchorStyles.Top;
-            iconButton7.BackColor = Color.FromArgb(35, 68, 57);
-            iconButton7.FlatAppearance.BorderColor = Color.FromArgb(35, 68, 57);
-            iconButton7.FlatAppearance.BorderSize = 0;
-            iconButton7.FlatStyle = FlatStyle.Flat;
-            iconButton7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton7.ForeColor = Color.White;
-            iconButton7.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton7.IconColor = Color.White;
-            iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton7.IconSize = 25;
-            iconButton7.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton7.Location = new Point(595, 66);
-            iconButton7.Name = "iconButton7";
-            iconButton7.Padding = new Padding(5, 0, 0, 0);
-            iconButton7.Size = new Size(123, 29);
-            iconButton7.TabIndex = 69;
-            iconButton7.Text = "Buscar Usuário";
-            iconButton7.UseVisualStyleBackColor = false;
+            panel6.BackColor = Color.Gainsboro;
+            panel6.Controls.Add(iconButton8);
+            panel6.Controls.Add(lblAdmUsuarios);
+            panel6.Controls.Add(btnVoltarPagEsqueciSenha);
+            panel6.Dock = DockStyle.Top;
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(978, 39);
+            panel6.TabIndex = 64;
+            // 
+            // iconButton8
+            // 
+            iconButton8.FlatAppearance.BorderSize = 0;
+            iconButton8.FlatStyle = FlatStyle.Flat;
+            iconButton8.IconChar = FontAwesome.Sharp.IconChar.ChevronRight;
+            iconButton8.IconColor = Color.Black;
+            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton8.IconSize = 25;
+            iconButton8.Location = new Point(48, 2);
+            iconButton8.Name = "iconButton8";
+            iconButton8.Size = new Size(39, 34);
+            iconButton8.TabIndex = 69;
+            iconButton8.UseVisualStyleBackColor = true;
+            // 
+            // lblAdmUsuarios
+            // 
+            lblAdmUsuarios.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblAdmUsuarios.AutoSize = true;
+            lblAdmUsuarios.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdmUsuarios.ForeColor = Color.Black;
+            lblAdmUsuarios.Location = new Point(436, 7);
+            lblAdmUsuarios.Name = "lblAdmUsuarios";
+            lblAdmUsuarios.Size = new Size(107, 25);
+            lblAdmUsuarios.TabIndex = 68;
+            lblAdmUsuarios.Text = "USUÁRIOS";
+            // 
+            // btnVoltarPagEsqueciSenha
+            // 
+            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
+            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
+            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
+            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
+            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnVoltarPagEsqueciSenha.IconSize = 25;
+            btnVoltarPagEsqueciSenha.Location = new Point(3, 3);
+            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
+            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
+            btnVoltarPagEsqueciSenha.TabIndex = 54;
+            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
             // 
             // UCAdm_Usuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(txtNomeCad);
             Controls.Add(iconButton3);
@@ -474,6 +532,8 @@
             panel1.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -509,5 +569,9 @@
         private ComboBox comboBox2;
         private Label label2;
         private FontAwesome.Sharp.IconButton iconButton7;
+        private Panel panel6;
+        private Label lblAdmUsuarios;
+        private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
+        private FontAwesome.Sharp.IconButton iconButton8;
     }
 }

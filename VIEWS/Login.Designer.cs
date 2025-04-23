@@ -34,7 +34,6 @@
             btnMaximizarRestaurarLogin = new FontAwesome.Sharp.IconButton();
             btnFecharLogin = new FontAwesome.Sharp.IconButton();
             panel3 = new Panel();
-            lblLogin = new Label();
             pictureBoxLogo = new PictureBox();
             lblUsuario = new Label();
             lblSenha = new Label();
@@ -46,6 +45,7 @@
             checkBoxVizualizarSenha = new CheckBox();
             panel1 = new Panel();
             panel2 = new Panel();
+            lblLogin = new Label();
             panelSuperiorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             SuspendLayout();
@@ -54,11 +54,11 @@
             // 
             panelSuperiorLogin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelSuperiorLogin.BackColor = Color.FromArgb(32, 65, 57);
+            panelSuperiorLogin.Controls.Add(lblLogin);
             panelSuperiorLogin.Controls.Add(btnMinimizarLogin);
             panelSuperiorLogin.Controls.Add(btnMaximizarRestaurarLogin);
             panelSuperiorLogin.Controls.Add(btnFecharLogin);
             panelSuperiorLogin.Controls.Add(panel3);
-            panelSuperiorLogin.Controls.Add(lblLogin);
             panelSuperiorLogin.Location = new Point(0, 0);
             panelSuperiorLogin.Name = "panelSuperiorLogin";
             panelSuperiorLogin.Size = new Size(1064, 40);
@@ -122,18 +122,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(148, 40);
             panel3.TabIndex = 20;
-            // 
-            // lblLogin
-            // 
-            lblLogin.AutoSize = true;
-            lblLogin.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = SystemColors.ButtonHighlight;
-            lblLogin.Location = new Point(12, 9);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(71, 25);
-            lblLogin.TabIndex = 0;
-            lblLogin.Text = "LOGIN";
-            lblLogin.Click += label1_Click;
             // 
             // pictureBoxLogo
             // 
@@ -252,6 +240,17 @@
             panel2.Size = new Size(558, 581);
             panel2.TabIndex = 12;
             // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(12, 9);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(86, 21);
+            lblLogin.TabIndex = 23;
+            lblLogin.Text = "ECOBoard";
+            // 
             // LoginTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -270,6 +269,7 @@
             Controls.Add(panelSuperiorLogin);
             Controls.Add(panel1);
             Controls.Add(panel2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "LoginTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
@@ -285,7 +285,6 @@
 
         private Panel panelSuperiorLogin;
         private PictureBox pictureBoxLogo;
-        private Label lblLogin;
         private Label lblUsuario;
         private Label lblSenha;
         private TextBox txtUsuario;
@@ -300,5 +299,6 @@
         private FontAwesome.Sharp.IconButton btnMaximizarRestaurarLogin;
         private FontAwesome.Sharp.IconButton btnFecharLogin;
         private Panel panel3;
+        private Label lblLogin;
     }
 }

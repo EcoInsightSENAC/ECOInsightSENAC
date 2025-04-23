@@ -211,6 +211,5 @@ namespace ECOInsight
             UCAdmGerarRelatorio uc = new UCAdmGerarRelatorio();
             addUserControl(uc);
         }
-
     }
 }

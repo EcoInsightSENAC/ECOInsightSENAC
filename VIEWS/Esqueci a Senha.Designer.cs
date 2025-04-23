@@ -45,6 +45,7 @@
             panel1 = new Panel();
             textTelef = new TextBox();
             lblTelef = new Label();
+            lblLogin = new Label();
             panelSuperiorEsqueciaSenha.SuspendLayout();
             SuspendLayout();
             // 
@@ -129,7 +130,7 @@
             // panelSuperiorEsqueciaSenha
             // 
             panelSuperiorEsqueciaSenha.BackColor = Color.FromArgb(32, 65, 57);
-            panelSuperiorEsqueciaSenha.Controls.Add(btnVoltarPagEsqueciSenha);
+            panelSuperiorEsqueciaSenha.Controls.Add(lblLogin);
             panelSuperiorEsqueciaSenha.Controls.Add(btnMinimizarEsqueciSenha);
             panelSuperiorEsqueciaSenha.Controls.Add(lblEsqueciSenha);
             panelSuperiorEsqueciaSenha.Controls.Add(btnMaximizarRestaurarEsqueciSenha);
@@ -146,10 +147,10 @@
             btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
             btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
             btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
-            btnVoltarPagEsqueciSenha.IconColor = Color.White;
+            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
             btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnVoltarPagEsqueciSenha.IconSize = 25;
-            btnVoltarPagEsqueciSenha.Location = new Point(12, 3);
+            btnVoltarPagEsqueciSenha.Location = new Point(0, 46);
             btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
             btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
             btnVoltarPagEsqueciSenha.TabIndex = 20;
@@ -175,6 +176,7 @@
             // 
             // lblEsqueciSenha
             // 
+            lblEsqueciSenha.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblEsqueciSenha.AutoSize = true;
             lblEsqueciSenha.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblEsqueciSenha.ForeColor = SystemColors.ButtonHighlight;
@@ -254,12 +256,24 @@
             lblTelef.TabIndex = 15;
             lblTelef.Text = "Telefone";
             // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(12, 9);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(86, 21);
+            lblLogin.TabIndex = 20;
+            lblLogin.Text = "ECOBoard";
+            // 
             // Esqueci_a_SenhaTela
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1064, 633);
             Controls.Add(lblTelef);
+            Controls.Add(btnVoltarPagEsqueciSenha);
             Controls.Add(textTelef);
             Controls.Add(panelSuperiorEsqueciaSenha);
             Controls.Add(btnRecuperar);
@@ -271,6 +285,7 @@
             Controls.Add(lblEmail);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "Esqueci_a_SenhaTela";
             StartPosition = FormStartPosition.CenterScreen;
@@ -299,5 +314,6 @@
         private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
         private TextBox textTelef;
         private Label lblTelef;
+        private Label lblLogin;
     }
 }

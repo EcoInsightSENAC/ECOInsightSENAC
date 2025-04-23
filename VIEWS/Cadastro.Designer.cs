@@ -52,6 +52,7 @@
             panel3 = new Panel();
             btnCancelar = new FontAwesome.Sharp.IconButton();
             btnSalvar = new FontAwesome.Sharp.IconButton();
+            lblLogin = new Label();
             panelSuperiorCad.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -61,6 +62,7 @@
             // panelSuperiorCad
             // 
             panelSuperiorCad.BackColor = Color.FromArgb(32, 65, 57);
+            panelSuperiorCad.Controls.Add(lblLogin);
             panelSuperiorCad.Controls.Add(btnMinimizarCadastro);
             panelSuperiorCad.Controls.Add(lblCad);
             panelSuperiorCad.Controls.Add(btnMaximizarRestaurarCadastro);
@@ -91,6 +93,7 @@
             // 
             // lblCad
             // 
+            lblCad.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblCad.AutoSize = true;
             lblCad.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCad.ForeColor = SystemColors.ButtonHighlight;
@@ -331,6 +334,17 @@
             btnSalvar.TextAlign = ContentAlignment.BottomCenter;
             btnSalvar.UseVisualStyleBackColor = false;
             // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(12, 9);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(86, 21);
+            lblLogin.TabIndex = 21;
+            lblLogin.Text = "ECOBoard";
+            // 
             // CadastroTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -387,5 +401,6 @@
         private FontAwesome.Sharp.IconButton btnSalvar;
         private ComboBox comboBox1;
         private ComboBox cbSelecao;
+        private Label lblLogin;
     }
 }

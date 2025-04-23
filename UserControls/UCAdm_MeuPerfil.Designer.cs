@@ -50,8 +50,13 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             iconButton1 = new FontAwesome.Sharp.IconButton();
+            panel1 = new Panel();
+            iconButton8 = new FontAwesome.Sharp.IconButton();
+            lblAlunoAulas = new Label();
+            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // button2
@@ -300,11 +305,64 @@
             iconButton1.Text = "Editar dados";
             iconButton1.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Gainsboro;
+            panel1.Controls.Add(iconButton8);
+            panel1.Controls.Add(lblAlunoAulas);
+            panel1.Controls.Add(btnVoltarPagEsqueciSenha);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(978, 39);
+            panel1.TabIndex = 64;
+            // 
+            // iconButton8
+            // 
+            iconButton8.FlatAppearance.BorderSize = 0;
+            iconButton8.FlatStyle = FlatStyle.Flat;
+            iconButton8.IconChar = FontAwesome.Sharp.IconChar.ChevronRight;
+            iconButton8.IconColor = Color.Black;
+            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton8.IconSize = 25;
+            iconButton8.Location = new Point(48, 2);
+            iconButton8.Name = "iconButton8";
+            iconButton8.Size = new Size(39, 34);
+            iconButton8.TabIndex = 72;
+            iconButton8.UseVisualStyleBackColor = true;
+            // 
+            // lblAlunoAulas
+            // 
+            lblAlunoAulas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblAlunoAulas.AutoSize = true;
+            lblAlunoAulas.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAlunoAulas.ForeColor = Color.Black;
+            lblAlunoAulas.Location = new Point(430, 7);
+            lblAlunoAulas.Name = "lblAlunoAulas";
+            lblAlunoAulas.Size = new Size(119, 25);
+            lblAlunoAulas.TabIndex = 68;
+            lblAlunoAulas.Text = "MEU PERFIL";
+            // 
+            // btnVoltarPagEsqueciSenha
+            // 
+            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
+            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
+            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
+            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
+            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnVoltarPagEsqueciSenha.IconSize = 25;
+            btnVoltarPagEsqueciSenha.Location = new Point(3, 3);
+            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
+            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
+            btnVoltarPagEsqueciSenha.TabIndex = 71;
+            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
+            // 
             // UCAdm_MeuPerfil
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            Controls.Add(panel1);
             Controls.Add(iconButton1);
             Controls.Add(button2);
             Controls.Add(textBox4);
@@ -323,6 +381,8 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -351,5 +411,9 @@
         private Label label9;
         private TextBox textBox9;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private Panel panel1;
+        private Label lblAlunoAulas;
+        private FontAwesome.Sharp.IconButton iconButton8;
+        private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
     }
 }

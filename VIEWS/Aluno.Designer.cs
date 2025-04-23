@@ -39,7 +39,6 @@
             btnMaximizarRestaurarAluno = new FontAwesome.Sharp.IconButton();
             btnFecharAluno = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
-            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
             panelSuperiorAluno = new Panel();
             panel1 = new Panel();
             btnMaximizarRestaurarHome = new FontAwesome.Sharp.IconButton();
@@ -54,8 +53,9 @@
             timerMenuAluno = new System.Windows.Forms.Timer(components);
             sidebarTimerAluno = new System.Windows.Forms.Timer(components);
             sidebarAluno = new FlowLayoutPanel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             panelAluno = new Panel();
+            label1 = new Label();
+            lblLogin = new Label();
             panel2.SuspendLayout();
             panelSuperiorAluno.SuspendLayout();
             panel1.SuspendLayout();
@@ -65,7 +65,7 @@
             panel7.SuspendLayout();
             panel8.SuspendLayout();
             sidebarAluno.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
+            panelAluno.SuspendLayout();
             SuspendLayout();
             // 
             // btnSair
@@ -184,6 +184,7 @@
             // 
             // lblAluno
             // 
+            lblAluno.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblAluno.AutoSize = true;
             lblAluno.FlatStyle = FlatStyle.Flat;
             lblAluno.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -239,24 +240,10 @@
             panel2.Size = new Size(148, 40);
             panel2.TabIndex = 14;
             // 
-            // btnVoltarPagEsqueciSenha
-            // 
-            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
-            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
-            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
-            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
-            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnVoltarPagEsqueciSenha.IconSize = 25;
-            btnVoltarPagEsqueciSenha.Location = new Point(3, 3);
-            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
-            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
-            btnVoltarPagEsqueciSenha.TabIndex = 21;
-            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
-            btnVoltarPagEsqueciSenha.Click += btnVoltarPagEsqueciSenha_Click;
-            // 
             // panelSuperiorAluno
             // 
             panelSuperiorAluno.BackColor = Color.FromArgb(36, 65, 57);
+            panelSuperiorAluno.Controls.Add(lblLogin);
             panelSuperiorAluno.Controls.Add(panel1);
             panelSuperiorAluno.Controls.Add(panel2);
             panelSuperiorAluno.Controls.Add(lblAluno);
@@ -408,23 +395,35 @@
             sidebarAluno.Size = new Size(180, 687);
             sidebarAluno.TabIndex = 39;
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BackColor = Color.Gainsboro;
-            flowLayoutPanel1.Controls.Add(btnVoltarPagEsqueciSenha);
-            flowLayoutPanel1.Dock = DockStyle.Top;
-            flowLayoutPanel1.Location = new Point(180, 42);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(959, 39);
-            flowLayoutPanel1.TabIndex = 55;
-            // 
             // panelAluno
             // 
+            panelAluno.Controls.Add(label1);
             panelAluno.Dock = DockStyle.Fill;
-            panelAluno.Location = new Point(180, 81);
+            panelAluno.Location = new Point(180, 42);
             panelAluno.Name = "panelAluno";
-            panelAluno.Size = new Size(959, 648);
+            panelAluno.Size = new Size(959, 687);
             panelAluno.TabIndex = 56;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(127, 196);
+            label1.Name = "label1";
+            label1.Size = new Size(705, 256);
+            label1.TabIndex = 0;
+            label1.Text = "TELA EM \r\nCONSTRUÇÃO";
+            // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(12, 9);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(86, 21);
+            lblLogin.TabIndex = 57;
+            lblLogin.Text = "ECOBoard";
             // 
             // AlunoTela
             // 
@@ -432,9 +431,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1139, 729);
             Controls.Add(panelAluno);
-            Controls.Add(flowLayoutPanel1);
             Controls.Add(sidebarAluno);
             Controls.Add(panelSuperiorAluno);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "AlunoTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
@@ -448,7 +447,8 @@
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
             sidebarAluno.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
+            panelAluno.ResumeLayout(false);
+            panelAluno.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -463,7 +463,6 @@
         private FontAwesome.Sharp.IconButton btnAlunoMPerfil;
         private FontAwesome.Sharp.IconButton btnAlunoAulas;
         private FontAwesome.Sharp.IconButton btnAlunoMenu;
-        private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
         private Panel panelSuperiorAluno;
         private Panel panel1;
         private FontAwesome.Sharp.IconButton btnMaximizarRestaurarHome;
@@ -478,7 +477,8 @@
         private System.Windows.Forms.Timer timerMenuAluno;
         private System.Windows.Forms.Timer sidebarTimerAluno;
         private FlowLayoutPanel sidebarAluno;
-        private FlowLayoutPanel flowLayoutPanel1;
         private Panel panelAluno;
+        private Label label1;
+        private Label lblLogin;
     }
 }

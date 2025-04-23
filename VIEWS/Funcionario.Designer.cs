@@ -40,15 +40,14 @@
             btnFuncionarioMenu = new FontAwesome.Sharp.IconButton();
             btnFuncionarioMPerfil = new FontAwesome.Sharp.IconButton();
             sidebarTimerFuncionario = new System.Windows.Forms.Timer(components);
-            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
+            lblLogin = new Label();
             sidebarFuncionario = new FlowLayoutPanel();
             panel3 = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
             panel7 = new Panel();
-            flowLayoutPanel2 = new FlowLayoutPanel();
             panelFuncionario = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -58,7 +57,6 @@
             panel5.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // btnMinimizarFuncionario
@@ -188,7 +186,7 @@
             btnFuncionarioAula.Padding = new Padding(7, 0, 0, 0);
             btnFuncionarioAula.Size = new Size(177, 52);
             btnFuncionarioAula.TabIndex = 20;
-            btnFuncionarioAula.Text = "       Relatório";
+            btnFuncionarioAula.Text = "       Registros";
             btnFuncionarioAula.UseVisualStyleBackColor = true;
             btnFuncionarioAula.Click += btnFuncionarioAula_Click;
             // 
@@ -236,24 +234,10 @@
             sidebarTimerFuncionario.Interval = 10;
             sidebarTimerFuncionario.Tick += sidebarTimerFuncionario_Tick;
             // 
-            // btnVoltarPagEsqueciSenha
-            // 
-            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
-            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
-            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
-            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
-            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnVoltarPagEsqueciSenha.IconSize = 25;
-            btnVoltarPagEsqueciSenha.Location = new Point(3, 3);
-            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
-            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
-            btnVoltarPagEsqueciSenha.TabIndex = 21;
-            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
-            btnVoltarPagEsqueciSenha.Click += btnVoltarPagEsqueciSenha_Click;
-            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(36, 65, 57);
+            panel2.Controls.Add(lblLogin);
             panel2.Controls.Add(lblFuncionario);
             panel2.Controls.Add(panel1);
             panel2.Dock = DockStyle.Top;
@@ -261,6 +245,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1139, 42);
             panel2.TabIndex = 22;
+            // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(12, 9);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(86, 21);
+            lblLogin.TabIndex = 58;
+            lblLogin.Text = "ECOBoard";
             // 
             // sidebarFuncionario
             // 
@@ -317,22 +312,12 @@
             panel7.Size = new Size(177, 52);
             panel7.TabIndex = 26;
             // 
-            // flowLayoutPanel2
-            // 
-            flowLayoutPanel2.BackColor = Color.Gainsboro;
-            flowLayoutPanel2.Controls.Add(btnVoltarPagEsqueciSenha);
-            flowLayoutPanel2.Dock = DockStyle.Top;
-            flowLayoutPanel2.Location = new Point(180, 42);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(959, 39);
-            flowLayoutPanel2.TabIndex = 24;
-            // 
             // panelFuncionario
             // 
             panelFuncionario.Dock = DockStyle.Fill;
-            panelFuncionario.Location = new Point(180, 81);
+            panelFuncionario.Location = new Point(180, 42);
             panelFuncionario.Name = "panelFuncionario";
-            panelFuncionario.Size = new Size(959, 648);
+            panelFuncionario.Size = new Size(959, 687);
             panelFuncionario.TabIndex = 57;
             // 
             // FuncionarioTela
@@ -341,9 +326,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1139, 729);
             Controls.Add(panelFuncionario);
-            Controls.Add(flowLayoutPanel2);
             Controls.Add(sidebarFuncionario);
             Controls.Add(panel2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FuncionarioTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
@@ -356,7 +341,6 @@
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel7.ResumeLayout(false);
-            flowLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -372,15 +356,14 @@
         private FontAwesome.Sharp.IconButton btnFuncionarioAula;
         private FontAwesome.Sharp.IconButton btnFuncionarioSair;
         private System.Windows.Forms.Timer sidebarTimerFuncionario;
-        private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
         private Panel panel2;
         private FlowLayoutPanel sidebarFuncionario;
-        private FlowLayoutPanel flowLayoutPanel2;
         private Panel panel3;
         private Panel panel4;
         private Panel panel5;
         private Panel panel6;
         private Panel panel7;
         private Panel panelFuncionario;
+        private Label lblLogin;
     }
 }

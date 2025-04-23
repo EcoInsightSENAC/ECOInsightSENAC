@@ -52,6 +52,7 @@
             btnSair = new FontAwesome.Sharp.IconButton();
             timerSub = new System.Windows.Forms.Timer(components);
             sidebarhome2 = new System.Windows.Forms.Timer(components);
+            lblLogin = new Label();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             panelSub.SuspendLayout();
@@ -324,6 +325,7 @@
             // panelSuperiorHome
             // 
             panelSuperiorHome.BackColor = Color.FromArgb(36, 65, 57);
+            panelSuperiorHome.Controls.Add(lblLogin);
             panelSuperiorHome.Controls.Add(panel2);
             panelSuperiorHome.Controls.Add(lblHome);
             panelSuperiorHome.Dock = DockStyle.Top;
@@ -376,6 +378,17 @@
             sidebarhome2.Interval = 10;
             sidebarhome2.Tick += sidebarhome2_Tick;
             // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(12, 9);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(86, 21);
+            lblLogin.TabIndex = 18;
+            lblLogin.Text = "ECOBoard";
+            // 
             // HomeTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -384,6 +397,7 @@
             Controls.Add(sidebarHome);
             Controls.Add(panelSuperiorHome);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "HomeTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
@@ -426,5 +440,6 @@
         private FontAwesome.Sharp.IconButton btnSair;
         private System.Windows.Forms.Timer timerSub;
         private System.Windows.Forms.Timer sidebarhome2;
+        private Label lblLogin;
     }
 }
