@@ -62,6 +62,8 @@
             iconButton8 = new FontAwesome.Sharp.IconButton();
             lblAdmUsuarios = new Label();
             btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
+            label4 = new Label();
+            textBox1 = new TextBox();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -74,7 +76,7 @@
             txtNomeCad.Anchor = AnchorStyles.Top;
             txtNomeCad.Location = new Point(140, 117);
             txtNomeCad.Name = "txtNomeCad";
-            txtNomeCad.Size = new Size(555, 23);
+            txtNomeCad.Size = new Size(312, 23);
             txtNomeCad.TabIndex = 23;
             // 
             // lblPerfilCad
@@ -340,6 +342,8 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(iconButton7);
             panel1.Controls.Add(lblEmailCad);
             panel1.Controls.Add(lblSenhaCad);
@@ -369,7 +373,7 @@
             iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton7.IconSize = 25;
             iconButton7.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton7.Location = new Point(595, 66);
+            iconButton7.Location = new Point(595, 63);
             iconButton7.Name = "iconButton7";
             iconButton7.Padding = new Padding(5, 0, 0, 0);
             iconButton7.Size = new Size(123, 29);
@@ -506,6 +510,25 @@
             btnVoltarPagEsqueciSenha.TabIndex = 54;
             btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(406, 32);
+            label4.Name = "label4";
+            label4.Size = new Size(26, 21);
+            label4.TabIndex = 70;
+            label4.Text = "ID";
+            // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.Top;
+            textBox1.Location = new Point(406, 66);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 23);
+            textBox1.TabIndex = 71;
+            // 
             // UCAdm_Usuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -573,5 +596,7 @@
         private Label lblAdmUsuarios;
         private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
         private FontAwesome.Sharp.IconButton iconButton8;
+        private TextBox textBox1;
+        private Label label4;
     }
 }

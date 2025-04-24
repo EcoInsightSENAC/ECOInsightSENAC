@@ -43,11 +43,9 @@
             sidebarTimerAdm = new System.Windows.Forms.Timer(components);
             btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
             panelSubRelatorioAdm = new Panel();
-            btnAdmGerarRelatorio = new FontAwesome.Sharp.IconButton();
             panelbtnAdmSair = new Panel();
             panelbtnAdmMeuPer = new Panel();
             panelSubUsuarios = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
             panelSuperiorAdm = new Panel();
             lblLogin = new Label();
             panel1 = new Panel();
@@ -165,7 +163,7 @@
             btnAdmUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAdmUsuario.IconSize = 40;
             btnAdmUsuario.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAdmUsuario.Location = new Point(0, -3);
+            btnAdmUsuario.Location = new Point(0, 0);
             btnAdmUsuario.Name = "btnAdmUsuario";
             btnAdmUsuario.Padding = new Padding(7, 0, 0, 0);
             btnAdmUsuario.Size = new Size(177, 52);
@@ -290,37 +288,16 @@
             // 
             // panelSubRelatorioAdm
             // 
-            panelSubRelatorioAdm.Controls.Add(btnAdmGerarRelatorio);
             panelSubRelatorioAdm.Controls.Add(btnAdmRelatorio);
             panelSubRelatorioAdm.Location = new Point(3, 119);
             panelSubRelatorioAdm.Name = "panelSubRelatorioAdm";
-            panelSubRelatorioAdm.Size = new Size(177, 62);
+            panelSubRelatorioAdm.Size = new Size(177, 52);
             panelSubRelatorioAdm.TabIndex = 58;
-            // 
-            // btnAdmGerarRelatorio
-            // 
-            btnAdmGerarRelatorio.FlatAppearance.BorderSize = 0;
-            btnAdmGerarRelatorio.FlatStyle = FlatStyle.Flat;
-            btnAdmGerarRelatorio.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdmGerarRelatorio.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
-            btnAdmGerarRelatorio.IconColor = Color.Black;
-            btnAdmGerarRelatorio.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAdmGerarRelatorio.IconSize = 40;
-            btnAdmGerarRelatorio.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAdmGerarRelatorio.Location = new Point(0, 57);
-            btnAdmGerarRelatorio.Name = "btnAdmGerarRelatorio";
-            btnAdmGerarRelatorio.Padding = new Padding(7, 0, 0, 0);
-            btnAdmGerarRelatorio.Size = new Size(177, 52);
-            btnAdmGerarRelatorio.TabIndex = 21;
-            btnAdmGerarRelatorio.Text = "          Gerar Relátorio";
-            btnAdmGerarRelatorio.TextAlign = ContentAlignment.MiddleRight;
-            btnAdmGerarRelatorio.UseVisualStyleBackColor = true;
-            btnAdmGerarRelatorio.Click += btnAdmGerarRelatorio_Click;
             // 
             // panelbtnAdmSair
             // 
             panelbtnAdmSair.Controls.Add(btnSair);
-            panelbtnAdmSair.Location = new Point(3, 304);
+            panelbtnAdmSair.Location = new Point(3, 293);
             panelbtnAdmSair.Name = "panelbtnAdmSair";
             panelbtnAdmSair.Size = new Size(177, 52);
             panelbtnAdmSair.TabIndex = 58;
@@ -328,37 +305,18 @@
             // panelbtnAdmMeuPer
             // 
             panelbtnAdmMeuPer.Controls.Add(btnAdmMPerfil);
-            panelbtnAdmMeuPer.Location = new Point(3, 246);
+            panelbtnAdmMeuPer.Location = new Point(3, 235);
             panelbtnAdmMeuPer.Name = "panelbtnAdmMeuPer";
             panelbtnAdmMeuPer.Size = new Size(177, 52);
             panelbtnAdmMeuPer.TabIndex = 58;
             // 
             // panelSubUsuarios
             // 
-            panelSubUsuarios.Controls.Add(iconButton1);
             panelSubUsuarios.Controls.Add(btnAdmUsuario);
-            panelSubUsuarios.Location = new Point(3, 187);
+            panelSubUsuarios.Location = new Point(3, 177);
             panelSubUsuarios.Name = "panelSubUsuarios";
-            panelSubUsuarios.Size = new Size(177, 53);
+            panelSubUsuarios.Size = new Size(177, 52);
             panelSubUsuarios.TabIndex = 58;
-            // 
-            // iconButton1
-            // 
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.UsersCog;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 40;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(0, 50);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(7, 0, 0, 0);
-            iconButton1.Size = new Size(177, 52);
-            iconButton1.TabIndex = 22;
-            iconButton1.Text = "     Usuários";
-            iconButton1.UseVisualStyleBackColor = true;
             // 
             // panelSuperiorAdm
             // 
@@ -534,16 +492,6 @@
             panelbtnAdmDestaques.Size = new Size(177, 52);
             panelbtnAdmDestaques.TabIndex = 58;
             // 
-            // timerSubRelatorio
-            // 
-            timerSubRelatorio.Interval = 10;
-            timerSubRelatorio.Tick += timerSubRelatorio_Tick;
-            // 
-            // timerSubUsuarios
-            // 
-            timerSubUsuarios.Interval = 10;
-            timerSubUsuarios.Tick += timerSubUsuarios_Tick;
-            // 
             // panelAdm
             // 
             panelAdm.Dock = DockStyle.Fill;
@@ -609,8 +557,6 @@
         private Panel panelSubUsuarios;
         private Panel panelbtnAdmMeuPer;
         private Panel panelbtnAdmSair;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btnAdmGerarRelatorio;
         private System.Windows.Forms.Timer timerSubRelatorio;
         private System.Windows.Forms.Timer timerSubUsuarios;
         private Panel panelAdm;

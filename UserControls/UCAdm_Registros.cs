@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ECOInsight.UserControls
 {
-    public partial class UCAdm_Relatorio : UserControl
+    public partial class UCAdm_Registros : UserControl
     {
-        public UCAdm_Relatorio()
+        public UCAdm_Registros()
         {
             InitializeComponent();
         }

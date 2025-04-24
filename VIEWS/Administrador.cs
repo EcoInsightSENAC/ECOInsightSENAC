@@ -98,8 +98,7 @@ namespace ECOInsight
 
         private void btnAdmRelatorio_Click_1(object sender, EventArgs e)
         {
-            timerSubRelatorio.Start();
-            UCAdm_Relatorio uc = new UCAdm_Relatorio();
+            UCAdm_Registros uc = new UCAdm_Registros();
             addUserControl(uc);
         }
 
@@ -111,7 +110,6 @@ namespace ECOInsight
 
         private void btnAdmUsuario_Click(object sender, EventArgs e)
         {
-            timerSubUsuarios.Start();
             UCAdm_Usuarios uc = new UCAdm_Usuarios();
             addUserControl(uc);
         }
@@ -125,58 +123,6 @@ namespace ECOInsight
         #endregion
 
         #region Eventos de Timer (Animações)
-
-        private void timerSubRelatorio_Tick(object sender, EventArgs e)
-        {
-            int animationStep = 3;
-            int targetHeightExpanded = 104;
-            int targetHeightCollapsed = 52;
-
-            if (!menuExpand)
-            {
-                panelSubRelatorioAdm.Height += animationStep;
-                if (panelSubRelatorioAdm.Height >= targetHeightExpanded)
-                {
-                    timerSubRelatorio.Stop();
-                    menuExpand = true;
-                }
-            }
-            else
-            {
-                panelSubRelatorioAdm.Height -= animationStep;
-                if (panelSubRelatorioAdm.Height <= targetHeightCollapsed)
-                {
-                    timerSubRelatorio.Stop();
-                    menuExpand = false;
-                }
-            }
-        }
-
-        private void timerSubUsuarios_Tick(object sender, EventArgs e)
-        {
-            int animationStep = 3;
-            int targetHeightExpanded = 104;
-            int targetHeightCollapsed = 52;
-
-            if (!menuExpand)
-            {
-                panelSubUsuarios.Height += animationStep;
-                if (panelSubUsuarios.Height >= targetHeightExpanded)
-                {
-                    timerSubUsuarios.Stop();
-                    menuExpand = true;
-                }
-            }
-            else
-            {
-                panelSubUsuarios.Height -= animationStep;
-                if (panelSubUsuarios.Height <= targetHeightCollapsed)
-                {
-                    timerSubUsuarios.Stop();
-                    menuExpand = false;
-                }
-            }
-        }
 
         private void sidebarTimerAdm_Tick(object sender, EventArgs e)
         {
@@ -211,5 +157,6 @@ namespace ECOInsight
             UCAdmGerarRelatorio uc = new UCAdmGerarRelatorio();
             addUserControl(uc);
         }
+
     }
 }

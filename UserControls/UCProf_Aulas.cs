@@ -16,5 +16,6 @@ namespace ECOInsight.UserControls
         {
             InitializeComponent();
         }
+
     }
 }

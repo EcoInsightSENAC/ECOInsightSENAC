@@ -10,7 +10,7 @@
     <Compile Update="UserControls\UCAdm_MeuPerfil.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\UCAdm_Relatorio.cs">
+    <Compile Update="UserControls\UCAdm_Registros.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\UCAdm_Usuarios.cs">

@@ -40,11 +40,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(339, 259);
+            label1.Location = new Point(137, 195);
             label1.Name = "label1";
-            label1.Size = new Size(301, 128);
+            label1.Size = new Size(705, 256);
             label1.TabIndex = 1;
-            label1.Text = "Aulas";
+            label1.Text = "TELA EM \r\nCONSTRUÇÃO";
             // 
             // panel1
             // 
