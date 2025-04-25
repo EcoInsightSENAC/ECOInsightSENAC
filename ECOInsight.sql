@@ -1,6 +1,6 @@
 create database ECOInsight;
 
-use ECOInsight
+use ECOInsight;
 
 CREATE TABLE usuarios (
     id_usuario INT PRIMARY KEY AUTO_INCREMENT,
@@ -76,23 +76,25 @@ CREATE TABLE pontuacao_reciclagem (
     data_atualizacao DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_funcionario) REFERENCES funcionarios(id_funcionario)
 ); 
--- aINDA NAO CRIADAS
-CREATE TABLE permissoes (
-id_permissoes INT PRIMARY KEY AUTO_INCREMENT,
-id_perfil INT,
-id_telas INT,
-pode_visualizar BOOLEAN DEFAULT FALSE,
-pode_editar BOOLEAN DEFAULT FALSE,
-pode_excluir BOOLEAN DEFAULT FALSE,
-pode_inserir BOOLEAN DEFAULT FALSE,
-FOREIGN KEY (id_perfil) REFERENCES perfis(id_perfil),
-FOREIGN KEY (id_telas) REFERENCES telas(id_telas)
+-- Criando a tabela de telas
+CREATE TABLE telas (
+    id_telas INT PRIMARY KEY AUTO_INCREMENT,
+    nome_telas VARCHAR(100) NOT NULL,
+    descricao TEXT
 );
 
-CREATE TABLE telas (
-id_telas INT PRIMARY KEY AUTO_INCREMENT,
-nome_telas VARCHAR(100) NOT NULL,
-descricao TEXT
+-- Criando a tabela de permissoes
+
+CREATE TABLE permissoes (
+    id_permissoes INT PRIMARY KEY AUTO_INCREMENT,
+    id_perfil INT,
+    id_telas INT,
+    pode_visualizar BOOLEAN DEFAULT FALSE,
+    pode_editar BOOLEAN DEFAULT FALSE,
+    pode_excluir BOOLEAN DEFAULT FALSE,
+    pode_inserir BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (id_perfil) REFERENCES perfis(id_perfil),
+    FOREIGN KEY (id_telas) REFERENCES telas(id_telas)
 );
 
 
