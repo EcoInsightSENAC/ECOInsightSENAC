@@ -16,5 +16,15 @@ namespace ECOInsight.UserControls
         {
             InitializeComponent();
         }
+
+        private void UCAdm_Registros_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTiposdemateriais_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

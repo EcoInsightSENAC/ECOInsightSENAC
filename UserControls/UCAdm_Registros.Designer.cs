@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             lblTiposdemateriais = new Label();
-            lbllixoOrganico = new Label();
             lbllixoReciclavel = new Label();
-            lblMinhocario = new Label();
             lblLixoDestino = new Label();
             LblLixoOutrasInfo = new Label();
             dateTimePicker1 = new DateTimePicker();
@@ -42,10 +40,9 @@
             checkBoxTipoPlastico = new CheckBox();
             checkBoxTipoPapel = new CheckBox();
             panelTiposdemateriais = new Panel();
+            checkBox1 = new CheckBox();
             textLixoOutrasInfo = new TextBox();
-            label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -64,9 +61,7 @@
             iconButton4 = new FontAwesome.Sharp.IconButton();
             label7 = new Label();
             iconButton5 = new FontAwesome.Sharp.IconButton();
-            comboBox2 = new ComboBox();
             comboBox3 = new ComboBox();
-            comboBox4 = new ComboBox();
             panelTiposdemateriais.SuspendLayout();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
@@ -77,44 +72,23 @@
             lblTiposdemateriais.Anchor = AnchorStyles.Top;
             lblTiposdemateriais.AutoSize = true;
             lblTiposdemateriais.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTiposdemateriais.Location = new Point(92, 67);
+            lblTiposdemateriais.Location = new Point(24, 70);
             lblTiposdemateriais.Name = "lblTiposdemateriais";
             lblTiposdemateriais.Size = new Size(144, 21);
             lblTiposdemateriais.TabIndex = 26;
             lblTiposdemateriais.Text = "Tipos de Materiais";
-            // 
-            // lbllixoOrganico
-            // 
-            lbllixoOrganico.Anchor = AnchorStyles.Top;
-            lbllixoOrganico.AutoSize = true;
-            lbllixoOrganico.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbllixoOrganico.Location = new Point(86, 235);
-            lbllixoOrganico.Name = "lbllixoOrganico";
-            lbllixoOrganico.Size = new Size(115, 21);
-            lbllixoOrganico.TabIndex = 25;
-            lbllixoOrganico.Text = "Lixo Orgânico:";
+            lblTiposdemateriais.Click += lblTiposdemateriais_Click;
             // 
             // lbllixoReciclavel
             // 
             lbllixoReciclavel.Anchor = AnchorStyles.Top;
             lbllixoReciclavel.AutoSize = true;
             lbllixoReciclavel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbllixoReciclavel.Location = new Point(370, 235);
+            lbllixoReciclavel.Location = new Point(86, 165);
             lbllixoReciclavel.Name = "lbllixoReciclavel";
-            lbllixoReciclavel.Size = new Size(120, 21);
+            lbllixoReciclavel.Size = new Size(52, 21);
             lbllixoReciclavel.TabIndex = 29;
-            lbllixoReciclavel.Text = "Lixo Reciclável:";
-            // 
-            // lblMinhocario
-            // 
-            lblMinhocario.Anchor = AnchorStyles.Top;
-            lblMinhocario.AutoSize = true;
-            lblMinhocario.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMinhocario.Location = new Point(658, 235);
-            lblMinhocario.Name = "lblMinhocario";
-            lblMinhocario.Size = new Size(97, 21);
-            lblMinhocario.TabIndex = 30;
-            lblMinhocario.Text = "Minhocário:";
+            lbllixoReciclavel.Text = "Peso :";
             // 
             // lblLixoDestino
             // 
@@ -154,7 +128,7 @@
             checkBoxTipoVidro.AutoSize = true;
             checkBoxTipoVidro.FlatStyle = FlatStyle.Flat;
             checkBoxTipoVidro.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBoxTipoVidro.Location = new Point(262, 15);
+            checkBoxTipoVidro.Location = new Point(236, 12);
             checkBoxTipoVidro.Name = "checkBoxTipoVidro";
             checkBoxTipoVidro.Size = new Size(68, 25);
             checkBoxTipoVidro.TabIndex = 34;
@@ -167,7 +141,7 @@
             checkBoxTipoMetal.AutoSize = true;
             checkBoxTipoMetal.FlatStyle = FlatStyle.Flat;
             checkBoxTipoMetal.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBoxTipoMetal.Location = new Point(376, 15);
+            checkBoxTipoMetal.Location = new Point(310, 12);
             checkBoxTipoMetal.Name = "checkBoxTipoMetal";
             checkBoxTipoMetal.Size = new Size(70, 25);
             checkBoxTipoMetal.TabIndex = 33;
@@ -180,7 +154,7 @@
             checkBoxTipoEletronico.AutoSize = true;
             checkBoxTipoEletronico.FlatStyle = FlatStyle.Flat;
             checkBoxTipoEletronico.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBoxTipoEletronico.Location = new Point(491, 15);
+            checkBoxTipoEletronico.Location = new Point(386, 12);
             checkBoxTipoEletronico.Name = "checkBoxTipoEletronico";
             checkBoxTipoEletronico.Size = new Size(104, 25);
             checkBoxTipoEletronico.TabIndex = 32;
@@ -193,7 +167,7 @@
             checkBoxTipoMedicamentos.AutoSize = true;
             checkBoxTipoMedicamentos.FlatStyle = FlatStyle.Flat;
             checkBoxTipoMedicamentos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBoxTipoMedicamentos.Location = new Point(636, 15);
+            checkBoxTipoMedicamentos.Location = new Point(496, 12);
             checkBoxTipoMedicamentos.Name = "checkBoxTipoMedicamentos";
             checkBoxTipoMedicamentos.Size = new Size(143, 25);
             checkBoxTipoMedicamentos.TabIndex = 36;
@@ -206,7 +180,7 @@
             checkBoxTipoPlastico.AutoSize = true;
             checkBoxTipoPlastico.FlatStyle = FlatStyle.Flat;
             checkBoxTipoPlastico.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBoxTipoPlastico.Location = new Point(133, 15);
+            checkBoxTipoPlastico.Location = new Point(144, 12);
             checkBoxTipoPlastico.Name = "checkBoxTipoPlastico";
             checkBoxTipoPlastico.Size = new Size(86, 25);
             checkBoxTipoPlastico.TabIndex = 35;
@@ -219,7 +193,7 @@
             checkBoxTipoPapel.AutoSize = true;
             checkBoxTipoPapel.FlatStyle = FlatStyle.Flat;
             checkBoxTipoPapel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBoxTipoPapel.Location = new Point(20, 15);
+            checkBoxTipoPapel.Location = new Point(69, 12);
             checkBoxTipoPapel.Name = "checkBoxTipoPapel";
             checkBoxTipoPapel.Size = new Size(69, 25);
             checkBoxTipoPapel.TabIndex = 31;
@@ -231,16 +205,30 @@
             panelTiposdemateriais.Anchor = AnchorStyles.Top;
             panelTiposdemateriais.BackColor = Color.FromArgb(153, 179, 142);
             panelTiposdemateriais.BorderStyle = BorderStyle.FixedSingle;
+            panelTiposdemateriais.Controls.Add(checkBox1);
             panelTiposdemateriais.Controls.Add(checkBoxTipoPapel);
             panelTiposdemateriais.Controls.Add(checkBoxTipoPlastico);
             panelTiposdemateriais.Controls.Add(checkBoxTipoMedicamentos);
             panelTiposdemateriais.Controls.Add(checkBoxTipoEletronico);
             panelTiposdemateriais.Controls.Add(checkBoxTipoMetal);
             panelTiposdemateriais.Controls.Add(checkBoxTipoVidro);
-            panelTiposdemateriais.Location = new Point(92, 103);
+            panelTiposdemateriais.Location = new Point(86, 103);
             panelTiposdemateriais.Name = "panelTiposdemateriais";
-            panelTiposdemateriais.Size = new Size(795, 55);
+            panelTiposdemateriais.Size = new Size(801, 55);
             panelTiposdemateriais.TabIndex = 43;
+            // 
+            // checkBox1
+            // 
+            checkBox1.Anchor = AnchorStyles.Top;
+            checkBox1.AutoSize = true;
+            checkBox1.FlatStyle = FlatStyle.Flat;
+            checkBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            checkBox1.Location = new Point(645, 12);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(96, 25);
+            checkBox1.TabIndex = 37;
+            checkBox1.Text = "Orgânico";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // textLixoOutrasInfo
             // 
@@ -251,38 +239,16 @@
             textLixoOutrasInfo.Size = new Size(366, 76);
             textLixoOutrasInfo.TabIndex = 44;
             // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label1.Location = new Point(313, 236);
-            label1.Name = "label1";
-            label1.Size = new Size(26, 19);
-            label1.TabIndex = 45;
-            label1.Text = "Kg";
-            // 
             // label2
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label2.Location = new Point(609, 236);
+            label2.Location = new Point(246, 166);
             label2.Name = "label2";
             label2.Size = new Size(26, 19);
             label2.TabIndex = 46;
             label2.Text = "Kg";
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label3.Location = new Point(868, 236);
-            label3.Name = "label3";
-            label3.Size = new Size(26, 19);
-            label3.TabIndex = 47;
-            label3.Text = "Kg";
             // 
             // iconButton3
             // 
@@ -318,7 +284,7 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 25;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(804, 173);
+            iconButton1.Location = new Point(802, 225);
             iconButton1.Name = "iconButton1";
             iconButton1.Padding = new Padding(5, 0, 0, 0);
             iconButton1.Size = new Size(83, 35);
@@ -340,7 +306,7 @@
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 25;
             iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(773, 275);
+            iconButton2.Location = new Point(92, 278);
             iconButton2.Name = "iconButton2";
             iconButton2.Padding = new Padding(5, 0, 0, 0);
             iconButton2.Size = new Size(114, 37);
@@ -555,43 +521,21 @@
             iconButton5.Text = "Limpar Filtros";
             iconButton5.UseVisualStyleBackColor = false;
             // 
-            // comboBox2
-            // 
-            comboBox2.Anchor = AnchorStyles.Top;
-            comboBox2.FlatStyle = FlatStyle.Flat;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(201, 234);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(111, 23);
-            comboBox2.TabIndex = 72;
-            // 
             // comboBox3
             // 
             comboBox3.Anchor = AnchorStyles.Top;
             comboBox3.FlatStyle = FlatStyle.Flat;
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(492, 234);
+            comboBox3.Location = new Point(137, 165);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(111, 23);
             comboBox3.TabIndex = 73;
             // 
-            // comboBox4
-            // 
-            comboBox4.Anchor = AnchorStyles.Top;
-            comboBox4.FlatStyle = FlatStyle.Flat;
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(751, 234);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(111, 23);
-            comboBox4.TabIndex = 74;
-            // 
-            // UCAdm_Relatorio
+            // UCAdm_Registros
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(comboBox4);
             Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
             Controls.Add(iconButton5);
             Controls.Add(iconButton4);
             Controls.Add(label7);
@@ -602,20 +546,17 @@
             Controls.Add(iconButton2);
             Controls.Add(iconButton1);
             Controls.Add(iconButton3);
-            Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(textLixoOutrasInfo);
             Controls.Add(panelTiposdemateriais);
             Controls.Add(dateTimePicker1);
             Controls.Add(LblLixoOutrasInfo);
             Controls.Add(lblLixoDestino);
-            Controls.Add(lblMinhocario);
             Controls.Add(lbllixoReciclavel);
-            Controls.Add(lbllixoOrganico);
             Controls.Add(lblTiposdemateriais);
-            Name = "UCAdm_Relatorio";
+            Name = "UCAdm_Registros";
             Size = new Size(978, 646);
+            Load += UCAdm_Registros_Load;
             panelTiposdemateriais.ResumeLayout(false);
             panelTiposdemateriais.PerformLayout();
             panel1.ResumeLayout(false);
@@ -628,9 +569,7 @@
 
         #endregion
         private Label lblTiposdemateriais;
-        private Label lbllixoOrganico;
         private Label lbllixoReciclavel;
-        private Label lblMinhocario;
         private Label lblLixoDestino;
         private Label LblLixoOutrasInfo;
         private DateTimePicker dateTimePicker1;
@@ -642,9 +581,7 @@
         private CheckBox checkBoxTipoPapel;
         private Panel panelTiposdemateriais;
         private TextBox textLixoOutrasInfo;
-        private Label label1;
         private Label label2;
-        private Label label3;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
@@ -663,8 +600,7 @@
         private FontAwesome.Sharp.IconButton iconButton4;
         private Label label7;
         private FontAwesome.Sharp.IconButton iconButton5;
-        private ComboBox comboBox2;
         private ComboBox comboBox3;
-        private ComboBox comboBox4;
+        private CheckBox checkBox1;
     }
 }

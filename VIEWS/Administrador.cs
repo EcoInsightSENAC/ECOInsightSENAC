@@ -55,7 +55,10 @@ namespace ECOInsight
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            LoginTela login = new LoginTela();
+            login.Show();
+            
         }
 
         private void btnMinimizarAdm_Click(object sender, EventArgs e)
@@ -83,7 +86,7 @@ namespace ECOInsight
 
         private void btnFecharAdm_Click(object sender, EventArgs e)
         {
-            Close();
+            
         }
 
         private void btnVoltarPagEsqueciSenha_Click(object sender, EventArgs e)

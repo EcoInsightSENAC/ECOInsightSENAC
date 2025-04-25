@@ -152,7 +152,9 @@ namespace ECOInsight
 
         private void btnSairProf_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            LoginTela login = new LoginTela();
+            login.Show(); //Abre a nova tela
+            this.Hide(); //Oculta a tela atual
         }
        
     }

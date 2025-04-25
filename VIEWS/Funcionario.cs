@@ -59,7 +59,9 @@ namespace ECOInsightSENAC
 
         private void btnFuncionarioSair_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            LoginTela login = new LoginTela();
+            login.Show(); //Abre a nova tela
+            this.Hide(); //Oculta a tela atual
         }
 
         private void btnVoltarPagEsqueciSenha_Click(object sender, EventArgs e)

@@ -62,6 +62,8 @@
             iconButton8 = new FontAwesome.Sharp.IconButton();
             lblAdmUsuarios = new Label();
             btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
+            label5 = new Label();
+            textBox2 = new TextBox();
             label4 = new Label();
             textBox1 = new TextBox();
             panel3.SuspendLayout();
@@ -74,7 +76,7 @@
             // txtNomeCad
             // 
             txtNomeCad.Anchor = AnchorStyles.Top;
-            txtNomeCad.Location = new Point(140, 117);
+            txtNomeCad.Location = new Point(140, 111);
             txtNomeCad.Name = "txtNomeCad";
             txtNomeCad.Size = new Size(312, 23);
             txtNomeCad.TabIndex = 23;
@@ -257,7 +259,7 @@
             lblConfirSenhaCad.Anchor = AnchorStyles.Top;
             lblConfirSenhaCad.AutoSize = true;
             lblConfirSenhaCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblConfirSenhaCad.Location = new Point(406, 196);
+            lblConfirSenhaCad.Location = new Point(394, 85);
             lblConfirSenhaCad.Name = "lblConfirSenhaCad";
             lblConfirSenhaCad.Size = new Size(131, 21);
             lblConfirSenhaCad.TabIndex = 22;
@@ -266,7 +268,7 @@
             // txtConfirSenhaCad
             // 
             txtConfirSenhaCad.Anchor = AnchorStyles.Top;
-            txtConfirSenhaCad.Location = new Point(406, 235);
+            txtConfirSenhaCad.Location = new Point(394, 109);
             txtConfirSenhaCad.Name = "txtConfirSenhaCad";
             txtConfirSenhaCad.Size = new Size(312, 23);
             txtConfirSenhaCad.TabIndex = 26;
@@ -276,7 +278,7 @@
             lblUsuarioCad.Anchor = AnchorStyles.Top;
             lblUsuarioCad.AutoSize = true;
             lblUsuarioCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsuarioCad.Location = new Point(406, 115);
+            lblUsuarioCad.Location = new Point(394, 32);
             lblUsuarioCad.Name = "lblUsuarioCad";
             lblUsuarioCad.Size = new Size(73, 21);
             lblUsuarioCad.TabIndex = 21;
@@ -296,15 +298,16 @@
             // txtTelefCad
             // 
             txtTelefCad.Anchor = AnchorStyles.Top;
-            txtTelefCad.Location = new Point(406, 154);
+            txtTelefCad.Location = new Point(394, 56);
             txtTelefCad.Name = "txtTelefCad";
             txtTelefCad.Size = new Size(312, 23);
             txtTelefCad.TabIndex = 25;
+            txtTelefCad.TextChanged += txtTelefCad_TextChanged;
             // 
             // txtEmailCad
             // 
             txtEmailCad.Anchor = AnchorStyles.Top;
-            txtEmailCad.Location = new Point(17, 154);
+            txtEmailCad.Location = new Point(17, 119);
             txtEmailCad.Name = "txtEmailCad";
             txtEmailCad.Size = new Size(312, 23);
             txtEmailCad.TabIndex = 24;
@@ -312,7 +315,7 @@
             // txtSenhaCad
             // 
             txtSenhaCad.Anchor = AnchorStyles.Top;
-            txtSenhaCad.Location = new Point(17, 235);
+            txtSenhaCad.Location = new Point(18, 172);
             txtSenhaCad.Name = "txtSenhaCad";
             txtSenhaCad.Size = new Size(312, 23);
             txtSenhaCad.TabIndex = 11;
@@ -322,7 +325,7 @@
             lblSenhaCad.Anchor = AnchorStyles.Top;
             lblSenhaCad.AutoSize = true;
             lblSenhaCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSenhaCad.Location = new Point(17, 196);
+            lblSenhaCad.Location = new Point(18, 148);
             lblSenhaCad.Name = "lblSenhaCad";
             lblSenhaCad.Size = new Size(54, 21);
             lblSenhaCad.TabIndex = 4;
@@ -333,7 +336,7 @@
             lblEmailCad.Anchor = AnchorStyles.Top;
             lblEmailCad.AutoSize = true;
             lblEmailCad.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEmailCad.Location = new Point(17, 115);
+            lblEmailCad.Location = new Point(17, 95);
             lblEmailCad.Name = "lblEmailCad";
             lblEmailCad.Size = new Size(54, 21);
             lblEmailCad.TabIndex = 19;
@@ -344,6 +347,8 @@
             panel1.Anchor = AnchorStyles.Top;
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label4);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(iconButton7);
             panel1.Controls.Add(lblEmailCad);
             panel1.Controls.Add(lblSenhaCad);
@@ -373,7 +378,7 @@
             iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton7.IconSize = 25;
             iconButton7.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton7.Location = new Point(595, 63);
+            iconButton7.Location = new Point(595, 12);
             iconButton7.Name = "iconButton7";
             iconButton7.Padding = new Padding(5, 0, 0, 0);
             iconButton7.Size = new Size(123, 29);
@@ -510,24 +515,43 @@
             btnVoltarPagEsqueciSenha.TabIndex = 54;
             btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(17, 214);
+            label5.Name = "label5";
+            label5.Size = new Size(52, 21);
+            label5.TabIndex = 72;
+            label5.Text = "Turno";
+            // 
+            // textBox2
+            // 
+            textBox2.Anchor = AnchorStyles.Top;
+            textBox2.Location = new Point(18, 238);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(312, 23);
+            textBox2.TabIndex = 73;
+            // 
             // label4
             // 
             label4.Anchor = AnchorStyles.Top;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(406, 32);
+            label4.Location = new Point(394, 151);
             label4.Name = "label4";
-            label4.Size = new Size(26, 21);
-            label4.TabIndex = 70;
-            label4.Text = "ID";
+            label4.Size = new Size(160, 21);
+            label4.TabIndex = 74;
+            label4.Text = "Data De Contratação";
             // 
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Top;
-            textBox1.Location = new Point(406, 66);
+            textBox1.Location = new Point(394, 175);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 23);
-            textBox1.TabIndex = 71;
+            textBox1.Size = new Size(312, 23);
+            textBox1.TabIndex = 75;
             // 
             // UCAdm_Usuarios
             // 
@@ -596,6 +620,8 @@
         private Label lblAdmUsuarios;
         private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
         private FontAwesome.Sharp.IconButton iconButton8;
+        private Label label5;
+        private TextBox textBox2;
         private TextBox textBox1;
         private Label label4;
     }

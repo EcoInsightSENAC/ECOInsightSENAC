@@ -16,5 +16,10 @@ namespace ECOInsight.UserControls
         {
             InitializeComponent();
         }
+
+        private void txtTelefCad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
