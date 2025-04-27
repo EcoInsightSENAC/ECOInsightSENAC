@@ -1,34 +1,84 @@
 ﻿using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Configuration;              // para ler a connectionString
 using ECOInsight.UserControls;
+using ECOInsight.DataAccess;            // para Conexao.CreateConnection()
 
 namespace ECOInsight
 {
     public partial class AdmTela : Form
     {
         #region Campos Privados
-
         private bool menuExpand;
         private bool sidebarExpand = false;
         private Size tamanhoOriginal;
         private bool maximizado = false;
-
         #endregion
 
         #region Construtor
-
         public AdmTela()
         {
             InitializeComponent();
             InitializeSidebar();
+            this.Load += AdmTela_Load;        // Associa o evento Load para testar a conexão
             LoadInitialUserControl();
         }
+        #endregion
 
+        #region Conexão com o Banco
+        private void AdmTela_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var conn = Conexao.CreateConnection())
+                {
+                    // Verifica estado da conexão
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        MessageBox.Show("Conexão aberta com sucesso!", "Sucesso",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Teste adicional: executar SELECT 1
+                        using (var cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandText = "SELECT 1";
+                            var result = cmd.ExecuteScalar();
+                            if (Convert.ToInt32(result) == 1)
+                            {
+                                MessageBox.Show("Teste de consulta executado com sucesso!", "Teste OK",
+                                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Teste de consulta retornou valor inesperado: {result}", "Atenção",
+                                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Conexão criada, mas não está aberta. Estado: {conn.State}", "Atenção",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao conectar ao banco: " + ex.Message,
+                                "Falha na Conexão",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region Sidebar e Load Inicial
         private void InitializeSidebar()
         {
-            sidebarAdm.Width = 63; // Define a largura inicial do sidebar para minimizado
-            sidebarExpand = false; // Garante que a variável esteja definida como false inicialmente
+            sidebarAdm.Width = 63;     // largura inicial minimizada
+            sidebarExpand = false;
         }
 
         private void LoadInitialUserControl()
@@ -36,11 +86,9 @@ namespace ECOInsight
             UCAdm_Destaques uc = new UCAdm_Destaques();
             addUserControl(uc);
         }
-
         #endregion
 
         #region Métodos Utilitários
-
         private void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -48,17 +96,14 @@ namespace ECOInsight
             panelAdm.Controls.Add(userControl);
             userControl.BringToFront();
         }
-
         #endregion
 
         #region Eventos de Botões (Ações da Interface)
-
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Hide();
             LoginTela login = new LoginTela();
             login.Show();
-            
         }
 
         private void btnMinimizarAdm_Click(object sender, EventArgs e)
@@ -86,7 +131,7 @@ namespace ECOInsight
 
         private void btnFecharAdm_Click(object sender, EventArgs e)
         {
-            
+            Application.Exit();
         }
 
         private void btnVoltarPagEsqueciSenha_Click(object sender, EventArgs e)
@@ -122,11 +167,9 @@ namespace ECOInsight
             UCAdm_MeuPerfil uc = new UCAdm_MeuPerfil();
             addUserControl(uc);
         }
-
         #endregion
 
         #region Eventos de Timer (Animações)
-
         private void sidebarTimerAdm_Tick(object sender, EventArgs e)
         {
             int animationStep = 10;
@@ -152,7 +195,6 @@ namespace ECOInsight
                 }
             }
         }
-
         #endregion
 
         private void btnAdmGerarRelatorio_Click(object sender, EventArgs e)
@@ -160,6 +202,5 @@ namespace ECOInsight
             UCAdmGerarRelatorio uc = new UCAdmGerarRelatorio();
             addUserControl(uc);
         }
-
     }
 }
