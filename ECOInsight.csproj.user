@@ -4,10 +4,10 @@
     <Compile Update="UserControls\UCAdm_Destaques.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\UCAdm_GerarRelatorio.cs">
+    <Compile Update="UserControls\UCAdm_MeuPerfil.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\UCAdm_MeuPerfil.cs">
+    <Compile Update="UserControls\UCAdm_Descartes.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\UCAdm_Registros.cs">
@@ -46,22 +46,25 @@
     <Compile Update="UserControls\UCProf_Relatorio.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControls\UCAdm_Minhocario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\UCAdm_ConsumoAgua.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="VIEWS\Administrador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="VIEWS\Aluno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="VIEWS\Cadastro.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="VIEWS\Esqueci a Senha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="VIEWS\Login.cs">
+    <Compile Update="VIEWS\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="VIEWS\Home.cs">
+    <Compile Update="VIEWS\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="VIEWS\Funcionario.cs">

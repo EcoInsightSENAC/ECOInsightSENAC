@@ -40,6 +40,7 @@
             btnFecharAluno = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             panelSuperiorAluno = new Panel();
+            lblLogin = new Label();
             panel1 = new Panel();
             btnMaximizarRestaurarHome = new FontAwesome.Sharp.IconButton();
             btnFecharHome = new FontAwesome.Sharp.IconButton();
@@ -55,7 +56,7 @@
             sidebarAluno = new FlowLayoutPanel();
             panelAluno = new Panel();
             label1 = new Label();
-            lblLogin = new Label();
+            pictureBox2 = new PictureBox();
             panel2.SuspendLayout();
             panelSuperiorAluno.SuspendLayout();
             panel1.SuspendLayout();
@@ -66,6 +67,7 @@
             panel8.SuspendLayout();
             sidebarAluno.SuspendLayout();
             panelAluno.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnSair
@@ -243,6 +245,7 @@
             // panelSuperiorAluno
             // 
             panelSuperiorAluno.BackColor = Color.FromArgb(36, 65, 57);
+            panelSuperiorAluno.Controls.Add(pictureBox2);
             panelSuperiorAluno.Controls.Add(lblLogin);
             panelSuperiorAluno.Controls.Add(panel1);
             panelSuperiorAluno.Controls.Add(panel2);
@@ -252,6 +255,17 @@
             panelSuperiorAluno.Name = "panelSuperiorAluno";
             panelSuperiorAluno.Size = new Size(1139, 42);
             panelSuperiorAluno.TabIndex = 33;
+            // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(53, 10);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(86, 21);
+            lblLogin.TabIndex = 57;
+            lblLogin.Text = "ECOBoard";
             // 
             // panel1
             // 
@@ -414,16 +428,15 @@
             label1.TabIndex = 0;
             label1.Text = "TELA EM \r\nCONSTRUÇÃO";
             // 
-            // lblLogin
+            // pictureBox2
             // 
-            lblLogin.AutoSize = true;
-            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = SystemColors.ButtonHighlight;
-            lblLogin.Location = new Point(12, 9);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(86, 21);
-            lblLogin.TabIndex = 57;
-            lblLogin.Text = "ECOBoard";
+            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 58;
+            pictureBox2.TabStop = false;
             // 
             // AlunoTela
             // 
@@ -449,6 +462,7 @@
             sidebarAluno.ResumeLayout(false);
             panelAluno.ResumeLayout(false);
             panelAluno.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -480,5 +494,6 @@
         private Panel panelAluno;
         private Label label1;
         private Label lblLogin;
+        private PictureBox pictureBox2;
     }
 }

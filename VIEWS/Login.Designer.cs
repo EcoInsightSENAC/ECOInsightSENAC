@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginTela));
             panelSuperiorLogin = new Panel();
+            pictureBox2 = new PictureBox();
+            lblLogin = new Label();
             btnMinimizarLogin = new FontAwesome.Sharp.IconButton();
             btnMaximizarRestaurarLogin = new FontAwesome.Sharp.IconButton();
             btnFecharLogin = new FontAwesome.Sharp.IconButton();
@@ -37,23 +39,26 @@
             pictureBoxLogo = new PictureBox();
             lblUsuario = new Label();
             lblSenha = new Label();
-            txtUsuario = new TextBox();
+            txtEmail = new TextBox();
             txtSenha = new TextBox();
             btnEsqueciSenha = new Button();
             btnEntrar = new Button();
             checkBoxLembrarSenha = new CheckBox();
             checkBoxVizualizarSenha = new CheckBox();
             panel1 = new Panel();
+            lblTodosOsDireitos = new Label();
             panel2 = new Panel();
-            lblLogin = new Label();
             panelSuperiorLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panelSuperiorLogin
             // 
             panelSuperiorLogin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelSuperiorLogin.BackColor = Color.FromArgb(32, 65, 57);
+            panelSuperiorLogin.Controls.Add(pictureBox2);
             panelSuperiorLogin.Controls.Add(lblLogin);
             panelSuperiorLogin.Controls.Add(btnMinimizarLogin);
             panelSuperiorLogin.Controls.Add(btnMaximizarRestaurarLogin);
@@ -63,6 +68,27 @@
             panelSuperiorLogin.Name = "panelSuperiorLogin";
             panelSuperiorLogin.Size = new Size(1064, 40);
             panelSuperiorLogin.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 25;
+            pictureBox2.TabStop = false;
+            // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(53, 10);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(86, 21);
+            lblLogin.TabIndex = 23;
+            lblLogin.Text = "ECOBoard";
             // 
             // btnMinimizarLogin
             // 
@@ -156,13 +182,14 @@
             lblSenha.TabIndex = 3;
             lblSenha.Text = "Senha";
             // 
-            // txtUsuario
+            // txtEmail
             // 
-            txtUsuario.Anchor = AnchorStyles.Top;
-            txtUsuario.Location = new Point(117, 217);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(314, 23);
-            txtUsuario.TabIndex = 4;
+            txtEmail.Anchor = AnchorStyles.Top;
+            txtEmail.Location = new Point(117, 217);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(314, 23);
+            txtEmail.TabIndex = 4;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtSenha
             // 
@@ -228,28 +255,30 @@
             // 
             // panel1
             // 
-            panel1.Location = new Point(0, 37);
+            panel1.Controls.Add(lblTodosOsDireitos);
+            panel1.Location = new Point(0, 40);
             panel1.Name = "panel1";
-            panel1.Size = new Size(503, 584);
+            panel1.Size = new Size(503, 592);
             panel1.TabIndex = 11;
+            // 
+            // lblTodosOsDireitos
+            // 
+            lblTodosOsDireitos.Anchor = AnchorStyles.Top;
+            lblTodosOsDireitos.AutoSize = true;
+            lblTodosOsDireitos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTodosOsDireitos.ForeColor = SystemColors.ButtonShadow;
+            lblTodosOsDireitos.Location = new Point(23, 557);
+            lblTodosOsDireitos.Name = "lblTodosOsDireitos";
+            lblTodosOsDireitos.Size = new Size(260, 13);
+            lblTodosOsDireitos.TabIndex = 0;
+            lblTodosOsDireitos.Text = "© 2025 ECOInsight. Todos os direitos reservados.";
             // 
             // panel2
             // 
             panel2.Location = new Point(503, 40);
             panel2.Name = "panel2";
-            panel2.Size = new Size(558, 581);
+            panel2.Size = new Size(558, 592);
             panel2.TabIndex = 12;
-            // 
-            // lblLogin
-            // 
-            lblLogin.AutoSize = true;
-            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = SystemColors.ButtonHighlight;
-            lblLogin.Location = new Point(12, 9);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(86, 21);
-            lblLogin.TabIndex = 23;
-            lblLogin.Text = "ECOBoard";
             // 
             // LoginTela
             // 
@@ -262,7 +291,7 @@
             Controls.Add(btnEntrar);
             Controls.Add(checkBoxLembrarSenha);
             Controls.Add(txtSenha);
-            Controls.Add(txtUsuario);
+            Controls.Add(txtEmail);
             Controls.Add(lblSenha);
             Controls.Add(lblUsuario);
             Controls.Add(pictureBoxLogo);
@@ -273,10 +302,12 @@
             Name = "LoginTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
-            Load += LoginTela_Load;
             panelSuperiorLogin.ResumeLayout(false);
             panelSuperiorLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -287,7 +318,7 @@
         private PictureBox pictureBoxLogo;
         private Label lblUsuario;
         private Label lblSenha;
-        private TextBox txtUsuario;
+        private TextBox txtEmail;
         private TextBox txtSenha;
         private Button btnEsqueciSenha;
         private Button btnEntrar;
@@ -300,5 +331,7 @@
         private FontAwesome.Sharp.IconButton btnFecharLogin;
         private Panel panel3;
         private Label lblLogin;
+        private Label lblTodosOsDireitos;
+        private PictureBox pictureBox2;
     }
 }

@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using ECOInsight.UserControls;
+using System.Collections.Generic;
 
 namespace ECOInsight
 {
@@ -9,10 +10,13 @@ namespace ECOInsight
     {
         #region Campos Privados
 
-        private bool menuExpand;
         private bool sidebarExpand = false;
+        private bool menuExpand = false;
         private Size tamanhoOriginal;
         private bool maximizado = false;
+        private Stack<UserControl> historicoVoltar = new Stack<UserControl>();
+        private Stack<UserControl> historicoAvancar = new Stack<UserControl>();
+        private UserControl controleAtual;
 
         #endregion
 
@@ -23,12 +27,17 @@ namespace ECOInsight
             InitializeComponent();
             InitializeSidebar();
             LoadInitialUserControl();
+            AtualizarEstadoBotoesNavegacao();
         }
+
+        #endregion
+
+        #region Inicialização
 
         private void InitializeSidebar()
         {
-            sidebarAdm.Width = 63; // Define a largura inicial do sidebar para minimizado
-            sidebarExpand = false; // Garante que a variável esteja definida como false inicialmente
+            sidebarAdm.Width = 63;
+            sidebarExpand = false;
         }
 
         private void LoadInitialUserControl()
@@ -41,12 +50,27 @@ namespace ECOInsight
 
         #region Métodos Utilitários
 
-        private void addUserControl(UserControl userControl)
+        private void addUserControl(UserControl novoControle, bool limparAvanco = true)
         {
-            userControl.Dock = DockStyle.Fill;
+            if (controleAtual != null)
+            {
+                historicoVoltar.Push(controleAtual);
+                if (limparAvanco)
+                    historicoAvancar.Clear();
+            }
+
+            controleAtual = novoControle;
+            novoControle.Dock = DockStyle.Fill;
             panelAdm.Controls.Clear();
-            panelAdm.Controls.Add(userControl);
-            userControl.BringToFront();
+            panelAdm.Controls.Add(novoControle);
+            novoControle.BringToFront();
+            AtualizarEstadoBotoesNavegacao();
+        }
+
+        private void AtualizarEstadoBotoesNavegacao()
+        {
+            btnAdm_Voltar.Enabled = historicoVoltar.Count > 0;
+            btnAdm_Avancar.Enabled = historicoAvancar.Count > 0;
         }
 
         #endregion
@@ -58,7 +82,6 @@ namespace ECOInsight
             this.Hide();
             LoginTela login = new LoginTela();
             login.Show();
-            
         }
 
         private void btnMinimizarAdm_Click(object sender, EventArgs e)
@@ -86,7 +109,7 @@ namespace ECOInsight
 
         private void btnFecharAdm_Click(object sender, EventArgs e)
         {
-            
+            System.Windows.Forms.Application.Exit();
         }
 
         private void btnVoltarPagEsqueciSenha_Click(object sender, EventArgs e)
@@ -101,6 +124,7 @@ namespace ECOInsight
 
         private void btnAdmRelatorio_Click_1(object sender, EventArgs e)
         {
+            timerSubRelatorio.Start();
             UCAdm_Registros uc = new UCAdm_Registros();
             addUserControl(uc);
         }
@@ -121,6 +145,48 @@ namespace ECOInsight
         {
             UCAdm_MeuPerfil uc = new UCAdm_MeuPerfil();
             addUserControl(uc);
+        }
+
+        private void btnAdmDescarte_Click(object sender, EventArgs e)
+        {
+            UCAdm_Descartes uc = new UCAdm_Descartes();
+            addUserControl(uc);
+        }
+
+        private void btnAdmMinhocario_Click(object sender, EventArgs e)
+        {
+            UCAdm_Minhocario uc = new UCAdm_Minhocario();
+            addUserControl(uc);
+        }
+
+        private void btnAdmAgua_Click(object sender, EventArgs e)
+        {
+            UCAdm_ConsumoAgua uc = new UCAdm_ConsumoAgua();
+            addUserControl(uc);
+        }
+
+        #endregion
+
+        #region Eventos de Navegação (Voltar e Avançar)
+
+        private void btnAdm_Voltar_Click_1(object sender, EventArgs e)
+        {
+            if (historicoVoltar.Count > 0)
+            {
+                historicoAvancar.Push(controleAtual);
+                UserControl controleAnterior = historicoVoltar.Pop();
+                addUserControl(controleAnterior, false);
+            }
+        }
+
+        private void btnAdm_Avancar_Click_1(object sender, EventArgs e)
+        {
+            if (historicoAvancar.Count > 0)
+            {
+                historicoVoltar.Push(controleAtual);
+                UserControl controleProximo = historicoAvancar.Pop();
+                addUserControl(controleProximo, false);
+            }
         }
 
         #endregion
@@ -153,13 +219,33 @@ namespace ECOInsight
             }
         }
 
-        #endregion
-
-        private void btnAdmGerarRelatorio_Click(object sender, EventArgs e)
+        private void timerSubRelatorio_Tick(object sender, EventArgs e)
         {
-            UCAdmGerarRelatorio uc = new UCAdmGerarRelatorio();
-            addUserControl(uc);
+            int animationStep = 5;
+            int targetHeightExpanded = 221;
+            int targetHeightCollapsed = 52;
+
+            if (!menuExpand)
+            {
+                SubAdmRelatorio.Height += animationStep;
+                if (SubAdmRelatorio.Height >= targetHeightExpanded)
+                {
+                    timerSubRelatorio.Stop();
+                    menuExpand = true;
+                }
+            }
+            else
+            {
+                SubAdmRelatorio.Height -= animationStep;
+                if (SubAdmRelatorio.Height <= targetHeightCollapsed)
+                {
+                    timerSubRelatorio.Stop();
+                    menuExpand = false;
+                }
+            }
         }
+
+        #endregion
 
     }
 }

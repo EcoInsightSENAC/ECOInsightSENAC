@@ -28,579 +28,497 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblTiposdemateriais = new Label();
-            lbllixoReciclavel = new Label();
-            lblLixoDestino = new Label();
-            LblLixoOutrasInfo = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            checkBoxTipoVidro = new CheckBox();
-            checkBoxTipoMetal = new CheckBox();
-            checkBoxTipoEletronico = new CheckBox();
-            checkBoxTipoMedicamentos = new CheckBox();
-            checkBoxTipoPlastico = new CheckBox();
-            checkBoxTipoPapel = new CheckBox();
-            panelTiposdemateriais = new Panel();
-            checkBox1 = new CheckBox();
-            textLixoOutrasInfo = new TextBox();
-            label2 = new Label();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            label4 = new Label();
-            comboBox1 = new ComboBox();
-            panel1 = new Panel();
-            iconButton8 = new FontAwesome.Sharp.IconButton();
-            lblAlunoAulas = new Label();
-            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
-            panel5 = new Panel();
-            label5 = new Label();
+            lblAdmAte = new Label();
             dateTimePicker2 = new DateTimePicker();
-            iconButton6 = new FontAwesome.Sharp.IconButton();
+            btn_GerarPDF = new FontAwesome.Sharp.IconButton();
             dateTimePicker3 = new DateTimePicker();
-            label6 = new Label();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
-            label7 = new Label();
-            iconButton5 = new FontAwesome.Sharp.IconButton();
-            comboBox3 = new ComboBox();
-            panelTiposdemateriais.SuspendLayout();
-            panel1.SuspendLayout();
-            panel5.SuspendLayout();
+            lblAdmGerarRelat = new Label();
+            lbRegistros = new Label();
+            lblAdmCategoria = new Label();
+            lblAdmTipoDescarte = new Label();
+            cb_Categoria = new ComboBox();
+            cb_TipoDescarte = new ComboBox();
+            lblAdmDestino = new Label();
+            cb_Destino = new ComboBox();
+            lblAdmGarrafasEcono = new Label();
+            cb_GarrafasEcono = new ComboBox();
+            btn_LimparFiltros = new FontAwesome.Sharp.IconButton();
+            cb_Pesototal = new ComboBox();
+            lblAdmPesoTotal = new Label();
+            cb_Bebedouro = new ComboBox();
+            lblAdmBebedouro = new Label();
+            cb_TotalLitros = new ComboBox();
+            lblAdmTotalLitros = new Label();
+            label12 = new Label();
+            lblAdmHumusColetado = new Label();
+            lblAdmTipodeMinhoca = new Label();
+            lblAdmMinhocarioN = new Label();
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
+            groupBox3 = new GroupBox();
+            cb_HumusColetado = new ComboBox();
+            cb_TipoMinhoca = new ComboBox();
+            cb_Minhocario = new ComboBox();
+            btn_RegistrosPesquisar = new FontAwesome.Sharp.IconButton();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
-            // lblTiposdemateriais
+            // lblAdmAte
             // 
-            lblTiposdemateriais.Anchor = AnchorStyles.Top;
-            lblTiposdemateriais.AutoSize = true;
-            lblTiposdemateriais.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTiposdemateriais.Location = new Point(24, 70);
-            lblTiposdemateriais.Name = "lblTiposdemateriais";
-            lblTiposdemateriais.Size = new Size(144, 21);
-            lblTiposdemateriais.TabIndex = 26;
-            lblTiposdemateriais.Text = "Tipos de Materiais";
-            lblTiposdemateriais.Click += lblTiposdemateriais_Click;
-            // 
-            // lbllixoReciclavel
-            // 
-            lbllixoReciclavel.Anchor = AnchorStyles.Top;
-            lbllixoReciclavel.AutoSize = true;
-            lbllixoReciclavel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbllixoReciclavel.Location = new Point(86, 165);
-            lbllixoReciclavel.Name = "lbllixoReciclavel";
-            lbllixoReciclavel.Size = new Size(52, 21);
-            lbllixoReciclavel.TabIndex = 29;
-            lbllixoReciclavel.Text = "Peso :";
-            // 
-            // lblLixoDestino
-            // 
-            lblLixoDestino.Anchor = AnchorStyles.Top;
-            lblLixoDestino.AutoSize = true;
-            lblLixoDestino.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLixoDestino.Location = new Point(519, 318);
-            lblLixoDestino.Name = "lblLixoDestino";
-            lblLixoDestino.Size = new Size(70, 21);
-            lblLixoDestino.TabIndex = 37;
-            lblLixoDestino.Text = "Destino ";
-            // 
-            // LblLixoOutrasInfo
-            // 
-            LblLixoOutrasInfo.Anchor = AnchorStyles.Top;
-            LblLixoOutrasInfo.AutoSize = true;
-            LblLixoOutrasInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LblLixoOutrasInfo.Location = new Point(92, 318);
-            LblLixoOutrasInfo.Name = "LblLixoOutrasInfo";
-            LblLixoOutrasInfo.Size = new Size(158, 21);
-            LblLixoOutrasInfo.TabIndex = 38;
-            LblLixoOutrasInfo.Text = "Outras Informações ";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Anchor = AnchorStyles.Top;
-            dateTimePicker1.Font = new Font("Segoe UI", 11F);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(761, 401);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(124, 27);
-            dateTimePicker1.TabIndex = 39;
-            // 
-            // checkBoxTipoVidro
-            // 
-            checkBoxTipoVidro.Anchor = AnchorStyles.Top;
-            checkBoxTipoVidro.AutoSize = true;
-            checkBoxTipoVidro.FlatStyle = FlatStyle.Flat;
-            checkBoxTipoVidro.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBoxTipoVidro.Location = new Point(236, 12);
-            checkBoxTipoVidro.Name = "checkBoxTipoVidro";
-            checkBoxTipoVidro.Size = new Size(68, 25);
-            checkBoxTipoVidro.TabIndex = 34;
-            checkBoxTipoVidro.Text = "Vidro";
-            checkBoxTipoVidro.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxTipoMetal
-            // 
-            checkBoxTipoMetal.Anchor = AnchorStyles.Top;
-            checkBoxTipoMetal.AutoSize = true;
-            checkBoxTipoMetal.FlatStyle = FlatStyle.Flat;
-            checkBoxTipoMetal.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBoxTipoMetal.Location = new Point(310, 12);
-            checkBoxTipoMetal.Name = "checkBoxTipoMetal";
-            checkBoxTipoMetal.Size = new Size(70, 25);
-            checkBoxTipoMetal.TabIndex = 33;
-            checkBoxTipoMetal.Text = "Metal";
-            checkBoxTipoMetal.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxTipoEletronico
-            // 
-            checkBoxTipoEletronico.Anchor = AnchorStyles.Top;
-            checkBoxTipoEletronico.AutoSize = true;
-            checkBoxTipoEletronico.FlatStyle = FlatStyle.Flat;
-            checkBoxTipoEletronico.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBoxTipoEletronico.Location = new Point(386, 12);
-            checkBoxTipoEletronico.Name = "checkBoxTipoEletronico";
-            checkBoxTipoEletronico.Size = new Size(104, 25);
-            checkBoxTipoEletronico.TabIndex = 32;
-            checkBoxTipoEletronico.Text = "Eletrônico";
-            checkBoxTipoEletronico.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxTipoMedicamentos
-            // 
-            checkBoxTipoMedicamentos.Anchor = AnchorStyles.Top;
-            checkBoxTipoMedicamentos.AutoSize = true;
-            checkBoxTipoMedicamentos.FlatStyle = FlatStyle.Flat;
-            checkBoxTipoMedicamentos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBoxTipoMedicamentos.Location = new Point(496, 12);
-            checkBoxTipoMedicamentos.Name = "checkBoxTipoMedicamentos";
-            checkBoxTipoMedicamentos.Size = new Size(143, 25);
-            checkBoxTipoMedicamentos.TabIndex = 36;
-            checkBoxTipoMedicamentos.Text = "Medicamentos ";
-            checkBoxTipoMedicamentos.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxTipoPlastico
-            // 
-            checkBoxTipoPlastico.Anchor = AnchorStyles.Top;
-            checkBoxTipoPlastico.AutoSize = true;
-            checkBoxTipoPlastico.FlatStyle = FlatStyle.Flat;
-            checkBoxTipoPlastico.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBoxTipoPlastico.Location = new Point(144, 12);
-            checkBoxTipoPlastico.Name = "checkBoxTipoPlastico";
-            checkBoxTipoPlastico.Size = new Size(86, 25);
-            checkBoxTipoPlastico.TabIndex = 35;
-            checkBoxTipoPlastico.Text = "Plástico";
-            checkBoxTipoPlastico.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxTipoPapel
-            // 
-            checkBoxTipoPapel.Anchor = AnchorStyles.Top;
-            checkBoxTipoPapel.AutoSize = true;
-            checkBoxTipoPapel.FlatStyle = FlatStyle.Flat;
-            checkBoxTipoPapel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBoxTipoPapel.Location = new Point(69, 12);
-            checkBoxTipoPapel.Name = "checkBoxTipoPapel";
-            checkBoxTipoPapel.Size = new Size(69, 25);
-            checkBoxTipoPapel.TabIndex = 31;
-            checkBoxTipoPapel.Text = "Papel";
-            checkBoxTipoPapel.UseVisualStyleBackColor = true;
-            // 
-            // panelTiposdemateriais
-            // 
-            panelTiposdemateriais.Anchor = AnchorStyles.Top;
-            panelTiposdemateriais.BackColor = Color.FromArgb(153, 179, 142);
-            panelTiposdemateriais.BorderStyle = BorderStyle.FixedSingle;
-            panelTiposdemateriais.Controls.Add(checkBox1);
-            panelTiposdemateriais.Controls.Add(checkBoxTipoPapel);
-            panelTiposdemateriais.Controls.Add(checkBoxTipoPlastico);
-            panelTiposdemateriais.Controls.Add(checkBoxTipoMedicamentos);
-            panelTiposdemateriais.Controls.Add(checkBoxTipoEletronico);
-            panelTiposdemateriais.Controls.Add(checkBoxTipoMetal);
-            panelTiposdemateriais.Controls.Add(checkBoxTipoVidro);
-            panelTiposdemateriais.Location = new Point(86, 103);
-            panelTiposdemateriais.Name = "panelTiposdemateriais";
-            panelTiposdemateriais.Size = new Size(801, 55);
-            panelTiposdemateriais.TabIndex = 43;
-            // 
-            // checkBox1
-            // 
-            checkBox1.Anchor = AnchorStyles.Top;
-            checkBox1.AutoSize = true;
-            checkBox1.FlatStyle = FlatStyle.Flat;
-            checkBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            checkBox1.Location = new Point(645, 12);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(96, 25);
-            checkBox1.TabIndex = 37;
-            checkBox1.Text = "Orgânico";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textLixoOutrasInfo
-            // 
-            textLixoOutrasInfo.Anchor = AnchorStyles.Top;
-            textLixoOutrasInfo.Location = new Point(92, 352);
-            textLixoOutrasInfo.Multiline = true;
-            textLixoOutrasInfo.Name = "textLixoOutrasInfo";
-            textLixoOutrasInfo.Size = new Size(366, 76);
-            textLixoOutrasInfo.TabIndex = 44;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label2.Location = new Point(246, 166);
-            label2.Name = "label2";
-            label2.Size = new Size(26, 19);
-            label2.TabIndex = 46;
-            label2.Text = "Kg";
-            // 
-            // iconButton3
-            // 
-            iconButton3.Anchor = AnchorStyles.Top;
-            iconButton3.BackColor = Color.FromArgb(35, 68, 57);
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton3.ForeColor = Color.White;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Save;
-            iconButton3.IconColor = Color.White;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 25;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(782, 457);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Padding = new Padding(3, 0, 0, 0);
-            iconButton3.Size = new Size(105, 41);
-            iconButton3.TabIndex = 48;
-            iconButton3.Text = "       Salvar ";
-            iconButton3.UseVisualStyleBackColor = false;
-            // 
-            // iconButton1
-            // 
-            iconButton1.Anchor = AnchorStyles.Top;
-            iconButton1.BackColor = Color.White;
-            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(35, 68, 57);
-            iconButton1.FlatAppearance.BorderSize = 2;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton1.ForeColor = Color.FromArgb(35, 68, 57);
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 25;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(802, 225);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(5, 0, 0, 0);
-            iconButton1.Size = new Size(83, 35);
-            iconButton1.TabIndex = 57;
-            iconButton1.Text = "Editar lista";
-            iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // iconButton2
-            // 
-            iconButton2.Anchor = AnchorStyles.Top;
-            iconButton2.BackColor = Color.White;
-            iconButton2.FlatAppearance.BorderColor = Color.FromArgb(35, 68, 57);
-            iconButton2.FlatAppearance.BorderSize = 2;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton2.ForeColor = Color.FromArgb(35, 68, 57);
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton2.IconColor = Color.White;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 25;
-            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(92, 278);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Padding = new Padding(5, 0, 0, 0);
-            iconButton2.Size = new Size(114, 37);
-            iconButton2.TabIndex = 58;
-            iconButton2.Text = "Editar campos";
-            iconButton2.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Top;
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(629, 405);
-            label4.Name = "label4";
-            label4.Size = new Size(126, 21);
-            label4.TabIndex = 59;
-            label4.Text = "Selecionar data:";
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Top;
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(521, 352);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(366, 23);
-            comboBox1.TabIndex = 60;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Gainsboro;
-            panel1.Controls.Add(iconButton8);
-            panel1.Controls.Add(lblAlunoAulas);
-            panel1.Controls.Add(btnVoltarPagEsqueciSenha);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(978, 39);
-            panel1.TabIndex = 64;
-            // 
-            // iconButton8
-            // 
-            iconButton8.FlatAppearance.BorderSize = 0;
-            iconButton8.FlatStyle = FlatStyle.Flat;
-            iconButton8.IconChar = FontAwesome.Sharp.IconChar.ChevronRight;
-            iconButton8.IconColor = Color.Black;
-            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton8.IconSize = 25;
-            iconButton8.Location = new Point(48, 2);
-            iconButton8.Name = "iconButton8";
-            iconButton8.Size = new Size(39, 34);
-            iconButton8.TabIndex = 70;
-            iconButton8.UseVisualStyleBackColor = true;
-            // 
-            // lblAlunoAulas
-            // 
-            lblAlunoAulas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lblAlunoAulas.AutoSize = true;
-            lblAlunoAulas.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAlunoAulas.ForeColor = Color.Black;
-            lblAlunoAulas.Location = new Point(433, 7);
-            lblAlunoAulas.Name = "lblAlunoAulas";
-            lblAlunoAulas.Size = new Size(113, 25);
-            lblAlunoAulas.TabIndex = 68;
-            lblAlunoAulas.Text = "REGISTROS";
-            // 
-            // btnVoltarPagEsqueciSenha
-            // 
-            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
-            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
-            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
-            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
-            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnVoltarPagEsqueciSenha.IconSize = 25;
-            btnVoltarPagEsqueciSenha.Location = new Point(3, 3);
-            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
-            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
-            btnVoltarPagEsqueciSenha.TabIndex = 54;
-            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            panel5.Anchor = AnchorStyles.Top;
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(label5);
-            panel5.Controls.Add(dateTimePicker2);
-            panel5.Controls.Add(iconButton6);
-            panel5.Controls.Add(dateTimePicker3);
-            panel5.Controls.Add(label6);
-            panel5.Location = new Point(86, 534);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(808, 85);
-            panel5.TabIndex = 67;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Top;
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(403, 32);
-            label5.Name = "label5";
-            label5.Size = new Size(44, 21);
-            label5.TabIndex = 51;
-            label5.Text = "Até: ";
+            lblAdmAte.Anchor = AnchorStyles.Top;
+            lblAdmAte.AutoSize = true;
+            lblAdmAte.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdmAte.Location = new Point(359, 544);
+            lblAdmAte.Name = "lblAdmAte";
+            lblAdmAte.Size = new Size(44, 21);
+            lblAdmAte.TabIndex = 51;
+            lblAdmAte.Text = "Até: ";
             // 
             // dateTimePicker2
             // 
             dateTimePicker2.Anchor = AnchorStyles.Top;
             dateTimePicker2.Font = new Font("Segoe UI", 11F);
             dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(262, 29);
+            dateTimePicker2.Location = new Point(240, 541);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(100, 27);
             dateTimePicker2.TabIndex = 55;
             dateTimePicker2.Value = new DateTime(2025, 4, 20, 22, 40, 38, 0);
             // 
-            // iconButton6
+            // btn_GerarPDF
             // 
-            iconButton6.Anchor = AnchorStyles.Top;
-            iconButton6.BackColor = Color.FromArgb(35, 68, 57);
-            iconButton6.FlatStyle = FlatStyle.Flat;
-            iconButton6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton6.ForeColor = Color.White;
-            iconButton6.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
-            iconButton6.IconColor = Color.White;
-            iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton6.IconSize = 25;
-            iconButton6.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton6.Location = new Point(587, 22);
-            iconButton6.Name = "iconButton6";
-            iconButton6.Padding = new Padding(5, 0, 0, 0);
-            iconButton6.Size = new Size(113, 41);
-            iconButton6.TabIndex = 53;
-            iconButton6.Text = "Gerar PDF";
-            iconButton6.TextAlign = ContentAlignment.MiddleRight;
-            iconButton6.UseVisualStyleBackColor = false;
+            btn_GerarPDF.Anchor = AnchorStyles.Top;
+            btn_GerarPDF.BackColor = Color.FromArgb(35, 68, 57);
+            btn_GerarPDF.FlatStyle = FlatStyle.Flat;
+            btn_GerarPDF.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_GerarPDF.ForeColor = Color.White;
+            btn_GerarPDF.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
+            btn_GerarPDF.IconColor = Color.White;
+            btn_GerarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_GerarPDF.IconSize = 25;
+            btn_GerarPDF.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_GerarPDF.Location = new Point(776, 534);
+            btn_GerarPDF.Name = "btn_GerarPDF";
+            btn_GerarPDF.Padding = new Padding(5, 0, 0, 0);
+            btn_GerarPDF.Size = new Size(113, 41);
+            btn_GerarPDF.TabIndex = 53;
+            btn_GerarPDF.Text = "Gerar PDF";
+            btn_GerarPDF.TextAlign = ContentAlignment.MiddleRight;
+            btn_GerarPDF.UseVisualStyleBackColor = false;
             // 
             // dateTimePicker3
             // 
             dateTimePicker3.Anchor = AnchorStyles.Top;
             dateTimePicker3.Font = new Font("Segoe UI", 11F);
             dateTimePicker3.Format = DateTimePickerFormat.Short;
-            dateTimePicker3.Location = new Point(453, 29);
+            dateTimePicker3.Location = new Point(404, 541);
             dateTimePicker3.Name = "dateTimePicker3";
             dateTimePicker3.Size = new Size(100, 27);
             dateTimePicker3.TabIndex = 52;
             dateTimePicker3.Value = new DateTime(2025, 4, 20, 22, 40, 38, 0);
             // 
-            // label6
+            // lblAdmGerarRelat
             // 
-            label6.Anchor = AnchorStyles.Top;
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(107, 32);
-            label6.Name = "label6";
-            label6.Size = new Size(152, 21);
-            label6.TabIndex = 54;
-            label6.Text = "Gerar Relatório de: ";
+            lblAdmGerarRelat.Anchor = AnchorStyles.Top;
+            lblAdmGerarRelat.AutoSize = true;
+            lblAdmGerarRelat.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdmGerarRelat.Location = new Point(91, 544);
+            lblAdmGerarRelat.Name = "lblAdmGerarRelat";
+            lblAdmGerarRelat.Size = new Size(152, 21);
+            lblAdmGerarRelat.TabIndex = 54;
+            lblAdmGerarRelat.Text = "Gerar Relatório de: ";
             // 
-            // iconButton4
+            // lbRegistros
             // 
-            iconButton4.Anchor = AnchorStyles.Top;
-            iconButton4.BackColor = Color.FromArgb(35, 68, 57);
-            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(35, 68, 57);
-            iconButton4.FlatAppearance.BorderSize = 0;
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton4.ForeColor = Color.White;
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton4.IconColor = Color.White;
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.IconSize = 25;
-            iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(262, 463);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Padding = new Padding(5, 0, 0, 0);
-            iconButton4.Size = new Size(139, 29);
-            iconButton4.TabIndex = 70;
-            iconButton4.Text = "Procurar Arquivos";
-            iconButton4.UseVisualStyleBackColor = false;
+            lbRegistros.Anchor = AnchorStyles.Top;
+            lbRegistros.AutoSize = true;
+            lbRegistros.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbRegistros.ForeColor = Color.FromArgb(35, 68, 57);
+            lbRegistros.Location = new Point(84, 52);
+            lbRegistros.Name = "lbRegistros";
+            lbRegistros.Size = new Size(118, 25);
+            lbRegistros.TabIndex = 69;
+            lbRegistros.Text = "REGISTROS";
             // 
-            // label7
+            // lblAdmCategoria
             // 
-            label7.Anchor = AnchorStyles.Top;
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(90, 467);
-            label7.Name = "label7";
-            label7.Size = new Size(156, 21);
-            label7.TabIndex = 69;
-            label7.Text = "Upload de arquivos:";
+            lblAdmCategoria.Anchor = AnchorStyles.Top;
+            lblAdmCategoria.AutoSize = true;
+            lblAdmCategoria.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAdmCategoria.Location = new Point(102, 124);
+            lblAdmCategoria.Name = "lblAdmCategoria";
+            lblAdmCategoria.Size = new Size(84, 21);
+            lblAdmCategoria.TabIndex = 83;
+            lblAdmCategoria.Text = "Categoria :";
             // 
-            // iconButton5
+            // lblAdmTipoDescarte
             // 
-            iconButton5.Anchor = AnchorStyles.Top;
-            iconButton5.BackColor = Color.White;
-            iconButton5.FlatAppearance.BorderColor = Color.FromArgb(35, 68, 57);
-            iconButton5.FlatAppearance.BorderSize = 2;
-            iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton5.ForeColor = Color.FromArgb(35, 68, 57);
-            iconButton5.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton5.IconColor = Color.White;
-            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton5.IconSize = 25;
-            iconButton5.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton5.Location = new Point(658, 457);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Padding = new Padding(5, 0, 0, 0);
-            iconButton5.Size = new Size(113, 41);
-            iconButton5.TabIndex = 71;
-            iconButton5.Text = "Limpar Filtros";
-            iconButton5.UseVisualStyleBackColor = false;
+            lblAdmTipoDescarte.Anchor = AnchorStyles.Top;
+            lblAdmTipoDescarte.AutoSize = true;
+            lblAdmTipoDescarte.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAdmTipoDescarte.Location = new Point(13, 41);
+            lblAdmTipoDescarte.Name = "lblAdmTipoDescarte";
+            lblAdmTipoDescarte.Size = new Size(130, 21);
+            lblAdmTipoDescarte.TabIndex = 84;
+            lblAdmTipoDescarte.Text = "Tipo de descarte :";
             // 
-            // comboBox3
+            // cb_Categoria
             // 
-            comboBox3.Anchor = AnchorStyles.Top;
-            comboBox3.FlatStyle = FlatStyle.Flat;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(137, 165);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(111, 23);
-            comboBox3.TabIndex = 73;
+            cb_Categoria.Anchor = AnchorStyles.Top;
+            cb_Categoria.FormattingEnabled = true;
+            cb_Categoria.Location = new Point(192, 123);
+            cb_Categoria.Name = "cb_Categoria";
+            cb_Categoria.Size = new Size(121, 23);
+            cb_Categoria.TabIndex = 85;
+            // 
+            // cb_TipoDescarte
+            // 
+            cb_TipoDescarte.Anchor = AnchorStyles.Top;
+            cb_TipoDescarte.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_TipoDescarte.FormattingEnabled = true;
+            cb_TipoDescarte.Location = new Point(149, 37);
+            cb_TipoDescarte.Name = "cb_TipoDescarte";
+            cb_TipoDescarte.Size = new Size(121, 29);
+            cb_TipoDescarte.TabIndex = 86;
+            // 
+            // lblAdmDestino
+            // 
+            lblAdmDestino.Anchor = AnchorStyles.Top;
+            lblAdmDestino.AutoSize = true;
+            lblAdmDestino.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAdmDestino.Location = new Point(322, 41);
+            lblAdmDestino.Name = "lblAdmDestino";
+            lblAdmDestino.Size = new Size(70, 21);
+            lblAdmDestino.TabIndex = 87;
+            lblAdmDestino.Text = "Destino :";
+            // 
+            // cb_Destino
+            // 
+            cb_Destino.Anchor = AnchorStyles.Top;
+            cb_Destino.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_Destino.FormattingEnabled = true;
+            cb_Destino.Location = new Point(398, 37);
+            cb_Destino.Name = "cb_Destino";
+            cb_Destino.Size = new Size(121, 29);
+            cb_Destino.TabIndex = 88;
+            // 
+            // lblAdmGarrafasEcono
+            // 
+            lblAdmGarrafasEcono.Anchor = AnchorStyles.Top;
+            lblAdmGarrafasEcono.AutoSize = true;
+            lblAdmGarrafasEcono.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAdmGarrafasEcono.Location = new Point(247, 41);
+            lblAdmGarrafasEcono.Name = "lblAdmGarrafasEcono";
+            lblAdmGarrafasEcono.Size = new Size(179, 21);
+            lblAdmGarrafasEcono.TabIndex = 89;
+            lblAdmGarrafasEcono.Text = "Garrafas economizadas :";
+            // 
+            // cb_GarrafasEcono
+            // 
+            cb_GarrafasEcono.Anchor = AnchorStyles.Top;
+            cb_GarrafasEcono.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_GarrafasEcono.FormattingEnabled = true;
+            cb_GarrafasEcono.Location = new Point(432, 37);
+            cb_GarrafasEcono.Name = "cb_GarrafasEcono";
+            cb_GarrafasEcono.Size = new Size(121, 29);
+            cb_GarrafasEcono.TabIndex = 90;
+            // 
+            // btn_LimparFiltros
+            // 
+            btn_LimparFiltros.Anchor = AnchorStyles.Top;
+            btn_LimparFiltros.BackColor = Color.White;
+            btn_LimparFiltros.FlatAppearance.BorderColor = Color.FromArgb(35, 68, 57);
+            btn_LimparFiltros.FlatAppearance.BorderSize = 2;
+            btn_LimparFiltros.FlatStyle = FlatStyle.Flat;
+            btn_LimparFiltros.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_LimparFiltros.ForeColor = Color.FromArgb(35, 68, 57);
+            btn_LimparFiltros.IconChar = FontAwesome.Sharp.IconChar.None;
+            btn_LimparFiltros.IconColor = Color.White;
+            btn_LimparFiltros.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_LimparFiltros.IconSize = 25;
+            btn_LimparFiltros.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_LimparFiltros.Location = new Point(529, 534);
+            btn_LimparFiltros.Name = "btn_LimparFiltros";
+            btn_LimparFiltros.Padding = new Padding(5, 0, 0, 0);
+            btn_LimparFiltros.Size = new Size(113, 41);
+            btn_LimparFiltros.TabIndex = 95;
+            btn_LimparFiltros.Text = "Limpar Filtros";
+            btn_LimparFiltros.UseVisualStyleBackColor = false;
+            btn_LimparFiltros.Click += btn_LimparFiltros_Click;
+            // 
+            // cb_Pesototal
+            // 
+            cb_Pesototal.Anchor = AnchorStyles.Top;
+            cb_Pesototal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_Pesototal.FormattingEnabled = true;
+            cb_Pesototal.Location = new Point(662, 37);
+            cb_Pesototal.Name = "cb_Pesototal";
+            cb_Pesototal.Size = new Size(121, 29);
+            cb_Pesototal.TabIndex = 97;
+            // 
+            // lblAdmPesoTotal
+            // 
+            lblAdmPesoTotal.Anchor = AnchorStyles.Top;
+            lblAdmPesoTotal.AutoSize = true;
+            lblAdmPesoTotal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAdmPesoTotal.Location = new Point(572, 41);
+            lblAdmPesoTotal.Name = "lblAdmPesoTotal";
+            lblAdmPesoTotal.Size = new Size(84, 21);
+            lblAdmPesoTotal.TabIndex = 96;
+            lblAdmPesoTotal.Text = "Peso total :";
+            // 
+            // cb_Bebedouro
+            // 
+            cb_Bebedouro.Anchor = AnchorStyles.Top;
+            cb_Bebedouro.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_Bebedouro.FormattingEnabled = true;
+            cb_Bebedouro.Location = new Point(113, 37);
+            cb_Bebedouro.Name = "cb_Bebedouro";
+            cb_Bebedouro.Size = new Size(121, 29);
+            cb_Bebedouro.TabIndex = 99;
+            // 
+            // lblAdmBebedouro
+            // 
+            lblAdmBebedouro.Anchor = AnchorStyles.Top;
+            lblAdmBebedouro.AutoSize = true;
+            lblAdmBebedouro.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAdmBebedouro.Location = new Point(14, 41);
+            lblAdmBebedouro.Name = "lblAdmBebedouro";
+            lblAdmBebedouro.Size = new Size(93, 21);
+            lblAdmBebedouro.TabIndex = 98;
+            lblAdmBebedouro.Text = "Bebedouro :";
+            // 
+            // cb_TotalLitros
+            // 
+            cb_TotalLitros.Anchor = AnchorStyles.Top;
+            cb_TotalLitros.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_TotalLitros.FormattingEnabled = true;
+            cb_TotalLitros.Location = new Point(661, 37);
+            cb_TotalLitros.Name = "cb_TotalLitros";
+            cb_TotalLitros.Size = new Size(121, 29);
+            cb_TotalLitros.TabIndex = 101;
+            // 
+            // lblAdmTotalLitros
+            // 
+            lblAdmTotalLitros.Anchor = AnchorStyles.Top;
+            lblAdmTotalLitros.AutoSize = true;
+            lblAdmTotalLitros.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAdmTotalLitros.Location = new Point(567, 41);
+            lblAdmTotalLitros.Name = "lblAdmTotalLitros";
+            lblAdmTotalLitros.Size = new Size(88, 21);
+            lblAdmTotalLitros.TabIndex = 100;
+            lblAdmTotalLitros.Text = "Total litros :";
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.Top;
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(762, 40);
+            label12.Name = "label12";
+            label12.Size = new Size(24, 17);
+            label12.TabIndex = 108;
+            label12.Text = "Kg";
+            // 
+            // lblAdmHumusColetado
+            // 
+            lblAdmHumusColetado.Anchor = AnchorStyles.Top;
+            lblAdmHumusColetado.AutoSize = true;
+            lblAdmHumusColetado.Font = new Font("Segoe UI", 12F);
+            lblAdmHumusColetado.Location = new Point(543, 38);
+            lblAdmHumusColetado.Name = "lblAdmHumusColetado";
+            lblAdmHumusColetado.Size = new Size(133, 21);
+            lblAdmHumusColetado.TabIndex = 106;
+            lblAdmHumusColetado.Text = "Húmus Coletado :";
+            // 
+            // lblAdmTipodeMinhoca
+            // 
+            lblAdmTipodeMinhoca.Anchor = AnchorStyles.Top;
+            lblAdmTipodeMinhoca.AutoSize = true;
+            lblAdmTipodeMinhoca.Font = new Font("Segoe UI", 12F);
+            lblAdmTipodeMinhoca.Location = new Point(295, 38);
+            lblAdmTipodeMinhoca.Name = "lblAdmTipodeMinhoca";
+            lblAdmTipodeMinhoca.Size = new Size(132, 21);
+            lblAdmTipodeMinhoca.TabIndex = 104;
+            lblAdmTipodeMinhoca.Text = "Tipo de Minhoca :";
+            // 
+            // lblAdmMinhocarioN
+            // 
+            lblAdmMinhocarioN.Anchor = AnchorStyles.Top;
+            lblAdmMinhocarioN.AutoSize = true;
+            lblAdmMinhocarioN.Font = new Font("Segoe UI", 12F);
+            lblAdmMinhocarioN.Location = new Point(14, 38);
+            lblAdmMinhocarioN.Name = "lblAdmMinhocarioN";
+            lblAdmMinhocarioN.Size = new Size(155, 21);
+            lblAdmMinhocarioN.TabIndex = 102;
+            lblAdmMinhocarioN.Text = "Minhocario número :";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Anchor = AnchorStyles.Top;
+            groupBox1.Controls.Add(cb_Destino);
+            groupBox1.Controls.Add(lblAdmTipoDescarte);
+            groupBox1.Controls.Add(cb_TipoDescarte);
+            groupBox1.Controls.Add(lblAdmDestino);
+            groupBox1.Controls.Add(lblAdmPesoTotal);
+            groupBox1.Controls.Add(cb_Pesototal);
+            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(89, 180);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(800, 76);
+            groupBox1.TabIndex = 112;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "DESCARTES";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Anchor = AnchorStyles.Top;
+            groupBox2.Controls.Add(cb_GarrafasEcono);
+            groupBox2.Controls.Add(lblAdmGarrafasEcono);
+            groupBox2.Controls.Add(lblAdmBebedouro);
+            groupBox2.Controls.Add(cb_Bebedouro);
+            groupBox2.Controls.Add(lblAdmTotalLitros);
+            groupBox2.Controls.Add(cb_TotalLitros);
+            groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.Location = new Point(89, 284);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(800, 76);
+            groupBox2.TabIndex = 113;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "CONSUMO DE ÁGUA";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Anchor = AnchorStyles.Top;
+            groupBox3.Controls.Add(cb_HumusColetado);
+            groupBox3.Controls.Add(cb_TipoMinhoca);
+            groupBox3.Controls.Add(cb_Minhocario);
+            groupBox3.Controls.Add(lblAdmHumusColetado);
+            groupBox3.Controls.Add(lblAdmMinhocarioN);
+            groupBox3.Controls.Add(lblAdmTipodeMinhoca);
+            groupBox3.Controls.Add(label12);
+            groupBox3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox3.Location = new Point(89, 390);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(800, 76);
+            groupBox3.TabIndex = 114;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "MINHOCARIO";
+            // 
+            // cb_HumusColetado
+            // 
+            cb_HumusColetado.Anchor = AnchorStyles.Top;
+            cb_HumusColetado.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_HumusColetado.FormattingEnabled = true;
+            cb_HumusColetado.Location = new Point(673, 34);
+            cb_HumusColetado.Name = "cb_HumusColetado";
+            cb_HumusColetado.Size = new Size(83, 29);
+            cb_HumusColetado.TabIndex = 111;
+            // 
+            // cb_TipoMinhoca
+            // 
+            cb_TipoMinhoca.Anchor = AnchorStyles.Top;
+            cb_TipoMinhoca.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_TipoMinhoca.FormattingEnabled = true;
+            cb_TipoMinhoca.Location = new Point(432, 34);
+            cb_TipoMinhoca.Name = "cb_TipoMinhoca";
+            cb_TipoMinhoca.Size = new Size(105, 29);
+            cb_TipoMinhoca.TabIndex = 110;
+            // 
+            // cb_Minhocario
+            // 
+            cb_Minhocario.Anchor = AnchorStyles.Top;
+            cb_Minhocario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_Minhocario.FormattingEnabled = true;
+            cb_Minhocario.Location = new Point(168, 34);
+            cb_Minhocario.Name = "cb_Minhocario";
+            cb_Minhocario.Size = new Size(118, 29);
+            cb_Minhocario.TabIndex = 109;
+            // 
+            // btn_RegistrosPesquisar
+            // 
+            btn_RegistrosPesquisar.Anchor = AnchorStyles.Top;
+            btn_RegistrosPesquisar.BackColor = Color.FromArgb(35, 68, 57);
+            btn_RegistrosPesquisar.FlatStyle = FlatStyle.Flat;
+            btn_RegistrosPesquisar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_RegistrosPesquisar.ForeColor = Color.White;
+            btn_RegistrosPesquisar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            btn_RegistrosPesquisar.IconColor = Color.White;
+            btn_RegistrosPesquisar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_RegistrosPesquisar.IconSize = 25;
+            btn_RegistrosPesquisar.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_RegistrosPesquisar.Location = new Point(653, 534);
+            btn_RegistrosPesquisar.Name = "btn_RegistrosPesquisar";
+            btn_RegistrosPesquisar.Padding = new Padding(5, 0, 0, 0);
+            btn_RegistrosPesquisar.Size = new Size(113, 41);
+            btn_RegistrosPesquisar.TabIndex = 115;
+            btn_RegistrosPesquisar.Text = "Pesquisar";
+            btn_RegistrosPesquisar.TextAlign = ContentAlignment.MiddleRight;
+            btn_RegistrosPesquisar.UseVisualStyleBackColor = false;
             // 
             // UCAdm_Registros
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(comboBox3);
-            Controls.Add(iconButton5);
-            Controls.Add(iconButton4);
-            Controls.Add(label7);
-            Controls.Add(panel5);
-            Controls.Add(panel1);
-            Controls.Add(comboBox1);
-            Controls.Add(label4);
-            Controls.Add(iconButton2);
-            Controls.Add(iconButton1);
-            Controls.Add(iconButton3);
-            Controls.Add(label2);
-            Controls.Add(textLixoOutrasInfo);
-            Controls.Add(panelTiposdemateriais);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(LblLixoOutrasInfo);
-            Controls.Add(lblLixoDestino);
-            Controls.Add(lbllixoReciclavel);
-            Controls.Add(lblTiposdemateriais);
+            Controls.Add(btn_RegistrosPesquisar);
+            Controls.Add(lblAdmAte);
+            Controls.Add(groupBox3);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(groupBox2);
+            Controls.Add(btn_GerarPDF);
+            Controls.Add(dateTimePicker3);
+            Controls.Add(groupBox1);
+            Controls.Add(lblAdmGerarRelat);
+            Controls.Add(btn_LimparFiltros);
+            Controls.Add(cb_Categoria);
+            Controls.Add(lblAdmCategoria);
+            Controls.Add(lbRegistros);
             Name = "UCAdm_Registros";
             Size = new Size(978, 646);
-            Load += UCAdm_Registros_Load;
-            panelTiposdemateriais.ResumeLayout(false);
-            panelTiposdemateriais.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label lblTiposdemateriais;
-        private Label lbllixoReciclavel;
-        private Label lblLixoDestino;
-        private Label LblLixoOutrasInfo;
-        private DateTimePicker dateTimePicker1;
-        private CheckBox checkBoxTipoVidro;
-        private CheckBox checkBoxTipoMetal;
-        private CheckBox checkBoxTipoEletronico;
-        private CheckBox checkBoxTipoMedicamentos;
-        private CheckBox checkBoxTipoPlastico;
-        private CheckBox checkBoxTipoPapel;
-        private Panel panelTiposdemateriais;
-        private TextBox textLixoOutrasInfo;
-        private Label label2;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private Label label4;
-        private ComboBox comboBox1;
-        private Panel panel1;
-        private Label lblAlunoAulas;
-        private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
-        private FontAwesome.Sharp.IconButton iconButton8;
-        private Panel panel5;
-        private Label label5;
+        private Label lblAdmAte;
         private DateTimePicker dateTimePicker2;
-        private FontAwesome.Sharp.IconButton iconButton6;
+        private FontAwesome.Sharp.IconButton btn_GerarPDF;
         private DateTimePicker dateTimePicker3;
-        private Label label6;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private Label label7;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private ComboBox comboBox3;
-        private CheckBox checkBox1;
+        private Label lblAdmGerarRelat;
+        private Label lbRegistros;
+        private Label lblAdmCategoria;
+        private Label lblAdmTipoDescarte;
+        private ComboBox cb_Categoria;
+        private ComboBox cb_TipoDescarte;
+        private Label lblAdmDestino;
+        private ComboBox cb_Destino;
+        private Label lblAdmGarrafasEcono;
+        private ComboBox cb_GarrafasEcono;
+        private FontAwesome.Sharp.IconButton btn_LimparFiltros;
+        private ComboBox cb_Pesototal;
+        private Label lblAdmPesoTotal;
+        private ComboBox cb_Bebedouro;
+        private Label lblAdmBebedouro;
+        private ComboBox cb_TotalLitros;
+        private Label lblAdmTotalLitros;
+        private Label label12;
+        private Label lblAdmHumusColetado;
+        private Label lblAdmTipodeMinhoca;
+        private Label lblAdmMinhocarioN;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private GroupBox groupBox3;
+        private ComboBox cb_HumusColetado;
+        private ComboBox cb_TipoMinhoca;
+        private ComboBox cb_Minhocario;
+        private FontAwesome.Sharp.IconButton btn_RegistrosPesquisar;
     }
 }

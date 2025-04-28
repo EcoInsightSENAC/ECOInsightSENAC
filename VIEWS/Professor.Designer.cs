@@ -41,6 +41,7 @@
             panel2 = new Panel();
             sidebarTimerProf = new System.Windows.Forms.Timer(components);
             panelSuperiorProf = new Panel();
+            lblLogin = new Label();
             sidebarProf = new FlowLayoutPanel();
             panelbtnAProfMenu = new Panel();
             panelbtnProfDestaques = new Panel();
@@ -52,7 +53,7 @@
             timerSubAula = new System.Windows.Forms.Timer(components);
             panelProf = new Panel();
             label1 = new Label();
-            lblLogin = new Label();
+            pictureBox2 = new PictureBox();
             panel2.SuspendLayout();
             panelSuperiorProf.SuspendLayout();
             sidebarProf.SuspendLayout();
@@ -62,6 +63,7 @@
             panelbtnProfMPerfil.SuspendLayout();
             panelbtnSairProf.SuspendLayout();
             panelProf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnAProfMenu
@@ -234,6 +236,7 @@
             // panelSuperiorProf
             // 
             panelSuperiorProf.BackColor = Color.FromArgb(36, 65, 57);
+            panelSuperiorProf.Controls.Add(pictureBox2);
             panelSuperiorProf.Controls.Add(lblLogin);
             panelSuperiorProf.Controls.Add(panel2);
             panelSuperiorProf.Controls.Add(lblAluno);
@@ -242,6 +245,17 @@
             panelSuperiorProf.Name = "panelSuperiorProf";
             panelSuperiorProf.Size = new Size(1139, 42);
             panelSuperiorProf.TabIndex = 22;
+            // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(53, 10);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(86, 21);
+            lblLogin.TabIndex = 17;
+            lblLogin.Text = "ECOBoard";
             // 
             // sidebarProf
             // 
@@ -356,16 +370,15 @@
             label1.TabIndex = 1;
             label1.Text = "TELA EM \r\nCONSTRUÇÃO";
             // 
-            // lblLogin
+            // pictureBox2
             // 
-            lblLogin.AutoSize = true;
-            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = SystemColors.ButtonHighlight;
-            lblLogin.Location = new Point(12, 9);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(86, 21);
-            lblLogin.TabIndex = 17;
-            lblLogin.Text = "ECOBoard";
+            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 25;
+            pictureBox2.TabStop = false;
             // 
             // ProfessorTela
             // 
@@ -390,6 +403,7 @@
             panelbtnSairProf.ResumeLayout(false);
             panelProf.ResumeLayout(false);
             panelProf.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -418,5 +432,6 @@
         private Panel panelProf;
         private Label label1;
         private Label lblLogin;
+        private PictureBox pictureBox2;
     }
 }
