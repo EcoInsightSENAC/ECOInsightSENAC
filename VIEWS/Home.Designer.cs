@@ -48,11 +48,12 @@
             panel6 = new Panel();
             panel5 = new Panel();
             panelSuperiorHome = new Panel();
+            lblLogin = new Label();
             sidebarHome = new FlowLayoutPanel();
             btnSair = new FontAwesome.Sharp.IconButton();
             timerSub = new System.Windows.Forms.Timer(components);
             sidebarhome2 = new System.Windows.Forms.Timer(components);
-            lblLogin = new Label();
+            pictureBox2 = new PictureBox();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             panelSub.SuspendLayout();
@@ -61,6 +62,7 @@
             panel5.SuspendLayout();
             panelSuperiorHome.SuspendLayout();
             sidebarHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnMinimizarHome
@@ -325,6 +327,7 @@
             // panelSuperiorHome
             // 
             panelSuperiorHome.BackColor = Color.FromArgb(36, 65, 57);
+            panelSuperiorHome.Controls.Add(pictureBox2);
             panelSuperiorHome.Controls.Add(lblLogin);
             panelSuperiorHome.Controls.Add(panel2);
             panelSuperiorHome.Controls.Add(lblHome);
@@ -333,6 +336,17 @@
             panelSuperiorHome.Name = "panelSuperiorHome";
             panelSuperiorHome.Size = new Size(1139, 42);
             panelSuperiorHome.TabIndex = 32;
+            // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(53, 10);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(86, 21);
+            lblLogin.TabIndex = 18;
+            lblLogin.Text = "ECOBoard";
             // 
             // sidebarHome
             // 
@@ -378,16 +392,15 @@
             sidebarhome2.Interval = 10;
             sidebarhome2.Tick += sidebarhome2_Tick;
             // 
-            // lblLogin
+            // pictureBox2
             // 
-            lblLogin.AutoSize = true;
-            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = SystemColors.ButtonHighlight;
-            lblLogin.Location = new Point(12, 9);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(86, 21);
-            lblLogin.TabIndex = 18;
-            lblLogin.Text = "ECOBoard";
+            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 25;
+            pictureBox2.TabStop = false;
             // 
             // HomeTela
             // 
@@ -411,6 +424,7 @@
             panelSuperiorHome.ResumeLayout(false);
             panelSuperiorHome.PerformLayout();
             sidebarHome.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -441,5 +455,6 @@
         private System.Windows.Forms.Timer timerSub;
         private System.Windows.Forms.Timer sidebarhome2;
         private Label lblLogin;
+        private PictureBox pictureBox2;
     }
 }

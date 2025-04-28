@@ -4,17 +4,33 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Configuration;              // para ler a connectionString
 using ECOInsight.UserControls;
+<<<<<<< HEAD
 using ECOInsight.DataAccess;            // para Conexao.CreateConnection()
+=======
+using System.Collections.Generic;
+>>>>>>> 4564881c64e93b88da029d11d4a782047885288a
 
 namespace ECOInsight
 {
     public partial class AdmTela : Form
     {
         #region Campos Privados
+<<<<<<< HEAD
         private bool menuExpand;
+=======
+
+>>>>>>> 4564881c64e93b88da029d11d4a782047885288a
         private bool sidebarExpand = false;
+        private bool menuExpand = false;
         private Size tamanhoOriginal;
         private bool maximizado = false;
+<<<<<<< HEAD
+=======
+        private Stack<UserControl> historicoVoltar = new Stack<UserControl>();
+        private Stack<UserControl> historicoAvancar = new Stack<UserControl>();
+        private UserControl controleAtual;
+
+>>>>>>> 4564881c64e93b88da029d11d4a782047885288a
         #endregion
 
         #region Construtor
@@ -24,9 +40,11 @@ namespace ECOInsight
             InitializeSidebar();
             this.Load += AdmTela_Load;        // Associa o evento Load para testar a conexão
             LoadInitialUserControl();
+            AtualizarEstadoBotoesNavegacao();
         }
         #endregion
 
+<<<<<<< HEAD
         #region Conexão com o Banco
         private void AdmTela_Load(object sender, EventArgs e)
         {
@@ -78,6 +96,15 @@ namespace ECOInsight
         private void InitializeSidebar()
         {
             sidebarAdm.Width = 63;     // largura inicial minimizada
+=======
+        #endregion
+
+        #region Inicialização
+
+        private void InitializeSidebar()
+        {
+            sidebarAdm.Width = 63;
+>>>>>>> 4564881c64e93b88da029d11d4a782047885288a
             sidebarExpand = false;
         }
 
@@ -89,12 +116,32 @@ namespace ECOInsight
         #endregion
 
         #region Métodos Utilitários
+<<<<<<< HEAD
         private void addUserControl(UserControl userControl)
+=======
+
+        private void addUserControl(UserControl novoControle, bool limparAvanco = true)
+>>>>>>> 4564881c64e93b88da029d11d4a782047885288a
         {
-            userControl.Dock = DockStyle.Fill;
+            if (controleAtual != null)
+            {
+                historicoVoltar.Push(controleAtual);
+                if (limparAvanco)
+                    historicoAvancar.Clear();
+            }
+
+            controleAtual = novoControle;
+            novoControle.Dock = DockStyle.Fill;
             panelAdm.Controls.Clear();
-            panelAdm.Controls.Add(userControl);
-            userControl.BringToFront();
+            panelAdm.Controls.Add(novoControle);
+            novoControle.BringToFront();
+            AtualizarEstadoBotoesNavegacao();
+        }
+
+        private void AtualizarEstadoBotoesNavegacao()
+        {
+            btnAdm_Voltar.Enabled = historicoVoltar.Count > 0;
+            btnAdm_Avancar.Enabled = historicoAvancar.Count > 0;
         }
         #endregion
 
@@ -131,7 +178,11 @@ namespace ECOInsight
 
         private void btnFecharAdm_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             Application.Exit();
+=======
+            System.Windows.Forms.Application.Exit();
+>>>>>>> 4564881c64e93b88da029d11d4a782047885288a
         }
 
         private void btnVoltarPagEsqueciSenha_Click(object sender, EventArgs e)
@@ -146,6 +197,7 @@ namespace ECOInsight
 
         private void btnAdmRelatorio_Click_1(object sender, EventArgs e)
         {
+            timerSubRelatorio.Start();
             UCAdm_Registros uc = new UCAdm_Registros();
             addUserControl(uc);
         }
@@ -167,6 +219,52 @@ namespace ECOInsight
             UCAdm_MeuPerfil uc = new UCAdm_MeuPerfil();
             addUserControl(uc);
         }
+<<<<<<< HEAD
+=======
+
+        private void btnAdmDescarte_Click(object sender, EventArgs e)
+        {
+            UCAdm_Descartes uc = new UCAdm_Descartes();
+            addUserControl(uc);
+        }
+
+        private void btnAdmMinhocario_Click(object sender, EventArgs e)
+        {
+            UCAdm_Minhocario uc = new UCAdm_Minhocario();
+            addUserControl(uc);
+        }
+
+        private void btnAdmAgua_Click(object sender, EventArgs e)
+        {
+            UCAdm_ConsumoAgua uc = new UCAdm_ConsumoAgua();
+            addUserControl(uc);
+        }
+
+        #endregion
+
+        #region Eventos de Navegação (Voltar e Avançar)
+
+        private void btnAdm_Voltar_Click_1(object sender, EventArgs e)
+        {
+            if (historicoVoltar.Count > 0)
+            {
+                historicoAvancar.Push(controleAtual);
+                UserControl controleAnterior = historicoVoltar.Pop();
+                addUserControl(controleAnterior, false);
+            }
+        }
+
+        private void btnAdm_Avancar_Click_1(object sender, EventArgs e)
+        {
+            if (historicoAvancar.Count > 0)
+            {
+                historicoVoltar.Push(controleAtual);
+                UserControl controleProximo = historicoAvancar.Pop();
+                addUserControl(controleProximo, false);
+            }
+        }
+
+>>>>>>> 4564881c64e93b88da029d11d4a782047885288a
         #endregion
 
         #region Eventos de Timer (Animações)
@@ -195,12 +293,43 @@ namespace ECOInsight
                 }
             }
         }
+<<<<<<< HEAD
         #endregion
 
         private void btnAdmGerarRelatorio_Click(object sender, EventArgs e)
+=======
+
+        private void timerSubRelatorio_Tick(object sender, EventArgs e)
+>>>>>>> 4564881c64e93b88da029d11d4a782047885288a
         {
-            UCAdmGerarRelatorio uc = new UCAdmGerarRelatorio();
-            addUserControl(uc);
+            int animationStep = 5;
+            int targetHeightExpanded = 221;
+            int targetHeightCollapsed = 52;
+
+            if (!menuExpand)
+            {
+                SubAdmRelatorio.Height += animationStep;
+                if (SubAdmRelatorio.Height >= targetHeightExpanded)
+                {
+                    timerSubRelatorio.Stop();
+                    menuExpand = true;
+                }
+            }
+            else
+            {
+                SubAdmRelatorio.Height -= animationStep;
+                if (SubAdmRelatorio.Height <= targetHeightCollapsed)
+                {
+                    timerSubRelatorio.Stop();
+                    menuExpand = false;
+                }
+            }
         }
+<<<<<<< HEAD
+=======
+
+        #endregion
+
+>>>>>>> 4564881c64e93b88da029d11d4a782047885288a
     }
 }

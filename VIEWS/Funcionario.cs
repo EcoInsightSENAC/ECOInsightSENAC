@@ -1,20 +1,45 @@
 using ECOInsight;
 using ECOInsight.UserControls;
+using System.Windows.Forms;
 
 namespace ECOInsightSENAC
 {
     public partial class FuncionarioTela : Form
     {
-        bool sidebarExpand = false;
+        #region Campos (Fields)
+
+        private bool sidebarExpand = false;
+
+        #endregion
+
+        #region Construtor (Constructor)
 
         public FuncionarioTela()
         {
             InitializeComponent();
-            UCFuncio_Destaques uc = new UCFuncio_Destaques();
-            addUserControl(uc);
+            InitializeSidebar();
+            LoadInitialUserControl();
+        }
+
+        #endregion
+
+        #region Inicialização
+
+        private void InitializeSidebar()
+        {
             sidebarFuncionario.Width = 63; // Define a largura inicial do sidebar para minimizado
             sidebarExpand = false; // Garante que a variável esteja definida como false inicialmente
         }
+
+        private void LoadInitialUserControl()
+        {
+            UCFuncio_Destaques uc = new UCFuncio_Destaques();
+            addUserControl(uc);
+        }
+
+        #endregion
+
+        #region Métodos Utilitários
 
         private void addUserControl(UserControl userControl)
         {
@@ -24,19 +49,19 @@ namespace ECOInsightSENAC
             userControl.BringToFront();
         }
 
-        private void btnMinim_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+        #endregion
 
-        private void btnMaxPad_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
+        #region Métodos de Evento (Event Handlers)
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void btnFuncionarioAula_Click(object sender, EventArgs e)
+        {
+            UCFuncio_Relatorio uc = new UCFuncio_Relatorio();
+            addUserControl(uc);
         }
 
         private void btnFuncionarioDestaques_Click(object sender, EventArgs e)
@@ -45,10 +70,9 @@ namespace ECOInsightSENAC
             addUserControl(uc);
         }
 
-        private void btnFuncionarioAula_Click(object sender, EventArgs e)
+        private void btnFuncionarioMenu_Click(object sender, EventArgs e)
         {
-            UCFuncio_Relatorio uc = new UCFuncio_Relatorio();
-            addUserControl(uc);
+            sidebarTimerFuncionario.Start();
         }
 
         private void btnFuncionarioMPerfil_Click(object sender, EventArgs e)
@@ -60,8 +84,18 @@ namespace ECOInsightSENAC
         private void btnFuncionarioSair_Click(object sender, EventArgs e)
         {
             LoginTela login = new LoginTela();
-            login.Show(); //Abre a nova tela
-            this.Hide(); //Oculta a tela atual
+            login.Show(); // Abre a nova tela
+            this.Hide(); // Oculta a tela atual
+        }
+
+        private void btnMaxPad_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btnMinim_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnVoltarPagEsqueciSenha_Click(object sender, EventArgs e)
@@ -69,12 +103,20 @@ namespace ECOInsightSENAC
             this.Close();
         }
 
+        #endregion
+
+        #region Eventos de Timer (Animações)
+
         private void sidebarTimerFuncionario_Tick(object sender, EventArgs e)
         {
+            int animationStep = 10;
+            int targetWidthExpanded = 180;
+            int targetWidthCollapsed = 63;
+
             if (sidebarExpand)
             {
-                sidebarFuncionario.Width -= 10;
-                if (sidebarFuncionario.Width <= 63)
+                sidebarFuncionario.Width -= animationStep;
+                if (sidebarFuncionario.Width <= targetWidthCollapsed)
                 {
                     sidebarExpand = false;
                     sidebarTimerFuncionario.Stop();
@@ -82,8 +124,8 @@ namespace ECOInsightSENAC
             }
             else
             {
-                sidebarFuncionario.Width += 10;
-                if (sidebarFuncionario.Width >= 180)
+                sidebarFuncionario.Width += animationStep;
+                if (sidebarFuncionario.Width >= targetWidthExpanded)
                 {
                     sidebarExpand = true;
                     sidebarTimerFuncionario.Stop();
@@ -91,14 +133,6 @@ namespace ECOInsightSENAC
             }
         }
 
-        private void btnFuncionarioMenu_Click(object sender, EventArgs e)
-        {
-            sidebarTimerFuncionario.Start();
-        }
-
-        private void sidebarFuncionario_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

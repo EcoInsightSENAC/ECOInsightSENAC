@@ -17,14 +17,29 @@ namespace ECOInsight.UserControls
             InitializeComponent();
         }
 
-        private void UCAdm_Registros_Load(object sender, EventArgs e)
+        private void btn_LimparFiltros_Click(object sender, EventArgs e)
         {
+            // Lista para armazenar os ComboBoxes
+            List<ComboBox> comboBoxesParaLimpar = new List<ComboBox>();
 
-        }
+            // Adiciona os ComboBoxes à lista
+            comboBoxesParaLimpar.Add(cb_Categoria);
+            comboBoxesParaLimpar.Add(cb_TipoDescarte);
+            comboBoxesParaLimpar.Add(cb_Destino);
+            comboBoxesParaLimpar.Add(cb_GarrafasEcono);
+            comboBoxesParaLimpar.Add(cb_Minhocario);
+            comboBoxesParaLimpar.Add(cb_TipoMinhoca);
+            comboBoxesParaLimpar.Add(cb_Pesototal);
+            comboBoxesParaLimpar.Add(cb_Bebedouro);
+            comboBoxesParaLimpar.Add(cb_TotalLitros);
+            comboBoxesParaLimpar.Add(cb_HumusColetado);
 
-        private void lblTiposdemateriais_Click(object sender, EventArgs e)
-        {
-
+            // Itera pela lista de ComboBoxes e limpa a seleção
+            foreach (ComboBox comboBox in comboBoxesParaLimpar)
+            {
+                comboBox.SelectedIndex = -1; // Desseleciona o item
+                comboBox.Text = string.Empty;       // Limpa o texto exibido (opcional)
+            }
         }
     }
 }

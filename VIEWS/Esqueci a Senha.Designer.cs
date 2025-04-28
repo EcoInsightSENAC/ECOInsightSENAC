@@ -36,17 +36,19 @@
             lblEmail = new Label();
             btnRecuperar = new Button();
             panelSuperiorEsqueciaSenha = new Panel();
-            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
+            pictureBox2 = new PictureBox();
+            lblLogin = new Label();
             btnMinimizarEsqueciSenha = new FontAwesome.Sharp.IconButton();
             lblEsqueciSenha = new Label();
             btnMaximizarRestaurarEsqueciSenha = new FontAwesome.Sharp.IconButton();
             btnFecharEsqueciSenha = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
+            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
             textTelef = new TextBox();
             lblTelef = new Label();
-            lblLogin = new Label();
             panelSuperiorEsqueciaSenha.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // txtConfirSenha
@@ -130,6 +132,7 @@
             // panelSuperiorEsqueciaSenha
             // 
             panelSuperiorEsqueciaSenha.BackColor = Color.FromArgb(32, 65, 57);
+            panelSuperiorEsqueciaSenha.Controls.Add(pictureBox2);
             panelSuperiorEsqueciaSenha.Controls.Add(lblLogin);
             panelSuperiorEsqueciaSenha.Controls.Add(btnMinimizarEsqueciSenha);
             panelSuperiorEsqueciaSenha.Controls.Add(lblEsqueciSenha);
@@ -142,20 +145,26 @@
             panelSuperiorEsqueciaSenha.Size = new Size(1064, 40);
             panelSuperiorEsqueciaSenha.TabIndex = 18;
             // 
-            // btnVoltarPagEsqueciSenha
+            // pictureBox2
             // 
-            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
-            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
-            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
-            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
-            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnVoltarPagEsqueciSenha.IconSize = 25;
-            btnVoltarPagEsqueciSenha.Location = new Point(0, 46);
-            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
-            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
-            btnVoltarPagEsqueciSenha.TabIndex = 20;
-            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
-            btnVoltarPagEsqueciSenha.Click += btnVoltarPagEsqueciSenha_Click;
+            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 24;
+            pictureBox2.TabStop = false;
+            // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(53, 10);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(86, 21);
+            lblLogin.TabIndex = 20;
+            lblLogin.Text = "ECOBoard";
             // 
             // btnMinimizarEsqueciSenha
             // 
@@ -228,6 +237,21 @@
             panel2.Size = new Size(148, 40);
             panel2.TabIndex = 21;
             // 
+            // btnVoltarPagEsqueciSenha
+            // 
+            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
+            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
+            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
+            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
+            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnVoltarPagEsqueciSenha.IconSize = 25;
+            btnVoltarPagEsqueciSenha.Location = new Point(0, 46);
+            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
+            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
+            btnVoltarPagEsqueciSenha.TabIndex = 20;
+            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
+            btnVoltarPagEsqueciSenha.Click += btnVoltarPagEsqueciSenha_Click;
+            // 
             // panel1
             // 
             panel1.Location = new Point(125, 150);
@@ -256,17 +280,6 @@
             lblTelef.TabIndex = 15;
             lblTelef.Text = "Telefone";
             // 
-            // lblLogin
-            // 
-            lblLogin.AutoSize = true;
-            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = SystemColors.ButtonHighlight;
-            lblLogin.Location = new Point(12, 9);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(86, 21);
-            lblLogin.TabIndex = 20;
-            lblLogin.Text = "ECOBoard";
-            // 
             // Esqueci_a_SenhaTela
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -292,6 +305,7 @@
             Text = "ECOInsight";
             panelSuperiorEsqueciaSenha.ResumeLayout(false);
             panelSuperiorEsqueciaSenha.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -315,5 +329,6 @@
         private TextBox textTelef;
         private Label lblTelef;
         private Label lblLogin;
+        private PictureBox pictureBox2;
     }
 }
