@@ -4,33 +4,21 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Configuration;              // para ler a connectionString
 using ECOInsight.UserControls;
-<<<<<<< HEAD
 using ECOInsight.DataAccess;            // para Conexao.CreateConnection()
-=======
 using System.Collections.Generic;
->>>>>>> 4564881c64e93b88da029d11d4a782047885288a
 
 namespace ECOInsight
 {
     public partial class AdmTela : Form
     {
         #region Campos Privados
-<<<<<<< HEAD
-        private bool menuExpand;
-=======
-
->>>>>>> 4564881c64e93b88da029d11d4a782047885288a
         private bool sidebarExpand = false;
         private bool menuExpand = false;
         private Size tamanhoOriginal;
         private bool maximizado = false;
-<<<<<<< HEAD
-=======
         private Stack<UserControl> historicoVoltar = new Stack<UserControl>();
         private Stack<UserControl> historicoAvancar = new Stack<UserControl>();
         private UserControl controleAtual;
-
->>>>>>> 4564881c64e93b88da029d11d4a782047885288a
         #endregion
 
         #region Construtor
@@ -44,7 +32,6 @@ namespace ECOInsight
         }
         #endregion
 
-<<<<<<< HEAD
         #region Conexão com o Banco
         private void AdmTela_Load(object sender, EventArgs e)
         {
@@ -96,15 +83,6 @@ namespace ECOInsight
         private void InitializeSidebar()
         {
             sidebarAdm.Width = 63;     // largura inicial minimizada
-=======
-        #endregion
-
-        #region Inicialização
-
-        private void InitializeSidebar()
-        {
-            sidebarAdm.Width = 63;
->>>>>>> 4564881c64e93b88da029d11d4a782047885288a
             sidebarExpand = false;
         }
 
@@ -116,12 +94,7 @@ namespace ECOInsight
         #endregion
 
         #region Métodos Utilitários
-<<<<<<< HEAD
-        private void addUserControl(UserControl userControl)
-=======
-
         private void addUserControl(UserControl novoControle, bool limparAvanco = true)
->>>>>>> 4564881c64e93b88da029d11d4a782047885288a
         {
             if (controleAtual != null)
             {
@@ -178,11 +151,7 @@ namespace ECOInsight
 
         private void btnFecharAdm_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            Application.Exit();
-=======
             System.Windows.Forms.Application.Exit();
->>>>>>> 4564881c64e93b88da029d11d4a782047885288a
         }
 
         private void btnVoltarPagEsqueciSenha_Click(object sender, EventArgs e)
@@ -219,8 +188,6 @@ namespace ECOInsight
             UCAdm_MeuPerfil uc = new UCAdm_MeuPerfil();
             addUserControl(uc);
         }
-<<<<<<< HEAD
-=======
 
         private void btnAdmDescarte_Click(object sender, EventArgs e)
         {
@@ -239,11 +206,9 @@ namespace ECOInsight
             UCAdm_ConsumoAgua uc = new UCAdm_ConsumoAgua();
             addUserControl(uc);
         }
-
         #endregion
 
         #region Eventos de Navegação (Voltar e Avançar)
-
         private void btnAdm_Voltar_Click_1(object sender, EventArgs e)
         {
             if (historicoVoltar.Count > 0)
@@ -263,8 +228,6 @@ namespace ECOInsight
                 addUserControl(controleProximo, false);
             }
         }
-
->>>>>>> 4564881c64e93b88da029d11d4a782047885288a
         #endregion
 
         #region Eventos de Timer (Animações)
@@ -293,14 +256,8 @@ namespace ECOInsight
                 }
             }
         }
-<<<<<<< HEAD
-        #endregion
-
-        private void btnAdmGerarRelatorio_Click(object sender, EventArgs e)
-=======
 
         private void timerSubRelatorio_Tick(object sender, EventArgs e)
->>>>>>> 4564881c64e93b88da029d11d4a782047885288a
         {
             int animationStep = 5;
             int targetHeightExpanded = 221;
@@ -325,11 +282,7 @@ namespace ECOInsight
                 }
             }
         }
-<<<<<<< HEAD
-=======
-
         #endregion
-
->>>>>>> 4564881c64e93b88da029d11d4a782047885288a
     }
+
 }

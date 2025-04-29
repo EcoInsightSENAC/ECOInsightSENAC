@@ -106,7 +106,6 @@ namespace ECOInsight.UserControls
                 e.Handled = true;
             }
         }
-
     }
 }
 
