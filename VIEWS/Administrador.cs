@@ -12,7 +12,7 @@ namespace ECOInsight
     public partial class AdmTela : Form
     {
         #region Campos Privados
-        private bool sidebarExpand = false;
+        private bool sidebarExpand = true;
         private bool menuExpand = false;
         private Size tamanhoOriginal;
         private bool maximizado = false;
@@ -83,7 +83,7 @@ namespace ECOInsight
         private void InitializeSidebar()
         {
             sidebarAdm.Width = 63;     // largura inicial minimizada
-            sidebarExpand = false;
+            sidebarExpand = true;
         }
 
         private void LoadInitialUserControl()
