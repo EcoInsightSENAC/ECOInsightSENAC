@@ -31,8 +31,8 @@ namespace ECOInsight
 
         private void InitializeSidebar()
         {
-            sidebarProf.Width = 63; // Define a largura inicial do sidebar para minimizado
-            sidebarExpand = false; // Garante que a variável esteja definida como false inicialmente
+            sidebarProf.Width = 180; // Define a largura inicial do sidebar para maximizado
+            sidebarExpand = true; // Garante que a variável esteja definida como false inicialmente
         }
 
         private void LoadInitialUserControl()

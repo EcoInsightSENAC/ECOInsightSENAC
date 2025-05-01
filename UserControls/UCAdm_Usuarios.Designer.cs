@@ -33,12 +33,12 @@
             cbCadPerfil = new ComboBox();
             cbCadStatus = new ComboBox();
             label3 = new Label();
-            btnCadNovoUsuario = new FontAwesome.Sharp.IconButton();
-            btnCadExcluirUsuario = new FontAwesome.Sharp.IconButton();
-            btnCadSalvar = new FontAwesome.Sharp.IconButton();
-            btnCadCancelar = new FontAwesome.Sharp.IconButton();
+            btn_CadNovoUsuario = new FontAwesome.Sharp.IconButton();
+            btn_CadExcluirUsuario = new FontAwesome.Sharp.IconButton();
+            btn_CadSalvar = new FontAwesome.Sharp.IconButton();
+            btn_CadCancelar = new FontAwesome.Sharp.IconButton();
             panel4 = new Panel();
-            btnCadEditarUsuario = new FontAwesome.Sharp.IconButton();
+            btn_CadEditarUsuario = new FontAwesome.Sharp.IconButton();
             lblConfirSenhaCad = new Label();
             txtCadConfirSenha = new TextBox();
             lblUsuarioCad = new Label();
@@ -53,12 +53,12 @@
             cbCadTurno = new ComboBox();
             label4 = new Label();
             label5 = new Label();
-            iconButton7 = new FontAwesome.Sharp.IconButton();
+            btn_CadBuscarUsuario = new FontAwesome.Sharp.IconButton();
             panel5 = new Panel();
             comboBox2 = new ComboBox();
             label2 = new Label();
             comboBox1 = new ComboBox();
-            btnCadGerarPDF = new FontAwesome.Sharp.IconButton();
+            btn_CadGerarPDF = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
             lblAdmUsuarios = new Label();
             panel1.SuspendLayout();
@@ -115,88 +115,88 @@
             label3.TabIndex = 22;
             label3.Text = "Status";
             // 
-            // btnCadNovoUsuario
+            // btn_CadNovoUsuario
             // 
-            btnCadNovoUsuario.Anchor = AnchorStyles.Top;
-            btnCadNovoUsuario.BackColor = Color.FromArgb(35, 68, 57);
-            btnCadNovoUsuario.FlatStyle = FlatStyle.Flat;
-            btnCadNovoUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCadNovoUsuario.ForeColor = Color.White;
-            btnCadNovoUsuario.IconChar = FontAwesome.Sharp.IconChar.Add;
-            btnCadNovoUsuario.IconColor = Color.White;
-            btnCadNovoUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCadNovoUsuario.IconSize = 25;
-            btnCadNovoUsuario.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCadNovoUsuario.Location = new Point(140, 458);
-            btnCadNovoUsuario.Name = "btnCadNovoUsuario";
-            btnCadNovoUsuario.Size = new Size(128, 41);
-            btnCadNovoUsuario.TabIndex = 12;
-            btnCadNovoUsuario.Text = "Novo Usuário";
-            btnCadNovoUsuario.TextAlign = ContentAlignment.MiddleRight;
-            btnCadNovoUsuario.UseVisualStyleBackColor = false;
+            btn_CadNovoUsuario.Anchor = AnchorStyles.Top;
+            btn_CadNovoUsuario.BackColor = Color.FromArgb(35, 68, 57);
+            btn_CadNovoUsuario.FlatStyle = FlatStyle.Flat;
+            btn_CadNovoUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_CadNovoUsuario.ForeColor = Color.White;
+            btn_CadNovoUsuario.IconChar = FontAwesome.Sharp.IconChar.Add;
+            btn_CadNovoUsuario.IconColor = Color.White;
+            btn_CadNovoUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_CadNovoUsuario.IconSize = 25;
+            btn_CadNovoUsuario.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_CadNovoUsuario.Location = new Point(140, 458);
+            btn_CadNovoUsuario.Name = "btn_CadNovoUsuario";
+            btn_CadNovoUsuario.Size = new Size(128, 41);
+            btn_CadNovoUsuario.TabIndex = 12;
+            btn_CadNovoUsuario.Text = "Novo Usuário";
+            btn_CadNovoUsuario.TextAlign = ContentAlignment.MiddleRight;
+            btn_CadNovoUsuario.UseVisualStyleBackColor = false;
             // 
-            // btnCadExcluirUsuario
+            // btn_CadExcluirUsuario
             // 
-            btnCadExcluirUsuario.Anchor = AnchorStyles.Top;
-            btnCadExcluirUsuario.BackColor = Color.FromArgb(35, 68, 57);
-            btnCadExcluirUsuario.FlatStyle = FlatStyle.Flat;
-            btnCadExcluirUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCadExcluirUsuario.ForeColor = Color.White;
-            btnCadExcluirUsuario.IconChar = FontAwesome.Sharp.IconChar.Subtract;
-            btnCadExcluirUsuario.IconColor = Color.White;
-            btnCadExcluirUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCadExcluirUsuario.IconSize = 25;
-            btnCadExcluirUsuario.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCadExcluirUsuario.Location = new Point(287, 458);
-            btnCadExcluirUsuario.Name = "btnCadExcluirUsuario";
-            btnCadExcluirUsuario.Size = new Size(137, 41);
-            btnCadExcluirUsuario.TabIndex = 13;
-            btnCadExcluirUsuario.Text = "Excluir Usuário";
-            btnCadExcluirUsuario.TextAlign = ContentAlignment.MiddleRight;
-            btnCadExcluirUsuario.UseVisualStyleBackColor = false;
+            btn_CadExcluirUsuario.Anchor = AnchorStyles.Top;
+            btn_CadExcluirUsuario.BackColor = Color.FromArgb(35, 68, 57);
+            btn_CadExcluirUsuario.FlatStyle = FlatStyle.Flat;
+            btn_CadExcluirUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_CadExcluirUsuario.ForeColor = Color.White;
+            btn_CadExcluirUsuario.IconChar = FontAwesome.Sharp.IconChar.Subtract;
+            btn_CadExcluirUsuario.IconColor = Color.White;
+            btn_CadExcluirUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_CadExcluirUsuario.IconSize = 25;
+            btn_CadExcluirUsuario.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_CadExcluirUsuario.Location = new Point(287, 458);
+            btn_CadExcluirUsuario.Name = "btn_CadExcluirUsuario";
+            btn_CadExcluirUsuario.Size = new Size(137, 41);
+            btn_CadExcluirUsuario.TabIndex = 13;
+            btn_CadExcluirUsuario.Text = "Excluir Usuário";
+            btn_CadExcluirUsuario.TextAlign = ContentAlignment.MiddleRight;
+            btn_CadExcluirUsuario.UseVisualStyleBackColor = false;
             // 
-            // btnCadSalvar
+            // btn_CadSalvar
             // 
-            btnCadSalvar.Anchor = AnchorStyles.Top;
-            btnCadSalvar.BackColor = Color.FromArgb(35, 68, 57);
-            btnCadSalvar.FlatStyle = FlatStyle.Flat;
-            btnCadSalvar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCadSalvar.ForeColor = Color.White;
-            btnCadSalvar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            btnCadSalvar.IconColor = Color.White;
-            btnCadSalvar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCadSalvar.IconSize = 25;
-            btnCadSalvar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCadSalvar.Location = new Point(736, 458);
-            btnCadSalvar.Name = "btnCadSalvar";
-            btnCadSalvar.Padding = new Padding(3, 0, 0, 0);
-            btnCadSalvar.Size = new Size(105, 41);
-            btnCadSalvar.TabIndex = 11;
-            btnCadSalvar.Text = "       Salvar ";
-            btnCadSalvar.UseVisualStyleBackColor = false;
+            btn_CadSalvar.Anchor = AnchorStyles.Top;
+            btn_CadSalvar.BackColor = Color.FromArgb(35, 68, 57);
+            btn_CadSalvar.FlatStyle = FlatStyle.Flat;
+            btn_CadSalvar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_CadSalvar.ForeColor = Color.White;
+            btn_CadSalvar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            btn_CadSalvar.IconColor = Color.White;
+            btn_CadSalvar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_CadSalvar.IconSize = 25;
+            btn_CadSalvar.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_CadSalvar.Location = new Point(736, 458);
+            btn_CadSalvar.Name = "btn_CadSalvar";
+            btn_CadSalvar.Padding = new Padding(3, 0, 0, 0);
+            btn_CadSalvar.Size = new Size(105, 41);
+            btn_CadSalvar.TabIndex = 11;
+            btn_CadSalvar.Text = "       Salvar ";
+            btn_CadSalvar.UseVisualStyleBackColor = false;
             // 
-            // btnCadCancelar
+            // btn_CadCancelar
             // 
-            btnCadCancelar.Anchor = AnchorStyles.Top;
-            btnCadCancelar.BackColor = Color.White;
-            btnCadCancelar.FlatAppearance.BorderSize = 2;
-            btnCadCancelar.FlatStyle = FlatStyle.Flat;
-            btnCadCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCadCancelar.ForeColor = Color.FromArgb(35, 68, 57);
-            btnCadCancelar.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
-            btnCadCancelar.IconColor = Color.FromArgb(35, 68, 57);
-            btnCadCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCadCancelar.IconSize = 25;
-            btnCadCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCadCancelar.Location = new Point(608, 458);
-            btnCadCancelar.Name = "btnCadCancelar";
-            btnCadCancelar.Padding = new Padding(3, 0, 0, 0);
-            btnCadCancelar.Size = new Size(105, 41);
-            btnCadCancelar.TabIndex = 37;
-            btnCadCancelar.Text = "Cancelar ";
-            btnCadCancelar.TextAlign = ContentAlignment.MiddleRight;
-            btnCadCancelar.UseVisualStyleBackColor = false;
-            btnCadCancelar.Click += btnCadCancelar_Click;
+            btn_CadCancelar.Anchor = AnchorStyles.Top;
+            btn_CadCancelar.BackColor = Color.White;
+            btn_CadCancelar.FlatAppearance.BorderSize = 2;
+            btn_CadCancelar.FlatStyle = FlatStyle.Flat;
+            btn_CadCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_CadCancelar.ForeColor = Color.FromArgb(35, 68, 57);
+            btn_CadCancelar.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
+            btn_CadCancelar.IconColor = Color.FromArgb(35, 68, 57);
+            btn_CadCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_CadCancelar.IconSize = 25;
+            btn_CadCancelar.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_CadCancelar.Location = new Point(608, 458);
+            btn_CadCancelar.Name = "btn_CadCancelar";
+            btn_CadCancelar.Padding = new Padding(3, 0, 0, 0);
+            btn_CadCancelar.Size = new Size(105, 41);
+            btn_CadCancelar.TabIndex = 37;
+            btn_CadCancelar.Text = "Cancelar ";
+            btn_CadCancelar.TextAlign = ContentAlignment.MiddleRight;
+            btn_CadCancelar.UseVisualStyleBackColor = false;
+            btn_CadCancelar.Click += btnCadCancelar_Click;
             // 
             // panel4
             // 
@@ -206,26 +206,26 @@
             panel4.Size = new Size(733, 90);
             panel4.TabIndex = 30;
             // 
-            // btnCadEditarUsuario
+            // btn_CadEditarUsuario
             // 
-            btnCadEditarUsuario.Anchor = AnchorStyles.Top;
-            btnCadEditarUsuario.BackColor = Color.FromArgb(35, 68, 57);
-            btnCadEditarUsuario.FlatStyle = FlatStyle.Flat;
-            btnCadEditarUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCadEditarUsuario.ForeColor = Color.White;
-            btnCadEditarUsuario.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            btnCadEditarUsuario.IconColor = Color.White;
-            btnCadEditarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCadEditarUsuario.IconSize = 25;
-            btnCadEditarUsuario.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCadEditarUsuario.Location = new Point(449, 458);
-            btnCadEditarUsuario.Name = "btnCadEditarUsuario";
-            btnCadEditarUsuario.Padding = new Padding(5, 0, 0, 0);
-            btnCadEditarUsuario.Size = new Size(137, 41);
-            btnCadEditarUsuario.TabIndex = 14;
-            btnCadEditarUsuario.Text = "Editar Usuário";
-            btnCadEditarUsuario.TextAlign = ContentAlignment.MiddleRight;
-            btnCadEditarUsuario.UseVisualStyleBackColor = false;
+            btn_CadEditarUsuario.Anchor = AnchorStyles.Top;
+            btn_CadEditarUsuario.BackColor = Color.FromArgb(35, 68, 57);
+            btn_CadEditarUsuario.FlatStyle = FlatStyle.Flat;
+            btn_CadEditarUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_CadEditarUsuario.ForeColor = Color.White;
+            btn_CadEditarUsuario.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            btn_CadEditarUsuario.IconColor = Color.White;
+            btn_CadEditarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_CadEditarUsuario.IconSize = 25;
+            btn_CadEditarUsuario.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_CadEditarUsuario.Location = new Point(449, 458);
+            btn_CadEditarUsuario.Name = "btn_CadEditarUsuario";
+            btn_CadEditarUsuario.Padding = new Padding(5, 0, 0, 0);
+            btn_CadEditarUsuario.Size = new Size(137, 41);
+            btn_CadEditarUsuario.TabIndex = 14;
+            btn_CadEditarUsuario.Text = "Editar Usuário";
+            btn_CadEditarUsuario.TextAlign = ContentAlignment.MiddleRight;
+            btn_CadEditarUsuario.UseVisualStyleBackColor = false;
             // 
             // lblConfirSenhaCad
             // 
@@ -326,7 +326,7 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(txtCadNome);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(iconButton7);
+            panel1.Controls.Add(btn_CadBuscarUsuario);
             panel1.Controls.Add(lblEmailCad);
             panel1.Controls.Add(lblSenhaCad);
             panel1.Controls.Add(txtCadSenha);
@@ -382,27 +382,27 @@
             label5.TabIndex = 72;
             label5.Text = "Turno";
             // 
-            // iconButton7
+            // btn_CadBuscarUsuario
             // 
-            iconButton7.Anchor = AnchorStyles.Top;
-            iconButton7.BackColor = Color.FromArgb(35, 68, 57);
-            iconButton7.FlatAppearance.BorderColor = Color.FromArgb(35, 68, 57);
-            iconButton7.FlatAppearance.BorderSize = 0;
-            iconButton7.FlatStyle = FlatStyle.Flat;
-            iconButton7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton7.ForeColor = Color.White;
-            iconButton7.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton7.IconColor = Color.White;
-            iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton7.IconSize = 25;
-            iconButton7.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton7.Location = new Point(568, 48);
-            iconButton7.Name = "iconButton7";
-            iconButton7.Padding = new Padding(5, 0, 0, 0);
-            iconButton7.Size = new Size(133, 27);
-            iconButton7.TabIndex = 10;
-            iconButton7.Text = "Buscar Usuário";
-            iconButton7.UseVisualStyleBackColor = false;
+            btn_CadBuscarUsuario.Anchor = AnchorStyles.Top;
+            btn_CadBuscarUsuario.BackColor = Color.FromArgb(35, 68, 57);
+            btn_CadBuscarUsuario.FlatAppearance.BorderColor = Color.FromArgb(35, 68, 57);
+            btn_CadBuscarUsuario.FlatAppearance.BorderSize = 0;
+            btn_CadBuscarUsuario.FlatStyle = FlatStyle.Flat;
+            btn_CadBuscarUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_CadBuscarUsuario.ForeColor = Color.White;
+            btn_CadBuscarUsuario.IconChar = FontAwesome.Sharp.IconChar.None;
+            btn_CadBuscarUsuario.IconColor = Color.White;
+            btn_CadBuscarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_CadBuscarUsuario.IconSize = 25;
+            btn_CadBuscarUsuario.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_CadBuscarUsuario.Location = new Point(568, 48);
+            btn_CadBuscarUsuario.Name = "btn_CadBuscarUsuario";
+            btn_CadBuscarUsuario.Padding = new Padding(5, 0, 0, 0);
+            btn_CadBuscarUsuario.Size = new Size(133, 27);
+            btn_CadBuscarUsuario.TabIndex = 10;
+            btn_CadBuscarUsuario.Text = "Buscar Usuário";
+            btn_CadBuscarUsuario.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -411,7 +411,7 @@
             panel5.Controls.Add(comboBox2);
             panel5.Controls.Add(label2);
             panel5.Controls.Add(comboBox1);
-            panel5.Controls.Add(btnCadGerarPDF);
+            panel5.Controls.Add(btn_CadGerarPDF);
             panel5.Controls.Add(label1);
             panel5.Location = new Point(123, 526);
             panel5.Name = "panel5";
@@ -449,26 +449,26 @@
             comboBox1.Size = new Size(132, 23);
             comboBox1.TabIndex = 15;
             // 
-            // btnCadGerarPDF
+            // btn_CadGerarPDF
             // 
-            btnCadGerarPDF.Anchor = AnchorStyles.Top;
-            btnCadGerarPDF.BackColor = Color.FromArgb(35, 68, 57);
-            btnCadGerarPDF.FlatStyle = FlatStyle.Flat;
-            btnCadGerarPDF.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCadGerarPDF.ForeColor = Color.White;
-            btnCadGerarPDF.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
-            btnCadGerarPDF.IconColor = Color.White;
-            btnCadGerarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCadGerarPDF.IconSize = 25;
-            btnCadGerarPDF.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCadGerarPDF.Location = new Point(594, 26);
-            btnCadGerarPDF.Name = "btnCadGerarPDF";
-            btnCadGerarPDF.Padding = new Padding(5, 0, 0, 0);
-            btnCadGerarPDF.Size = new Size(113, 41);
-            btnCadGerarPDF.TabIndex = 17;
-            btnCadGerarPDF.Text = "Gerar PDF";
-            btnCadGerarPDF.TextAlign = ContentAlignment.MiddleRight;
-            btnCadGerarPDF.UseVisualStyleBackColor = false;
+            btn_CadGerarPDF.Anchor = AnchorStyles.Top;
+            btn_CadGerarPDF.BackColor = Color.FromArgb(35, 68, 57);
+            btn_CadGerarPDF.FlatStyle = FlatStyle.Flat;
+            btn_CadGerarPDF.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_CadGerarPDF.ForeColor = Color.White;
+            btn_CadGerarPDF.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
+            btn_CadGerarPDF.IconColor = Color.White;
+            btn_CadGerarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_CadGerarPDF.IconSize = 25;
+            btn_CadGerarPDF.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_CadGerarPDF.Location = new Point(594, 26);
+            btn_CadGerarPDF.Name = "btn_CadGerarPDF";
+            btn_CadGerarPDF.Padding = new Padding(5, 0, 0, 0);
+            btn_CadGerarPDF.Size = new Size(113, 41);
+            btn_CadGerarPDF.TabIndex = 17;
+            btn_CadGerarPDF.Text = "Gerar PDF";
+            btn_CadGerarPDF.TextAlign = ContentAlignment.MiddleRight;
+            btn_CadGerarPDF.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -499,11 +499,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lblAdmUsuarios);
             Controls.Add(panel5);
-            Controls.Add(btnCadSalvar);
-            Controls.Add(btnCadCancelar);
-            Controls.Add(btnCadEditarUsuario);
-            Controls.Add(btnCadExcluirUsuario);
-            Controls.Add(btnCadNovoUsuario);
+            Controls.Add(btn_CadSalvar);
+            Controls.Add(btn_CadCancelar);
+            Controls.Add(btn_CadEditarUsuario);
+            Controls.Add(btn_CadExcluirUsuario);
+            Controls.Add(btn_CadNovoUsuario);
             Controls.Add(panel4);
             Controls.Add(panel1);
             Name = "UCAdm_Usuarios";
@@ -520,12 +520,12 @@
         private TextBox txtCadNome;
         private Label lblPerfilCad;
         private ComboBox cbCadPerfil;
-        private FontAwesome.Sharp.IconButton btnCadNovoUsuario;
-        private FontAwesome.Sharp.IconButton btnCadExcluirUsuario;
-        private FontAwesome.Sharp.IconButton btnCadSalvar;
-        private FontAwesome.Sharp.IconButton btnCadCancelar;
+        private FontAwesome.Sharp.IconButton btn_CadNovoUsuario;
+        private FontAwesome.Sharp.IconButton btn_CadExcluirUsuario;
+        private FontAwesome.Sharp.IconButton btn_CadSalvar;
+        private FontAwesome.Sharp.IconButton btn_CadCancelar;
         private Panel panel4;
-        private FontAwesome.Sharp.IconButton btnCadEditarUsuario;
+        private FontAwesome.Sharp.IconButton btn_CadEditarUsuario;
         private Label lblConfirSenhaCad;
         private TextBox txtCadConfirSenha;
         private Label lblUsuarioCad;
@@ -537,14 +537,14 @@
         private Label lblEmailCad;
         private Panel panel1;
         private Panel panel5;
-        private FontAwesome.Sharp.IconButton btnCadGerarPDF;
+        private FontAwesome.Sharp.IconButton btn_CadGerarPDF;
         private Label label1;
         private ComboBox comboBox1;
         private ComboBox cbCadStatus;
         private Label label3;
         private ComboBox comboBox2;
         private Label label2;
-        private FontAwesome.Sharp.IconButton iconButton7;
+        private FontAwesome.Sharp.IconButton btn_CadBuscarUsuario;
         private Label lblAdmUsuarios;
         private Label label5;
         private Label label4;

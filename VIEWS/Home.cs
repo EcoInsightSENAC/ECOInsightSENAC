@@ -175,5 +175,7 @@ namespace ECOInsight
         // Não há outros métodos explícitos neste código.
 
         #endregion
+
+      
     }
 }

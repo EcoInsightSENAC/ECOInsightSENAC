@@ -53,16 +53,18 @@
             lblAdmHumusColetado = new Label();
             lblAdmTipodeMinhoca = new Label();
             lblAdmMinhocarioN = new Label();
-            groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            groupBox3 = new GroupBox();
+            gb_Descartes = new GroupBox();
+            gb_ConsumodeAgua = new GroupBox();
+            gb_Minhocario = new GroupBox();
             cb_HumusColetado = new ComboBox();
             cb_TipoMinhoca = new ComboBox();
             cb_Minhocario = new ComboBox();
             btn_RegistrosPesquisar = new FontAwesome.Sharp.IconButton();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            gb_Descartes.SuspendLayout();
+            gb_ConsumodeAgua.SuspendLayout();
+            gb_Minhocario.SuspendLayout();
             SuspendLayout();
             // 
             // lblAdmAte
@@ -253,7 +255,7 @@
             cb_Pesototal.Anchor = AnchorStyles.Top;
             cb_Pesototal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cb_Pesototal.FormattingEnabled = true;
-            cb_Pesototal.Location = new Point(662, 37);
+            cb_Pesototal.Location = new Point(642, 37);
             cb_Pesototal.Name = "cb_Pesototal";
             cb_Pesototal.Size = new Size(121, 29);
             cb_Pesototal.TabIndex = 97;
@@ -263,7 +265,7 @@
             lblAdmPesoTotal.Anchor = AnchorStyles.Top;
             lblAdmPesoTotal.AutoSize = true;
             lblAdmPesoTotal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAdmPesoTotal.Location = new Point(572, 41);
+            lblAdmPesoTotal.Location = new Point(556, 41);
             lblAdmPesoTotal.Name = "lblAdmPesoTotal";
             lblAdmPesoTotal.Size = new Size(84, 21);
             lblAdmPesoTotal.TabIndex = 96;
@@ -295,7 +297,7 @@
             cb_TotalLitros.Anchor = AnchorStyles.Top;
             cb_TotalLitros.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cb_TotalLitros.FormattingEnabled = true;
-            cb_TotalLitros.Location = new Point(661, 37);
+            cb_TotalLitros.Location = new Point(652, 37);
             cb_TotalLitros.Name = "cb_TotalLitros";
             cb_TotalLitros.Size = new Size(121, 29);
             cb_TotalLitros.TabIndex = 101;
@@ -305,7 +307,7 @@
             lblAdmTotalLitros.Anchor = AnchorStyles.Top;
             lblAdmTotalLitros.AutoSize = true;
             lblAdmTotalLitros.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAdmTotalLitros.Location = new Point(567, 41);
+            lblAdmTotalLitros.Location = new Point(564, 41);
             lblAdmTotalLitros.Name = "lblAdmTotalLitros";
             lblAdmTotalLitros.Size = new Size(88, 21);
             lblAdmTotalLitros.TabIndex = 100;
@@ -318,9 +320,9 @@
             label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label12.Location = new Point(762, 40);
             label12.Name = "label12";
-            label12.Size = new Size(24, 17);
+            label12.Size = new Size(27, 17);
             label12.TabIndex = 108;
-            label12.Text = "Kg";
+            label12.Text = "Kg.";
             // 
             // lblAdmHumusColetado
             // 
@@ -355,57 +357,59 @@
             lblAdmMinhocarioN.TabIndex = 102;
             lblAdmMinhocarioN.Text = "Minhocario número :";
             // 
-            // groupBox1
+            // gb_Descartes
             // 
-            groupBox1.Anchor = AnchorStyles.Top;
-            groupBox1.Controls.Add(cb_Destino);
-            groupBox1.Controls.Add(lblAdmTipoDescarte);
-            groupBox1.Controls.Add(cb_TipoDescarte);
-            groupBox1.Controls.Add(lblAdmDestino);
-            groupBox1.Controls.Add(lblAdmPesoTotal);
-            groupBox1.Controls.Add(cb_Pesototal);
-            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(89, 180);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(800, 76);
-            groupBox1.TabIndex = 112;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "DESCARTES";
+            gb_Descartes.Anchor = AnchorStyles.Top;
+            gb_Descartes.Controls.Add(label1);
+            gb_Descartes.Controls.Add(cb_Destino);
+            gb_Descartes.Controls.Add(lblAdmTipoDescarte);
+            gb_Descartes.Controls.Add(cb_TipoDescarte);
+            gb_Descartes.Controls.Add(lblAdmDestino);
+            gb_Descartes.Controls.Add(lblAdmPesoTotal);
+            gb_Descartes.Controls.Add(cb_Pesototal);
+            gb_Descartes.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gb_Descartes.Location = new Point(89, 180);
+            gb_Descartes.Name = "gb_Descartes";
+            gb_Descartes.Size = new Size(800, 76);
+            gb_Descartes.TabIndex = 112;
+            gb_Descartes.TabStop = false;
+            gb_Descartes.Text = "DESCARTES";
             // 
-            // groupBox2
+            // gb_ConsumodeAgua
             // 
-            groupBox2.Anchor = AnchorStyles.Top;
-            groupBox2.Controls.Add(cb_GarrafasEcono);
-            groupBox2.Controls.Add(lblAdmGarrafasEcono);
-            groupBox2.Controls.Add(lblAdmBebedouro);
-            groupBox2.Controls.Add(cb_Bebedouro);
-            groupBox2.Controls.Add(lblAdmTotalLitros);
-            groupBox2.Controls.Add(cb_TotalLitros);
-            groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(89, 284);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(800, 76);
-            groupBox2.TabIndex = 113;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "CONSUMO DE ÁGUA";
+            gb_ConsumodeAgua.Anchor = AnchorStyles.Top;
+            gb_ConsumodeAgua.Controls.Add(label2);
+            gb_ConsumodeAgua.Controls.Add(cb_GarrafasEcono);
+            gb_ConsumodeAgua.Controls.Add(lblAdmGarrafasEcono);
+            gb_ConsumodeAgua.Controls.Add(lblAdmBebedouro);
+            gb_ConsumodeAgua.Controls.Add(cb_Bebedouro);
+            gb_ConsumodeAgua.Controls.Add(lblAdmTotalLitros);
+            gb_ConsumodeAgua.Controls.Add(cb_TotalLitros);
+            gb_ConsumodeAgua.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gb_ConsumodeAgua.Location = new Point(89, 284);
+            gb_ConsumodeAgua.Name = "gb_ConsumodeAgua";
+            gb_ConsumodeAgua.Size = new Size(800, 76);
+            gb_ConsumodeAgua.TabIndex = 113;
+            gb_ConsumodeAgua.TabStop = false;
+            gb_ConsumodeAgua.Text = "CONSUMO DE ÁGUA";
             // 
-            // groupBox3
+            // gb_Minhocario
             // 
-            groupBox3.Anchor = AnchorStyles.Top;
-            groupBox3.Controls.Add(cb_HumusColetado);
-            groupBox3.Controls.Add(cb_TipoMinhoca);
-            groupBox3.Controls.Add(cb_Minhocario);
-            groupBox3.Controls.Add(lblAdmHumusColetado);
-            groupBox3.Controls.Add(lblAdmMinhocarioN);
-            groupBox3.Controls.Add(lblAdmTipodeMinhoca);
-            groupBox3.Controls.Add(label12);
-            groupBox3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox3.Location = new Point(89, 390);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(800, 76);
-            groupBox3.TabIndex = 114;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "MINHOCARIO";
+            gb_Minhocario.Anchor = AnchorStyles.Top;
+            gb_Minhocario.Controls.Add(cb_HumusColetado);
+            gb_Minhocario.Controls.Add(cb_TipoMinhoca);
+            gb_Minhocario.Controls.Add(cb_Minhocario);
+            gb_Minhocario.Controls.Add(lblAdmHumusColetado);
+            gb_Minhocario.Controls.Add(lblAdmMinhocarioN);
+            gb_Minhocario.Controls.Add(lblAdmTipodeMinhoca);
+            gb_Minhocario.Controls.Add(label12);
+            gb_Minhocario.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gb_Minhocario.Location = new Point(89, 390);
+            gb_Minhocario.Name = "gb_Minhocario";
+            gb_Minhocario.Size = new Size(800, 76);
+            gb_Minhocario.TabIndex = 114;
+            gb_Minhocario.TabStop = false;
+            gb_Minhocario.Text = "MINHOCARIO";
             // 
             // cb_HumusColetado
             // 
@@ -458,18 +462,40 @@
             btn_RegistrosPesquisar.TextAlign = ContentAlignment.MiddleRight;
             btn_RegistrosPesquisar.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(767, 45);
+            label1.Name = "label1";
+            label1.Size = new Size(27, 17);
+            label1.TabIndex = 109;
+            label1.Text = "Kg.";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(775, 46);
+            label2.Name = "label2";
+            label2.Size = new Size(17, 17);
+            label2.TabIndex = 112;
+            label2.Text = "L.";
+            // 
             // UCAdm_Registros
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(btn_RegistrosPesquisar);
             Controls.Add(lblAdmAte);
-            Controls.Add(groupBox3);
+            Controls.Add(gb_Minhocario);
             Controls.Add(dateTimePicker2);
-            Controls.Add(groupBox2);
+            Controls.Add(gb_ConsumodeAgua);
             Controls.Add(btn_GerarPDF);
             Controls.Add(dateTimePicker3);
-            Controls.Add(groupBox1);
+            Controls.Add(gb_Descartes);
             Controls.Add(lblAdmGerarRelat);
             Controls.Add(btn_LimparFiltros);
             Controls.Add(cb_Categoria);
@@ -477,12 +503,12 @@
             Controls.Add(lbRegistros);
             Name = "UCAdm_Registros";
             Size = new Size(978, 646);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            gb_Descartes.ResumeLayout(false);
+            gb_Descartes.PerformLayout();
+            gb_ConsumodeAgua.ResumeLayout(false);
+            gb_ConsumodeAgua.PerformLayout();
+            gb_Minhocario.ResumeLayout(false);
+            gb_Minhocario.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -513,12 +539,14 @@
         private Label lblAdmHumusColetado;
         private Label lblAdmTipodeMinhoca;
         private Label lblAdmMinhocarioN;
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
-        private GroupBox groupBox3;
+        private GroupBox gb_Descartes;
+        private GroupBox gb_ConsumodeAgua;
+        private GroupBox gb_Minhocario;
         private ComboBox cb_HumusColetado;
         private ComboBox cb_TipoMinhoca;
         private ComboBox cb_Minhocario;
         private FontAwesome.Sharp.IconButton btn_RegistrosPesquisar;
+        private Label label1;
+        private Label label2;
     }
 }

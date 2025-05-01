@@ -15,10 +15,6 @@ namespace ECOInsight.UserControls
         public UCAdm_Minhocario()
         {
             InitializeComponent();
-        }
-
-        private void cb_TipoOrganico_CheckedChanged(object sender, EventArgs e)
-        {
 
         }
     }

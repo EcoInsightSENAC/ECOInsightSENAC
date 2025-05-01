@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             lblFuncionarioMinhocario = new Label();
-            label7 = new Label();
+            lbl_LixoOutrasInfo = new Label();
             textBox1 = new TextBox();
-            label2 = new Label();
+            lblMinhocarioN = new Label();
             dateTimePicker4 = new DateTimePicker();
-            label6 = new Label();
+            lbl_UltimaManutencao = new Label();
             textBox3 = new TextBox();
-            label8 = new Label();
-            label3 = new Label();
+            lbl_TipoMinhoca = new Label();
+            lbl_UltimaColetaHumus = new Label();
             dateTimePicker6 = new DateTimePicker();
-            label11 = new Label();
+            lbl_HumusColetado = new Label();
             textBox2 = new TextBox();
-            label12 = new Label();
+            lblKg = new Label();
             panelTiposdeDescartes = new Panel();
             cb_TipoFrutas = new CheckBox();
             cb_TipoLegumes = new CheckBox();
@@ -52,6 +52,9 @@
             txtLixoOrganico = new TextBox();
             btnMinhocario_Limpardados = new FontAwesome.Sharp.IconButton();
             btn_Salvar = new FontAwesome.Sharp.IconButton();
+            txt_TipoOrganico = new TextBox();
+            lblAdmKg = new Label();
+            lbllixoReciclavel = new Label();
             panelTiposdeDescartes.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,126 +70,126 @@
             lblFuncionarioMinhocario.TabIndex = 68;
             lblFuncionarioMinhocario.Text = "MINHOCÁRIO";
             // 
-            // label7
+            // lbl_LixoOutrasInfo
             // 
-            label7.Anchor = AnchorStyles.Top;
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(89, 346);
-            label7.Name = "label7";
-            label7.Size = new Size(161, 21);
-            label7.TabIndex = 79;
-            label7.Text = "Outras informações: ";
+            lbl_LixoOutrasInfo.Anchor = AnchorStyles.Top;
+            lbl_LixoOutrasInfo.AutoSize = true;
+            lbl_LixoOutrasInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_LixoOutrasInfo.Location = new Point(89, 357);
+            lbl_LixoOutrasInfo.Name = "lbl_LixoOutrasInfo";
+            lbl_LixoOutrasInfo.Size = new Size(161, 21);
+            lbl_LixoOutrasInfo.TabIndex = 79;
+            lbl_LixoOutrasInfo.Text = "Outras informações: ";
             // 
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Top;
-            textBox1.Location = new Point(246, 292);
+            textBox1.Location = new Point(246, 322);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(82, 23);
             textBox1.TabIndex = 76;
             // 
-            // label2
+            // lblMinhocarioN
             // 
-            label2.Anchor = AnchorStyles.Top;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(86, 293);
-            label2.Name = "label2";
-            label2.Size = new Size(155, 21);
-            label2.TabIndex = 73;
-            label2.Text = "Minhocario número :";
+            lblMinhocarioN.Anchor = AnchorStyles.Top;
+            lblMinhocarioN.AutoSize = true;
+            lblMinhocarioN.Font = new Font("Segoe UI", 12F);
+            lblMinhocarioN.Location = new Point(86, 323);
+            lblMinhocarioN.Name = "lblMinhocarioN";
+            lblMinhocarioN.Size = new Size(155, 21);
+            lblMinhocarioN.TabIndex = 73;
+            lblMinhocarioN.Text = "Minhocario número :";
             // 
             // dateTimePicker4
             // 
             dateTimePicker4.Anchor = AnchorStyles.Top;
             dateTimePicker4.CalendarFont = new Font("Segoe UI", 11F);
             dateTimePicker4.Format = DateTimePickerFormat.Short;
-            dateTimePicker4.Location = new Point(246, 233);
+            dateTimePicker4.Location = new Point(246, 263);
             dateTimePicker4.Name = "dateTimePicker4";
             dateTimePicker4.Size = new Size(100, 23);
             dateTimePicker4.TabIndex = 83;
             // 
-            // label6
+            // lbl_UltimaManutencao
             // 
-            label6.Anchor = AnchorStyles.Top;
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(87, 234);
-            label6.Name = "label6";
-            label6.Size = new Size(153, 21);
-            label6.TabIndex = 82;
-            label6.Text = "Última manutenção :";
+            lbl_UltimaManutencao.Anchor = AnchorStyles.Top;
+            lbl_UltimaManutencao.AutoSize = true;
+            lbl_UltimaManutencao.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_UltimaManutencao.Location = new Point(87, 264);
+            lbl_UltimaManutencao.Name = "lbl_UltimaManutencao";
+            lbl_UltimaManutencao.Size = new Size(153, 21);
+            lbl_UltimaManutencao.TabIndex = 82;
+            lbl_UltimaManutencao.Text = "Última manutenção :";
             // 
             // textBox3
             // 
             textBox3.Anchor = AnchorStyles.Top;
-            textBox3.Location = new Point(510, 292);
+            textBox3.Location = new Point(510, 322);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(82, 23);
             textBox3.TabIndex = 85;
             // 
-            // label8
+            // lbl_TipoMinhoca
             // 
-            label8.Anchor = AnchorStyles.Top;
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F);
-            label8.Location = new Point(379, 293);
-            label8.Name = "label8";
-            label8.Size = new Size(132, 21);
-            label8.TabIndex = 84;
-            label8.Text = "Tipo de Minhoca :";
+            lbl_TipoMinhoca.Anchor = AnchorStyles.Top;
+            lbl_TipoMinhoca.AutoSize = true;
+            lbl_TipoMinhoca.Font = new Font("Segoe UI", 12F);
+            lbl_TipoMinhoca.Location = new Point(379, 323);
+            lbl_TipoMinhoca.Name = "lbl_TipoMinhoca";
+            lbl_TipoMinhoca.Size = new Size(132, 21);
+            lbl_TipoMinhoca.TabIndex = 84;
+            lbl_TipoMinhoca.Text = "Tipo de Minhoca :";
             // 
-            // label3
+            // lbl_UltimaColetaHumus
             // 
-            label3.Anchor = AnchorStyles.Top;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(599, 234);
-            label3.Name = "label3";
-            label3.Size = new Size(189, 21);
-            label3.TabIndex = 92;
-            label3.Text = "Última Coleta de Húmus: :";
+            lbl_UltimaColetaHumus.Anchor = AnchorStyles.Top;
+            lbl_UltimaColetaHumus.AutoSize = true;
+            lbl_UltimaColetaHumus.Font = new Font("Segoe UI", 12F);
+            lbl_UltimaColetaHumus.Location = new Point(599, 264);
+            lbl_UltimaColetaHumus.Name = "lbl_UltimaColetaHumus";
+            lbl_UltimaColetaHumus.Size = new Size(189, 21);
+            lbl_UltimaColetaHumus.TabIndex = 92;
+            lbl_UltimaColetaHumus.Text = "Última Coleta de Húmus: :";
             // 
             // dateTimePicker6
             // 
             dateTimePicker6.Anchor = AnchorStyles.Top;
             dateTimePicker6.CalendarFont = new Font("Segoe UI", 11F);
             dateTimePicker6.Format = DateTimePickerFormat.Short;
-            dateTimePicker6.Location = new Point(792, 234);
+            dateTimePicker6.Location = new Point(792, 264);
             dateTimePicker6.Name = "dateTimePicker6";
             dateTimePicker6.Size = new Size(100, 23);
             dateTimePicker6.TabIndex = 93;
             // 
-            // label11
+            // lbl_HumusColetado
             // 
-            label11.Anchor = AnchorStyles.Top;
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 12F);
-            label11.Location = new Point(639, 293);
-            label11.Name = "label11";
-            label11.Size = new Size(133, 21);
-            label11.TabIndex = 94;
-            label11.Text = "Húmus Coletado :";
+            lbl_HumusColetado.Anchor = AnchorStyles.Top;
+            lbl_HumusColetado.AutoSize = true;
+            lbl_HumusColetado.Font = new Font("Segoe UI", 12F);
+            lbl_HumusColetado.Location = new Point(639, 323);
+            lbl_HumusColetado.Name = "lbl_HumusColetado";
+            lbl_HumusColetado.Size = new Size(133, 21);
+            lbl_HumusColetado.TabIndex = 94;
+            lbl_HumusColetado.Text = "Húmus Coletado :";
             // 
             // textBox2
             // 
             textBox2.Anchor = AnchorStyles.Top;
-            textBox2.Location = new Point(775, 292);
+            textBox2.Location = new Point(775, 322);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(82, 23);
             textBox2.TabIndex = 95;
             // 
-            // label12
+            // lblKg
             // 
-            label12.Anchor = AnchorStyles.Top;
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(858, 295);
-            label12.Name = "label12";
-            label12.Size = new Size(24, 17);
-            label12.TabIndex = 96;
-            label12.Text = "Kg";
+            lblKg.Anchor = AnchorStyles.Top;
+            lblKg.AutoSize = true;
+            lblKg.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblKg.Location = new Point(858, 325);
+            lblKg.Name = "lblKg";
+            lblKg.Size = new Size(24, 17);
+            lblKg.TabIndex = 96;
+            lblKg.Text = "Kg";
             // 
             // panelTiposdeDescartes
             // 
@@ -216,7 +219,6 @@
             cb_TipoFrutas.TabIndex = 37;
             cb_TipoFrutas.Text = "Frutas";
             cb_TipoFrutas.UseVisualStyleBackColor = true;
-            cb_TipoFrutas.CheckedChanged += cb_TipoOrganico_CheckedChanged;
             // 
             // cb_TipoLegumes
             // 
@@ -297,7 +299,7 @@
             // txtLixoOrganico
             // 
             txtLixoOrganico.Anchor = AnchorStyles.Top;
-            txtLixoOrganico.Location = new Point(91, 379);
+            txtLixoOrganico.Location = new Point(91, 390);
             txtLixoOrganico.Multiline = true;
             txtLixoOrganico.Name = "txtLixoOrganico";
             txtLixoOrganico.Size = new Size(801, 97);
@@ -345,28 +347,61 @@
             btn_Salvar.Text = "       Salvar ";
             btn_Salvar.UseVisualStyleBackColor = false;
             // 
+            // txt_TipoOrganico
+            // 
+            txt_TipoOrganico.Anchor = AnchorStyles.Top;
+            txt_TipoOrganico.Location = new Point(140, 222);
+            txt_TipoOrganico.Name = "txt_TipoOrganico";
+            txt_TipoOrganico.Size = new Size(100, 23);
+            txt_TipoOrganico.TabIndex = 102;
+            // 
+            // lblAdmKg
+            // 
+            lblAdmKg.Anchor = AnchorStyles.Top;
+            lblAdmKg.AutoSize = true;
+            lblAdmKg.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAdmKg.Location = new Point(246, 224);
+            lblAdmKg.Name = "lblAdmKg";
+            lblAdmKg.Size = new Size(24, 17);
+            lblAdmKg.TabIndex = 101;
+            lblAdmKg.Text = "Kg";
+            // 
+            // lbllixoReciclavel
+            // 
+            lbllixoReciclavel.Anchor = AnchorStyles.Top;
+            lbllixoReciclavel.AutoSize = true;
+            lbllixoReciclavel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbllixoReciclavel.Location = new Point(91, 223);
+            lbllixoReciclavel.Name = "lbllixoReciclavel";
+            lbllixoReciclavel.Size = new Size(49, 21);
+            lbllixoReciclavel.TabIndex = 100;
+            lbllixoReciclavel.Text = "Peso :";
+            // 
             // UCAdm_Minhocario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(txt_TipoOrganico);
+            Controls.Add(lblAdmKg);
+            Controls.Add(lbllixoReciclavel);
             Controls.Add(btn_Salvar);
             Controls.Add(panelTiposdeDescartes);
             Controls.Add(lblTiposdemateriais);
-            Controls.Add(label12);
+            Controls.Add(lblKg);
             Controls.Add(lblFuncionarioMinhocario);
             Controls.Add(textBox2);
-            Controls.Add(label11);
+            Controls.Add(lbl_HumusColetado);
             Controls.Add(dateTimePicker6);
-            Controls.Add(label3);
+            Controls.Add(lbl_UltimaColetaHumus);
             Controls.Add(textBox3);
-            Controls.Add(label8);
+            Controls.Add(lbl_TipoMinhoca);
             Controls.Add(dateTimePicker4);
-            Controls.Add(label6);
+            Controls.Add(lbl_UltimaManutencao);
             Controls.Add(btnMinhocario_Limpardados);
-            Controls.Add(label7);
+            Controls.Add(lbl_LixoOutrasInfo);
             Controls.Add(txtLixoOrganico);
             Controls.Add(textBox1);
-            Controls.Add(label2);
+            Controls.Add(lblMinhocarioN);
             Name = "UCAdm_Minhocario";
             Size = new Size(978, 646);
             panelTiposdeDescartes.ResumeLayout(false);
@@ -378,18 +413,18 @@
         #endregion
 
         private Label lblFuncionarioMinhocario;
-        private Label label7;
+        private Label lbl_LixoOutrasInfo;
         private TextBox textBox1;
-        private Label label2;
+        private Label lblMinhocarioN;
         private DateTimePicker dateTimePicker4;
-        private Label label6;
+        private Label lbl_UltimaManutencao;
         private TextBox textBox3;
-        private Label label8;
-        private Label label3;
+        private Label lbl_TipoMinhoca;
+        private Label lbl_UltimaColetaHumus;
         private DateTimePicker dateTimePicker6;
-        private Label label11;
+        private Label lbl_HumusColetado;
         private TextBox textBox2;
-        private Label label12;
+        private Label lblKg;
         private Panel panelTiposdeDescartes;
         private CheckBox cb_TipoFrutas;
         private CheckBox cb_TipoLegumes;
@@ -401,5 +436,8 @@
         private TextBox txtLixoOrganico;
         private FontAwesome.Sharp.IconButton btnMinhocario_Limpardados;
         private FontAwesome.Sharp.IconButton btn_Salvar;
+        private TextBox txt_TipoOrganico;
+        private Label lblAdmKg;
+        private Label lbllixoReciclavel;
     }
 }

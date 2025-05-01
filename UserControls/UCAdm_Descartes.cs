@@ -15,48 +15,18 @@ namespace ECOInsight.UserControls
         public UCAdm_Descartes()
         {
             InitializeComponent();
+            DesativarTodasTextBoxes();
         }
 
-        private void cb_TipoOrganico_CheckedChanged(object sender, EventArgs e)
+        private void DesativarTodasTextBoxes()
         {
-            CheckBox? currentlyChecked = sender as CheckBox;
-
-            if (currentlyChecked != null && currentlyChecked.Checked)
-            {
-                foreach (Control control in this.Controls) // Se os checkboxes estão diretamente no formulário
-                {
-                    if (control is CheckBox && control != currentlyChecked)
-                    {
-                        control.Enabled = false;
-                    }
-                }
-                // Se os checkboxes estão dentro de um Panel ou GroupBox:
-                foreach (Control control in panelTiposdeDescartes.Controls)
-                {
-                    if (control is CheckBox && control != currentlyChecked)
-                    {
-                        control.Enabled = false;
-                    }
-                }
-            }
-            else
-            {
-                foreach (Control control in this.Controls) // Se os checkboxes estão diretamente no formulário
-                {
-                    if (control is CheckBox && control != currentlyChecked)
-                    {
-                        control.Enabled = true;
-                    }
-                }
-                // Se os checkboxes estão dentro de um Panel ou GroupBox:
-                foreach (Control control in panelTiposdeDescartes.Controls)
-                {
-                    if (control is CheckBox && control != currentlyChecked)
-                    {
-                        control.Enabled = true;
-                    }
-                }
-            }
+            txt_TipoOrganico.Enabled = false;
+            txt_TipoPapel.Enabled = false;
+            txt_TipoPlastico.Enabled = false;
+            txt_TipoVidro.Enabled = false;
+            txt_TipoMetal.Enabled = false;
+            txt_TipoEletronico.Enabled = false;
+            txt_TipoMedicamentos.Enabled = false;
         }
 
         private void btn_LimparFiltros_Click(object sender, EventArgs e)
@@ -70,42 +40,93 @@ namespace ECOInsight.UserControls
                     checkBox.Enabled = true; // Reabilita a checkbox, caso tenha sido desabilitada
                 }
 
-                // Limpar ComboBox 
-                cb_Peso.SelectedIndex = -1; // Desseleciona qualquer item
-                cb_Peso.Text = string.Empty;   // Limpa o texto exibido (opcional)
-
                 cb_Destino.SelectedIndex = -1;
                 cb_Destino.Text = string.Empty;
 
-                // Limpar a TextBox (supondo que seu TextBox se chama textBoxInformacoes):
-                if (textLixoOutrasInfo != null) // Adiciona uma verificação de nulidade por segurança
+                // Limpar a TextBox
+                if (txt_DescartesOutrasInfo != null) // Adiciona uma verificação de nulidade por segurança
                 {
-                    textLixoOutrasInfo.Text = string.Empty;
+                    txt_DescartesOutrasInfo.Text = string.Empty;
+                    txt_TipoOrganico.Text = string.Empty;
+                    txt_TipoPapel.Text = string.Empty;
+                    txt_TipoPlastico.Text = string.Empty;
+                    txt_TipoVidro.Text = string.Empty;
+                    txt_TipoMetal.Text = string.Empty;
+                    txt_TipoEletronico.Text = string.Empty;
+                    txt_TipoMedicamentos.Text = string.Empty;
                 }
 
             }
         }
 
-        private void cb_Peso_KeyPress(object sender, KeyPressEventArgs e)
+        private void cb_TipoOrganico_CheckedChanged_1(object sender, EventArgs e)
         {
-            // Verifica se o caractere digitado é um dígito (0-9)
-            if (char.IsDigit(e.KeyChar))
+            txt_TipoOrganico.Enabled = cb_TipoOrganico.Checked;
+
+            if (!cb_TipoOrganico.Checked)
             {
-                // Se for um dígito, permite a entrada
-                e.Handled = false;
+                txt_TipoOrganico.Text = string.Empty;
             }
-            // Verifica se o caractere é um caractere de controle (como Backspace)
-            else if (char.IsControl(e.KeyChar))
+        }
+
+        private void cb_TipoVidro_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txt_TipoVidro.Enabled = cb_TipoVidro.Checked;
+
+            if (!cb_TipoVidro.Checked)
             {
-                // Se for um caractere de controle, permite a entrada
-                e.Handled = false;
+                txt_TipoVidro.Text = string.Empty;
             }
-            else
+        }
+
+        private void cb_TipoMetal_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txt_TipoMetal.Enabled = cb_TipoMetal.Checked;
+
+            if (!cb_TipoMetal.Checked)
             {
-                // Se não for um dígito nem um caractere de controle, bloqueia a entrada
-                e.Handled = true;
+                txt_TipoMetal.Text = string.Empty;
+            }
+        }
+
+        private void cb_TipoEletronico_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txt_TipoEletronico.Enabled = cb_TipoEletronico.Checked;
+
+            if (!cb_TipoEletronico.Checked)
+            {
+                txt_TipoEletronico.Text = string.Empty;
+            }
+        }
+
+        private void cb_TipoMedicamentos_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txt_TipoMedicamentos.Enabled = cb_TipoMedicamentos.Checked;
+
+            if (!cb_TipoMedicamentos.Checked)
+            {
+                txt_TipoMedicamentos.Text = string.Empty;
+            }
+        }
+
+        private void cb_TipoPapel_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_TipoPapel.Enabled = cb_TipoPapel.Checked;
+
+            if (!cb_TipoPapel.Checked)
+            {
+                txt_TipoPapel.Text = string.Empty;
+            }
+        }
+
+        private void cb_TipoPlastico_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_TipoPlastico.Enabled = cb_TipoPlastico.Checked;
+
+            if (!cb_TipoPlastico.Checked)
+            {
+                txt_TipoPlastico.Text = string.Empty;
             }
         }
     }
 }
-

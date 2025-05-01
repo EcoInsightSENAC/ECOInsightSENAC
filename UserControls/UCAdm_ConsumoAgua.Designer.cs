@@ -58,7 +58,7 @@
             // textTotalLitros
             // 
             textTotalLitros.Anchor = AnchorStyles.Top;
-            textTotalLitros.Location = new Point(649, 261);
+            textTotalLitros.Location = new Point(257, 322);
             textTotalLitros.Name = "textTotalLitros";
             textTotalLitros.Size = new Size(100, 23);
             textTotalLitros.TabIndex = 66;
@@ -67,7 +67,7 @@
             // textTotalGarrafas
             // 
             textTotalGarrafas.Anchor = AnchorStyles.Top;
-            textTotalGarrafas.Location = new Point(326, 264);
+            textTotalGarrafas.Location = new Point(326, 260);
             textTotalGarrafas.Name = "textTotalGarrafas";
             textTotalGarrafas.Size = new Size(100, 23);
             textTotalGarrafas.TabIndex = 65;
@@ -87,7 +87,7 @@
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(488, 262);
+            label3.Location = new Point(96, 323);
             label3.Name = "label3";
             label3.Size = new Size(162, 21);
             label3.TabIndex = 63;
@@ -98,7 +98,7 @@
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(93, 265);
+            label2.Location = new Point(93, 261);
             label2.Name = "label2";
             label2.Size = new Size(234, 21);
             label2.TabIndex = 62;
@@ -120,7 +120,7 @@
             label7.Anchor = AnchorStyles.Top;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(91, 327);
+            label7.Location = new Point(91, 387);
             label7.Name = "label7";
             label7.Size = new Size(161, 21);
             label7.TabIndex = 68;
@@ -129,7 +129,7 @@
             // textAguaOutrasInfo
             // 
             textAguaOutrasInfo.Anchor = AnchorStyles.Top;
-            textAguaOutrasInfo.Location = new Point(93, 360);
+            textAguaOutrasInfo.Location = new Point(93, 421);
             textAguaOutrasInfo.Multiline = true;
             textAguaOutrasInfo.Name = "textAguaOutrasInfo";
             textAguaOutrasInfo.Size = new Size(801, 97);
@@ -149,7 +149,7 @@
             btn_LimparFiltrosAgua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_LimparFiltrosAgua.IconSize = 25;
             btn_LimparFiltrosAgua.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_LimparFiltrosAgua.Location = new Point(659, 477);
+            btn_LimparFiltrosAgua.Location = new Point(659, 538);
             btn_LimparFiltrosAgua.Name = "btn_LimparFiltrosAgua";
             btn_LimparFiltrosAgua.Padding = new Padding(5, 0, 0, 0);
             btn_LimparFiltrosAgua.Size = new Size(113, 41);
@@ -161,7 +161,7 @@
             // textIdBebedouro
             // 
             textIdBebedouro.Anchor = AnchorStyles.Top;
-            textIdBebedouro.Location = new Point(329, 197);
+            textIdBebedouro.Location = new Point(308, 196);
             textIdBebedouro.Name = "textIdBebedouro";
             textIdBebedouro.Size = new Size(100, 23);
             textIdBebedouro.TabIndex = 73;
@@ -189,7 +189,7 @@
             btn_Salvar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Salvar.IconSize = 25;
             btn_Salvar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Salvar.Location = new Point(789, 477);
+            btn_Salvar.Location = new Point(789, 538);
             btn_Salvar.Name = "btn_Salvar";
             btn_Salvar.Padding = new Padding(3, 0, 0, 0);
             btn_Salvar.Size = new Size(105, 41);

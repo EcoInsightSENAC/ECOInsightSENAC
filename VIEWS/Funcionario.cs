@@ -27,8 +27,8 @@ namespace ECOInsightSENAC
 
         private void InitializeSidebar()
         {
-            sidebarFuncionario.Width = 63; // Define a largura inicial do sidebar para minimizado
-            sidebarExpand = false; // Garante que a variável esteja definida como false inicialmente
+            sidebarFuncionario.Width = 180; // Define a largura inicial do sidebar para maximizado
+            sidebarExpand = true; // Garante que a variável esteja definida como true inicialmente
         }
 
         private void LoadInitialUserControl()

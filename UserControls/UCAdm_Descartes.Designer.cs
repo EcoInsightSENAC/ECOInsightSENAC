@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             lblTiposdemateriais = new Label();
-            lbllixoReciclavel = new Label();
+            lbl_PesoOrganic = new Label();
             lblLixoDestino = new Label();
             LblLixoOutrasInfo = new Label();
-            dateTimeRegistros = new DateTimePicker();
+            dateTimeDescartess = new DateTimePicker();
             cb_TipoVidro = new CheckBox();
             cb_TipoMetal = new CheckBox();
             cb_TipoEletronico = new CheckBox();
@@ -41,7 +41,7 @@
             cb_TipoPapel = new CheckBox();
             panelTiposdeDescartes = new Panel();
             cb_TipoOrganico = new CheckBox();
-            textLixoOutrasInfo = new TextBox();
+            txt_DescartesOutrasInfo = new TextBox();
             lblAdmKg = new Label();
             btn_EditarLista = new FontAwesome.Sharp.IconButton();
             lblAdmSeleData = new Label();
@@ -50,26 +50,26 @@
             btn_ProcurArquivos = new FontAwesome.Sharp.IconButton();
             lblAdmUploadRegistros = new Label();
             btn_LimparFiltros = new FontAwesome.Sharp.IconButton();
-            cb_Peso = new ComboBox();
             btn_Salvar = new FontAwesome.Sharp.IconButton();
-            comboBox1 = new ComboBox();
             label1 = new Label();
-            label2 = new Label();
-            comboBox2 = new ComboBox();
+            lbl_PesoVidro = new Label();
             label3 = new Label();
-            label4 = new Label();
-            comboBox3 = new ComboBox();
+            lbl_PesoMetal = new Label();
             label5 = new Label();
-            label6 = new Label();
-            comboBox4 = new ComboBox();
+            lbl_PesoEletronico = new Label();
             label7 = new Label();
-            label8 = new Label();
-            comboBox5 = new ComboBox();
+            lbl_PesoMedicamentos = new Label();
             label9 = new Label();
-            label10 = new Label();
-            comboBox6 = new ComboBox();
+            lbl_PesoPlastico = new Label();
             label11 = new Label();
-            label12 = new Label();
+            lbl_PesoPapel = new Label();
+            txt_TipoOrganico = new TextBox();
+            txt_TipoPapel = new TextBox();
+            txt_TipoPlastico = new TextBox();
+            txt_TipoVidro = new TextBox();
+            txt_TipoMetal = new TextBox();
+            txt_TipoEletronico = new TextBox();
+            txt_TipoMedicamentos = new TextBox();
             panelTiposdeDescartes.SuspendLayout();
             SuspendLayout();
             // 
@@ -84,16 +84,16 @@
             lblTiposdemateriais.TabIndex = 26;
             lblTiposdemateriais.Text = "Tipos de Descartes";
             // 
-            // lbllixoReciclavel
+            // lbl_PesoOrganic
             // 
-            lbllixoReciclavel.Anchor = AnchorStyles.Top;
-            lbllixoReciclavel.AutoSize = true;
-            lbllixoReciclavel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbllixoReciclavel.Location = new Point(287, 147);
-            lbllixoReciclavel.Name = "lbllixoReciclavel";
-            lbllixoReciclavel.Size = new Size(52, 21);
-            lbllixoReciclavel.TabIndex = 29;
-            lbllixoReciclavel.Text = "Peso :";
+            lbl_PesoOrganic.Anchor = AnchorStyles.Top;
+            lbl_PesoOrganic.AutoSize = true;
+            lbl_PesoOrganic.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_PesoOrganic.Location = new Point(287, 143);
+            lbl_PesoOrganic.Name = "lbl_PesoOrganic";
+            lbl_PesoOrganic.Size = new Size(52, 21);
+            lbl_PesoOrganic.TabIndex = 29;
+            lbl_PesoOrganic.Text = "Peso :";
             // 
             // lblLixoDestino
             // 
@@ -111,21 +111,21 @@
             LblLixoOutrasInfo.Anchor = AnchorStyles.Top;
             LblLixoOutrasInfo.AutoSize = true;
             LblLixoOutrasInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LblLixoOutrasInfo.Location = new Point(583, 319);
+            LblLixoOutrasInfo.Location = new Point(583, 333);
             LblLixoOutrasInfo.Name = "LblLixoOutrasInfo";
             LblLixoOutrasInfo.Size = new Size(158, 21);
             LblLixoOutrasInfo.TabIndex = 38;
             LblLixoOutrasInfo.Text = "Outras Informações ";
             // 
-            // dateTimeRegistros
+            // dateTimeDescartess
             // 
-            dateTimeRegistros.Anchor = AnchorStyles.Top;
-            dateTimeRegistros.Font = new Font("Segoe UI", 11F);
-            dateTimeRegistros.Format = DateTimePickerFormat.Short;
-            dateTimeRegistros.Location = new Point(769, 270);
-            dateTimeRegistros.Name = "dateTimeRegistros";
-            dateTimeRegistros.Size = new Size(124, 27);
-            dateTimeRegistros.TabIndex = 39;
+            dateTimeDescartess.Anchor = AnchorStyles.Top;
+            dateTimeDescartess.Font = new Font("Segoe UI", 11F);
+            dateTimeDescartess.Format = DateTimePickerFormat.Short;
+            dateTimeDescartess.Location = new Point(714, 267);
+            dateTimeDescartess.Name = "dateTimeDescartess";
+            dateTimeDescartess.Size = new Size(179, 27);
+            dateTimeDescartess.TabIndex = 39;
             // 
             // cb_TipoVidro
             // 
@@ -139,7 +139,7 @@
             cb_TipoVidro.TabIndex = 34;
             cb_TipoVidro.Text = "Vidro";
             cb_TipoVidro.UseVisualStyleBackColor = true;
-            cb_TipoVidro.CheckedChanged += cb_TipoOrganico_CheckedChanged;
+            cb_TipoVidro.CheckedChanged += cb_TipoVidro_CheckedChanged_1;
             // 
             // cb_TipoMetal
             // 
@@ -153,7 +153,7 @@
             cb_TipoMetal.TabIndex = 33;
             cb_TipoMetal.Text = "Metal";
             cb_TipoMetal.UseVisualStyleBackColor = true;
-            cb_TipoMetal.CheckedChanged += cb_TipoOrganico_CheckedChanged;
+            cb_TipoMetal.CheckedChanged += cb_TipoMetal_CheckedChanged_1;
             // 
             // cb_TipoEletronico
             // 
@@ -167,7 +167,7 @@
             cb_TipoEletronico.TabIndex = 32;
             cb_TipoEletronico.Text = "Eletrônico";
             cb_TipoEletronico.UseVisualStyleBackColor = true;
-            cb_TipoEletronico.CheckedChanged += cb_TipoOrganico_CheckedChanged;
+            cb_TipoEletronico.CheckedChanged += cb_TipoEletronico_CheckedChanged_1;
             // 
             // cb_TipoMedicamentos
             // 
@@ -181,7 +181,7 @@
             cb_TipoMedicamentos.TabIndex = 36;
             cb_TipoMedicamentos.Text = "Medicamentos ";
             cb_TipoMedicamentos.UseVisualStyleBackColor = true;
-            cb_TipoMedicamentos.CheckedChanged += cb_TipoOrganico_CheckedChanged;
+            cb_TipoMedicamentos.CheckedChanged += cb_TipoMedicamentos_CheckedChanged_1;
             // 
             // cb_TipoPlastico
             // 
@@ -195,7 +195,7 @@
             cb_TipoPlastico.TabIndex = 35;
             cb_TipoPlastico.Text = "Plástico";
             cb_TipoPlastico.UseVisualStyleBackColor = true;
-            cb_TipoPlastico.CheckedChanged += cb_TipoOrganico_CheckedChanged;
+            cb_TipoPlastico.CheckedChanged += cb_TipoPlastico_CheckedChanged;
             // 
             // cb_TipoPapel
             // 
@@ -209,7 +209,7 @@
             cb_TipoPapel.TabIndex = 31;
             cb_TipoPapel.Text = "Papel";
             cb_TipoPapel.UseVisualStyleBackColor = true;
-            cb_TipoPapel.CheckedChanged += cb_TipoOrganico_CheckedChanged;
+            cb_TipoPapel.CheckedChanged += cb_TipoPapel_CheckedChanged;
             // 
             // panelTiposdeDescartes
             // 
@@ -240,23 +240,23 @@
             cb_TipoOrganico.TabIndex = 37;
             cb_TipoOrganico.Text = "Orgânico";
             cb_TipoOrganico.UseVisualStyleBackColor = true;
-            cb_TipoOrganico.CheckedChanged += cb_TipoOrganico_CheckedChanged;
+            cb_TipoOrganico.CheckedChanged += cb_TipoOrganico_CheckedChanged_1;
             // 
-            // textLixoOutrasInfo
+            // txt_DescartesOutrasInfo
             // 
-            textLixoOutrasInfo.Anchor = AnchorStyles.Top;
-            textLixoOutrasInfo.Location = new Point(583, 351);
-            textLixoOutrasInfo.Multiline = true;
-            textLixoOutrasInfo.Name = "textLixoOutrasInfo";
-            textLixoOutrasInfo.Size = new Size(310, 190);
-            textLixoOutrasInfo.TabIndex = 44;
+            txt_DescartesOutrasInfo.Anchor = AnchorStyles.Top;
+            txt_DescartesOutrasInfo.Location = new Point(583, 371);
+            txt_DescartesOutrasInfo.Multiline = true;
+            txt_DescartesOutrasInfo.Name = "txt_DescartesOutrasInfo";
+            txt_DescartesOutrasInfo.Size = new Size(310, 177);
+            txt_DescartesOutrasInfo.TabIndex = 44;
             // 
             // lblAdmKg
             // 
             lblAdmKg.Anchor = AnchorStyles.Top;
             lblAdmKg.AutoSize = true;
             lblAdmKg.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            lblAdmKg.Location = new Point(453, 148);
+            lblAdmKg.Location = new Point(442, 144);
             lblAdmKg.Name = "lblAdmKg";
             lblAdmKg.Size = new Size(26, 19);
             lblAdmKg.TabIndex = 46;
@@ -276,7 +276,7 @@
             btn_EditarLista.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_EditarLista.IconSize = 25;
             btn_EditarLista.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_EditarLista.Location = new Point(86, 556);
+            btn_EditarLista.Location = new Point(86, 557);
             btn_EditarLista.Name = "btn_EditarLista";
             btn_EditarLista.Padding = new Padding(5, 0, 0, 0);
             btn_EditarLista.Size = new Size(83, 35);
@@ -289,7 +289,7 @@
             lblAdmSeleData.Anchor = AnchorStyles.Top;
             lblAdmSeleData.AutoSize = true;
             lblAdmSeleData.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAdmSeleData.Location = new Point(582, 274);
+            lblAdmSeleData.Location = new Point(582, 271);
             lblAdmSeleData.Name = "lblAdmSeleData";
             lblAdmSeleData.Size = new Size(126, 21);
             lblAdmSeleData.TabIndex = 59;
@@ -331,7 +331,7 @@
             btn_ProcurArquivos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_ProcurArquivos.IconSize = 25;
             btn_ProcurArquivos.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_ProcurArquivos.Location = new Point(754, 141);
+            btn_ProcurArquivos.Location = new Point(754, 134);
             btn_ProcurArquivos.Name = "btn_ProcurArquivos";
             btn_ProcurArquivos.Padding = new Padding(5, 0, 0, 0);
             btn_ProcurArquivos.Size = new Size(139, 29);
@@ -344,7 +344,7 @@
             lblAdmUploadRegistros.Anchor = AnchorStyles.Top;
             lblAdmUploadRegistros.AutoSize = true;
             lblAdmUploadRegistros.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAdmUploadRegistros.Location = new Point(582, 145);
+            lblAdmUploadRegistros.Location = new Point(582, 138);
             lblAdmUploadRegistros.Name = "lblAdmUploadRegistros";
             lblAdmUploadRegistros.Size = new Size(156, 21);
             lblAdmUploadRegistros.TabIndex = 69;
@@ -364,7 +364,7 @@
             btn_LimparFiltros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_LimparFiltros.IconSize = 25;
             btn_LimparFiltros.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_LimparFiltros.Location = new Point(664, 559);
+            btn_LimparFiltros.Location = new Point(664, 554);
             btn_LimparFiltros.Name = "btn_LimparFiltros";
             btn_LimparFiltros.Padding = new Padding(5, 0, 0, 0);
             btn_LimparFiltros.Size = new Size(113, 41);
@@ -372,17 +372,6 @@
             btn_LimparFiltros.Text = "Limpar Filtros";
             btn_LimparFiltros.UseVisualStyleBackColor = false;
             btn_LimparFiltros.Click += btn_LimparFiltros_Click;
-            // 
-            // cb_Peso
-            // 
-            cb_Peso.Anchor = AnchorStyles.Top;
-            cb_Peso.FlatStyle = FlatStyle.Flat;
-            cb_Peso.FormattingEnabled = true;
-            cb_Peso.Location = new Point(338, 146);
-            cb_Peso.Name = "cb_Peso";
-            cb_Peso.Size = new Size(109, 23);
-            cb_Peso.TabIndex = 73;
-            cb_Peso.KeyPress += cb_Peso_KeyPress;
             // 
             // btn_Salvar
             // 
@@ -396,7 +385,7 @@
             btn_Salvar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Salvar.IconSize = 25;
             btn_Salvar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Salvar.Location = new Point(788, 559);
+            btn_Salvar.Location = new Point(788, 554);
             btn_Salvar.Name = "btn_Salvar";
             btn_Salvar.Padding = new Padding(3, 0, 0, 0);
             btn_Salvar.Size = new Size(105, 41);
@@ -404,222 +393,218 @@
             btn_Salvar.Text = "       Salvar ";
             btn_Salvar.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Top;
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(338, 330);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(109, 23);
-            comboBox1.TabIndex = 78;
-            // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label1.Location = new Point(453, 332);
+            label1.Location = new Point(441, 331);
             label1.Name = "label1";
             label1.Size = new Size(26, 19);
             label1.TabIndex = 77;
             label1.Text = "Kg";
             // 
-            // label2
+            // lbl_PesoVidro
             // 
-            label2.Anchor = AnchorStyles.Top;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(287, 331);
-            label2.Name = "label2";
-            label2.Size = new Size(52, 21);
-            label2.TabIndex = 76;
-            label2.Text = "Peso :";
-            // 
-            // comboBox2
-            // 
-            comboBox2.Anchor = AnchorStyles.Top;
-            comboBox2.FlatStyle = FlatStyle.Flat;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(338, 390);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(109, 23);
-            comboBox2.TabIndex = 81;
+            lbl_PesoVidro.Anchor = AnchorStyles.Top;
+            lbl_PesoVidro.AutoSize = true;
+            lbl_PesoVidro.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_PesoVidro.Location = new Point(287, 330);
+            lbl_PesoVidro.Name = "lbl_PesoVidro";
+            lbl_PesoVidro.Size = new Size(52, 21);
+            lbl_PesoVidro.TabIndex = 76;
+            lbl_PesoVidro.Text = "Peso :";
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label3.Location = new Point(453, 392);
+            label3.Location = new Point(441, 393);
             label3.Name = "label3";
             label3.Size = new Size(26, 19);
             label3.TabIndex = 80;
             label3.Text = "Kg";
             // 
-            // label4
+            // lbl_PesoMetal
             // 
-            label4.Anchor = AnchorStyles.Top;
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(287, 391);
-            label4.Name = "label4";
-            label4.Size = new Size(52, 21);
-            label4.TabIndex = 79;
-            label4.Text = "Peso :";
-            // 
-            // comboBox3
-            // 
-            comboBox3.Anchor = AnchorStyles.Top;
-            comboBox3.FlatStyle = FlatStyle.Flat;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(338, 456);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(109, 23);
-            comboBox3.TabIndex = 84;
+            lbl_PesoMetal.Anchor = AnchorStyles.Top;
+            lbl_PesoMetal.AutoSize = true;
+            lbl_PesoMetal.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_PesoMetal.Location = new Point(287, 392);
+            lbl_PesoMetal.Name = "lbl_PesoMetal";
+            lbl_PesoMetal.Size = new Size(52, 21);
+            lbl_PesoMetal.TabIndex = 79;
+            lbl_PesoMetal.Text = "Peso :";
             // 
             // label5
             // 
             label5.Anchor = AnchorStyles.Top;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label5.Location = new Point(453, 458);
+            label5.Location = new Point(441, 455);
             label5.Name = "label5";
             label5.Size = new Size(26, 19);
             label5.TabIndex = 83;
             label5.Text = "Kg";
             // 
-            // label6
+            // lbl_PesoEletronico
             // 
-            label6.Anchor = AnchorStyles.Top;
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(287, 457);
-            label6.Name = "label6";
-            label6.Size = new Size(52, 21);
-            label6.TabIndex = 82;
-            label6.Text = "Peso :";
-            // 
-            // comboBox4
-            // 
-            comboBox4.Anchor = AnchorStyles.Top;
-            comboBox4.FlatStyle = FlatStyle.Flat;
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(338, 518);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(109, 23);
-            comboBox4.TabIndex = 87;
+            lbl_PesoEletronico.Anchor = AnchorStyles.Top;
+            lbl_PesoEletronico.AutoSize = true;
+            lbl_PesoEletronico.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_PesoEletronico.Location = new Point(287, 454);
+            lbl_PesoEletronico.Name = "lbl_PesoEletronico";
+            lbl_PesoEletronico.Size = new Size(52, 21);
+            lbl_PesoEletronico.TabIndex = 82;
+            lbl_PesoEletronico.Text = "Peso :";
             // 
             // label7
             // 
             label7.Anchor = AnchorStyles.Top;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label7.Location = new Point(453, 520);
+            label7.Location = new Point(441, 515);
             label7.Name = "label7";
             label7.Size = new Size(26, 19);
             label7.TabIndex = 86;
             label7.Text = "Kg";
             // 
-            // label8
+            // lbl_PesoMedicamentos
             // 
-            label8.Anchor = AnchorStyles.Top;
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(287, 519);
-            label8.Name = "label8";
-            label8.Size = new Size(52, 21);
-            label8.TabIndex = 85;
-            label8.Text = "Peso :";
-            // 
-            // comboBox5
-            // 
-            comboBox5.Anchor = AnchorStyles.Top;
-            comboBox5.FlatStyle = FlatStyle.Flat;
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(338, 267);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(109, 23);
-            comboBox5.TabIndex = 90;
+            lbl_PesoMedicamentos.Anchor = AnchorStyles.Top;
+            lbl_PesoMedicamentos.AutoSize = true;
+            lbl_PesoMedicamentos.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_PesoMedicamentos.Location = new Point(287, 514);
+            lbl_PesoMedicamentos.Name = "lbl_PesoMedicamentos";
+            lbl_PesoMedicamentos.Size = new Size(52, 21);
+            lbl_PesoMedicamentos.TabIndex = 85;
+            lbl_PesoMedicamentos.Text = "Peso :";
             // 
             // label9
             // 
             label9.Anchor = AnchorStyles.Top;
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label9.Location = new Point(453, 269);
+            label9.Location = new Point(441, 269);
             label9.Name = "label9";
             label9.Size = new Size(26, 19);
             label9.TabIndex = 89;
             label9.Text = "Kg";
             // 
-            // label10
+            // lbl_PesoPlastico
             // 
-            label10.Anchor = AnchorStyles.Top;
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(287, 268);
-            label10.Name = "label10";
-            label10.Size = new Size(52, 21);
-            label10.TabIndex = 88;
-            label10.Text = "Peso :";
-            // 
-            // comboBox6
-            // 
-            comboBox6.Anchor = AnchorStyles.Top;
-            comboBox6.FlatStyle = FlatStyle.Flat;
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(338, 206);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(109, 23);
-            comboBox6.TabIndex = 93;
+            lbl_PesoPlastico.Anchor = AnchorStyles.Top;
+            lbl_PesoPlastico.AutoSize = true;
+            lbl_PesoPlastico.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_PesoPlastico.Location = new Point(287, 268);
+            lbl_PesoPlastico.Name = "lbl_PesoPlastico";
+            lbl_PesoPlastico.Size = new Size(52, 21);
+            lbl_PesoPlastico.TabIndex = 88;
+            lbl_PesoPlastico.Text = "Peso :";
             // 
             // label11
             // 
             label11.Anchor = AnchorStyles.Top;
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label11.Location = new Point(453, 208);
+            label11.Location = new Point(441, 208);
             label11.Name = "label11";
             label11.Size = new Size(26, 19);
             label11.TabIndex = 92;
             label11.Text = "Kg";
             // 
-            // label12
+            // lbl_PesoPapel
             // 
-            label12.Anchor = AnchorStyles.Top;
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(287, 207);
-            label12.Name = "label12";
-            label12.Size = new Size(52, 21);
-            label12.TabIndex = 91;
-            label12.Text = "Peso :";
+            lbl_PesoPapel.Anchor = AnchorStyles.Top;
+            lbl_PesoPapel.AutoSize = true;
+            lbl_PesoPapel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_PesoPapel.Location = new Point(287, 207);
+            lbl_PesoPapel.Name = "lbl_PesoPapel";
+            lbl_PesoPapel.Size = new Size(52, 21);
+            lbl_PesoPapel.TabIndex = 91;
+            lbl_PesoPapel.Text = "Peso :";
+            // 
+            // txt_TipoOrganico
+            // 
+            txt_TipoOrganico.Anchor = AnchorStyles.Top;
+            txt_TipoOrganico.Location = new Point(336, 142);
+            txt_TipoOrganico.Name = "txt_TipoOrganico";
+            txt_TipoOrganico.Size = new Size(100, 23);
+            txt_TipoOrganico.TabIndex = 93;
+            // 
+            // txt_TipoPapel
+            // 
+            txt_TipoPapel.Anchor = AnchorStyles.Top;
+            txt_TipoPapel.Location = new Point(336, 206);
+            txt_TipoPapel.Name = "txt_TipoPapel";
+            txt_TipoPapel.Size = new Size(100, 23);
+            txt_TipoPapel.TabIndex = 94;
+            // 
+            // txt_TipoPlastico
+            // 
+            txt_TipoPlastico.Anchor = AnchorStyles.Top;
+            txt_TipoPlastico.Location = new Point(336, 267);
+            txt_TipoPlastico.Name = "txt_TipoPlastico";
+            txt_TipoPlastico.Size = new Size(100, 23);
+            txt_TipoPlastico.TabIndex = 95;
+            // 
+            // txt_TipoVidro
+            // 
+            txt_TipoVidro.Anchor = AnchorStyles.Top;
+            txt_TipoVidro.Location = new Point(336, 329);
+            txt_TipoVidro.Name = "txt_TipoVidro";
+            txt_TipoVidro.Size = new Size(100, 23);
+            txt_TipoVidro.TabIndex = 96;
+            // 
+            // txt_TipoMetal
+            // 
+            txt_TipoMetal.Anchor = AnchorStyles.Top;
+            txt_TipoMetal.Location = new Point(336, 391);
+            txt_TipoMetal.Name = "txt_TipoMetal";
+            txt_TipoMetal.Size = new Size(100, 23);
+            txt_TipoMetal.TabIndex = 97;
+            // 
+            // txt_TipoEletronico
+            // 
+            txt_TipoEletronico.Anchor = AnchorStyles.Top;
+            txt_TipoEletronico.Location = new Point(336, 453);
+            txt_TipoEletronico.Name = "txt_TipoEletronico";
+            txt_TipoEletronico.Size = new Size(100, 23);
+            txt_TipoEletronico.TabIndex = 98;
+            // 
+            // txt_TipoMedicamentos
+            // 
+            txt_TipoMedicamentos.Anchor = AnchorStyles.Top;
+            txt_TipoMedicamentos.Location = new Point(336, 513);
+            txt_TipoMedicamentos.Name = "txt_TipoMedicamentos";
+            txt_TipoMedicamentos.Size = new Size(100, 23);
+            txt_TipoMedicamentos.TabIndex = 99;
             // 
             // UCAdm_Descartes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(comboBox6);
+            Controls.Add(txt_TipoMedicamentos);
+            Controls.Add(txt_TipoEletronico);
+            Controls.Add(txt_TipoMetal);
+            Controls.Add(txt_TipoVidro);
+            Controls.Add(txt_TipoPlastico);
+            Controls.Add(txt_TipoPapel);
+            Controls.Add(txt_TipoOrganico);
             Controls.Add(label11);
-            Controls.Add(label12);
-            Controls.Add(comboBox5);
+            Controls.Add(lbl_PesoPapel);
             Controls.Add(label9);
-            Controls.Add(label10);
-            Controls.Add(comboBox4);
+            Controls.Add(lbl_PesoPlastico);
             Controls.Add(label7);
-            Controls.Add(label8);
-            Controls.Add(comboBox3);
+            Controls.Add(lbl_PesoMedicamentos);
             Controls.Add(label5);
-            Controls.Add(label6);
-            Controls.Add(comboBox2);
+            Controls.Add(lbl_PesoEletronico);
             Controls.Add(label3);
-            Controls.Add(label4);
-            Controls.Add(comboBox1);
+            Controls.Add(lbl_PesoMetal);
             Controls.Add(label1);
-            Controls.Add(label2);
+            Controls.Add(lbl_PesoVidro);
             Controls.Add(btn_Salvar);
-            Controls.Add(cb_Peso);
             Controls.Add(lbRegistros);
             Controls.Add(btn_LimparFiltros);
             Controls.Add(btn_ProcurArquivos);
@@ -628,12 +613,12 @@
             Controls.Add(lblAdmSeleData);
             Controls.Add(btn_EditarLista);
             Controls.Add(lblAdmKg);
-            Controls.Add(textLixoOutrasInfo);
+            Controls.Add(txt_DescartesOutrasInfo);
             Controls.Add(panelTiposdeDescartes);
-            Controls.Add(dateTimeRegistros);
+            Controls.Add(dateTimeDescartess);
             Controls.Add(LblLixoOutrasInfo);
             Controls.Add(lblLixoDestino);
-            Controls.Add(lbllixoReciclavel);
+            Controls.Add(lbl_PesoOrganic);
             Controls.Add(lblTiposdemateriais);
             Name = "UCAdm_Descartes";
             Size = new Size(978, 646);
@@ -645,10 +630,10 @@
 
         #endregion
         private Label lblTiposdemateriais;
-        private Label lbllixoReciclavel;
+        private Label lbl_PesoOrganic;
         private Label lblLixoDestino;
         private Label LblLixoOutrasInfo;
-        private DateTimePicker dateTimeRegistros;
+        private DateTimePicker dateTimeDescartess;
         private CheckBox cb_TipoVidro;
         private CheckBox cb_TipoMetal;
         private CheckBox cb_TipoEletronico;
@@ -656,7 +641,7 @@
         private CheckBox cb_TipoPlastico;
         private CheckBox cb_TipoPapel;
         private Panel panelTiposdeDescartes;
-        private TextBox textLixoOutrasInfo;
+        private TextBox txt_DescartesOutrasInfo;
         private Label lblAdmKg;
         private FontAwesome.Sharp.IconButton btn_EditarLista;
         private Label lblAdmSeleData;
@@ -665,26 +650,26 @@
         private FontAwesome.Sharp.IconButton btn_ProcurArquivos;
         private Label lblAdmUploadRegistros;
         private FontAwesome.Sharp.IconButton btn_LimparFiltros;
-        private ComboBox cb_Peso;
         private CheckBox cb_TipoOrganico;
         private FontAwesome.Sharp.IconButton btn_Salvar;
-        private ComboBox comboBox1;
         private Label label1;
-        private Label label2;
-        private ComboBox comboBox2;
+        private Label lbl_PesoVidro;
         private Label label3;
-        private Label label4;
-        private ComboBox comboBox3;
+        private Label lbl_PesoMetal;
         private Label label5;
-        private Label label6;
-        private ComboBox comboBox4;
+        private Label lbl_PesoEletronico;
         private Label label7;
-        private Label label8;
-        private ComboBox comboBox5;
+        private Label lbl_PesoMedicamentos;
         private Label label9;
-        private Label label10;
-        private ComboBox comboBox6;
+        private Label lbl_PesoPlastico;
         private Label label11;
-        private Label label12;
+        private Label lbl_PesoPapel;
+        private TextBox txt_TipoOrganico;
+        private TextBox txt_TipoPapel;
+        private TextBox txt_TipoPlastico;
+        private TextBox txt_TipoVidro;
+        private TextBox txt_TipoMetal;
+        private TextBox txt_TipoEletronico;
+        private TextBox txt_TipoMedicamentos;
     }
 }

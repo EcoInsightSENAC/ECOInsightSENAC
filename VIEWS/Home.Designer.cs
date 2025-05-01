@@ -48,12 +48,12 @@
             panel6 = new Panel();
             panel5 = new Panel();
             panelSuperiorHome = new Panel();
+            pictureBox2 = new PictureBox();
             lblLogin = new Label();
             sidebarHome = new FlowLayoutPanel();
             btnSair = new FontAwesome.Sharp.IconButton();
             timerSub = new System.Windows.Forms.Timer(components);
             sidebarhome2 = new System.Windows.Forms.Timer(components);
-            pictureBox2 = new PictureBox();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             panelSub.SuspendLayout();
@@ -61,8 +61,8 @@
             panel6.SuspendLayout();
             panel5.SuspendLayout();
             panelSuperiorHome.SuspendLayout();
-            sidebarHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            sidebarHome.SuspendLayout();
             SuspendLayout();
             // 
             // btnMinimizarHome
@@ -337,6 +337,16 @@
             panelSuperiorHome.Size = new Size(1139, 42);
             panelSuperiorHome.TabIndex = 32;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 25;
+            pictureBox2.TabStop = false;
+            // 
             // lblLogin
             // 
             lblLogin.AutoSize = true;
@@ -392,16 +402,6 @@
             sidebarhome2.Interval = 10;
             sidebarhome2.Tick += sidebarhome2_Tick;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
-            pictureBox2.Location = new Point(12, 8);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(40, 25);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 25;
-            pictureBox2.TabStop = false;
-            // 
             // HomeTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -423,8 +423,8 @@
             panel5.ResumeLayout(false);
             panelSuperiorHome.ResumeLayout(false);
             panelSuperiorHome.PerformLayout();
-            sidebarHome.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            sidebarHome.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
