@@ -41,6 +41,7 @@
             panel2 = new Panel();
             sidebarTimerProf = new System.Windows.Forms.Timer(components);
             panelSuperiorProf = new Panel();
+            pictureBox2 = new PictureBox();
             lblLogin = new Label();
             sidebarProf = new FlowLayoutPanel();
             panelbtnAProfMenu = new Panel();
@@ -53,9 +54,9 @@
             timerSubAula = new System.Windows.Forms.Timer(components);
             panelProf = new Panel();
             label1 = new Label();
-            pictureBox2 = new PictureBox();
             panel2.SuspendLayout();
             panelSuperiorProf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             sidebarProf.SuspendLayout();
             panelbtnAProfMenu.SuspendLayout();
             panelbtnProfDestaques.SuspendLayout();
@@ -63,7 +64,6 @@
             panelbtnProfMPerfil.SuspendLayout();
             panelbtnSairProf.SuspendLayout();
             panelProf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnAProfMenu
@@ -245,6 +245,17 @@
             panelSuperiorProf.Name = "panelSuperiorProf";
             panelSuperiorProf.Size = new Size(1139, 42);
             panelSuperiorProf.TabIndex = 22;
+            panelSuperiorProf.MouseDown += panelSuperiorProf_MouseDown;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 25;
+            pictureBox2.TabStop = false;
             // 
             // lblLogin
             // 
@@ -370,16 +381,6 @@
             label1.TabIndex = 1;
             label1.Text = "TELA EM \r\nCONSTRUÇÃO";
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
-            pictureBox2.Location = new Point(12, 8);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(40, 25);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 25;
-            pictureBox2.TabStop = false;
-            // 
             // ProfessorTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -395,6 +396,7 @@
             panel2.ResumeLayout(false);
             panelSuperiorProf.ResumeLayout(false);
             panelSuperiorProf.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             sidebarProf.ResumeLayout(false);
             panelbtnAProfMenu.ResumeLayout(false);
             panelbtnProfDestaques.ResumeLayout(false);
@@ -403,7 +405,6 @@
             panelbtnSairProf.ResumeLayout(false);
             panelProf.ResumeLayout(false);
             panelProf.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using ECOInsightSENAC;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace ECOInsight
 {
@@ -176,6 +178,31 @@ namespace ECOInsight
 
         #endregion
 
-      
+        #region Movimentar Janela (Barra Customizada)
+
+        // Importação de funções da API do Windows
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        // Constantes para simular movimentação da janela
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HTCAPTION = 0x2;
+
+        // Evento que permite mover a janela arrastando a barra superior customizada
+
+        private void panelSuperiorHome_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+
+        #endregion
     }
 }

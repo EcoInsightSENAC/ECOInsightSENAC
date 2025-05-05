@@ -40,6 +40,7 @@
             btnFecharAluno = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             panelSuperiorAluno = new Panel();
+            pictureBox2 = new PictureBox();
             lblLogin = new Label();
             panel1 = new Panel();
             btnMaximizarRestaurarHome = new FontAwesome.Sharp.IconButton();
@@ -56,9 +57,9 @@
             sidebarAluno = new FlowLayoutPanel();
             panelAluno = new Panel();
             label1 = new Label();
-            pictureBox2 = new PictureBox();
             panel2.SuspendLayout();
             panelSuperiorAluno.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -67,7 +68,6 @@
             panel8.SuspendLayout();
             sidebarAluno.SuspendLayout();
             panelAluno.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnSair
@@ -255,6 +255,17 @@
             panelSuperiorAluno.Name = "panelSuperiorAluno";
             panelSuperiorAluno.Size = new Size(1139, 42);
             panelSuperiorAluno.TabIndex = 33;
+            panelSuperiorAluno.MouseDown += panelSuperiorAluno_MouseDown;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 58;
+            pictureBox2.TabStop = false;
             // 
             // lblLogin
             // 
@@ -428,16 +439,6 @@
             label1.TabIndex = 0;
             label1.Text = "TELA EM \r\nCONSTRUÇÃO";
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
-            pictureBox2.Location = new Point(12, 8);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(40, 25);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 58;
-            pictureBox2.TabStop = false;
-            // 
             // AlunoTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -453,6 +454,7 @@
             panel2.ResumeLayout(false);
             panelSuperiorAluno.ResumeLayout(false);
             panelSuperiorAluno.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -462,7 +464,6 @@
             sidebarAluno.ResumeLayout(false);
             panelAluno.ResumeLayout(false);
             panelAluno.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 

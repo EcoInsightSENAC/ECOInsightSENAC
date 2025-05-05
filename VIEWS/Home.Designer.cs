@@ -336,6 +336,7 @@
             panelSuperiorHome.Name = "panelSuperiorHome";
             panelSuperiorHome.Size = new Size(1139, 42);
             panelSuperiorHome.TabIndex = 32;
+            panelSuperiorHome.MouseDown += panelSuperiorHome_MouseDown;
             // 
             // pictureBox2
             // 

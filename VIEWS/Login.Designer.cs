@@ -68,6 +68,7 @@
             panelSuperiorLogin.Name = "panelSuperiorLogin";
             panelSuperiorLogin.Size = new Size(1064, 40);
             panelSuperiorLogin.TabIndex = 0;
+            panelSuperiorLogin.MouseDown += panelSuperiorLogin_MouseDown;
             // 
             // pictureBox2
             // 

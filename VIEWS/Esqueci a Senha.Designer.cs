@@ -144,6 +144,7 @@
             panelSuperiorEsqueciaSenha.Name = "panelSuperiorEsqueciaSenha";
             panelSuperiorEsqueciaSenha.Size = new Size(1064, 40);
             panelSuperiorEsqueciaSenha.TabIndex = 18;
+            panelSuperiorEsqueciaSenha.MouseDown += panelSuperiorEsqueciaSenha_MouseDown;
             // 
             // pictureBox2
             // 

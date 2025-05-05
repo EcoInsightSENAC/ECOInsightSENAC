@@ -405,6 +405,7 @@
             panelSuperiorAdm.Name = "panelSuperiorAdm";
             panelSuperiorAdm.Size = new Size(1139, 42);
             panelSuperiorAdm.TabIndex = 34;
+            panelSuperiorAdm.MouseDown += panelSuperiorAdm_MouseDown;
             // 
             // pictureBox2
             // 
