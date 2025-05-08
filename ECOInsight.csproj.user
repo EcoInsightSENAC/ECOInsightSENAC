@@ -64,10 +64,10 @@
     <Compile Update="VIEWS\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="VIEWS\Login.cs">
+    <Compile Update="VIEWS\Funcionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="VIEWS\Funcionario.cs">
+    <Compile Update="VIEWS\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="VIEWS\Professor.cs">

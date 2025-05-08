@@ -298,8 +298,6 @@ namespace ECOInsight
         // Constantes para simular movimentação da janela
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
-
-        // Evento que permite mover a janela arrastando a barra superior customizada
         private void panelSuperiorAdm_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -308,8 +306,8 @@ namespace ECOInsight
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
-
         #endregion
+
     }
 
 }

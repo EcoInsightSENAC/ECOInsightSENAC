@@ -278,7 +278,7 @@
             // 
             panel2.Location = new Point(503, 40);
             panel2.Name = "panel2";
-            panel2.Size = new Size(558, 592);
+            panel2.Size = new Size(561, 592);
             panel2.TabIndex = 12;
             // 
             // LoginTela
@@ -303,6 +303,9 @@
             Name = "LoginTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
+            MouseDown += LoginTela_MouseDown;
+            MouseMove += LoginTela_MouseMove;
+            MouseUp += LoginTela_MouseUp;
             panelSuperiorLogin.ResumeLayout(false);
             panelSuperiorLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

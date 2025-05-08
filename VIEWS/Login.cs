@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Runtime.InteropServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
-
+using System.Drawing;
 
 namespace ECOInsight
 {
@@ -14,10 +14,22 @@ namespace ECOInsight
         private Size tamanhoOriginal;
         private bool maximizado = false;
 
+        private const int resizeEdge = 15; // Tamanho da área de redimensionamento
+        private bool resizing = false;
+        private Point lastMousePosition;
+
         public LoginTela()
         {
             InitializeComponent();
+
+            //Tentativa de fazer o redimensionamento da tela
+            this.MinimumSize = new Size(1064, 633);
+            this.FormBorderStyle = FormBorderStyle.None; // Mantém o estilo sem bordas
+            this.MouseMove += LoginTela_MouseMove;
+            this.MouseDown += LoginTela_MouseDown;
+            this.MouseUp += LoginTela_MouseUp;
         }
+
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
@@ -165,6 +177,102 @@ namespace ECOInsight
             }
         }
 
-#endregion
+        #endregion
+
+
+
+        #region Tentativa de fazer o redimensionamento da tela 
+        // Quando o mouse é pressionado
+        private void LoginTela_MouseDown(object sender, MouseEventArgs e)
+        {
+            // Inicia o redimensionamento se o mouse estiver próximo da borda direita
+            if (e.X >= this.ClientSize.Width - resizeEdge)
+            {
+                resizing = true;
+                lastMousePosition = e.Location; // Salva a posição do mouse
+            }
+        }
+
+        // Quando o mouse é solto
+        private void LoginTela_MouseUp(object sender, MouseEventArgs e)
+        {
+            resizing = false; // Finaliza o redimensionamento
+        }
+
+        // Quando o mouse se move
+        private void LoginTela_MouseMove(object sender, MouseEventArgs e)
+        {
+            // Verificar se o redimensionamento está ativo
+            if (resizing)
+            {
+                int newWidth = e.X + this.Left - lastMousePosition.X; // Calcular a largura
+                newWidth = Math.Max(this.MinimumSize.Width, newWidth); // Garantir que a largura mínima seja respeitada
+                this.Width = newWidth; // Atualiza a largura da janela
+            }
+            else if (e.X >= this.ClientSize.Width - resizeEdge) // Detecta se o mouse está na borda direita
+            {
+                this.Cursor = Cursors.SizeWE; // Cursor de redimensionamento horizontal
+            }
+            else
+            {
+                this.Cursor = Cursors.Default; // Cursor padrão
+            }
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            const int HTLEFT = 10;
+            const int HTRIGHT = 11;
+            const int HTTOP = 12;
+            const int HTTOPLEFT = 13;
+            const int HTTOPRIGHT = 14;
+            const int HTBOTTOM = 15;
+            const int HTBOTTOMLEFT = 16;
+            const int HTBOTTOMRIGHT = 17;
+            const int WM_NCHITTEST = 0x84;
+
+            const int resizeAreaSize = 10;
+
+            if (m.Msg == WM_NCHITTEST)
+            {
+                base.WndProc(ref m);
+                Point pos = PointToClient(new Point(m.LParam.ToInt32()));
+
+                if (pos.X <= resizeAreaSize)
+                {
+                    if (pos.Y <= resizeAreaSize)
+                        m.Result = (IntPtr)HTTOPLEFT;
+                    else if (pos.Y >= ClientSize.Height - resizeAreaSize)
+                        m.Result = (IntPtr)HTBOTTOMLEFT;
+                    else
+                        m.Result = (IntPtr)HTLEFT;
+                }
+                else if (pos.X >= ClientSize.Width - resizeAreaSize)
+                {
+                    if (pos.Y <= resizeAreaSize)
+                        m.Result = (IntPtr)HTTOPRIGHT;
+                    else if (pos.Y >= ClientSize.Height - resizeAreaSize)
+                        m.Result = (IntPtr)HTBOTTOMRIGHT;
+                    else
+                        m.Result = (IntPtr)HTRIGHT;
+                }
+                else if (pos.Y <= resizeAreaSize)
+                {
+                    m.Result = (IntPtr)HTTOP;
+                }
+                else if (pos.Y >= ClientSize.Height - resizeAreaSize)
+                {
+                    m.Result = (IntPtr)HTBOTTOM;
+                }
+                return;
+            }
+
+            base.WndProc(ref m);
+        }
+
+        #endregion
     }
+
 }
+
+
