@@ -1,11 +1,16 @@
 using System;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
+using System.Security.Cryptography;
+using System.Text;
 using MySql.Data.MySqlClient;
 using System.Configuration;
+using System.Windows.Forms;
 using System.Runtime.InteropServices;
+<<<<<<< Updated upstream
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Drawing;
+=======
+using System.Text.RegularExpressions;
+>>>>>>> Stashed changes
 
 namespace ECOInsight
 {
@@ -33,11 +38,11 @@ namespace ECOInsight
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            // Lógica de validação de login
             string email = txtEmail.Text.Trim();
             string senha = txtSenha.Text.Trim();
 
-            if (ValidarLogin(email, senha))
+            Autenticacao auth = new Autenticacao();
+            if (auth.ValidarLogin(email, senha))
             {
                 // Se a validação for bem-sucedida, abre a tela Home
                 HomeTela home = new HomeTela();
@@ -46,7 +51,6 @@ namespace ECOInsight
             }
             else
             {
-                // Exibe mensagem de erro se o login for inválido
                 MessageBox.Show("Email ou senha inválidos!", "Erro de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -55,6 +59,9 @@ namespace ECOInsight
         {
             bool usuarioValido = false;
 
+            // Gerar o hash da senha informada pelo usuário
+            string senha_hash_informada = GerarHashSenha(senha);
+
             try
             {
                 // Cria a conexão com o banco de dados
@@ -62,19 +69,24 @@ namespace ECOInsight
                 {
                     conn.Open();
 
-                    // SQL para validar o login do usuário administrador
-                    string query = "SELECT COUNT(*) FROM usuarios WHERE email = @Email AND senha_hash = @Senha AND ativo = TRUE";
+                    // SQL para validar o login do usuário
+                    string query = "SELECT senha_hash FROM usuarios WHERE email = @Email AND ativo = TRUE";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Senha", senha); // Aqui, é importante que a senha esteja criptografada antes de ser comparada
 
-                    // Executa a consulta e verifica se existe um usuário válido
-                    int usuarioCount = Convert.ToInt32(cmd.ExecuteScalar());
+                    // Executa a consulta e verifica se existe o hash da senha para o email informado
+                    object resultado = cmd.ExecuteScalar(); // Retorna o valor do hash armazenado ou null
 
-                    if (usuarioCount > 0)
+                    if (resultado != null)
                     {
-                        // Se existir um usuário, retorna verdadeiro
-                        usuarioValido = true;
+                        string senha_hash_armazenada = resultado.ToString();
+
+                        // Comparar o hash informado com o hash armazenado
+                        if (senha_hash_informada == senha_hash_armazenada)
+                        {
+                            // Senha válida
+                            usuarioValido = true;
+                        }
                     }
                 }
             }
@@ -86,6 +98,22 @@ namespace ECOInsight
             return usuarioValido;
         }
 
+        // Função para gerar o hash da senha
+        public string GerarHashSenha(string senha)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(senha));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
+        // Outros métodos que você já possui
         private void btnEsqueciSenha_Click_1(object sender, EventArgs e)
         {
             Esqueci_a_SenhaTela esqueciSenhaTela = new Esqueci_a_SenhaTela();
@@ -178,6 +206,7 @@ namespace ECOInsight
         }
 
         #endregion
+<<<<<<< Updated upstream
 
 
 
@@ -271,6 +300,8 @@ namespace ECOInsight
         }
 
         #endregion
+=======
+>>>>>>> Stashed changes
     }
 
 }

@@ -2,9 +2,9 @@
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Configuration;              // para ler a connectionString
+using System.Configuration;              // Para ler a connectionString
 using ECOInsight.UserControls;
-using ECOInsight.DataAccess;            // para Conexao.CreateConnection()
+using ECOInsight.DataAccess;            // Para Conexao.CreateConnection()
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
@@ -28,55 +28,32 @@ namespace ECOInsight
         {
             InitializeComponent();
             InitializeSidebar();
-            this.Load += AdmTela_Load;        // Associa o evento Load para testar a conexão
+            this.Load += AdmTela_Load;        // Associa o evento Load para conectar ao banco
             LoadInitialUserControl();
             AtualizarEstadoBotoesNavegacao();
         }
         #endregion
 
         #region Conexão com o Banco
+        // Evento Load para conectar ao banco de dados
         private void AdmTela_Load(object sender, EventArgs e)
         {
             try
             {
+                // Criação da conexão com o banco
                 using (var conn = Conexao.CreateConnection())
                 {
-                    // Verifica estado da conexão
-                    if (conn.State == ConnectionState.Open)
+                    // Verifica se a conexão foi estabelecida com sucesso
+                    if (conn.State != ConnectionState.Open)
                     {
-                        MessageBox.Show("Conexão aberta com sucesso!", "Sucesso",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // Teste adicional: executar SELECT 1
-                        using (var cmd = conn.CreateCommand())
-                        {
-                            cmd.CommandText = "SELECT 1";
-                            var result = cmd.ExecuteScalar();
-                            if (Convert.ToInt32(result) == 1)
-                            {
-                                MessageBox.Show("Teste de consulta executado com sucesso!", "Teste OK",
-                                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                MessageBox.Show($"Teste de consulta retornou valor inesperado: {result}", "Atenção",
-                                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Conexão criada, mas não está aberta. Estado: {conn.State}", "Atenção",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show($"Conexão criada, mas não está aberta. Estado: {conn.State}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao conectar ao banco: " + ex.Message,
-                                "Falha na Conexão",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                // Caso ocorra algum erro ao tentar conectar, exibe uma mensagem de falha
+                MessageBox.Show("Erro ao conectar ao banco: " + ex.Message, "Falha na Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
@@ -309,5 +286,4 @@ namespace ECOInsight
         #endregion
 
     }
-
 }
