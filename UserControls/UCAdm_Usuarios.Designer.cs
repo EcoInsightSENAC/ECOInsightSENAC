@@ -30,7 +30,7 @@
         {
             txtCadNome = new TextBox();
             lblPerfilCad = new Label();
-            cbCadPerfil = new ComboBox();
+            txtCadPerfil = new ComboBox();
             cbCadStatus = new ComboBox();
             label3 = new Label();
             btn_CadNovoUsuario = new FontAwesome.Sharp.IconButton();
@@ -50,7 +50,7 @@
             lblEmailCad = new Label();
             panel1 = new Panel();
             dateTimePicker1 = new DateTimePicker();
-            cbCadTurno = new ComboBox();
+            txtCadTurno = new ComboBox();
             label4 = new Label();
             label5 = new Label();
             btn_CadBuscarUsuario = new FontAwesome.Sharp.IconButton();
@@ -84,15 +84,15 @@
             lblPerfilCad.TabIndex = 20;
             lblPerfilCad.Text = "Perfil";
             // 
-            // cbCadPerfil
+            // txtCadPerfil
             // 
-            cbCadPerfil.Anchor = AnchorStyles.Top;
-            cbCadPerfil.FlatStyle = FlatStyle.Flat;
-            cbCadPerfil.FormattingEnabled = true;
-            cbCadPerfil.Location = new Point(17, 316);
-            cbCadPerfil.Name = "cbCadPerfil";
-            cbCadPerfil.Size = new Size(312, 23);
-            cbCadPerfil.TabIndex = 7;
+            txtCadPerfil.Anchor = AnchorStyles.Top;
+            txtCadPerfil.FlatStyle = FlatStyle.Flat;
+            txtCadPerfil.FormattingEnabled = true;
+            txtCadPerfil.Location = new Point(17, 316);
+            txtCadPerfil.Name = "txtCadPerfil";
+            txtCadPerfil.Size = new Size(312, 23);
+            txtCadPerfil.TabIndex = 7;
             // 
             // cbCadStatus
             // 
@@ -319,10 +319,10 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.Controls.Add(dateTimePicker1);
-            panel1.Controls.Add(cbCadTurno);
+            panel1.Controls.Add(txtCadTurno);
             panel1.Controls.Add(cbCadStatus);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(cbCadPerfil);
+            panel1.Controls.Add(txtCadPerfil);
             panel1.Controls.Add(lblPerfilCad);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(txtCadNome);
@@ -351,15 +351,15 @@
             dateTimePicker1.TabIndex = 6;
             dateTimePicker1.Value = new DateTime(2025, 4, 26, 14, 27, 7, 0);
             // 
-            // cbCadTurno
+            // txtCadTurno
             // 
-            cbCadTurno.Anchor = AnchorStyles.Top;
-            cbCadTurno.FlatStyle = FlatStyle.Flat;
-            cbCadTurno.FormattingEnabled = true;
-            cbCadTurno.Location = new Point(18, 252);
-            cbCadTurno.Name = "cbCadTurno";
-            cbCadTurno.Size = new Size(312, 23);
-            cbCadTurno.TabIndex = 5;
+            txtCadTurno.Anchor = AnchorStyles.Top;
+            txtCadTurno.FlatStyle = FlatStyle.Flat;
+            txtCadTurno.FormattingEnabled = true;
+            txtCadTurno.Location = new Point(18, 252);
+            txtCadTurno.Name = "txtCadTurno";
+            txtCadTurno.Size = new Size(312, 23);
+            txtCadTurno.TabIndex = 5;
             // 
             // label4
             // 
@@ -520,7 +520,7 @@
         #endregion
         private TextBox txtCadNome;
         private Label lblPerfilCad;
-        private ComboBox cbCadPerfil;
+        private ComboBox txtCadPerfil;
         private FontAwesome.Sharp.IconButton btn_CadNovoUsuario;
         private FontAwesome.Sharp.IconButton btn_CadExcluirUsuario;
         private FontAwesome.Sharp.IconButton btn_CadSalvar;
@@ -550,6 +550,6 @@
         private Label label5;
         private Label label4;
         private DateTimePicker dateTimePicker1;
-        private ComboBox cbCadTurno;
+        private ComboBox txtCadTurno;
     }
 }
