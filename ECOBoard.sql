@@ -1,6 +1,6 @@
-create database ECOInsight;
+create database  ECOBoard;
 
-use ECOInsight;
+use ECOBoard;
 
 CREATE TABLE usuarios (
     id_usuario INT PRIMARY KEY AUTO_INCREMENT,
@@ -96,8 +96,3 @@ CREATE TABLE permissoes (
     FOREIGN KEY (id_perfil) REFERENCES perfis(id_perfil),
     FOREIGN KEY (id_telas) REFERENCES telas(id_telas)
 );
-
-
-
-
-

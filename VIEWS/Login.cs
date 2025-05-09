@@ -23,6 +23,7 @@ namespace ECOInsight
         {
             InitializeComponent();
 
+            // Configuração inicial da janela
             this.MinimumSize = new Size(1064, 633);
             this.FormBorderStyle = FormBorderStyle.None;
             this.MouseMove += LoginTela_MouseMove;
@@ -187,7 +188,7 @@ namespace ECOInsight
 
         #endregion
 
-        #region Redimensionamento
+        #region Redimensionamento da Janela
 
         private void LoginTela_MouseDown(object sender, MouseEventArgs e)
         {
