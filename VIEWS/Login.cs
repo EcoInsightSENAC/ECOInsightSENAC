@@ -5,12 +5,8 @@ using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-<<<<<<< Updated upstream
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Drawing;
-=======
 using System.Text.RegularExpressions;
->>>>>>> Stashed changes
 
 namespace ECOInsight
 {
@@ -19,7 +15,7 @@ namespace ECOInsight
         private Size tamanhoOriginal;
         private bool maximizado = false;
 
-        private const int resizeEdge = 15; // Tamanho da área de redimensionamento
+        private const int resizeEdge = 15;
         private bool resizing = false;
         private Point lastMousePosition;
 
@@ -27,14 +23,12 @@ namespace ECOInsight
         {
             InitializeComponent();
 
-            //Tentativa de fazer o redimensionamento da tela
             this.MinimumSize = new Size(1064, 633);
-            this.FormBorderStyle = FormBorderStyle.None; // Mantém o estilo sem bordas
+            this.FormBorderStyle = FormBorderStyle.None;
             this.MouseMove += LoginTela_MouseMove;
             this.MouseDown += LoginTela_MouseDown;
             this.MouseUp += LoginTela_MouseUp;
         }
-
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
@@ -44,7 +38,6 @@ namespace ECOInsight
             Autenticacao auth = new Autenticacao();
             if (auth.ValidarLogin(email, senha))
             {
-                // Se a validação for bem-sucedida, abre a tela Home
                 HomeTela home = new HomeTela();
                 home.Show();
                 this.Hide();
@@ -58,33 +51,25 @@ namespace ECOInsight
         private bool ValidarLogin(string email, string senha)
         {
             bool usuarioValido = false;
-
-            // Gerar o hash da senha informada pelo usuário
             string senha_hash_informada = GerarHashSenha(senha);
 
             try
             {
-                // Cria a conexão com o banco de dados
                 using (MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
                 {
                     conn.Open();
 
-                    // SQL para validar o login do usuário
                     string query = "SELECT senha_hash FROM usuarios WHERE email = @Email AND ativo = TRUE";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Email", email);
 
-                    // Executa a consulta e verifica se existe o hash da senha para o email informado
-                    object resultado = cmd.ExecuteScalar(); // Retorna o valor do hash armazenado ou null
+                    object resultado = cmd.ExecuteScalar();
 
                     if (resultado != null)
                     {
                         string senha_hash_armazenada = resultado.ToString();
-
-                        // Comparar o hash informado com o hash armazenado
                         if (senha_hash_informada == senha_hash_armazenada)
                         {
-                            // Senha válida
                             usuarioValido = true;
                         }
                     }
@@ -98,22 +83,20 @@ namespace ECOInsight
             return usuarioValido;
         }
 
-        // Função para gerar o hash da senha
         public string GerarHashSenha(string senha)
         {
             using (SHA256 sha256Hash = SHA256.Create())
             {
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(senha));
                 StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
+                foreach (byte b in bytes)
                 {
-                    builder.Append(bytes[i].ToString("x2"));
+                    builder.Append(b.ToString("x2"));
                 }
                 return builder.ToString();
             }
         }
 
-        // Outros métodos que você já possui
         private void btnEsqueciSenha_Click_1(object sender, EventArgs e)
         {
             Esqueci_a_SenhaTela esqueciSenhaTela = new Esqueci_a_SenhaTela();
@@ -164,7 +147,7 @@ namespace ECOInsight
             else
             {
                 textBox.BorderStyle = BorderStyle.FixedSingle;
-                textBox.BackColor = System.Drawing.SystemColors.Window;
+                textBox.BackColor = SystemColors.Window;
             }
         }
 
@@ -179,23 +162,20 @@ namespace ECOInsight
 
         private void btnFecharLogin_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
 
-        #region Movimentar Janela (Barra Customizada)
+        #region Movimentar Janela
 
-        // Importação de funções da API do Windows
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
-        // Constantes para simular movimentação da janela
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
 
-        // Evento que permite mover a janela arrastando a barra superior customizada
         private void panelSuperiorLogin_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -206,45 +186,38 @@ namespace ECOInsight
         }
 
         #endregion
-<<<<<<< Updated upstream
 
+        #region Redimensionamento
 
-
-        #region Tentativa de fazer o redimensionamento da tela 
-        // Quando o mouse é pressionado
         private void LoginTela_MouseDown(object sender, MouseEventArgs e)
         {
-            // Inicia o redimensionamento se o mouse estiver próximo da borda direita
             if (e.X >= this.ClientSize.Width - resizeEdge)
             {
                 resizing = true;
-                lastMousePosition = e.Location; // Salva a posição do mouse
+                lastMousePosition = e.Location;
             }
         }
 
-        // Quando o mouse é solto
         private void LoginTela_MouseUp(object sender, MouseEventArgs e)
         {
-            resizing = false; // Finaliza o redimensionamento
+            resizing = false;
         }
 
-        // Quando o mouse se move
         private void LoginTela_MouseMove(object sender, MouseEventArgs e)
         {
-            // Verificar se o redimensionamento está ativo
             if (resizing)
             {
-                int newWidth = e.X + this.Left - lastMousePosition.X; // Calcular a largura
-                newWidth = Math.Max(this.MinimumSize.Width, newWidth); // Garantir que a largura mínima seja respeitada
-                this.Width = newWidth; // Atualiza a largura da janela
+                int newWidth = e.X + this.Left - lastMousePosition.X;
+                newWidth = Math.Max(this.MinimumSize.Width, newWidth);
+                this.Width = newWidth;
             }
-            else if (e.X >= this.ClientSize.Width - resizeEdge) // Detecta se o mouse está na borda direita
+            else if (e.X >= this.ClientSize.Width - resizeEdge)
             {
-                this.Cursor = Cursors.SizeWE; // Cursor de redimensionamento horizontal
+                this.Cursor = Cursors.SizeWE;
             }
             else
             {
-                this.Cursor = Cursors.Default; // Cursor padrão
+                this.Cursor = Cursors.Default;
             }
         }
 
@@ -259,7 +232,6 @@ namespace ECOInsight
             const int HTBOTTOMLEFT = 16;
             const int HTBOTTOMRIGHT = 17;
             const int WM_NCHITTEST = 0x84;
-
             const int resizeAreaSize = 10;
 
             if (m.Msg == WM_NCHITTEST)
@@ -300,10 +272,5 @@ namespace ECOInsight
         }
 
         #endregion
-=======
->>>>>>> Stashed changes
     }
-
 }
-
-

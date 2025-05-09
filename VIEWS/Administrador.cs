@@ -35,15 +35,12 @@ namespace ECOInsight
         #endregion
 
         #region Conexão com o Banco
-        // Evento Load para conectar ao banco de dados
         private void AdmTela_Load(object sender, EventArgs e)
         {
             try
             {
-                // Criação da conexão com o banco
                 using (var conn = Conexao.CreateConnection())
                 {
-                    // Verifica se a conexão foi estabelecida com sucesso
                     if (conn.State != ConnectionState.Open)
                     {
                         MessageBox.Show($"Conexão criada, mas não está aberta. Estado: {conn.State}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -52,7 +49,6 @@ namespace ECOInsight
             }
             catch (Exception ex)
             {
-                // Caso ocorra algum erro ao tentar conectar, exibe uma mensagem de falha
                 MessageBox.Show("Erro ao conectar ao banco: " + ex.Message, "Falha na Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -61,7 +57,7 @@ namespace ECOInsight
         #region Sidebar e Load Inicial
         private void InitializeSidebar()
         {
-            sidebarAdm.Width = 180;     // largura inicial maximizada
+            sidebarAdm.Width = 180;
             sidebarExpand = true;
         }
 
@@ -264,17 +260,15 @@ namespace ECOInsight
         #endregion
 
         #region Movimentar Janela (Barra Customizada)
-
-        // Importação de funções da API do Windows
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
-        // Constantes para simular movimentação da janela
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
+
         private void panelSuperiorAdm_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -284,6 +278,5 @@ namespace ECOInsight
             }
         }
         #endregion
-
     }
 }
