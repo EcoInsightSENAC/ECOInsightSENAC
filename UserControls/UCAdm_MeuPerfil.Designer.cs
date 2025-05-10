@@ -28,67 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button2 = new Button();
-            textBox4 = new TextBox();
-            textBox2 = new TextBox();
+            btnAdm_SalvarImagem = new Button();
+            txtAdm_PerfilTelefone = new TextBox();
+            txtAdm_PerfilSobrenome = new TextBox();
             label4 = new Label();
-            button1 = new Button();
+            btnAdm_PerfilSalvar = new Button();
             label2 = new Label();
             groupBox1 = new GroupBox();
             label9 = new Label();
-            textBox9 = new TextBox();
+            txtAdm_PerfilSenhaAtual = new TextBox();
             label7 = new Label();
             label8 = new Label();
-            textBox5 = new TextBox();
-            textBox7 = new TextBox();
+            txtAdm_PerfilNovSenhaConfir = new TextBox();
+            txtAdm_PerfilNovSenha = new TextBox();
             textBox6 = new TextBox();
             label5 = new Label();
             label6 = new Label();
-            textBox3 = new TextBox();
+            txtAdm_PerfilEmail = new TextBox();
             label3 = new Label();
-            textBox1 = new TextBox();
-            label1 = new Label();
+            txtAdm_PerfilNome = new TextBox();
+            lblAdm_PerfilNome = new Label();
             pictureBox1 = new PictureBox();
             iconButton1 = new FontAwesome.Sharp.IconButton();
-            panel1 = new Panel();
-            iconButton8 = new FontAwesome.Sharp.IconButton();
             lblAlunoAulas = new Label();
-            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // button2
+            // btnAdm_SalvarImagem
             // 
-            button2.Anchor = AnchorStyles.Top;
-            button2.BackColor = SystemColors.ControlDarkDark;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(96, 272);
-            button2.Name = "button2";
-            button2.Size = new Size(120, 23);
-            button2.TabIndex = 33;
-            button2.Text = "Buscar Imagem";
-            button2.UseVisualStyleBackColor = false;
+            btnAdm_SalvarImagem.Anchor = AnchorStyles.Top;
+            btnAdm_SalvarImagem.BackColor = SystemColors.ControlDarkDark;
+            btnAdm_SalvarImagem.FlatAppearance.BorderSize = 0;
+            btnAdm_SalvarImagem.FlatStyle = FlatStyle.Flat;
+            btnAdm_SalvarImagem.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdm_SalvarImagem.ForeColor = Color.White;
+            btnAdm_SalvarImagem.Location = new Point(96, 272);
+            btnAdm_SalvarImagem.Name = "btnAdm_SalvarImagem";
+            btnAdm_SalvarImagem.Size = new Size(120, 23);
+            btnAdm_SalvarImagem.TabIndex = 33;
+            btnAdm_SalvarImagem.Text = "Buscar Imagem";
+            btnAdm_SalvarImagem.UseVisualStyleBackColor = false;
             // 
-            // textBox4
+            // txtAdm_PerfilTelefone
             // 
-            textBox4.Anchor = AnchorStyles.Top;
-            textBox4.Location = new Point(632, 232);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(271, 23);
-            textBox4.TabIndex = 31;
+            txtAdm_PerfilTelefone.Anchor = AnchorStyles.Top;
+            txtAdm_PerfilTelefone.Location = new Point(632, 232);
+            txtAdm_PerfilTelefone.Name = "txtAdm_PerfilTelefone";
+            txtAdm_PerfilTelefone.Size = new Size(271, 23);
+            txtAdm_PerfilTelefone.TabIndex = 31;
+            txtAdm_PerfilTelefone.KeyPress += txtAdm_PerfilTelefone_KeyPress;
             // 
-            // textBox2
+            // txtAdm_PerfilSobrenome
             // 
-            textBox2.Anchor = AnchorStyles.Top;
-            textBox2.Location = new Point(632, 153);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(271, 23);
-            textBox2.TabIndex = 28;
+            txtAdm_PerfilSobrenome.Anchor = AnchorStyles.Top;
+            txtAdm_PerfilSobrenome.Location = new Point(632, 153);
+            txtAdm_PerfilSobrenome.Name = "txtAdm_PerfilSobrenome";
+            txtAdm_PerfilSobrenome.Size = new Size(271, 23);
+            txtAdm_PerfilSobrenome.TabIndex = 28;
             // 
             // label4
             // 
@@ -101,20 +98,20 @@
             label4.TabIndex = 32;
             label4.Text = "Telefone:";
             // 
-            // button1
+            // btnAdm_PerfilSalvar
             // 
-            button1.Anchor = AnchorStyles.Top;
-            button1.BackColor = Color.FromArgb(35, 68, 57);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(443, 512);
-            button1.Name = "button1";
-            button1.Size = new Size(93, 35);
-            button1.TabIndex = 29;
-            button1.Text = "Salvar ";
-            button1.UseVisualStyleBackColor = false;
+            btnAdm_PerfilSalvar.Anchor = AnchorStyles.Top;
+            btnAdm_PerfilSalvar.BackColor = Color.FromArgb(35, 68, 57);
+            btnAdm_PerfilSalvar.FlatAppearance.BorderSize = 0;
+            btnAdm_PerfilSalvar.FlatStyle = FlatStyle.Flat;
+            btnAdm_PerfilSalvar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdm_PerfilSalvar.ForeColor = Color.White;
+            btnAdm_PerfilSalvar.Location = new Point(443, 512);
+            btnAdm_PerfilSalvar.Name = "btnAdm_PerfilSalvar";
+            btnAdm_PerfilSalvar.Size = new Size(93, 35);
+            btnAdm_PerfilSalvar.TabIndex = 29;
+            btnAdm_PerfilSalvar.Text = "Salvar ";
+            btnAdm_PerfilSalvar.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -131,11 +128,11 @@
             // 
             groupBox1.Anchor = AnchorStyles.Top;
             groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(textBox9);
+            groupBox1.Controls.Add(txtAdm_PerfilSenhaAtual);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(textBox5);
-            groupBox1.Controls.Add(textBox7);
+            groupBox1.Controls.Add(txtAdm_PerfilNovSenhaConfir);
+            groupBox1.Controls.Add(txtAdm_PerfilNovSenha);
             groupBox1.Controls.Add(textBox6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label6);
@@ -152,19 +149,19 @@
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label9.Location = new Point(233, 27);
+            label9.Location = new Point(11, 38);
             label9.Name = "label9";
             label9.Size = new Size(97, 21);
             label9.TabIndex = 30;
             label9.Text = "Senha atual:";
             // 
-            // textBox9
+            // txtAdm_PerfilSenhaAtual
             // 
-            textBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox9.Location = new Point(339, 25);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(282, 23);
-            textBox9.TabIndex = 28;
+            txtAdm_PerfilSenhaAtual.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtAdm_PerfilSenhaAtual.Location = new Point(117, 36);
+            txtAdm_PerfilSenhaAtual.Name = "txtAdm_PerfilSenhaAtual";
+            txtAdm_PerfilSenhaAtual.Size = new Size(282, 23);
+            txtAdm_PerfilSenhaAtual.TabIndex = 28;
             // 
             // label7
             // 
@@ -188,21 +185,21 @@
             label8.TabIndex = 27;
             label8.Text = "Confirmar Senha:";
             // 
-            // textBox5
+            // txtAdm_PerfilNovSenhaConfir
             // 
-            textBox5.Anchor = AnchorStyles.Top;
-            textBox5.Location = new Point(562, 87);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(281, 23);
-            textBox5.TabIndex = 25;
+            txtAdm_PerfilNovSenhaConfir.Anchor = AnchorStyles.Top;
+            txtAdm_PerfilNovSenhaConfir.Location = new Point(562, 87);
+            txtAdm_PerfilNovSenhaConfir.Name = "txtAdm_PerfilNovSenhaConfir";
+            txtAdm_PerfilNovSenhaConfir.Size = new Size(281, 23);
+            txtAdm_PerfilNovSenhaConfir.TabIndex = 25;
             // 
-            // textBox7
+            // txtAdm_PerfilNovSenha
             // 
-            textBox7.Anchor = AnchorStyles.Top;
-            textBox7.Location = new Point(117, 87);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(282, 23);
-            textBox7.TabIndex = 24;
+            txtAdm_PerfilNovSenha.Anchor = AnchorStyles.Top;
+            txtAdm_PerfilNovSenha.Location = new Point(117, 87);
+            txtAdm_PerfilNovSenha.Name = "txtAdm_PerfilNovSenha";
+            txtAdm_PerfilNovSenha.Size = new Size(282, 23);
+            txtAdm_PerfilNovSenha.TabIndex = 24;
             // 
             // textBox6
             // 
@@ -234,13 +231,13 @@
             label6.TabIndex = 2;
             label6.Text = "Confirmar Senha:";
             // 
-            // textBox3
+            // txtAdm_PerfilEmail
             // 
-            textBox3.Anchor = AnchorStyles.Top;
-            textBox3.Location = new Point(283, 232);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(271, 23);
-            textBox3.TabIndex = 30;
+            txtAdm_PerfilEmail.Anchor = AnchorStyles.Top;
+            txtAdm_PerfilEmail.Location = new Point(283, 232);
+            txtAdm_PerfilEmail.Name = "txtAdm_PerfilEmail";
+            txtAdm_PerfilEmail.Size = new Size(271, 23);
+            txtAdm_PerfilEmail.TabIndex = 30;
             // 
             // label3
             // 
@@ -253,24 +250,24 @@
             label3.TabIndex = 27;
             label3.Text = "Email:";
             // 
-            // textBox1
+            // txtAdm_PerfilNome
             // 
-            textBox1.Anchor = AnchorStyles.Top;
-            textBox1.Location = new Point(283, 153);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(271, 23);
-            textBox1.TabIndex = 23;
+            txtAdm_PerfilNome.Anchor = AnchorStyles.Top;
+            txtAdm_PerfilNome.Location = new Point(283, 153);
+            txtAdm_PerfilNome.Name = "txtAdm_PerfilNome";
+            txtAdm_PerfilNome.Size = new Size(271, 23);
+            txtAdm_PerfilNome.TabIndex = 23;
             // 
-            // label1
+            // lblAdm_PerfilNome
             // 
-            label1.Anchor = AnchorStyles.Top;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label1.Location = new Point(283, 116);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 21);
-            label1.TabIndex = 22;
-            label1.Text = "Nome:";
+            lblAdm_PerfilNome.Anchor = AnchorStyles.Top;
+            lblAdm_PerfilNome.AutoSize = true;
+            lblAdm_PerfilNome.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblAdm_PerfilNome.Location = new Point(283, 116);
+            lblAdm_PerfilNome.Name = "lblAdm_PerfilNome";
+            lblAdm_PerfilNome.Size = new Size(59, 21);
+            lblAdm_PerfilNome.TabIndex = 22;
+            lblAdm_PerfilNome.Text = "Nome:";
             // 
             // pictureBox1
             // 
@@ -305,115 +302,70 @@
             iconButton1.Text = "Editar dados";
             iconButton1.UseVisualStyleBackColor = false;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Gainsboro;
-            panel1.Controls.Add(iconButton8);
-            panel1.Controls.Add(lblAlunoAulas);
-            panel1.Controls.Add(btnVoltarPagEsqueciSenha);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(978, 39);
-            panel1.TabIndex = 64;
-            // 
-            // iconButton8
-            // 
-            iconButton8.FlatAppearance.BorderSize = 0;
-            iconButton8.FlatStyle = FlatStyle.Flat;
-            iconButton8.IconChar = FontAwesome.Sharp.IconChar.ChevronRight;
-            iconButton8.IconColor = Color.Black;
-            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton8.IconSize = 25;
-            iconButton8.Location = new Point(48, 2);
-            iconButton8.Name = "iconButton8";
-            iconButton8.Size = new Size(39, 34);
-            iconButton8.TabIndex = 72;
-            iconButton8.UseVisualStyleBackColor = true;
-            // 
             // lblAlunoAulas
             // 
-            lblAlunoAulas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblAlunoAulas.Anchor = AnchorStyles.Top;
             lblAlunoAulas.AutoSize = true;
-            lblAlunoAulas.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAlunoAulas.ForeColor = Color.Black;
-            lblAlunoAulas.Location = new Point(430, 7);
+            lblAlunoAulas.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAlunoAulas.ForeColor = Color.FromArgb(35, 68, 57);
+            lblAlunoAulas.Location = new Point(84, 52);
             lblAlunoAulas.Name = "lblAlunoAulas";
-            lblAlunoAulas.Size = new Size(119, 25);
+            lblAlunoAulas.Size = new Size(122, 25);
             lblAlunoAulas.TabIndex = 68;
             lblAlunoAulas.Text = "MEU PERFIL";
-            // 
-            // btnVoltarPagEsqueciSenha
-            // 
-            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
-            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
-            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
-            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
-            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnVoltarPagEsqueciSenha.IconSize = 25;
-            btnVoltarPagEsqueciSenha.Location = new Point(3, 3);
-            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
-            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
-            btnVoltarPagEsqueciSenha.TabIndex = 71;
-            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
             // 
             // UCAdm_MeuPerfil
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            Controls.Add(panel1);
+            Controls.Add(lblAlunoAulas);
             Controls.Add(iconButton1);
-            Controls.Add(button2);
-            Controls.Add(textBox4);
-            Controls.Add(textBox2);
+            Controls.Add(btnAdm_SalvarImagem);
+            Controls.Add(txtAdm_PerfilTelefone);
+            Controls.Add(txtAdm_PerfilSobrenome);
             Controls.Add(label4);
-            Controls.Add(button1);
+            Controls.Add(btnAdm_PerfilSalvar);
             Controls.Add(label2);
             Controls.Add(groupBox1);
-            Controls.Add(textBox3);
+            Controls.Add(txtAdm_PerfilEmail);
             Controls.Add(label3);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
+            Controls.Add(txtAdm_PerfilNome);
+            Controls.Add(lblAdm_PerfilNome);
             Controls.Add(pictureBox1);
             Name = "UCAdm_MeuPerfil";
             Size = new Size(978, 646);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button2;
-        private TextBox textBox4;
-        private TextBox textBox2;
+        private Button btnAdm_SalvarImagem;
+        private TextBox txtAdm_PerfilTelefone;
+        private TextBox txtAdm_PerfilSobrenome;
         private Label label4;
-        private Button button1;
+        private Button btnAdm_PerfilSalvar;
         private Label label2;
         private GroupBox groupBox1;
         private TextBox textBox6;
         private Label label5;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox txtAdm_PerfilEmail;
         private Label label3;
-        private TextBox textBox1;
-        private Label label1;
+        private TextBox txtAdm_PerfilNome;
+        private Label lblAdm_PerfilNome;
         private PictureBox pictureBox1;
         private Label label7;
         private Label label8;
-        private TextBox textBox5;
-        private TextBox textBox7;
+        private TextBox txtAdm_PerfilNovSenhaConfir;
+        private TextBox txtAdm_PerfilNovSenha;
         private Label label9;
-        private TextBox textBox9;
+        private TextBox txtAdm_PerfilSenhaAtual;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private Panel panel1;
         private Label lblAlunoAulas;
-        private FontAwesome.Sharp.IconButton iconButton8;
-        private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
     }
 }

@@ -50,13 +50,8 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             iconButton1 = new FontAwesome.Sharp.IconButton();
-            panel1 = new Panel();
-            iconButton8 = new FontAwesome.Sharp.IconButton();
-            btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
-            lblFuncionarioHome = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // button2
@@ -152,7 +147,7 @@
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label9.Location = new Point(234, 35);
+            label9.Location = new Point(14, 41);
             label9.Name = "label9";
             label9.Size = new Size(97, 21);
             label9.TabIndex = 30;
@@ -161,9 +156,9 @@
             // textBox9
             // 
             textBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox9.Location = new Point(340, 33);
+            textBox9.Location = new Point(120, 39);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(281, 23);
+            textBox9.Size = new Size(279, 23);
             textBox9.TabIndex = 28;
             // 
             // label7
@@ -305,63 +300,10 @@
             iconButton1.Text = "Editar dados";
             iconButton1.UseVisualStyleBackColor = false;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Gainsboro;
-            panel1.Controls.Add(iconButton8);
-            panel1.Controls.Add(btnVoltarPagEsqueciSenha);
-            panel1.Controls.Add(lblFuncionarioHome);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(978, 39);
-            panel1.TabIndex = 63;
-            // 
-            // iconButton8
-            // 
-            iconButton8.FlatAppearance.BorderSize = 0;
-            iconButton8.FlatStyle = FlatStyle.Flat;
-            iconButton8.IconChar = FontAwesome.Sharp.IconChar.ChevronRight;
-            iconButton8.IconColor = Color.Black;
-            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton8.IconSize = 25;
-            iconButton8.Location = new Point(48, 2);
-            iconButton8.Name = "iconButton8";
-            iconButton8.Size = new Size(39, 34);
-            iconButton8.TabIndex = 72;
-            iconButton8.UseVisualStyleBackColor = true;
-            // 
-            // btnVoltarPagEsqueciSenha
-            // 
-            btnVoltarPagEsqueciSenha.FlatAppearance.BorderSize = 0;
-            btnVoltarPagEsqueciSenha.FlatStyle = FlatStyle.Flat;
-            btnVoltarPagEsqueciSenha.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
-            btnVoltarPagEsqueciSenha.IconColor = Color.Black;
-            btnVoltarPagEsqueciSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnVoltarPagEsqueciSenha.IconSize = 25;
-            btnVoltarPagEsqueciSenha.Location = new Point(3, 3);
-            btnVoltarPagEsqueciSenha.Name = "btnVoltarPagEsqueciSenha";
-            btnVoltarPagEsqueciSenha.Size = new Size(39, 34);
-            btnVoltarPagEsqueciSenha.TabIndex = 71;
-            btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
-            // 
-            // lblFuncionarioHome
-            // 
-            lblFuncionarioHome.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lblFuncionarioHome.AutoSize = true;
-            lblFuncionarioHome.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFuncionarioHome.ForeColor = Color.Black;
-            lblFuncionarioHome.Location = new Point(430, 7);
-            lblFuncionarioHome.Name = "lblFuncionarioHome";
-            lblFuncionarioHome.Size = new Size(119, 25);
-            lblFuncionarioHome.TabIndex = 67;
-            lblFuncionarioHome.Text = "MEU PERFIL";
-            // 
             // UCFuncio_MeuPerfil
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel1);
             Controls.Add(iconButton1);
             Controls.Add(button2);
             Controls.Add(textBox4);
@@ -380,8 +322,6 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -410,9 +350,5 @@
         private Label label1;
         private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private Panel panel1;
-        private Label lblFuncionarioHome;
-        private FontAwesome.Sharp.IconButton iconButton8;
-        private FontAwesome.Sharp.IconButton btnVoltarPagEsqueciSenha;
     }
 }
