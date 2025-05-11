@@ -63,6 +63,8 @@
             sidebarAdm = new FlowLayoutPanel();
             panelbtnAdmMenu = new Panel();
             panelbtnAdmDestaques = new Panel();
+            panel4 = new Panel();
+            btnSobre = new FontAwesome.Sharp.IconButton();
             panelAdm = new Panel();
             timerSubRelatorio = new System.Windows.Forms.Timer(components);
             btnAdm_Avancar = new FontAwesome.Sharp.IconButton();
@@ -80,6 +82,7 @@
             sidebarAdm.SuspendLayout();
             panelbtnAdmMenu.SuspendLayout();
             panelbtnAdmDestaques.SuspendLayout();
+            panel4.SuspendLayout();
             panelAdm_VoltarAvançar.SuspendLayout();
             SuspendLayout();
             // 
@@ -370,7 +373,7 @@
             // panelbtnAdmSair
             // 
             panelbtnAdmSair.Controls.Add(btnSair);
-            panelbtnAdmSair.Location = new Point(3, 293);
+            panelbtnAdmSair.Location = new Point(3, 334);
             panelbtnAdmSair.Name = "panelbtnAdmSair";
             panelbtnAdmSair.Size = new Size(177, 52);
             panelbtnAdmSair.TabIndex = 58;
@@ -554,6 +557,7 @@
             sidebarAdm.Controls.Add(SubAdmRelatorio);
             sidebarAdm.Controls.Add(panelSubUsuarios);
             sidebarAdm.Controls.Add(panelbtnAdmMeuPer);
+            sidebarAdm.Controls.Add(panel4);
             sidebarAdm.Controls.Add(panelbtnAdmSair);
             sidebarAdm.Dock = DockStyle.Left;
             sidebarAdm.Location = new Point(0, 42);
@@ -576,6 +580,34 @@
             panelbtnAdmDestaques.Name = "panelbtnAdmDestaques";
             panelbtnAdmDestaques.Size = new Size(177, 52);
             panelbtnAdmDestaques.TabIndex = 58;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(btnSobre);
+            panel4.Location = new Point(3, 293);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(177, 35);
+            panel4.TabIndex = 60;
+            // 
+            // btnSobre
+            // 
+            btnSobre.Anchor = AnchorStyles.Left;
+            btnSobre.FlatAppearance.BorderSize = 0;
+            btnSobre.FlatStyle = FlatStyle.Flat;
+            btnSobre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSobre.IconChar = FontAwesome.Sharp.IconChar.Info;
+            btnSobre.IconColor = Color.Black;
+            btnSobre.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSobre.IconSize = 28;
+            btnSobre.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSobre.Location = new Point(0, 0);
+            btnSobre.Name = "btnSobre";
+            btnSobre.Padding = new Padding(10, 0, 0, 0);
+            btnSobre.Size = new Size(177, 35);
+            btnSobre.TabIndex = 59;
+            btnSobre.Text = "            Sobre EcoBoard";
+            btnSobre.UseVisualStyleBackColor = true;
+            btnSobre.Click += btnSobre_Click;
             // 
             // panelAdm
             // 
@@ -657,6 +689,7 @@
             sidebarAdm.ResumeLayout(false);
             panelbtnAdmMenu.ResumeLayout(false);
             panelbtnAdmDestaques.ResumeLayout(false);
+            panel4.ResumeLayout(false);
             panelAdm_VoltarAvançar.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -701,5 +734,7 @@
         private FontAwesome.Sharp.IconButton btnAdm_Voltar;
         private Panel panelAdm_VoltarAvançar;
         private FontAwesome.Sharp.IconButton btnAdmDescarte;
+        private FontAwesome.Sharp.IconButton btnSobre;
+        private Panel panel4;
     }
 }

@@ -265,7 +265,6 @@
             // lblTodosOsDireitos
             // 
             lblTodosOsDireitos.Anchor = AnchorStyles.Top;
-            lblTodosOsDireitos.AutoSize = true;
             lblTodosOsDireitos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTodosOsDireitos.ForeColor = SystemColors.ButtonShadow;
             lblTodosOsDireitos.Location = new Point(23, 557);
@@ -311,7 +310,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

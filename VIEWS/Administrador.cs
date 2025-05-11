@@ -181,6 +181,13 @@ namespace ECOInsight
             UCAdm_ConsumoAgua uc = new UCAdm_ConsumoAgua();
             addUserControl(uc);
         }
+
+        private void btnSobre_Click(object sender, EventArgs e)
+        {
+            SobreECOBoard SobreEcoInsight = new SobreECOBoard();
+            SobreEcoInsight.FormClosed += (s, ev) => this.Show();
+            SobreEcoInsight.Show();
+        }
         #endregion
 
         #region Eventos de Navegação (Voltar e Avançar)
@@ -278,5 +285,6 @@ namespace ECOInsight
             }
         }
         #endregion
+
     }
 }
