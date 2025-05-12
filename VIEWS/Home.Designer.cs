@@ -355,9 +355,9 @@
             lblLogin.ForeColor = SystemColors.ButtonHighlight;
             lblLogin.Location = new Point(53, 10);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(86, 21);
+            lblLogin.Size = new Size(82, 21);
             lblLogin.TabIndex = 18;
-            lblLogin.Text = "ECOBoard";
+            lblLogin.Text = "EcoBoard";
             // 
             // sidebarHome
             // 

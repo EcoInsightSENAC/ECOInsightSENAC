@@ -20,7 +20,7 @@ namespace ECOInsight
             this.labelVersion.Text = String.Format("Versão {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.textBoxDescription.Text = AssemblyDescription;            
         }
 
         #region Acessório de Atributos do Assembly
@@ -57,7 +57,7 @@ namespace ECOInsight
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
                 if (attributes.Length == 0)
                 {
-                    return "";
+                    return "Descrição: A aplicação oferece uma maneira de armazenar e organizar as informações sobre o descarte de lixo em geral, além de promover conscientização de seus usuários sobre sustentabilidade."; ;
                 }
                 return ((AssemblyDescriptionAttribute)attributes[0]).Description;
             }
@@ -83,7 +83,7 @@ namespace ECOInsight
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
                 if (attributes.Length == 0)
                 {
-                    return "";
+                    return "© 2025 ECOInsight. Todos os direitos reservados.";
                 }
                 return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
             }

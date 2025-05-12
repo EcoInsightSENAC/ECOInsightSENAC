@@ -110,7 +110,7 @@
             labelCopyright.Name = "labelCopyright";
             labelCopyright.Size = new Size(329, 20);
             labelCopyright.TabIndex = 21;
-            labelCopyright.Text = "© 2025 ECOInsight. Todos os direitos reservados.";
+            labelCopyright.Text = "© 2025 EcoInsight. Todos os direitos reservados.";
             labelCopyright.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // labelVersion
@@ -132,7 +132,7 @@
             labelProductName.Name = "labelProductName";
             labelProductName.Size = new Size(329, 20);
             labelProductName.TabIndex = 19;
-            labelProductName.Text = "ECOBoard";
+            labelProductName.Text = "EcoBoard";
             labelProductName.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // textBoxDescription
@@ -165,7 +165,7 @@
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Sobre ECOBoard";
+            Text = "Sobre EcoBoard";
             tableLayoutPanel.ResumeLayout(false);
             tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
