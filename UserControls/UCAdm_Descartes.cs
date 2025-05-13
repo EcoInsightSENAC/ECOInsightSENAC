@@ -40,8 +40,10 @@ namespace ECOInsight.UserControls
                     checkBox.Enabled = true; // Reabilita a checkbox, caso tenha sido desabilitada
                 }
 
-                cb_Destino.SelectedIndex = -1;
-                cb_Destino.Text = string.Empty;
+                //Alteração nas telas este campo não existe mais 
+
+                //cb_Destino.SelectedIndex = -1;
+                //cb_Destino.Text = string.Empty;
 
                 // Limpar a TextBox
                 if (txt_DescartesOutrasInfo != null) // Adiciona uma verificação de nulidade por segurança

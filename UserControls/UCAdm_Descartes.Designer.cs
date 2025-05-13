@@ -30,7 +30,7 @@
         {
             lblTiposdemateriais = new Label();
             lbl_PesoOrganic = new Label();
-            lblLixoDestino = new Label();
+            lblLocalColeta = new Label();
             LblLixoOutrasInfo = new Label();
             dateTimeDescartess = new DateTimePicker();
             cb_TipoVidro = new CheckBox();
@@ -45,7 +45,6 @@
             lblAdmKg = new Label();
             btn_EditarLista = new FontAwesome.Sharp.IconButton();
             lblAdmSeleData = new Label();
-            cb_Destino = new ComboBox();
             lbRegistros = new Label();
             btn_ProcurArquivos = new FontAwesome.Sharp.IconButton();
             lblAdmUploadRegistros = new Label();
@@ -70,6 +69,15 @@
             txt_TipoMetal = new TextBox();
             txt_TipoEletronico = new TextBox();
             txt_TipoMedicamentos = new TextBox();
+            lblAdmFuncionario = new Label();
+            cb_Funcionario = new ComboBox();
+            cb_MaterialReciclavel = new ComboBox();
+            lblAdmMaterReciclavel = new Label();
+            lblAdmDestinoColeta = new Label();
+            txt_LocalColeta = new TextBox();
+            txt_DestinoColeta = new TextBox();
+            txt_Quantidade = new TextBox();
+            lblAdmQuantidade = new Label();
             panelTiposdeDescartes.SuspendLayout();
             SuspendLayout();
             // 
@@ -95,23 +103,23 @@
             lbl_PesoOrganic.TabIndex = 29;
             lbl_PesoOrganic.Text = "Peso :";
             // 
-            // lblLixoDestino
+            // lblLocalColeta
             // 
-            lblLixoDestino.Anchor = AnchorStyles.Top;
-            lblLixoDestino.AutoSize = true;
-            lblLixoDestino.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLixoDestino.Location = new Point(582, 195);
-            lblLixoDestino.Name = "lblLixoDestino";
-            lblLixoDestino.Size = new Size(70, 21);
-            lblLixoDestino.TabIndex = 37;
-            lblLixoDestino.Text = "Destino ";
+            lblLocalColeta.Anchor = AnchorStyles.Top;
+            lblLocalColeta.AutoSize = true;
+            lblLocalColeta.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLocalColeta.Location = new Point(581, 273);
+            lblLocalColeta.Name = "lblLocalColeta";
+            lblLocalColeta.Size = new Size(129, 21);
+            lblLocalColeta.TabIndex = 37;
+            lblLocalColeta.Text = "Local da Coleta :";
             // 
             // LblLixoOutrasInfo
             // 
             LblLixoOutrasInfo.Anchor = AnchorStyles.Top;
             LblLixoOutrasInfo.AutoSize = true;
             LblLixoOutrasInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LblLixoOutrasInfo.Location = new Point(583, 333);
+            LblLixoOutrasInfo.Location = new Point(581, 480);
             LblLixoOutrasInfo.Name = "LblLixoOutrasInfo";
             LblLixoOutrasInfo.Size = new Size(158, 21);
             LblLixoOutrasInfo.TabIndex = 38;
@@ -122,7 +130,7 @@
             dateTimeDescartess.Anchor = AnchorStyles.Top;
             dateTimeDescartess.Font = new Font("Segoe UI", 11F);
             dateTimeDescartess.Format = DateTimePickerFormat.Short;
-            dateTimeDescartess.Location = new Point(714, 267);
+            dateTimeDescartess.Location = new Point(714, 382);
             dateTimeDescartess.Name = "dateTimeDescartess";
             dateTimeDescartess.Size = new Size(179, 27);
             dateTimeDescartess.TabIndex = 39;
@@ -245,10 +253,10 @@
             // txt_DescartesOutrasInfo
             // 
             txt_DescartesOutrasInfo.Anchor = AnchorStyles.Top;
-            txt_DescartesOutrasInfo.Location = new Point(583, 371);
+            txt_DescartesOutrasInfo.Location = new Point(583, 504);
             txt_DescartesOutrasInfo.Multiline = true;
             txt_DescartesOutrasInfo.Name = "txt_DescartesOutrasInfo";
-            txt_DescartesOutrasInfo.Size = new Size(310, 177);
+            txt_DescartesOutrasInfo.Size = new Size(310, 44);
             txt_DescartesOutrasInfo.TabIndex = 44;
             // 
             // lblAdmKg
@@ -289,21 +297,11 @@
             lblAdmSeleData.Anchor = AnchorStyles.Top;
             lblAdmSeleData.AutoSize = true;
             lblAdmSeleData.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAdmSeleData.Location = new Point(582, 271);
+            lblAdmSeleData.Location = new Point(582, 385);
             lblAdmSeleData.Name = "lblAdmSeleData";
             lblAdmSeleData.Size = new Size(126, 21);
             lblAdmSeleData.TabIndex = 59;
             lblAdmSeleData.Text = "Selecionar data:";
-            // 
-            // cb_Destino
-            // 
-            cb_Destino.Anchor = AnchorStyles.Top;
-            cb_Destino.FlatStyle = FlatStyle.Flat;
-            cb_Destino.FormattingEnabled = true;
-            cb_Destino.Location = new Point(582, 219);
-            cb_Destino.Name = "cb_Destino";
-            cb_Destino.Size = new Size(311, 23);
-            cb_Destino.TabIndex = 60;
             // 
             // lbRegistros
             // 
@@ -331,7 +329,7 @@
             btn_ProcurArquivos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_ProcurArquivos.IconSize = 25;
             btn_ProcurArquivos.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_ProcurArquivos.Location = new Point(754, 134);
+            btn_ProcurArquivos.Location = new Point(754, 433);
             btn_ProcurArquivos.Name = "btn_ProcurArquivos";
             btn_ProcurArquivos.Padding = new Padding(5, 0, 0, 0);
             btn_ProcurArquivos.Size = new Size(139, 29);
@@ -344,7 +342,7 @@
             lblAdmUploadRegistros.Anchor = AnchorStyles.Top;
             lblAdmUploadRegistros.AutoSize = true;
             lblAdmUploadRegistros.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAdmUploadRegistros.Location = new Point(582, 138);
+            lblAdmUploadRegistros.Location = new Point(582, 437);
             lblAdmUploadRegistros.Name = "lblAdmUploadRegistros";
             lblAdmUploadRegistros.Size = new Size(156, 21);
             lblAdmUploadRegistros.TabIndex = 69;
@@ -581,10 +579,102 @@
             txt_TipoMedicamentos.Size = new Size(100, 23);
             txt_TipoMedicamentos.TabIndex = 99;
             // 
+            // lblAdmFuncionario
+            // 
+            lblAdmFuncionario.Anchor = AnchorStyles.Top;
+            lblAdmFuncionario.AutoSize = true;
+            lblAdmFuncionario.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdmFuncionario.Location = new Point(581, 124);
+            lblAdmFuncionario.Name = "lblAdmFuncionario";
+            lblAdmFuncionario.Size = new Size(107, 21);
+            lblAdmFuncionario.TabIndex = 100;
+            lblAdmFuncionario.Text = "Funcionário : ";
+            // 
+            // cb_Funcionario
+            // 
+            cb_Funcionario.FlatStyle = FlatStyle.Flat;
+            cb_Funcionario.FormattingEnabled = true;
+            cb_Funcionario.Location = new Point(683, 123);
+            cb_Funcionario.Name = "cb_Funcionario";
+            cb_Funcionario.Size = new Size(209, 23);
+            cb_Funcionario.TabIndex = 101;
+            // 
+            // cb_MaterialReciclavel
+            // 
+            cb_MaterialReciclavel.FlatStyle = FlatStyle.Flat;
+            cb_MaterialReciclavel.FormattingEnabled = true;
+            cb_MaterialReciclavel.Location = new Point(730, 170);
+            cb_MaterialReciclavel.Name = "cb_MaterialReciclavel";
+            cb_MaterialReciclavel.Size = new Size(163, 23);
+            cb_MaterialReciclavel.TabIndex = 103;
+            // 
+            // lblAdmMaterReciclavel
+            // 
+            lblAdmMaterReciclavel.Anchor = AnchorStyles.Top;
+            lblAdmMaterReciclavel.AutoSize = true;
+            lblAdmMaterReciclavel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdmMaterReciclavel.Location = new Point(583, 171);
+            lblAdmMaterReciclavel.Name = "lblAdmMaterReciclavel";
+            lblAdmMaterReciclavel.Size = new Size(158, 21);
+            lblAdmMaterReciclavel.TabIndex = 102;
+            lblAdmMaterReciclavel.Text = "Material Reciclável : ";
+            // 
+            // lblAdmDestinoColeta
+            // 
+            lblAdmDestinoColeta.Anchor = AnchorStyles.Top;
+            lblAdmDestinoColeta.AutoSize = true;
+            lblAdmDestinoColeta.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdmDestinoColeta.Location = new Point(581, 327);
+            lblAdmDestinoColeta.Name = "lblAdmDestinoColeta";
+            lblAdmDestinoColeta.Size = new Size(147, 21);
+            lblAdmDestinoColeta.TabIndex = 104;
+            lblAdmDestinoColeta.Text = "Destino da Coleta :";
+            // 
+            // txt_LocalColeta
+            // 
+            txt_LocalColeta.Location = new Point(711, 272);
+            txt_LocalColeta.Name = "txt_LocalColeta";
+            txt_LocalColeta.Size = new Size(181, 23);
+            txt_LocalColeta.TabIndex = 106;
+            // 
+            // txt_DestinoColeta
+            // 
+            txt_DestinoColeta.Location = new Point(730, 326);
+            txt_DestinoColeta.Name = "txt_DestinoColeta";
+            txt_DestinoColeta.Size = new Size(163, 23);
+            txt_DestinoColeta.TabIndex = 107;
+            // 
+            // txt_Quantidade
+            // 
+            txt_Quantidade.Location = new Point(683, 221);
+            txt_Quantidade.Name = "txt_Quantidade";
+            txt_Quantidade.Size = new Size(209, 23);
+            txt_Quantidade.TabIndex = 109;
+            // 
+            // lblAdmQuantidade
+            // 
+            lblAdmQuantidade.Anchor = AnchorStyles.Top;
+            lblAdmQuantidade.AutoSize = true;
+            lblAdmQuantidade.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdmQuantidade.Location = new Point(581, 222);
+            lblAdmQuantidade.Name = "lblAdmQuantidade";
+            lblAdmQuantidade.Size = new Size(103, 21);
+            lblAdmQuantidade.TabIndex = 108;
+            lblAdmQuantidade.Text = "Quantidade :";
+            // 
             // UCAdm_Descartes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(txt_Quantidade);
+            Controls.Add(lblAdmQuantidade);
+            Controls.Add(txt_DestinoColeta);
+            Controls.Add(txt_LocalColeta);
+            Controls.Add(lblAdmDestinoColeta);
+            Controls.Add(cb_MaterialReciclavel);
+            Controls.Add(lblAdmMaterReciclavel);
+            Controls.Add(cb_Funcionario);
+            Controls.Add(lblAdmFuncionario);
             Controls.Add(txt_TipoMedicamentos);
             Controls.Add(txt_TipoEletronico);
             Controls.Add(txt_TipoMetal);
@@ -609,7 +699,6 @@
             Controls.Add(btn_LimparFiltros);
             Controls.Add(btn_ProcurArquivos);
             Controls.Add(lblAdmUploadRegistros);
-            Controls.Add(cb_Destino);
             Controls.Add(lblAdmSeleData);
             Controls.Add(btn_EditarLista);
             Controls.Add(lblAdmKg);
@@ -617,7 +706,7 @@
             Controls.Add(panelTiposdeDescartes);
             Controls.Add(dateTimeDescartess);
             Controls.Add(LblLixoOutrasInfo);
-            Controls.Add(lblLixoDestino);
+            Controls.Add(lblLocalColeta);
             Controls.Add(lbl_PesoOrganic);
             Controls.Add(lblTiposdemateriais);
             Name = "UCAdm_Descartes";
@@ -631,7 +720,7 @@
         #endregion
         private Label lblTiposdemateriais;
         private Label lbl_PesoOrganic;
-        private Label lblLixoDestino;
+        private Label lblLocalColeta;
         private Label LblLixoOutrasInfo;
         private DateTimePicker dateTimeDescartess;
         private CheckBox cb_TipoVidro;
@@ -645,7 +734,6 @@
         private Label lblAdmKg;
         private FontAwesome.Sharp.IconButton btn_EditarLista;
         private Label lblAdmSeleData;
-        private ComboBox cb_Destino;
         private Label lbRegistros;
         private FontAwesome.Sharp.IconButton btn_ProcurArquivos;
         private Label lblAdmUploadRegistros;
@@ -671,5 +759,14 @@
         private TextBox txt_TipoMetal;
         private TextBox txt_TipoEletronico;
         private TextBox txt_TipoMedicamentos;
+        private Label lblAdmFuncionario;
+        private ComboBox cb_Funcionario;
+        private ComboBox cb_MaterialReciclavel;
+        private Label lblAdmMaterReciclavel;
+        private Label lblAdmDestinoColeta;
+        private TextBox txt_LocalColeta;
+        private TextBox txt_DestinoColeta;
+        private TextBox txt_Quantidade;
+        private Label lblAdmQuantidade;
     }
 }
