@@ -134,6 +134,7 @@
             btn_CadNovoUsuario.Text = "Novo Usuário";
             btn_CadNovoUsuario.TextAlign = ContentAlignment.MiddleRight;
             btn_CadNovoUsuario.UseVisualStyleBackColor = false;
+            btn_CadNovoUsuario.Click += btn_CadNovoUsuario_Click;
             // 
             // btn_CadExcluirUsuario
             // 
@@ -154,6 +155,7 @@
             btn_CadExcluirUsuario.Text = "Excluir Usuário";
             btn_CadExcluirUsuario.TextAlign = ContentAlignment.MiddleRight;
             btn_CadExcluirUsuario.UseVisualStyleBackColor = false;
+            btn_CadExcluirUsuario.Click += btn_CadExcluirUsuario_Click;
             // 
             // btn_CadSalvar
             // 
@@ -227,6 +229,7 @@
             btn_CadEditarUsuario.Text = "Editar Usuário";
             btn_CadEditarUsuario.TextAlign = ContentAlignment.MiddleRight;
             btn_CadEditarUsuario.UseVisualStyleBackColor = false;
+            btn_CadEditarUsuario.Click += btn_CadEditarUsuario_Click;
             // 
             // lblConfirSenhaCad
             // 
@@ -368,9 +371,9 @@
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(390, 249);
             label4.Name = "label4";
-            label4.Size = new Size(160, 21);
+            label4.Size = new Size(136, 21);
             label4.TabIndex = 74;
-            label4.Text = "Data De Contratação";
+            label4.Text = "Data De Cadastro";
             // 
             // label5
             // 
@@ -404,6 +407,7 @@
             btn_CadBuscarUsuario.TabIndex = 10;
             btn_CadBuscarUsuario.Text = "Buscar Usuário";
             btn_CadBuscarUsuario.UseVisualStyleBackColor = false;
+            btn_CadBuscarUsuario.Click += btn_CadBuscarUsuario_Click;
             // 
             // panel5
             // 
