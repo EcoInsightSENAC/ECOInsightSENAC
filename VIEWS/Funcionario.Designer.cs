@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FuncionarioTela));
             btnMinimizarFuncionario = new FontAwesome.Sharp.IconButton();
             btnMaximizarRestaurarFuncionario = new FontAwesome.Sharp.IconButton();
             btnFecharFuncionario = new FontAwesome.Sharp.IconButton();
@@ -41,6 +42,7 @@
             btnFuncionarioMPerfil = new FontAwesome.Sharp.IconButton();
             sidebarTimerFuncionario = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
+            pictureBox2 = new PictureBox();
             lblLogin = new Label();
             sidebarFuncionario = new FlowLayoutPanel();
             panel3 = new Panel();
@@ -51,6 +53,7 @@
             panelFuncionario = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             sidebarFuncionario.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -237,6 +240,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(36, 65, 57);
+            panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(lblLogin);
             panel2.Controls.Add(lblFuncionario);
             panel2.Controls.Add(panel1);
@@ -245,17 +249,28 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1139, 42);
             panel2.TabIndex = 22;
+            panel2.MouseDown += panel2_MouseDown;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = ECOInsight.Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 26;
+            pictureBox2.TabStop = false;
             // 
             // lblLogin
             // 
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLogin.ForeColor = SystemColors.ButtonHighlight;
-            lblLogin.Location = new Point(12, 9);
+            lblLogin.Location = new Point(53, 10);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(86, 21);
-            lblLogin.TabIndex = 58;
-            lblLogin.Text = "ECOBoard";
+            lblLogin.Size = new Size(82, 21);
+            lblLogin.TabIndex = 25;
+            lblLogin.Text = "EcoBoard";
             // 
             // sidebarFuncionario
             // 
@@ -270,7 +285,6 @@
             sidebarFuncionario.Name = "sidebarFuncionario";
             sidebarFuncionario.Size = new Size(180, 687);
             sidebarFuncionario.TabIndex = 23;
-            sidebarFuncionario.Paint += sidebarFuncionario_Paint;
             // 
             // panel3
             // 
@@ -329,12 +343,14 @@
             Controls.Add(sidebarFuncionario);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FuncionarioTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             sidebarFuncionario.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -364,6 +380,7 @@
         private Panel panel6;
         private Panel panel7;
         private Panel panelFuncionario;
+        private PictureBox pictureBox2;
         private Label lblLogin;
     }
 }

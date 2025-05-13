@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdmTela));
             btnAdmMenu = new FontAwesome.Sharp.IconButton();
             btnSair = new FontAwesome.Sharp.IconButton();
             btnAdmDestaques = new FontAwesome.Sharp.IconButton();
@@ -42,11 +43,15 @@
             lblAdm = new Label();
             sidebarTimerAdm = new System.Windows.Forms.Timer(components);
             btnVoltarPagEsqueciSenha = new FontAwesome.Sharp.IconButton();
-            panelSubRelatorioAdm = new Panel();
+            SubAdmRelatorio = new Panel();
+            btnAdmAgua = new FontAwesome.Sharp.IconButton();
+            btnAdmMinhocario = new FontAwesome.Sharp.IconButton();
+            btnAdmDescarte = new FontAwesome.Sharp.IconButton();
             panelbtnAdmSair = new Panel();
             panelbtnAdmMeuPer = new Panel();
             panelSubUsuarios = new Panel();
             panelSuperiorAdm = new Panel();
+            pictureBox2 = new PictureBox();
             lblLogin = new Label();
             panel1 = new Panel();
             btnMaximizarRestaurarHome = new FontAwesome.Sharp.IconButton();
@@ -59,20 +64,27 @@
             sidebarAdm = new FlowLayoutPanel();
             panelbtnAdmMenu = new Panel();
             panelbtnAdmDestaques = new Panel();
-            timerSubRelatorio = new System.Windows.Forms.Timer(components);
-            timerSubUsuarios = new System.Windows.Forms.Timer(components);
+            panel4 = new Panel();
+            btnSobre = new FontAwesome.Sharp.IconButton();
             panelAdm = new Panel();
+            timerSubRelatorio = new System.Windows.Forms.Timer(components);
+            btnAdm_Avancar = new FontAwesome.Sharp.IconButton();
+            btnAdm_Voltar = new FontAwesome.Sharp.IconButton();
+            panelAdm_VoltarAvançar = new Panel();
             panel2.SuspendLayout();
-            panelSubRelatorioAdm.SuspendLayout();
+            SubAdmRelatorio.SuspendLayout();
             panelbtnAdmSair.SuspendLayout();
             panelbtnAdmMeuPer.SuspendLayout();
             panelSubUsuarios.SuspendLayout();
             panelSuperiorAdm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             sidebarAdm.SuspendLayout();
             panelbtnAdmMenu.SuspendLayout();
             panelbtnAdmDestaques.SuspendLayout();
+            panel4.SuspendLayout();
+            panelAdm_VoltarAvançar.SuspendLayout();
             SuspendLayout();
             // 
             // btnAdmMenu
@@ -105,7 +117,7 @@
             btnSair.IconColor = Color.Black;
             btnSair.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnSair.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSair.Location = new Point(0, -3);
+            btnSair.Location = new Point(0, 0);
             btnSair.Name = "btnSair";
             btnSair.Padding = new Padding(4, 0, 0, 0);
             btnSair.Size = new Size(177, 52);
@@ -183,7 +195,7 @@
             btnAdmRelatorio.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAdmRelatorio.IconSize = 40;
             btnAdmRelatorio.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAdmRelatorio.Location = new Point(0, -3);
+            btnAdmRelatorio.Location = new Point(0, 0);
             btnAdmRelatorio.Name = "btnAdmRelatorio";
             btnAdmRelatorio.Padding = new Padding(7, 0, 0, 0);
             btnAdmRelatorio.Size = new Size(177, 56);
@@ -286,18 +298,83 @@
             btnVoltarPagEsqueciSenha.UseVisualStyleBackColor = true;
             btnVoltarPagEsqueciSenha.Click += btnVoltarPagEsqueciSenha_Click;
             // 
-            // panelSubRelatorioAdm
+            // SubAdmRelatorio
             // 
-            panelSubRelatorioAdm.Controls.Add(btnAdmRelatorio);
-            panelSubRelatorioAdm.Location = new Point(3, 119);
-            panelSubRelatorioAdm.Name = "panelSubRelatorioAdm";
-            panelSubRelatorioAdm.Size = new Size(177, 52);
-            panelSubRelatorioAdm.TabIndex = 58;
+            SubAdmRelatorio.Controls.Add(btnAdmAgua);
+            SubAdmRelatorio.Controls.Add(btnAdmRelatorio);
+            SubAdmRelatorio.Controls.Add(btnAdmMinhocario);
+            SubAdmRelatorio.Controls.Add(btnAdmDescarte);
+            SubAdmRelatorio.Location = new Point(3, 119);
+            SubAdmRelatorio.MaximumSize = new Size(177, 221);
+            SubAdmRelatorio.MinimumSize = new Size(177, 52);
+            SubAdmRelatorio.Name = "SubAdmRelatorio";
+            SubAdmRelatorio.Size = new Size(177, 52);
+            SubAdmRelatorio.TabIndex = 58;
+            // 
+            // btnAdmAgua
+            // 
+            btnAdmAgua.BackColor = Color.FromArgb(153, 179, 142);
+            btnAdmAgua.FlatAppearance.BorderSize = 0;
+            btnAdmAgua.FlatStyle = FlatStyle.Flat;
+            btnAdmAgua.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdmAgua.IconChar = FontAwesome.Sharp.IconChar.BottleWater;
+            btnAdmAgua.IconColor = Color.Black;
+            btnAdmAgua.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdmAgua.IconSize = 40;
+            btnAdmAgua.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdmAgua.Location = new Point(0, 165);
+            btnAdmAgua.Name = "btnAdmAgua";
+            btnAdmAgua.Padding = new Padding(7, 0, 0, 0);
+            btnAdmAgua.Size = new Size(177, 56);
+            btnAdmAgua.TabIndex = 22;
+            btnAdmAgua.Text = "        Consumo \r\n       de Água";
+            btnAdmAgua.UseVisualStyleBackColor = false;
+            btnAdmAgua.Click += btnAdmAgua_Click;
+            // 
+            // btnAdmMinhocario
+            // 
+            btnAdmMinhocario.BackColor = Color.FromArgb(153, 179, 142);
+            btnAdmMinhocario.FlatAppearance.BorderSize = 0;
+            btnAdmMinhocario.FlatStyle = FlatStyle.Flat;
+            btnAdmMinhocario.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdmMinhocario.IconChar = FontAwesome.Sharp.IconChar.Worm;
+            btnAdmMinhocario.IconColor = Color.Black;
+            btnAdmMinhocario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdmMinhocario.IconSize = 40;
+            btnAdmMinhocario.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdmMinhocario.Location = new Point(0, 112);
+            btnAdmMinhocario.Name = "btnAdmMinhocario";
+            btnAdmMinhocario.Padding = new Padding(7, 0, 0, 0);
+            btnAdmMinhocario.Size = new Size(177, 56);
+            btnAdmMinhocario.TabIndex = 21;
+            btnAdmMinhocario.Text = "        Minhocário";
+            btnAdmMinhocario.UseVisualStyleBackColor = false;
+            btnAdmMinhocario.Click += btnAdmMinhocario_Click;
+            // 
+            // btnAdmDescarte
+            // 
+            btnAdmDescarte.BackColor = Color.FromArgb(153, 179, 142);
+            btnAdmDescarte.FlatAppearance.BorderSize = 0;
+            btnAdmDescarte.FlatStyle = FlatStyle.Flat;
+            btnAdmDescarte.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdmDescarte.IconChar = FontAwesome.Sharp.IconChar.Recycle;
+            btnAdmDescarte.IconColor = Color.Black;
+            btnAdmDescarte.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdmDescarte.IconSize = 40;
+            btnAdmDescarte.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdmDescarte.Location = new Point(0, 56);
+            btnAdmDescarte.Name = "btnAdmDescarte";
+            btnAdmDescarte.Padding = new Padding(7, 0, 0, 0);
+            btnAdmDescarte.Size = new Size(177, 56);
+            btnAdmDescarte.TabIndex = 23;
+            btnAdmDescarte.Text = "     Descartes";
+            btnAdmDescarte.UseVisualStyleBackColor = false;
+            btnAdmDescarte.Click += btnAdmDescarte_Click;
             // 
             // panelbtnAdmSair
             // 
             panelbtnAdmSair.Controls.Add(btnSair);
-            panelbtnAdmSair.Location = new Point(3, 293);
+            panelbtnAdmSair.Location = new Point(3, 334);
             panelbtnAdmSair.Name = "panelbtnAdmSair";
             panelbtnAdmSair.Size = new Size(177, 52);
             panelbtnAdmSair.TabIndex = 58;
@@ -321,6 +398,7 @@
             // panelSuperiorAdm
             // 
             panelSuperiorAdm.BackColor = Color.FromArgb(36, 65, 57);
+            panelSuperiorAdm.Controls.Add(pictureBox2);
             panelSuperiorAdm.Controls.Add(lblLogin);
             panelSuperiorAdm.Controls.Add(panel1);
             panelSuperiorAdm.Controls.Add(panel3);
@@ -331,17 +409,28 @@
             panelSuperiorAdm.Name = "panelSuperiorAdm";
             panelSuperiorAdm.Size = new Size(1139, 42);
             panelSuperiorAdm.TabIndex = 34;
+            panelSuperiorAdm.MouseDown += panelSuperiorAdm_MouseDown;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 60;
+            pictureBox2.TabStop = false;
             // 
             // lblLogin
             // 
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLogin.ForeColor = SystemColors.ButtonHighlight;
-            lblLogin.Location = new Point(12, 9);
+            lblLogin.Location = new Point(53, 10);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(86, 21);
+            lblLogin.Size = new Size(82, 21);
             lblLogin.TabIndex = 59;
-            lblLogin.Text = "ECOBoard";
+            lblLogin.Text = "EcoBoard";
             // 
             // panel1
             // 
@@ -466,9 +555,10 @@
             sidebarAdm.BackColor = Color.FromArgb(153, 179, 142);
             sidebarAdm.Controls.Add(panelbtnAdmMenu);
             sidebarAdm.Controls.Add(panelbtnAdmDestaques);
-            sidebarAdm.Controls.Add(panelSubRelatorioAdm);
+            sidebarAdm.Controls.Add(SubAdmRelatorio);
             sidebarAdm.Controls.Add(panelSubUsuarios);
             sidebarAdm.Controls.Add(panelbtnAdmMeuPer);
+            sidebarAdm.Controls.Add(panel4);
             sidebarAdm.Controls.Add(panelbtnAdmSair);
             sidebarAdm.Dock = DockStyle.Left;
             sidebarAdm.Location = new Point(0, 42);
@@ -492,6 +582,34 @@
             panelbtnAdmDestaques.Size = new Size(177, 52);
             panelbtnAdmDestaques.TabIndex = 58;
             // 
+            // panel4
+            // 
+            panel4.Controls.Add(btnSobre);
+            panel4.Location = new Point(3, 293);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(177, 35);
+            panel4.TabIndex = 60;
+            // 
+            // btnSobre
+            // 
+            btnSobre.Anchor = AnchorStyles.Left;
+            btnSobre.FlatAppearance.BorderSize = 0;
+            btnSobre.FlatStyle = FlatStyle.Flat;
+            btnSobre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSobre.IconChar = FontAwesome.Sharp.IconChar.Info;
+            btnSobre.IconColor = Color.Black;
+            btnSobre.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSobre.IconSize = 28;
+            btnSobre.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSobre.Location = new Point(0, 0);
+            btnSobre.Name = "btnSobre";
+            btnSobre.Padding = new Padding(10, 0, 0, 0);
+            btnSobre.Size = new Size(177, 35);
+            btnSobre.TabIndex = 59;
+            btnSobre.Text = "            Sobre EcoBoard";
+            btnSobre.UseVisualStyleBackColor = true;
+            btnSobre.Click += btnSobre_Click;
+            // 
             // panelAdm
             // 
             panelAdm.Dock = DockStyle.Fill;
@@ -500,30 +618,81 @@
             panelAdm.Size = new Size(959, 687);
             panelAdm.TabIndex = 58;
             // 
+            // timerSubRelatorio
+            // 
+            timerSubRelatorio.Interval = 10;
+            timerSubRelatorio.Tick += timerSubRelatorio_Tick;
+            // 
+            // btnAdm_Avancar
+            // 
+            btnAdm_Avancar.FlatAppearance.BorderSize = 0;
+            btnAdm_Avancar.FlatStyle = FlatStyle.Flat;
+            btnAdm_Avancar.IconChar = FontAwesome.Sharp.IconChar.ChevronRight;
+            btnAdm_Avancar.IconColor = Color.Black;
+            btnAdm_Avancar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdm_Avancar.IconSize = 25;
+            btnAdm_Avancar.Location = new Point(48, 2);
+            btnAdm_Avancar.Name = "btnAdm_Avancar";
+            btnAdm_Avancar.Size = new Size(39, 34);
+            btnAdm_Avancar.TabIndex = 74;
+            btnAdm_Avancar.UseVisualStyleBackColor = true;
+            btnAdm_Avancar.Click += btnAdm_Avancar_Click_1;
+            // 
+            // btnAdm_Voltar
+            // 
+            btnAdm_Voltar.FlatAppearance.BorderSize = 0;
+            btnAdm_Voltar.FlatStyle = FlatStyle.Flat;
+            btnAdm_Voltar.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
+            btnAdm_Voltar.IconColor = Color.Black;
+            btnAdm_Voltar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdm_Voltar.IconSize = 25;
+            btnAdm_Voltar.Location = new Point(3, 3);
+            btnAdm_Voltar.Name = "btnAdm_Voltar";
+            btnAdm_Voltar.Size = new Size(39, 34);
+            btnAdm_Voltar.TabIndex = 73;
+            btnAdm_Voltar.UseVisualStyleBackColor = true;
+            btnAdm_Voltar.Click += btnAdm_Voltar_Click_1;
+            // 
+            // panelAdm_VoltarAvançar
+            // 
+            panelAdm_VoltarAvançar.BackColor = Color.Gainsboro;
+            panelAdm_VoltarAvançar.Controls.Add(btnAdm_Avancar);
+            panelAdm_VoltarAvançar.Controls.Add(btnAdm_Voltar);
+            panelAdm_VoltarAvançar.Dock = DockStyle.Top;
+            panelAdm_VoltarAvançar.Location = new Point(180, 42);
+            panelAdm_VoltarAvançar.Name = "panelAdm_VoltarAvançar";
+            panelAdm_VoltarAvançar.Size = new Size(959, 39);
+            panelAdm_VoltarAvançar.TabIndex = 59;
+            // 
             // AdmTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1139, 729);
+            Controls.Add(panelAdm_VoltarAvançar);
             Controls.Add(panelAdm);
             Controls.Add(sidebarAdm);
             Controls.Add(panelSuperiorAdm);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdmTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
             panel2.ResumeLayout(false);
-            panelSubRelatorioAdm.ResumeLayout(false);
+            SubAdmRelatorio.ResumeLayout(false);
             panelbtnAdmSair.ResumeLayout(false);
             panelbtnAdmMeuPer.ResumeLayout(false);
             panelSubUsuarios.ResumeLayout(false);
             panelSuperiorAdm.ResumeLayout(false);
             panelSuperiorAdm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             sidebarAdm.ResumeLayout(false);
             panelbtnAdmMenu.ResumeLayout(false);
             panelbtnAdmDestaques.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panelAdm_VoltarAvançar.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -553,13 +722,21 @@
         private FlowLayoutPanel sidebarAdm;
         private Panel panelbtnAdmMenu;
         private Panel panelbtnAdmDestaques;
-        private Panel panelSubRelatorioAdm;
+        private Panel SubAdmRelatorio;
         private Panel panelSubUsuarios;
         private Panel panelbtnAdmMeuPer;
         private Panel panelbtnAdmSair;
-        private System.Windows.Forms.Timer timerSubRelatorio;
-        private System.Windows.Forms.Timer timerSubUsuarios;
         private Panel panelAdm;
         private Label lblLogin;
+        private PictureBox pictureBox2;
+        private FontAwesome.Sharp.IconButton btnAdmAgua;
+        private FontAwesome.Sharp.IconButton btnAdmMinhocario;
+        private System.Windows.Forms.Timer timerSubRelatorio;
+        private FontAwesome.Sharp.IconButton btnAdm_Avancar;
+        private FontAwesome.Sharp.IconButton btnAdm_Voltar;
+        private Panel panelAdm_VoltarAvançar;
+        private FontAwesome.Sharp.IconButton btnAdmDescarte;
+        private FontAwesome.Sharp.IconButton btnSobre;
+        private Panel panel4;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlunoTela));
             btnSair = new FontAwesome.Sharp.IconButton();
             btnAlunoMenu = new FontAwesome.Sharp.IconButton();
             btnAlunoDestaques = new FontAwesome.Sharp.IconButton();
@@ -40,6 +41,8 @@
             btnFecharAluno = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             panelSuperiorAluno = new Panel();
+            pictureBox2 = new PictureBox();
+            lblLogin = new Label();
             panel1 = new Panel();
             btnMaximizarRestaurarHome = new FontAwesome.Sharp.IconButton();
             btnFecharHome = new FontAwesome.Sharp.IconButton();
@@ -55,9 +58,9 @@
             sidebarAluno = new FlowLayoutPanel();
             panelAluno = new Panel();
             label1 = new Label();
-            lblLogin = new Label();
             panel2.SuspendLayout();
             panelSuperiorAluno.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -243,6 +246,7 @@
             // panelSuperiorAluno
             // 
             panelSuperiorAluno.BackColor = Color.FromArgb(36, 65, 57);
+            panelSuperiorAluno.Controls.Add(pictureBox2);
             panelSuperiorAluno.Controls.Add(lblLogin);
             panelSuperiorAluno.Controls.Add(panel1);
             panelSuperiorAluno.Controls.Add(panel2);
@@ -252,6 +256,28 @@
             panelSuperiorAluno.Name = "panelSuperiorAluno";
             panelSuperiorAluno.Size = new Size(1139, 42);
             panelSuperiorAluno.TabIndex = 33;
+            panelSuperiorAluno.MouseDown += panelSuperiorAluno_MouseDown;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 58;
+            pictureBox2.TabStop = false;
+            // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(53, 10);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(82, 21);
+            lblLogin.TabIndex = 57;
+            lblLogin.Text = "EcoBoard";
             // 
             // panel1
             // 
@@ -414,17 +440,6 @@
             label1.TabIndex = 0;
             label1.Text = "TELA EM \r\nCONSTRUÇÃO";
             // 
-            // lblLogin
-            // 
-            lblLogin.AutoSize = true;
-            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = SystemColors.ButtonHighlight;
-            lblLogin.Location = new Point(12, 9);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(86, 21);
-            lblLogin.TabIndex = 57;
-            lblLogin.Text = "ECOBoard";
-            // 
             // AlunoTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -434,12 +449,14 @@
             Controls.Add(sidebarAluno);
             Controls.Add(panelSuperiorAluno);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AlunoTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
             panel2.ResumeLayout(false);
             panelSuperiorAluno.ResumeLayout(false);
             panelSuperiorAluno.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -480,5 +497,6 @@
         private Panel panelAluno;
         private Label label1;
         private Label lblLogin;
+        private PictureBox pictureBox2;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeTela));
             btnMinimizarHome = new FontAwesome.Sharp.IconButton();
             btnMaximizarRestaurarHome = new FontAwesome.Sharp.IconButton();
             btnFecharHome = new FontAwesome.Sharp.IconButton();
@@ -48,11 +49,12 @@
             panel6 = new Panel();
             panel5 = new Panel();
             panelSuperiorHome = new Panel();
+            pictureBox2 = new PictureBox();
+            lblLogin = new Label();
             sidebarHome = new FlowLayoutPanel();
             btnSair = new FontAwesome.Sharp.IconButton();
             timerSub = new System.Windows.Forms.Timer(components);
             sidebarhome2 = new System.Windows.Forms.Timer(components);
-            lblLogin = new Label();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             panelSub.SuspendLayout();
@@ -60,6 +62,7 @@
             panel6.SuspendLayout();
             panel5.SuspendLayout();
             panelSuperiorHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             sidebarHome.SuspendLayout();
             SuspendLayout();
             // 
@@ -325,6 +328,7 @@
             // panelSuperiorHome
             // 
             panelSuperiorHome.BackColor = Color.FromArgb(36, 65, 57);
+            panelSuperiorHome.Controls.Add(pictureBox2);
             panelSuperiorHome.Controls.Add(lblLogin);
             panelSuperiorHome.Controls.Add(panel2);
             panelSuperiorHome.Controls.Add(lblHome);
@@ -333,6 +337,28 @@
             panelSuperiorHome.Name = "panelSuperiorHome";
             panelSuperiorHome.Size = new Size(1139, 42);
             panelSuperiorHome.TabIndex = 32;
+            panelSuperiorHome.MouseDown += panelSuperiorHome_MouseDown;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 25;
+            pictureBox2.TabStop = false;
+            // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(53, 10);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(82, 21);
+            lblLogin.TabIndex = 18;
+            lblLogin.Text = "EcoBoard";
             // 
             // sidebarHome
             // 
@@ -378,17 +404,6 @@
             sidebarhome2.Interval = 10;
             sidebarhome2.Tick += sidebarhome2_Tick;
             // 
-            // lblLogin
-            // 
-            lblLogin.AutoSize = true;
-            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = SystemColors.ButtonHighlight;
-            lblLogin.Location = new Point(12, 9);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(86, 21);
-            lblLogin.TabIndex = 18;
-            lblLogin.Text = "ECOBoard";
-            // 
             // HomeTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -398,6 +413,7 @@
             Controls.Add(panelSuperiorHome);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "HomeTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
@@ -410,6 +426,7 @@
             panel5.ResumeLayout(false);
             panelSuperiorHome.ResumeLayout(false);
             panelSuperiorHome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             sidebarHome.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -441,5 +458,6 @@
         private System.Windows.Forms.Timer timerSub;
         private System.Windows.Forms.Timer sidebarhome2;
         private Label lblLogin;
+        private PictureBox pictureBox2;
     }
 }

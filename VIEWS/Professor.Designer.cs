@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfessorTela));
             btnAProfMenu = new FontAwesome.Sharp.IconButton();
             btnProfDestaques = new FontAwesome.Sharp.IconButton();
             btnProfMPerfil = new FontAwesome.Sharp.IconButton();
@@ -41,6 +42,8 @@
             panel2 = new Panel();
             sidebarTimerProf = new System.Windows.Forms.Timer(components);
             panelSuperiorProf = new Panel();
+            pictureBox2 = new PictureBox();
+            lblLogin = new Label();
             sidebarProf = new FlowLayoutPanel();
             panelbtnAProfMenu = new Panel();
             panelbtnProfDestaques = new Panel();
@@ -52,9 +55,9 @@
             timerSubAula = new System.Windows.Forms.Timer(components);
             panelProf = new Panel();
             label1 = new Label();
-            lblLogin = new Label();
             panel2.SuspendLayout();
             panelSuperiorProf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             sidebarProf.SuspendLayout();
             panelbtnAProfMenu.SuspendLayout();
             panelbtnProfDestaques.SuspendLayout();
@@ -234,6 +237,7 @@
             // panelSuperiorProf
             // 
             panelSuperiorProf.BackColor = Color.FromArgb(36, 65, 57);
+            panelSuperiorProf.Controls.Add(pictureBox2);
             panelSuperiorProf.Controls.Add(lblLogin);
             panelSuperiorProf.Controls.Add(panel2);
             panelSuperiorProf.Controls.Add(lblAluno);
@@ -242,6 +246,28 @@
             panelSuperiorProf.Name = "panelSuperiorProf";
             panelSuperiorProf.Size = new Size(1139, 42);
             panelSuperiorProf.TabIndex = 22;
+            panelSuperiorProf.MouseDown += panelSuperiorProf_MouseDown;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.LogoEcoInsght;
+            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 25;
+            pictureBox2.TabStop = false;
+            // 
+            // lblLogin
+            // 
+            lblLogin.AutoSize = true;
+            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = SystemColors.ButtonHighlight;
+            lblLogin.Location = new Point(53, 10);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(82, 21);
+            lblLogin.TabIndex = 17;
+            lblLogin.Text = "EcoBoard";
             // 
             // sidebarProf
             // 
@@ -356,17 +382,6 @@
             label1.TabIndex = 1;
             label1.Text = "TELA EM \r\nCONSTRUÇÃO";
             // 
-            // lblLogin
-            // 
-            lblLogin.AutoSize = true;
-            lblLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = SystemColors.ButtonHighlight;
-            lblLogin.Location = new Point(12, 9);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(86, 21);
-            lblLogin.TabIndex = 17;
-            lblLogin.Text = "ECOBoard";
-            // 
             // ProfessorTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -376,12 +391,14 @@
             Controls.Add(sidebarProf);
             Controls.Add(panelSuperiorProf);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ProfessorTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";
             panel2.ResumeLayout(false);
             panelSuperiorProf.ResumeLayout(false);
             panelSuperiorProf.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             sidebarProf.ResumeLayout(false);
             panelbtnAProfMenu.ResumeLayout(false);
             panelbtnProfDestaques.ResumeLayout(false);
@@ -418,5 +435,6 @@
         private Panel panelProf;
         private Label label1;
         private Label lblLogin;
+        private PictureBox pictureBox2;
     }
 }
