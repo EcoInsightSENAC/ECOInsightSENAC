@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ECOInsight.DataAccess;
+using ECOInsight.Modelos;
+using System.Windows.Media.Media3D;
 
 namespace ECOInsight.UserControls
 {
@@ -130,5 +133,30 @@ namespace ECOInsight.UserControls
                 txt_TipoPlastico.Text = string.Empty;
             }
         }
+
+        private void txt_DescartesOutrasInfo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UCAdm_Descartes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ProcurArquivos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void btn_Salvar_Click(object sender, EventArgs e)
+        {
+            // Seu código para o que deve acontecer quando o botão for clicado
+            MessageBox.Show("Botão Salvar foi clicado!");
+        }
+
+
     }
 }

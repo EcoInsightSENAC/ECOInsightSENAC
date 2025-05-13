@@ -1,4 +1,9 @@
-﻿namespace ECOInsight.UserControls
+﻿
+using ECOInsight.DataAccess;
+using ECOInsight.Modelos;
+using System.Windows.Media.Media3D;
+
+namespace ECOInsight.UserControls
 {
     partial class UCAdm_Descartes
     {
@@ -258,6 +263,7 @@
             txt_DescartesOutrasInfo.Name = "txt_DescartesOutrasInfo";
             txt_DescartesOutrasInfo.Size = new Size(310, 44);
             txt_DescartesOutrasInfo.TabIndex = 44;
+            txt_DescartesOutrasInfo.TextChanged += txt_DescartesOutrasInfo_TextChanged;
             // 
             // lblAdmKg
             // 
@@ -336,6 +342,7 @@
             btn_ProcurArquivos.TabIndex = 70;
             btn_ProcurArquivos.Text = "Procurar Arquivos";
             btn_ProcurArquivos.UseVisualStyleBackColor = false;
+            btn_ProcurArquivos.Click += btn_ProcurArquivos_Click;
             // 
             // lblAdmUploadRegistros
             // 
@@ -390,6 +397,7 @@
             btn_Salvar.TabIndex = 75;
             btn_Salvar.Text = "       Salvar ";
             btn_Salvar.UseVisualStyleBackColor = false;
+            btn_Salvar.Click += this.btn_Salvar_Click;
             // 
             // label1
             // 
@@ -711,11 +719,17 @@
             Controls.Add(lblTiposdemateriais);
             Name = "UCAdm_Descartes";
             Size = new Size(978, 646);
+            Load += UCAdm_Descartes_Load;
             panelTiposdeDescartes.ResumeLayout(false);
             panelTiposdeDescartes.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
+
+       
+
+       
+
 
         #endregion
         private Label lblTiposdemateriais;

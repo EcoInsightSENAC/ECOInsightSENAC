@@ -1,69 +1,73 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Configuration;
-using System.Security.Cryptography;
+using MySql.Data.MySqlClient;
+using System.Security.Cryptography; // Adicionando SHA256
 using System.Text;
 
 public class Autenticacao
 {
-    // Função para validar o login
-    public bool ValidarLogin(string email, string senha)
+    public class ResultadoAutenticacao
     {
-        // Gerar o hash da senha informada pelo usuário
+        public bool Sucesso { get; set; }
+        public string Perfil { get; set; }
+    }
+
+    public ResultadoAutenticacao ValidarLogin(string email, string senha)
+    {
+        // Gerar o hash da senha informada
         string senhaHashInformada = GerarHashSenha(senha);
 
-        // Estabelecer a conexão com o banco de dados
         using (MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
         {
             try
             {
                 conn.Open();
 
-                // Consulta SQL para pegar o hash da senha armazenada no banco
-                string query = "SELECT senha_hash FROM usuarios WHERE email = @Email AND ativo = TRUE";
+                string query = @"
+                    SELECT u.senha_hash, p.nome_perfil 
+                    FROM usuarios u
+                    JOIN usuarios_perfis up ON u.id_usuario = up.id_usuario
+                    JOIN perfis p ON up.id_perfil = p.id_perfil
+                    WHERE u.email = @Email AND u.ativo = TRUE";
+
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Email", email);
 
-                // Executar a consulta e obter o hash armazenado
-                object resultado = cmd.ExecuteScalar();
-
-                if (resultado != null)
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    string senhaHashArmazenada = resultado.ToString();
+                    if (reader.Read())
+                    {
+                        string senhaHashArmazenada = reader["senha_hash"].ToString();
 
-                    // Comparar o hash informado com o hash armazenado
-                    if (senhaHashInformada == senhaHashArmazenada)
-                    {
-                        // Senha válida
-                        return true;
+                        // Usar uma comparação segura para comparar os hashes
+                        if (CompararHashes(senhaHashInformada, senhaHashArmazenada))
+                        {
+                            return new ResultadoAutenticacao
+                            {
+                                Sucesso = true,
+                                Perfil = reader["nome_perfil"].ToString()
+                            };
+                        }
                     }
-                    else
-                    {
-                        // Senha inválida
-                        return false;
-                    }
-                }
-                else
-                {
-                    // Usuário não encontrado
-                    return false;
+                    return new ResultadoAutenticacao { Sucesso = false };
                 }
             }
             catch (Exception ex)
             {
-                // Tratar erros de conexão ou exceções
                 Console.WriteLine("Erro ao verificar login: " + ex.Message);
-                return false;
+                return new ResultadoAutenticacao { Sucesso = false };
             }
         }
     }
 
-    // Função para gerar o hash SHA-256 da senha
     private string GerarHashSenha(string senha)
     {
         using (SHA256 sha256Hash = SHA256.Create())
         {
+            // Convert the input string to a byte array and compute the hash
             byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(senha));
+
+            // Convert the byte array to a hexadecimal string
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < bytes.Length; i++)
             {
@@ -71,5 +75,21 @@ public class Autenticacao
             }
             return builder.ToString();
         }
+    }
+
+    private bool CompararHashes(string hash1, string hash2)
+    {
+        // Comparação segura de hashes
+        if (hash1.Length != hash2.Length)
+            return false;
+
+        // Comparar byte por byte de forma constante para evitar ataques de timing
+        for (int i = 0; i < hash1.Length; i++)
+        {
+            if (hash1[i] != hash2[i])
+                return false;
+        }
+
+        return true;
     }
 }

@@ -1,12 +1,10 @@
 using System;
-using System.Security.Cryptography;
-using System.Text;
-using MySql.Data.MySqlClient;
 using System.Configuration;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using ECOInsightSENAC;
 
 namespace ECOInsight
 {
@@ -37,11 +35,33 @@ namespace ECOInsight
             string senha = txtSenha.Text.Trim();
 
             Autenticacao auth = new Autenticacao();
-            if (auth.ValidarLogin(email, senha))
+            var resultado = auth.ValidarLogin(email, senha);
+
+            if (resultado.Sucesso)
             {
-                HomeTela home = new HomeTela();
-                home.Show();
-                this.Hide();
+                Form telaDestino;
+
+                switch (resultado.Perfil)
+                {
+                    case "Administrador":
+                        telaDestino = new AdmTela(); // Substitua pelo seu Form real
+                        break;
+                    case "Professor":
+                        telaDestino = new ProfessorTela();
+                        break;
+                    case "Funcionário":
+                        telaDestino = new FuncionarioTela();
+                        break;
+                    case "Aluno":
+                        telaDestino = new AlunoTela();
+                        break;
+                    default:
+                        telaDestino = new HomeTela(); // Genérica ou erro
+                        break;
+                }
+
+                telaDestino.Show();
+                this.Hide(); // oculta a tela de login
             }
             else
             {
@@ -49,54 +69,6 @@ namespace ECOInsight
             }
         }
 
-        private bool ValidarLogin(string email, string senha)
-        {
-            bool usuarioValido = false;
-            string senha_hash_informada = GerarHashSenha(senha);
-
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
-                {
-                    conn.Open();
-
-                    string query = "SELECT senha_hash FROM usuarios WHERE email = @Email AND ativo = TRUE";
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@Email", email);
-
-                    object resultado = cmd.ExecuteScalar();
-
-                    if (resultado != null)
-                    {
-                        string senha_hash_armazenada = resultado.ToString();
-                        if (senha_hash_informada == senha_hash_armazenada)
-                        {
-                            usuarioValido = true;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao acessar o banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return usuarioValido;
-        }
-
-        public string GerarHashSenha(string senha)
-        {
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(senha));
-                StringBuilder builder = new StringBuilder();
-                foreach (byte b in bytes)
-                {
-                    builder.Append(b.ToString("x2"));
-                }
-                return builder.ToString();
-            }
-        }
 
         private void btnEsqueciSenha_Click_1(object sender, EventArgs e)
         {
