@@ -39,7 +39,65 @@ namespace ECOInsight.UserControls
 
         private void btn_CadSalvar_Click(object sender, EventArgs e)
         {
+            string email = txtCadEmail.Text.Trim(); // E-mail do usuário
+            string nome = txtCadNome.Text.Trim();   // Nome do usuário
+            string telefone = txtCadTelef.Text.Trim(); // Telefone do usuário
+            bool ativo = cbCadStatus.SelectedItem.ToString() == "Ativo"; // Status (ativo ou inativo)
 
+            // Validação: Verifique se os campos obrigatórios estão preenchidos
+            if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(telefone) || string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("Todos os campos devem ser preenchidos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                // Iniciar a conexão com o banco de dados
+                using (MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
+                {
+                    conn.Open();
+
+                    // Verificar se o e-mail existe no banco
+                    string checkUserQuery = "SELECT COUNT(*) FROM usuarios WHERE email = @Email";
+                    MySqlCommand cmdCheckUser = new MySqlCommand(checkUserQuery, conn);
+                    cmdCheckUser.Parameters.AddWithValue("@Email", email);
+                    int userCount = Convert.ToInt32(cmdCheckUser.ExecuteScalar());
+
+                    if (userCount == 0)
+                    {
+                        MessageBox.Show("Usuário não encontrado com este e-mail.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // Atualizar os dados do usuário
+                    string updateUserQuery = @"
+                UPDATE usuarios 
+                SET nome = @Nome, telefone = @Telefone, ativo = @Ativo 
+                WHERE email = @Email";
+
+                    MySqlCommand cmdUpdateUser = new MySqlCommand(updateUserQuery, conn);
+                    cmdUpdateUser.Parameters.AddWithValue("@Nome", nome);
+                    cmdUpdateUser.Parameters.AddWithValue("@Telefone", telefone);
+                    cmdUpdateUser.Parameters.AddWithValue("@Ativo", ativo);
+                    cmdUpdateUser.Parameters.AddWithValue("@Email", email);
+
+                    int rowsAffected = cmdUpdateUser.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Informações do usuário atualizadas com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhuma alteração realizada. O usuário pode não ter sido alterado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao salvar as informações: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private string GerarHashSenha(string senha)
@@ -225,7 +283,81 @@ namespace ECOInsight.UserControls
 
         private void btn_CadExcluirUsuario_Click(object sender, EventArgs e)
         {
+            string emailBuscado = txtCadEmail.Text.Trim();
 
+            // Verificar se o e-mail foi preenchido
+            if (string.IsNullOrEmpty(emailBuscado))
+            {
+                MessageBox.Show("Por favor, digite o e-mail do usuário para excluir.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Confirmar a exclusão com o usuário
+            DialogResult dialogResult = MessageBox.Show("Tem certeza de que deseja excluir este usuário?", "Confirmação de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult != DialogResult.Yes)
+            {
+                return;
+            }
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
+                {
+                    conn.Open();
+
+                    // Iniciar uma transação para garantir que todas as exclusões sejam realizadas de forma atômica
+                    using (MySqlTransaction transaction = conn.BeginTransaction())
+                    {
+                        try
+                        {
+                            // Primeiro, verificar se o usuário existe
+                            string checkUserQuery = "SELECT COUNT(*) FROM usuarios WHERE email = @Email";
+                            MySqlCommand cmdCheckUser = new MySqlCommand(checkUserQuery, conn);
+                            cmdCheckUser.Parameters.AddWithValue("@Email", emailBuscado);
+                            int userCount = Convert.ToInt32(cmdCheckUser.ExecuteScalar());
+
+                            if (userCount == 0)
+                            {
+                                MessageBox.Show("Usuário não encontrado com este e-mail.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+                            // Excluir os dados relacionados ao usuário nas tabelas de relacionamento (usuarios_perfis, funcionarios)
+                            string deleteUserProfile = "DELETE FROM usuarios_perfis WHERE id_usuario = (SELECT id_usuario FROM usuarios WHERE email = @Email)";
+                            MySqlCommand cmdDeleteProfile = new MySqlCommand(deleteUserProfile, conn, transaction);
+                            cmdDeleteProfile.Parameters.AddWithValue("@Email", emailBuscado);
+                            cmdDeleteProfile.ExecuteNonQuery();
+
+                            string deleteFuncionario = "DELETE FROM funcionarios WHERE id_usuario = (SELECT id_usuario FROM usuarios WHERE email = @Email)";
+                            MySqlCommand cmdDeleteFuncionario = new MySqlCommand(deleteFuncionario, conn, transaction);
+                            cmdDeleteFuncionario.Parameters.AddWithValue("@Email", emailBuscado);
+                            cmdDeleteFuncionario.ExecuteNonQuery();
+
+                            // Excluir o usuário da tabela de usuários
+                            string deleteUser = "DELETE FROM usuarios WHERE email = @Email";
+                            MySqlCommand cmdDeleteUser = new MySqlCommand(deleteUser, conn, transaction);
+                            cmdDeleteUser.Parameters.AddWithValue("@Email", emailBuscado);
+                            cmdDeleteUser.ExecuteNonQuery();
+
+                            // Commit da transação
+                            transaction.Commit();
+
+                            MessageBox.Show("Usuário excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            // Caso haja algum erro, realizar rollback da transação
+                            transaction.Rollback();
+                            MessageBox.Show("Erro ao excluir usuário: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Exibindo erro de conexão com o banco de dados
+                MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Falha na Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_CadEditarUsuario_Click(object sender, EventArgs e)
