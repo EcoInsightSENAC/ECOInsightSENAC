@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeTela));
             btnMinimizarHome = new FontAwesome.Sharp.IconButton();
             btnMaximizarRestaurarHome = new FontAwesome.Sharp.IconButton();
             btnFecharHome = new FontAwesome.Sharp.IconButton();
@@ -412,6 +413,7 @@
             Controls.Add(panelSuperiorHome);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "HomeTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";

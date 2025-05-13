@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>IMG1\iconeECOBoard.ico</ApplicationIcon>
+    <ApplicationIcon>IMG1\LogoEcoBoard.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="IMG1\iconeECOBoard.ico" />
+    <Content Include="IMG1\LogoEcoBoard.ico" />
   </ItemGroup>
 
   <ItemGroup>

@@ -299,6 +299,7 @@
             Controls.Add(panel1);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";

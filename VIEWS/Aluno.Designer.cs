@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlunoTela));
             btnSair = new FontAwesome.Sharp.IconButton();
             btnAlunoMenu = new FontAwesome.Sharp.IconButton();
             btnAlunoDestaques = new FontAwesome.Sharp.IconButton();
@@ -448,6 +449,7 @@
             Controls.Add(sidebarAluno);
             Controls.Add(panelSuperiorAluno);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AlunoTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdmTela));
             btnAdmMenu = new FontAwesome.Sharp.IconButton();
             btnSair = new FontAwesome.Sharp.IconButton();
             btnAdmDestaques = new FontAwesome.Sharp.IconButton();
@@ -673,6 +674,7 @@
             Controls.Add(sidebarAdm);
             Controls.Add(panelSuperiorAdm);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdmTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";

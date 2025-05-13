@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfessorTela));
             btnAProfMenu = new FontAwesome.Sharp.IconButton();
             btnProfDestaques = new FontAwesome.Sharp.IconButton();
             btnProfMPerfil = new FontAwesome.Sharp.IconButton();
@@ -390,6 +391,7 @@
             Controls.Add(sidebarProf);
             Controls.Add(panelSuperiorProf);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ProfessorTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FuncionarioTela));
             btnMinimizarFuncionario = new FontAwesome.Sharp.IconButton();
             btnMaximizarRestaurarFuncionario = new FontAwesome.Sharp.IconButton();
             btnFecharFuncionario = new FontAwesome.Sharp.IconButton();
@@ -342,6 +343,7 @@
             Controls.Add(sidebarFuncionario);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FuncionarioTela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ECOInsight";

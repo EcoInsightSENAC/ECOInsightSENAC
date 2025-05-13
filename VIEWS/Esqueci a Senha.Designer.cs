@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Esqueci_a_SenhaTela));
             txtConfirSenha = new TextBox();
             txtNovaSenha = new TextBox();
             txtEmail = new TextBox();
@@ -300,6 +301,7 @@
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             Name = "Esqueci_a_SenhaTela";
             StartPosition = FormStartPosition.CenterScreen;
