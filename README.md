@@ -2,7 +2,7 @@
 Soluções ambientais para empresas com foco em ESG
 
 ## Sistema de Monitoramento de Desperdício e Reciclagem
-![banner](https://github.com/EcoInsightSENAC/ECOInsightSENAC/blob/master/imagemDeCapaProj(2).jpeg)
+![banner](https://github.com/EcoInsightSENAC/ECOInsightSENAC/blob/master/IMG1/imagemDeCapaProj(2).jpeg)
 Este é um software desenvolvido em C# como uma aplicação Windows Forms e Console Application para monitorar desperdício e reciclagem de materiais.
 
 ### Sobre a EcoInsight
@@ -77,7 +77,13 @@ Contribuições são bem-vindas! Para contribuir:
 ### Licença
 Este projeto é licenciado sob a Licença MIT License.
 ### Autores
-- Seu Nome - Trabalho Inicial - SeuPerfilGitHub
+[Allana Fiorito dos Anjos](https://github.com/AllanaFA),
+[Davi Abreu dos Reis](https://github.com/Davi-2006),
+[Geovane Facundes Feitosa](https://github.com/gvnff),
+[Mateus Henrique Petrolio](https://github.com/Matt300-sketch),
+[Mirella Novais Rocha](https://github.com/mirellanovroch),
+[Rafael Forero Usipales](https://github.com/rafaelforusi451).
+
 ### Contato
 Para qualquer dúvida ou suporte técnico, entre em contato através de:
 - GitHub Issues
